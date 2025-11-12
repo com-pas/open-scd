@@ -1,5 +1,5 @@
 {
-  "name": "@openscd/xml",
+  "name": "@compas-oscd/xml",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/xml/src",

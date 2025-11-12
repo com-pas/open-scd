@@ -16,7 +16,16 @@
     "sourceMap": true,
     "inlineSources": true,
     "resolveJsonModule": true,
-    "rootDir": "./src"
+    "paths": {
+      "@openscd/core": ["../core/foundation.ts"],
+      "@openscd/core/*": ["../core/*"],
+      "@openscd/open-scd": ["../openscd/src/open-scd.ts"],
+      "@openscd/open-scd/*": ["../openscd/*"],
+      "@openscd/wizards": ["../wizards/src"],
+      "@openscd/wizards/*": ["../wizards/*"],
+      "@openscd/xml": ["../xml/src"],
+      "@openscd/xml/*": ["../xml/*"]
+    }
   },
   "include": ["src/**/*.ts"]
 }

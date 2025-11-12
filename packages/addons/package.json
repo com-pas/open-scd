@@ -1,5 +1,5 @@
 {
-  "name": "@openscd/addons",
+  "name": "@compas-oscd/addons",
   "version": "0.34.0",
   "repository": "https://github.com/openscd/open-scd.git",
   "directory": "packages/addons",
@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "lit": "^2.2.7",
-    "@openscd/core": "*"
+    "@openscd/core": "npm:@compas-oscd/core@*"
   },
   "//": {
     "clean": "rimraf build",

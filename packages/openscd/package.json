@@ -1,5 +1,5 @@
 {
-  "name": "@openscd/open-scd",
+  "name": "@compas-oscd/open-scd",
   "version": "0.34.0",
   "repository": "https://github.com/openscd/open-scd.git",
   "directory": "packages/openscd",
@@ -40,8 +40,8 @@
     "@material/mwc-textfield": "0.22.1",
     "@material/mwc-top-app-bar-fixed": "0.22.1",
     "@openscd/oscd-api": "^0.1.5",
-    "@openscd/core": "*",
-    "@openscd/xml": "*",
+    "@openscd/core": "npm:@compas-oscd/core@*",
+    "@openscd/xml": "npm:@compas-oscd/xml@*",
     "ace-custom-element": "^1.6.5",
     "lit": "^2.2.7",
     "lit-translate": "^1.2.1",
