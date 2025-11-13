@@ -20,8 +20,8 @@
     "./dist/**"
   ],
   "dependencies": {
-    "@compas-oscd/addons": "npm:@compas-oscd/addons@*",
-    "@compas-oscd/open-scd": "npm:@compas-oscd/open-scd@*",
+    "@openscd/addons": "*",
+    "@openscd/open-scd": "*",
     "@openscd/plugins": "*"
   },
   "scripts": {

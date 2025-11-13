@@ -38,30 +38,28 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
         continue-on-error: true
-      - name: Publish addons to npm
-        run: cd packages/addons && npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
-        continue-on-error: true
+
       - name: Publish forms to npm
         run: cd packages/forms && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
         continue-on-error: true
-      - name: Publish wizards to npm
-        run: cd packages/wizards && npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
-        continue-on-error: true
+
       - name: Publish xml to npm
         run: cd packages/xml && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
         continue-on-error: true
+
+      - name: Publish plugins to npm
+        run: cd packages/plugins && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{ steps.release.outputs.release_created }}
+        continue-on-error: true
+
       - name: Publish open-scd to npm
         run: cd packages/openscd && npm publish --access public
         env:

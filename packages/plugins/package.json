@@ -1,7 +1,7 @@
 {
-  "name": "@openscd/plugins",
+  "name": "@compas-oscd/plugins",
   "version": "0.0.1",
-  "repository": "https://github.com/openscd/open-scd.git",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/plugins",
   "description": "The official plug-ins of open-scd.",
   "keywords": [
@@ -15,7 +15,9 @@
   "author": "Open-SCD",
   "license": "Apache-2.0",
   "type": "module",
-  "private": true,
+  "files": [
+    "./dist/**"
+  ],
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-fab": "0.22.1",
