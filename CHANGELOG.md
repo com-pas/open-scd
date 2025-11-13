@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.44.0](https://github.com/com-pas/open-scd/compare/v0.43.0...v0.44.0) (2025-11-13)
+
+
+### Features
+
+* API compliant editor ([#1719](https://github.com/com-pas/open-scd/issues/1719)) ([e43ee6a](https://github.com/com-pas/open-scd/commit/e43ee6a10805d1d09e5a8adb539be7d68a65ab6a))
+* Form library ([#1718](https://github.com/com-pas/open-scd/issues/1718)) ([396bb13](https://github.com/com-pas/open-scd/commit/396bb13d0d5ecf6c3994072f00958587bb9e5fcd))
+
+
+### Bug Fixes
+
+* publish packages to npm ([2c38caa](https://github.com/com-pas/open-scd/commit/2c38caaa12a2b343b767ed48aa27ab9c85e6517c))
+* publish packages to npm ([7ee5158](https://github.com/com-pas/open-scd/commit/7ee515894f0ad44089d32318c25f065688bee871))
+* publish plugins to npm and remove empty packages from release step ([21fa2ac](https://github.com/com-pas/open-scd/commit/21fa2ac8f61816c04a6cef4d72f622befcb9dcf9))
+* restore deploy step in build-and-deploy workflow ([65c64f5](https://github.com/com-pas/open-scd/commit/65c64f59ec65b8fb5e7b515a966a9da88ad323a4))
+* temp turn off build-and-deploy workflow ([a9d65a8](https://github.com/com-pas/open-scd/commit/a9d65a8d1cf1c30d0a7ded5e71f7257fd4803367))
+* update node  to 20.x in release workflow ([#1716](https://github.com/com-pas/open-scd/issues/1716)) ([115f22a](https://github.com/com-pas/open-scd/commit/115f22a6f1f9cfe02a4817ec03811bcc53cd1fea))
+
 ## [0.43.0](https://github.com/openscd/open-scd/compare/v0.42.0...v0.43.0) (2025-10-27)
 
 
