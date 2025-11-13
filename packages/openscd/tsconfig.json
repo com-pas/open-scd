@@ -16,7 +16,12 @@
     "sourceMap": true,
     "inlineSources": true,
     "resolveJsonModule": true,
-    "rootDir": "./src"
+    "paths": {
+      "@openscd/core": ["../core/foundation.ts"],
+      "@openscd/core/*": ["../core/*"],
+      "@openscd/xml": ["../xml/src"],
+      "@openscd/xml/*": ["../xml/*"]
+    }
   },
   "include": ["./src/**/*.ts"]
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@openscd/plugins",
+  "name": "@compas-oscd/plugins",
   "version": "0.0.1",
-  "repository": "https://github.com/openscd/open-scd.git",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/plugins",
   "description": "The official plug-ins of open-scd.",
   "keywords": [
@@ -15,7 +15,9 @@
   "author": "Open-SCD",
   "license": "Apache-2.0",
   "type": "module",
-  "private": true,
+  "files": [
+    "./dist/**"
+  ],
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-fab": "0.22.1",
@@ -30,10 +32,10 @@
     "@material/mwc-textarea": "0.22.1",
     "@material/mwc-textfield": "0.22.1",
     "@openenergytools/scl-lib": "^1.8.0",
-    "@openscd/core": "*",
-    "@openscd/open-scd": "*",
-    "@openscd/wizards": "*",
-    "@openscd/xml": "*",
+    "@openscd/core": "npm:@compas-oscd/core@*",
+    "@openscd/open-scd": "npm:@compas-oscd/open-scd@*",
+    "@openscd/wizards": "npm:@compas-oscd/wizards@*",
+    "@openscd/xml": "npm:@compas-oscd/xml@*",
     "lit": "^2.2.7",
     "lit-translate": "^1.2.1",
     "marked": "^4.0.10",

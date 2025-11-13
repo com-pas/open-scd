@@ -1,5 +1,5 @@
 {
-  "name": "@openscd/xml",
+  "name": "@compas-oscd/xml",
   "version": "0.0.1",
   "description": "The XML manipulation package for OpenSCD",
   "author": "Open-SCD",

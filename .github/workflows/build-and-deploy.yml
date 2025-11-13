@@ -40,5 +40,5 @@ jobs:
         with:
           branch: master
           folder: packages/distribution/build
-          repository-name: openscd/openscd.github.io
+          repository-name: com-pas/openscd.github.io
           ssh-key: ${{ secrets.DEPLOY_KEY }}
