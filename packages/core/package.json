@@ -17,7 +17,20 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
-    }
+    },
+    "./foundation/scl.js": "./dist/foundation/scl.js",
+    "./foundation/deprecated/editor.js": "./dist/foundation/deprecated/editor.js",
+    "./foundation/deprecated/open-event.js": "./dist/foundation/deprecated/open-event.js",
+    "./foundation/deprecated/settings.js": "./dist/foundation/deprecated/settings.js",
+    "./foundation/deprecated/validation.js": "./dist/foundation/deprecated/validation.js",
+    "./foundation/deprecated/history.js": "./dist/foundation/deprecated/history.js",
+    "./foundation/deprecated/waiter.js": "./dist/foundation/deprecated/waiter.js",
+    "./foundation/deprecated/editor": "./dist/foundation/deprecated/editor.js",
+    "./foundation/deprecated/open-event": "./dist/foundation/deprecated/open-event.js",
+    "./foundation/deprecated/settings": "./dist/foundation/deprecated/settings.js",
+    "./foundation/deprecated/validation": "./dist/foundation/deprecated/validation.js",
+    "./foundation/deprecated/history": "./dist/foundation/deprecated/history.js",
+    "./foundation/deprecated/waiter": "./dist/foundation/deprecated/waiter.js"
   },
   "scripts": {
     "clean": "rimraf .tsbuildinfo dist",
