@@ -8,7 +8,7 @@ import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
 import {
   WizardInputElement,
 } from '@openscd/open-scd/src/foundation.js';
-import { Create, Replace, isCreate, isReplace } from '@openscd/core/foundation/deprecated/editor.js';
+import { Create, Replace, isCreate, isReplace } from '@compas-oscd/core';
 import {
   createTransformerWindingWizard,
   editTransformerWindingWizard,

@@ -28,12 +28,11 @@ import 'ace-custom-element';
 import './wizard-checkbox.js';
 import './wizard-textfield.js';
 import './wizard-select.js';
-
 import {
-  newActionEvent,
-  Delete,
-  Create,
-} from '@openscd/core/foundation/deprecated/editor.js';
+   newActionEvent,
+   Delete,
+   Create,
+} from '@compas-oscd/core';
 import {
   Wizard,
   WizardInputElement,

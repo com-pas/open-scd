@@ -4,7 +4,13 @@
   "description": "OpenSCD base distribution and plugins",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/addons",
+    "packages/distribution",
+    "packages/forms",
+    "packages/openscd",
+    "packages/plugins",
+    "packages/wizards",
+    "packages/xml"
   ],
   "scripts": {
     "clean": "lerna run clean",

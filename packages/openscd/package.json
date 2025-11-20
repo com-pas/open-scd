@@ -21,6 +21,7 @@
     "./build/**"
   ],
   "dependencies": {
+    "@compas-oscd/core": "^0.1.18",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-drawer": "0.22.1",
     "@material/mwc-fab": "0.22.1",
@@ -40,7 +41,6 @@
     "@material/mwc-textfield": "0.22.1",
     "@material/mwc-top-app-bar-fixed": "0.22.1",
     "@openscd/oscd-api": "^0.1.5",
-    "@openscd/core": "npm:@compas-oscd/core@*",
     "@openscd/xml": "npm:@compas-oscd/xml@*",
     "ace-custom-element": "^1.6.5",
     "lit": "^2.2.7",

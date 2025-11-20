@@ -38,7 +38,7 @@ import {
   SimpleAction,
   EditorAction,
   newActionEvent
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { maxLength, patterns } from './foundation/limits.js';
 import { editDataSetWizard } from './dataset.js';
 import { editGseWizard } from './gse.js';

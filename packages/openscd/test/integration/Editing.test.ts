@@ -2,12 +2,11 @@ import { expect, fixture, html } from '@open-wc/testing';
 
 import '../mock-editor-logger.js';
 import { MockEditorLogger } from '../mock-editor-logger.js';
-
 import {
   newActionEvent,
   Update,
   createUpdateAction
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 describe('Editing-Logging integration', () => {
   let elm: MockEditorLogger;

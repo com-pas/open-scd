@@ -21,7 +21,7 @@ import {
   newWizardEvent,
   compareNames,
 } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { createConnectedApWizard } from '../../wizards/connectedap.js';
 import { wizards } from '../../wizards/wizard-library.js';
 import { canMoveCommunicationElementToConnectedAP, getAllConnectedAPsOfSameIED } from './foundation.js';

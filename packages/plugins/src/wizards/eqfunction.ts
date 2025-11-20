@@ -13,7 +13,7 @@ import {
   getChildElementsByTagName,
 } from '@openscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 import { contentFunctionWizard } from './function.js';
 
 function updateEqFunctionAction(element: Element): WizardActor {

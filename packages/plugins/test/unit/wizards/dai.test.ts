@@ -13,7 +13,7 @@ import {
   Create, 
   Replace,
   ComplexAction
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 import { fetchDoc, setWizardTextFieldValue } from './test-support.js';
 import {

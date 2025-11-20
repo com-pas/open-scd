@@ -10,7 +10,7 @@ import {
   ComplexAction,
   EditorAction,
   createUpdateAction,
-} from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/core';
 import { get } from 'lit-translate';
 import { updateReferences } from './references.js';
 

@@ -14,7 +14,7 @@ import {
   Delete,
   ComplexAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { updateNamingAttributeWithReferencesAction } from './foundation/actions.js';
 import { deleteReferences } from './foundation/references.js';
 import { patterns } from './foundation/limits.js';

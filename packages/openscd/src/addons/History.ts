@@ -31,12 +31,12 @@ import {
   LogEntry,
   LogEntryType,
   LogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core';
 
 import { getFilterIcon, iconColors } from '../icons/icons.js';
 
 import { Plugin } from '../plugin.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@compas-oscd/core';
 
 import { getLogText } from './history/get-log-text.js';
 
@@ -191,7 +191,7 @@ export class OscdHistory extends LitElement {
         error: this.errorUI,
         warning: this.warningUI,
         info: this.infoUI,
-      }[detail.kind];
+      }[detail.kind as keyof typeof icons];
 
       ui.close();
       ui.show();
@@ -279,8 +279,8 @@ export class OscdHistory extends LitElement {
     super.connectedCallback();
 
     this.unsubscribers.push(
-      this.editor.subscribe(e => this.updateHistory()),
-      this.editor.subscribeUndoRedo(e => this.updateHistory())
+      this.editor.subscribe((_e: unknown) => this.updateHistory()),
+      this.editor.subscribeUndoRedo((_e: unknown) => this.updateHistory())
     );
 
     this.host.addEventListener('log', this.onLog);
@@ -313,10 +313,8 @@ export class OscdHistory extends LitElement {
         <span slot="secondary">${entry.message}</span>
         <mwc-icon
           slot="graphic"
-          style="--mdc-theme-text-icon-on-background:var(${iconColors[
-            entry.kind
-          ]})"
-          >${icons[entry.kind]}</mwc-icon
+          style="--mdc-theme-text-icon-on-background:var(${iconColors[entry.kind as keyof typeof iconColors]})"
+          >${icons[entry.kind as keyof typeof icons]}</mwc-icon
         >
       </mwc-list-item></abbr
     >`;
@@ -358,7 +356,7 @@ export class OscdHistory extends LitElement {
 
   private renderHistory(): TemplateResult[] | TemplateResult {
     if (this.history.length > 0)
-      return this.history.slice().reverse().map(e => this.renderHistoryEntry(e));
+      return this.history.slice().reverse().map((e: HistoryItem) => this.renderHistoryEntry(e));
     else
       return html`<mwc-list-item disabled graphic="icon">
         <span>${get('history.placeholder')}</span>

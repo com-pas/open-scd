@@ -18,7 +18,7 @@ import {
   cloneElement,
 } from '@openscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import {
   automationLogicalNode,
   controlLogicalNode,

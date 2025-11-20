@@ -34,8 +34,8 @@ import { patterns } from './foundation/limits.js';
 import {
   Create,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+  newLogEvent
+} from '@compas-oscd/core';
 
 function createLNodeAction(parent: Element): WizardActor {
   return (

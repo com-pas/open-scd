@@ -9,7 +9,7 @@ import {
   isReplace,
   isSimple,
   ComplexAction 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import '@openscd/open-scd/src/wizard-textfield.js';
 import { createAction } from '../../../src/wizards/bay.js';
 import { replaceNamingAttributeWithReferencesAction } from '../../../src/wizards/foundation/actions.js';

@@ -12,7 +12,7 @@ import {
   ComplexAction,
   Replace,
   isSimple
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { editDaTypeWizard } from '../../../../src/editors/templates/datype-wizards.js';
 
 describe('wizards for DAType element', () => {

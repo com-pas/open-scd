@@ -12,7 +12,7 @@ import { WizardTextField } from './wizard-textfield.js';
 import { WizardSelect } from './wizard-select.js';
 import { WizardCheckbox } from './wizard-checkbox.js';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 
 export const wizardInputSelector =
   'wizard-textfield, mwc-textfield, ace-editor, mwc-select, wizard-select, wizard-checkbox';

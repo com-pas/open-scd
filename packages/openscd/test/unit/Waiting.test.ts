@@ -4,7 +4,7 @@ import '../../src/addons/Waiter.js';
 
 import { OscdWaiter } from '../../src/addons/Waiter.js';
 
-import { newPendingStateEvent } from '@openscd/core/foundation/deprecated/waiter.js';
+import { newPendingStateEvent } from '@compas-oscd/core';
 
 describe('OSCD-Waiter', () => {
   let element: OscdWaiter;

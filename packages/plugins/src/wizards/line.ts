@@ -12,7 +12,7 @@ import {
 
 import { cloneElement, createElement } from '@openscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 
 const initial = {
   nomFreq: '50',

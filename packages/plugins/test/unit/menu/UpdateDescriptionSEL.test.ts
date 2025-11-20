@@ -8,7 +8,7 @@ import {
   ComplexAction,
   isSimple,
   isReplace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import UpdateDescriptionSel from '../../../src/menu/UpdateDescriptionSEL.js';
 
 describe('Update method for desc attributes in SEL IEDs', () => {

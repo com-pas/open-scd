@@ -32,7 +32,7 @@ import {
 import { SelectedItemsChangedEvent } from '@openscd/open-scd/src/oscd-filter-button.js';
 import { Nsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
 import { getIcon } from '@openscd/open-scd/src/icons/icons.js';
-import { OscdApi, newEditEventV2, InsertV2 } from '@openscd/core';
+import { OscdApi, newEditEventV2, InsertV2 } from '@compas-oscd/core';
 import { CreateIedDialog } from './ied/create-ied-dialog.js';
 
 /** An editor [[`plugin`]] for editing the `IED` section. */

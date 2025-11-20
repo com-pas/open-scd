@@ -1,16 +1,14 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
 import '../mock-open-scd.js';
-import { mockEdits } from '../mock-edits.js';
 import { MockOpenSCD } from '../mock-open-scd.js';
 
 import {
-  CommitEntry,
   newIssueEvent,
   newLogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+  InsertV2
+} from '@compas-oscd/core';
 import { OscdHistory } from '../../src/addons/History.js';
-import { InsertV2 } from '@openscd/core';
 import { createElement } from '@openscd/xml';
 
 describe('HistoringElement', () => {

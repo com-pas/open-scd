@@ -11,7 +11,7 @@ import {
   cloneElement
 } from '@openscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 import { SCL_COORDINATES_NAMESPACE } from '../foundation.js';
 
 export function getNameAttribute(element: Element): string | null {

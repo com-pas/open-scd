@@ -13,7 +13,7 @@ import { get, translate } from 'lit-translate';
 
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
-import { newEditEventV2 } from '@openscd/core';
+import { newEditEventV2 } from '@compas-oscd/core';
 import { createElement } from '@openscd/xml';
 import { logicalDeviceIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
 import {
@@ -23,7 +23,7 @@ import {
   getLdNameAttribute,
   newWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 
 import { wizards } from '../../wizards/wizard-library.js';
 import { Container } from './foundation.js';

@@ -18,7 +18,7 @@ import {
   createElement,
 } from '@openscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 
 let bayNum = 1;
 let cbNum = 1;

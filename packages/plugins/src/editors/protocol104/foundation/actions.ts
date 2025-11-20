@@ -1,4 +1,4 @@
-import { Create } from '@openscd/core/foundation/deprecated/editor.js';
+import { Create } from '@compas-oscd/core';
 import { TiInformation } from './cdc.js';
 
 /**

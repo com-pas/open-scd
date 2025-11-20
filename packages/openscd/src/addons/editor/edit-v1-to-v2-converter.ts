@@ -1,4 +1,4 @@
-import { Edit, EditV2, isComplex, isInsert, isNamespaced, isRemove, isUpdate, Update } from '@openscd/core';
+import { Edit, EditV2, isComplex, isInsert, isNamespaced, isRemove, isUpdate, Update } from '@compas-oscd/core';
 
 export function convertEditV1toV2(edit: Edit): EditV2 {
   if (isComplex(edit)) {
@@ -21,15 +21,17 @@ function convertUpdate(edit: Update): EditV2 {
   > = {};
 
   Object.entries(edit.attributes).forEach(([key, value]) => {
-    if (isNamespaced(value!)) {
-      const ns = value.namespaceURI;
+    if (value && isNamespaced(value)) {
+      const ns = (value as { namespaceURI: string }).namespaceURI;
       if (!ns) return;
 
       if (!attributesNS[ns]) {
         attributesNS[ns] = {};
       }
-      attributesNS[ns]![key] = value.value;
-    } else attributes[key] = value;
+      attributesNS[ns]![key] = (value as { value: string | null }).value;
+    } else {
+      attributes[key] = value as string | null;
+    }
   });
 
   return { element: edit.element, attributes, attributesNS };

@@ -21,7 +21,7 @@ import {
 
 import { cloneElement } from '@openscd/xml';
 
-import { Replace } from '@openscd/core/foundation/deprecated/editor.js';
+import { Replace } from '@compas-oscd/core';
 import { createFCDAsWizard } from './fcda.js';
 
 function openFcdaWizard(element: Element): WizardMenuActor {

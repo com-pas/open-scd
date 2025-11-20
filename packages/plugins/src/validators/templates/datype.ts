@@ -1,6 +1,6 @@
 import { get } from 'lit-translate';
 import { identity } from '@openscd/open-scd/src/foundation.js';
-import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
+import { LogDetailBase } from '@compas-oscd/core';
 import { validateChildren } from './foundation.js';
 import { iec6185073, iec6185081 } from '@openscd/open-scd/src/foundation/nsd.js';
 

@@ -14,7 +14,7 @@ import {
   getChildElementsByTagName
 } from '@openscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 
 interface ContentOptions {
   name: string | null;

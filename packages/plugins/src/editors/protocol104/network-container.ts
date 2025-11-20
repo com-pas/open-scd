@@ -9,7 +9,7 @@ import {
 
 import { createElement } from '@openscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { createSubNetworkWizard } from './wizards/subnetwork.js';
 import { Base104Container } from './base-container.js';
 import { getTypeAttribute } from './foundation/foundation.js';

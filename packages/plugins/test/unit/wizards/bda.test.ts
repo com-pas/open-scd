@@ -14,7 +14,7 @@ import {
   isReplace,
   Create, 
   Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { wizardContent } from '../../../src/wizards/abstractda.js';
 import { createBDaAction, updateBDaAction } from '../../../src/wizards/bda.js';
 

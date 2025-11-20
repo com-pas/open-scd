@@ -13,7 +13,7 @@ import {
 
 import { cloneElement } from '@openscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 import { patterns } from './foundation/limits.js';
 
 function getLNodeTypeOptions(element: Element): string[] {

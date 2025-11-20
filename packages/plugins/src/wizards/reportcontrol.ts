@@ -39,7 +39,7 @@ import {
   Delete,
   ComplexAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
 import { FinderList } from '@openscd/open-scd/src/finder-list.js';
 import { dataAttributePicker, iEDPicker } from './foundation/finder.js';

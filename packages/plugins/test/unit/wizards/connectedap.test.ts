@@ -17,7 +17,7 @@ import {
   ComplexAction, 
   Delete, 
   Create
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { editConnectedApWizard } from '../../../src/wizards/connectedap.js';
 
 describe('Wizards for SCL element ConnectedAP', () => {

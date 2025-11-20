@@ -8,7 +8,7 @@ import {
   getNameAttribute,
   newWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
 import '@openscd/open-scd/src/action-pane.js';

@@ -16,7 +16,7 @@ import {
   ComplexAction,
   EditorAction,
   SimpleAction,
-} from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/core';
 
 import { updateReferences } from './foundation/references.js';
 

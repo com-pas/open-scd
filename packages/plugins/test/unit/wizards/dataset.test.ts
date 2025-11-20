@@ -17,7 +17,7 @@ import {
   isReplace,
   Delete, 
   Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 describe('dataset wizards', () => {
   let doc: XMLDocument;

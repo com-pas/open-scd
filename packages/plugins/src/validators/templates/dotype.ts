@@ -1,7 +1,7 @@
 import { get } from 'lit-translate';
 
 import { identity } from '@openscd/open-scd/src/foundation.js';
-import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
+import { LogDetailBase } from '@compas-oscd/core';
 import {
   getAdjacentClass,
   validateChildren,

@@ -5,7 +5,7 @@ import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
 import type { Plugin } from '@openscd/open-scd/src/plugin.js';
 
 import ValidateSchema from '../../../src/validators/ValidateSchema.js';
-import { IssueDetail, LogEntry } from '@openscd/core/foundation/deprecated/history.js';
+import { IssueDetail, LogEntry } from '@compas-oscd/core/foundation/deprecated/history.js';
 
 describe('ValidateSchema plugin', () => {
   if (customElements.get('') === undefined)

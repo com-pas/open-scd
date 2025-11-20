@@ -7,7 +7,7 @@ import { identity, isPublic } from '@openscd/open-scd/src/foundation.js';
 
 import { getChildElementsByTagName } from '@openscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import {
   circuitBreakerIcon,
   disconnectorIcon,

@@ -17,7 +17,7 @@ import { LNContainer } from '../../../src/editors/ied/ln-container.js';
 import { DOContainer } from '../../../src/editors/ied/do-container.js';
 import { DAContainer } from '../../../src/editors/ied/da-container.js';
 import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
-import { OscdApi } from '@openscd/core';
+import { OscdApi } from '@compas-oscd/core';
 import { PluginStateApi } from '../../../../core/dist/api/plugin-state-api.js';
 
 describe('IED Plugin', () => {

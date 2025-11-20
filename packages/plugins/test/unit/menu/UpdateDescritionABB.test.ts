@@ -8,7 +8,7 @@ import {
   ComplexAction,
   isSimple,
   isReplace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import UpdateDescriptionAbb from '../../../src/menu/UpdateDescriptionABB.js';
 
 describe('Update method for desc attributes in ABB IEDs', () => {

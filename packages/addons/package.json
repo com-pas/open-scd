@@ -19,8 +19,7 @@
     "./dist/**"
   ],
   "dependencies": {
-    "lit": "^2.2.7",
-    "@openscd/core": "npm:@compas-oscd/core@*"
+    "lit": "^2.2.7"
   },
   "//": {
     "clean": "rimraf build",

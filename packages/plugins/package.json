@@ -19,6 +19,7 @@
     "./dist/**"
   ],
   "dependencies": {
+    "@compas-oscd/core": "^0.1.18",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-fab": "0.22.1",
     "@material/mwc-formfield": "0.22.1",
@@ -32,8 +33,7 @@
     "@material/mwc-textarea": "0.22.1",
     "@material/mwc-textfield": "0.22.1",
     "@openenergytools/scl-lib": "^1.8.0",
-    "@openscd/core": "npm:@compas-oscd/core@*",
-    "@openscd/open-scd": "npm:@compas-oscd/open-scd@*",
+    "@openscd/open-scd": "*",
     "@openscd/wizards": "npm:@compas-oscd/wizards@*",
     "@openscd/xml": "npm:@compas-oscd/xml@*",
     "lit": "^2.2.7",

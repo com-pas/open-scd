@@ -16,7 +16,7 @@ import {
   isCreate, 
   Create, 
   Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { regExp, regexString } from '../../foundation.js';
 import { editLNodeWizard, lNodeWizard } from '../../../src/wizards/lnode.js';
 

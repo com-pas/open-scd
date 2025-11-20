@@ -13,7 +13,7 @@ import {
   createElement,
   getChildElementsByTagName,
 } from '@openscd/xml';
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 
 function createProcessAction(parent: Element): WizardActor {
   return (inputs: WizardInputElement[]) => {

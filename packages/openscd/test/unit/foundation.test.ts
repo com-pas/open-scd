@@ -19,17 +19,17 @@ import {
 } from '../../src/foundation.js';
 
 import {
-  ComplexAction,
-  EditorAction,
+ ComplexAction,
+ EditorAction,
   invert,
-  isCreate,
-  isDelete,
-  isMove,
-  isReplace,
-  isSimple,
-  newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { newPendingStateEvent } from '@openscd/core/foundation/deprecated/waiter.js';
+ isCreate,
+ isDelete,
+ isMove,
+ isReplace,
+ isSimple,
+ newActionEvent,
+} from '@compas-oscd/core';
+import { newPendingStateEvent } from '@compas-oscd/core';
 
 import { MockAction } from './mock-actions.js';
 

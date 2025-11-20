@@ -15,7 +15,7 @@ import {
   isDelete,
   Create, 
   Delete 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import {
   contentGseOrSmvWizard,
   updateAddress,

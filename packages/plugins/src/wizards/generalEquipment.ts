@@ -13,7 +13,7 @@ import {
   getChildElementsByTagName,
 } from '@openscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 
 export function editGeneralEquipmentWizard(element: Element): Wizard {
   const name = element.getAttribute('name');

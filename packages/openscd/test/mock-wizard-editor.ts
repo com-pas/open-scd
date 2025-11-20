@@ -12,7 +12,7 @@ import '../src/addons/Wizards.js';
 import '../src/addons/Editor.js';
 
 import { OscdWizards } from '../src/addons/Wizards.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@compas-oscd/core';
 
 @customElement('mock-wizard-editor')
 export class MockWizardEditor extends LitElement {

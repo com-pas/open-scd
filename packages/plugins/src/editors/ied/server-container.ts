@@ -13,7 +13,7 @@ import { translate } from 'lit-translate';
 import { serverIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
 import { getDescriptionAttribute } from '@openscd/open-scd/src/foundation.js';
 import { createElement } from '@openscd/xml';
-import { newEditEventV2 } from '@openscd/core';
+import { newEditEventV2 } from '@compas-oscd/core';
 
 import {
   Container,

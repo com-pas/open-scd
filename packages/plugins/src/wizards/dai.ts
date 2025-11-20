@@ -11,7 +11,7 @@ import {
   WizardActor,
   WizardInputElement,
 } from '@openscd/open-scd/src/foundation.js';
-import { EditorAction, ComplexAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction, ComplexAction } from '@compas-oscd/core';
 import { SCL_NAMESPACE } from '@openscd/open-scd/src/schemas.js';
 
 export function updateValue(element: Element, val: Element): WizardActor {
