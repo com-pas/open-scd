@@ -1,31 +1,23 @@
 {
   "name": "@compas-oscd/core",
-  "version": "0.1.4",
+  "version": "0.1.14",
   "description": "The core editor component of open-scd, without any extensions pre-installed.",
   "author": "Open-SCD",
   "license": "Apache-2.0",
   "packageManager": "npm@8.12.2",
   "type": "module",
-  "browser": "./dist/foundation.js",
-  "main": "./dist/foundation.js",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "./dist/**"
   ],
   "exports": {
-    ".": "./dist/foundation.js",
-    "./foundation/scl.js": "./dist/foundation/scl.js",
-    "./foundation/deprecated/editor.js": "./dist/foundation/deprecated/editor.js",
-    "./foundation/deprecated/open-event.js": "./dist/foundation/deprecated/open-event.js",
-    "./foundation/deprecated/settings.js": "./dist/foundation/deprecated/settings.js",
-    "./foundation/deprecated/validation.js": "./dist/foundation/deprecated/validation.js",
-    "./foundation/deprecated/history.js": "./dist/foundation/deprecated/history.js",
-    "./foundation/deprecated/waiter.js": "./dist/foundation/deprecated/waiter.js",
-    "./foundation/deprecated/editor": "./dist/foundation/deprecated/editor.js",
-    "./foundation/deprecated/open-event": "./dist/foundation/deprecated/open-event.js",
-    "./foundation/deprecated/settings": "./dist/foundation/deprecated/settings.js",
-    "./foundation/deprecated/validation": "./dist/foundation/deprecated/validation.js",
-    "./foundation/deprecated/history": "./dist/foundation/deprecated/history.js",
-    "./foundation/deprecated/waiter": "./dist/foundation/deprecated/waiter.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
   },
   "scripts": {
     "clean": "rimraf .tsbuildinfo dist",

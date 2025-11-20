@@ -12,6 +12,9 @@ export interface LogDetailBase {
 /** The [[`LogEntry`]] for a committed [[`EditorAction`]]. */
 export interface CommitDetail extends LogDetailBase {
   kind: 'action';
+  redo: EditV2;
+  undo: EditV2;
+  squash?: boolean;
 }
 /** A [[`LogEntry`]] for notifying the user. */
 export interface InfoDetail extends LogDetailBase {
@@ -42,7 +45,6 @@ export type InfoEntry = Timestamped & InfoDetail;
 
 export type LogEntry = InfoEntry | CommitEntry;
 
-
 export function newLogEvent(
   detail: LogDetail,
   eventInitDict?: CustomEventInit<LogDetail>
@@ -68,9 +70,8 @@ export function newIssueEvent(
 }
 
 declare global {
-    interface ElementEventMap {
-      ['log']: LogEvent;
-      ['issue']: IssueEvent;
-    }
+  interface ElementEventMap {
+    ['log']: LogEvent;
+    ['issue']: IssueEvent;
   }
-  
+}
