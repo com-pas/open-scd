@@ -71,6 +71,8 @@ export {
   LogEntry,
   LogEntryType,
   LogEvent,
+  CommitDetail,
+  LogDetail,
 } from './foundation/deprecated/history.js';
 
 // Deprecated validation
@@ -94,6 +96,7 @@ export {
   isMove,
   isUpdate as isDeprecatedUpdate,
   createUpdateAction,
+  EditorActionEvent,
 } from './foundation/deprecated/editor.js';
 
 // Settings
