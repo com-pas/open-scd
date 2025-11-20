@@ -73,6 +73,7 @@ export {
   LogEvent,
   CommitDetail,
   LogDetail,
+  LogDetailBase,
 } from './foundation/deprecated/history.js';
 
 // Deprecated validation
