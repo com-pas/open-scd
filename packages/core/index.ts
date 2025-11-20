@@ -78,22 +78,22 @@ export { newValidateEvent } from './foundation/deprecated/validation.js';
 
 // Deprecated editor (aliased to avoid conflicts)
 export {
-  newActionEvent as newDeprecatedActionEvent,
-  ComplexAction as DeprecatedComplexAction,
-  SimpleAction as DeprecatedSimpleAction,
-  EditorAction as DeprecatedEditorAction,
-  Replace as DeprecatedReplace,
-  Create as DeprecatedCreate,
-  Move as DeprecatedMove,
+  newActionEvent,
+  ComplexAction,
+  SimpleAction,
+  EditorAction,
+  Replace,
+  Create,
+  Move,
   Update as DeprecatedUpdate,
-  Delete as DeprecatedDelete,
-  isCreate as isDeprecatedCreate,
-  isDelete as isDeprecatedDelete,
-  isReplace as isDeprecatedReplace,
-  isSimple as isDeprecatedSimple,
-  isMove as isDeprecatedMove,
+  Delete,
+  isCreate,
+  isDelete,
+  isReplace,
+  isSimple,
+  isMove,
   isUpdate as isDeprecatedUpdate,
-  createUpdateAction as createDeprecatedUpdateAction,
+  createUpdateAction,
 } from './foundation/deprecated/editor.js';
 
 // Settings
