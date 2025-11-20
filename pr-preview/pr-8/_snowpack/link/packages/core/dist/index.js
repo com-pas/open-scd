@@ -16,7 +16,7 @@ export { newLogEvent, newIssueEvent, } from './foundation/deprecated/history.js'
 // Deprecated validation
 export { newValidateEvent } from './foundation/deprecated/validation.js';
 // Deprecated editor (aliased to avoid conflicts)
-export { newActionEvent as newDeprecatedActionEvent, isCreate as isDeprecatedCreate, isDelete as isDeprecatedDelete, isReplace as isDeprecatedReplace, isSimple as isDeprecatedSimple, isMove as isDeprecatedMove, isUpdate as isDeprecatedUpdate, createUpdateAction as createDeprecatedUpdateAction, } from './foundation/deprecated/editor.js';
+export { newActionEvent, isCreate, isDelete, isReplace, isSimple, isMove, isUpdate as isDeprecatedUpdate, createUpdateAction, } from './foundation/deprecated/editor.js';
 // Settings
 export { newSettingsUIEvent, newLoadNsdocEvent, } from './foundation/deprecated/settings.js';
 // API
