@@ -15,7 +15,7 @@ export { newPendingStateEvent, } from './foundation/deprecated/waiter.js';
 export { newLogEvent, newIssueEvent, } from './foundation/deprecated/history.js';
 // Deprecated validation
 export { newValidateEvent } from './foundation/deprecated/validation.js';
-export { newActionEvent, isCreate, isDelete, isReplace, isSimple, isMove, isUpdate as isEditorUpdate, createUpdateAction, } from './foundation/deprecated/editor.js';
+export { newActionEvent, isCreate, isDelete, isReplace, isSimple, isMove, isUpdate as isEditorUpdate, createUpdateAction, invert, } from './foundation/deprecated/editor.js';
 // Settings
 export { newSettingsUIEvent, newLoadNsdocEvent, } from './foundation/deprecated/settings.js';
 // API
