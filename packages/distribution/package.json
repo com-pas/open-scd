@@ -20,7 +20,7 @@
     "./dist/**"
   ],
   "dependencies": {
-    "@compas-oscd/core": "^0.1.18",
+    "@compas-oscd/core": "^0.1.21",
     "@openscd/addons": "*",
     "@openscd/open-scd": "*",
     "@openscd/plugins": "*"

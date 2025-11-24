@@ -21,7 +21,7 @@
     "./build/**"
   ],
   "dependencies": {
-    "@compas-oscd/core": "^0.1.18",
+    "@compas-oscd/core": "^0.1.21",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-drawer": "0.22.1",
     "@material/mwc-fab": "0.22.1",

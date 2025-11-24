@@ -21,7 +21,7 @@ import {
 import {
  ComplexAction,
  EditorAction,
-  invert,
+ invert,
  isCreate,
  isDelete,
  isMove,

@@ -7,7 +7,6 @@ import {
   isMove,
   isReplace,
   isSimple,
-  isUpdate,
   Move,
   Replace,
   SimpleAction,
@@ -15,10 +14,10 @@ import {
   Edit,
   Insert,
   Remove,
-  Update as UpdateV2,
+  EditorUpdate,
+  isEditorUpdate
 } from '@compas-oscd/core';
 import { getReference, SCLTag } from '../../foundation.js';
-
 
 export function convertEditActiontoV1(action: EditorAction): Edit {
   if (isSimple(action)) {
@@ -33,7 +32,7 @@ function convertSimpleAction(action: SimpleAction): Edit {
     return convertCreate(action);
   } else if (isDelete(action)) {
     return convertDelete(action);
-  } else if (isUpdate(action)) {
+  } else if (isEditorUpdate(action)) {
     return convertUpdate(action);
   } else if (isMove(action)) {
     return convertMove(action);
@@ -62,17 +61,17 @@ function convertCreate(action: Create): Insert {
   return {
     parent: action.new.parent,
     node: action.new.element,
-    reference
+    reference,
   };
 }
 
 function convertDelete(action: Delete): Remove {
   return {
-    node: action.old.element
+    node: action.old.element,
   };
 }
 
-function convertUpdate(action: Update): UpdateV2 {
+function convertUpdate(action: EditorUpdate): Update {
   const oldAttributesToRemove: Record<string, string | null> = {};
   Array.from(action.element.attributes).forEach(attr => {
     const attribute = attr as Attr;
@@ -81,12 +80,12 @@ function convertUpdate(action: Update): UpdateV2 {
 
   const attributes = {
     ...oldAttributesToRemove,
-    ...action.attributes
+    ...action.newAttributes,
   };
 
   return {
     element: action.element,
-    attributes
+    attributes,
   };
 }
 
@@ -101,8 +100,8 @@ function convertMove(action: Move): Insert {
   return {
     parent: action.new.parent,
     node: action.old.element,
-    reference: action.new.reference ?? null
-  }
+    reference: action.new.reference ?? null,
+  };
 }
 
 function convertReplace(action: Replace): Edit {
@@ -124,11 +123,8 @@ function convertReplace(action: Replace): Edit {
   const insert: Insert = {
     parent,
     node: newNode,
-    reference
+    reference,
   };
 
-  return [
-    remove,
-    insert
-  ];
+  return [remove, insert];
 }
