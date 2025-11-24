@@ -32,27 +32,27 @@ export {
   isInsertV2,
   isComplexV2,
   isSetAttributesV2,
-  isSetTextContentV2
+  isSetTextContentV2,
 } from './foundation.js';
 export type {
   EditEventV2,
   EditEventOptionsV2,
-  EditDetailV2
+  EditDetailV2,
 } from './foundation.js';
 export { newEditEventV2 } from './foundation.js';
 export { handleEditV2 } from './foundation.js';
 export { cyrb64 } from './foundation.js';
 export type { Plugin, PluginSet } from './foundation.js';
 export { newEditCompletedEvent } from './foundation.js';
-export type {
-  EditCompletedEvent,
-  EditCompletedDetail,
-} from './foundation.js';
+export type { EditCompletedEvent, EditCompletedDetail } from './foundation.js';
 export { crossProduct } from './foundation.js';
 export { XMLEditor } from './foundation.js';
 
 // Deprecated open-event
-export { newOpenDocEvent, OpenDocEvent } from './foundation/deprecated/open-event.js';
+export {
+  newOpenDocEvent,
+  OpenDocEvent,
+} from './foundation/deprecated/open-event.js';
 
 // Deprecated waiter
 export {
@@ -80,25 +80,29 @@ export {
 export { newValidateEvent } from './foundation/deprecated/validation.js';
 
 // Deprecated editor (aliased to avoid conflicts)
-export {
-  newActionEvent,
+export type {
   ComplexAction,
   SimpleAction,
   EditorAction,
   Replace,
   Create,
   Move,
-  Update as DeprecatedUpdate,
+  Update as EditorUpdate,
   Delete,
+  EditorActionEvent,
+  EditorActionDetail,
+} from './foundation/deprecated/editor.js';
+export {
+  newActionEvent,
   isCreate,
   isDelete,
   isReplace,
   isSimple,
   isMove,
-  isUpdate as isDeprecatedUpdate,
+  isUpdate as isEditorUpdate,
   createUpdateAction,
-  EditorActionEvent,
 } from './foundation/deprecated/editor.js';
+export type { Update as EventUpdate } from './foundation/deprecated/edit-event.js';
 
 // Settings
 export {
