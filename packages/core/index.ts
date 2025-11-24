@@ -101,6 +101,7 @@ export {
   isMove,
   isUpdate as isEditorUpdate,
   createUpdateAction,
+  invert,
 } from './foundation/deprecated/editor.js';
 export type { Update as EventUpdate } from './foundation/deprecated/edit-event.js';
 
