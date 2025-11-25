@@ -6,7 +6,7 @@ import { Select } from '@material/mwc-select';
 import { TextField } from '@material/mwc-textfield';
 import AceEditor from 'ace-custom-element';
 
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
 import { WizardTextField } from './wizard-textfield.js';
 import { WizardSelect } from './wizard-select.js';

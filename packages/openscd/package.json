@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/open-scd",
-  "version": "0.34.0",
+  "version": "0.34.32",
   "repository": "https://github.com/openscd/open-scd.git",
   "directory": "packages/openscd",
   "description": "A bottom-up substation configuration designer for projects described using SCL `IEC 61850-6` Edition 2 or greater.",
@@ -14,14 +14,17 @@
   ],
   "author": "OMICRON electronics GmbH",
   "license": "Apache-2.0",
-  "main": "open-scd.js",
-  "module": "open-scd.js",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
-    "./build/**"
+    "./dist/**"
   ],
   "dependencies": {
     "@compas-oscd/core": "^0.1.21",
+    "@compas-oscd/xml": "^0.0.1",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-drawer": "0.22.1",
     "@material/mwc-fab": "0.22.1",
@@ -41,7 +44,6 @@
     "@material/mwc-textfield": "0.22.1",
     "@material/mwc-top-app-bar-fixed": "0.22.1",
     "@openscd/oscd-api": "^0.1.5",
-    "@openscd/xml": "npm:@compas-oscd/xml@*",
     "ace-custom-element": "^1.6.5",
     "lit": "^2.2.7",
     "lit-translate": "^1.2.1",

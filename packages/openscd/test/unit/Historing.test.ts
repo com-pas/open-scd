@@ -9,7 +9,7 @@ import {
   InsertV2
 } from '@compas-oscd/core';
 import { OscdHistory } from '../../src/addons/History.js';
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 describe('HistoringElement', () => {
   let mock: MockOpenSCD;

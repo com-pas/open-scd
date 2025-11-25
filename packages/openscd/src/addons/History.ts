@@ -40,6 +40,13 @@ import { XMLEditor } from '@compas-oscd/core';
 
 import { getLogText } from './history/get-log-text.js';
 
+export const historyStateEvent = 'history-state';
+export interface HistoryState {
+  editCount: number;
+  canUndo: boolean;
+  canRedo: boolean;
+}
+
 interface HistoryItem {
   title: string;
   message?: string;
@@ -364,7 +371,7 @@ export class OscdHistory extends LitElement {
       </mwc-list-item>`;
   }
 
-  private renderIssueEntry(issue: IssueDetail): TemplateResult {
+  protected renderIssueEntry(issue: IssueDetail): TemplateResult {
     return html` <abbr title="${issue.title + '\n' + issue.message}"
       ><mwc-list-item ?twoline=${!!issue.message}>
         <span> ${issue.title}</span>
