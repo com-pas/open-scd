@@ -4,7 +4,7 @@ import '../mock-editor-logger.js';
 import { MockEditorLogger } from '../mock-editor-logger.js';
 import {
   newActionEvent,
-  Update,
+  EditorUpdate as Update,
   createUpdateAction
 } from '@compas-oscd/core';
 

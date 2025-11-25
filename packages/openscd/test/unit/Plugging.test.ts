@@ -455,7 +455,7 @@ describe('OpenSCD-Plugin', () => {
             const storedPlugins = openscd.layout.plugins.map((plugin) => {
               Object.keys(plugin).forEach((key) => {
                 if(!keys.includes(key)) {
-                  delete plugin[key]
+                  delete (plugin as any)[key]
                 }
               })
 
