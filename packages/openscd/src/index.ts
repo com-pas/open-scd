@@ -1,7 +1,9 @@
-// Addons
 import './addons/Waiter.js';
 import './addons/Settings.js';
 import './addons/History.js';
+import './action-pane.js';
+import './action-icon.js';
+import './plain-compare-list.js'
 
 // History addon
 export {
@@ -54,6 +56,7 @@ export {
   getNameAttribute,
   checkValidity,
   wizardInputSelector,
+  WizardFactory
 } from './foundation.js';
 
 // Translations
@@ -66,10 +69,11 @@ import './wizard-textfield.js';
 export { WizardTextField } from './wizard-textfield.js';
 export { SelectedItemsChangedEvent } from './oscd-filter-button.js';
 
-
 // Wizards
 export { mergeWizard } from './wizards.js';
 export { OscdWizards } from './addons/Wizards.js';
+export { Wizarding } from './Wizarding.js';
+export { WizardDialog } from './wizard-dialog.js';
 
 // Schema
 export { SCL_NAMESPACE, isSCLNamespace } from './schemas.js';
@@ -77,6 +81,3 @@ export { SCL_NAMESPACE, isSCLNamespace } from './schemas.js';
 // Translations
 export { de } from './translations/de.js';
 export { en  } from './translations/en.js';
-
-// Test helpers
-import '../test/mock-open-scd.ts'
