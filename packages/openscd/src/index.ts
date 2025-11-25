@@ -3,7 +3,16 @@ import './addons/Waiter.js';
 import './addons/Settings.js';
 import './addons/History.js';
 
-export { HistoryState, historyStateEvent } from './addons/History.js';
+// History addon
+export {
+  HistoryState,
+  historyStateEvent,
+  HistoryUIDetail,
+  OscdHistory,
+} from './addons/History.js';
+
+// Layout addon
+export { OscdLayout } from './addons/Layout.js';
 
 // Foundation
 export { initializeNsdoc, Nsdoc } from './foundation/nsdoc.js';
@@ -37,7 +46,14 @@ export {
   crossProduct,
   patterns,
   SCLTag,
-  getVersion
+  getVersion,
+  LitElementConstructor,
+  Mixin,
+  getDescriptionAttribute,
+  getInstanceAttribute,
+  getNameAttribute,
+  checkValidity,
+  wizardInputSelector,
 } from './foundation.js';
 
 // Translations
@@ -47,11 +63,20 @@ export { en as oscdEn } from './translations/en.js';
 // Components
 import './filtered-list.js';
 import './wizard-textfield.js';
+export { WizardTextField } from './wizard-textfield.js';
+export { SelectedItemsChangedEvent } from './oscd-filter-button.js';
+
 
 // Wizards
 export { mergeWizard } from './wizards.js';
 export { OscdWizards } from './addons/Wizards.js';
 
+// Schema
+export { SCL_NAMESPACE, isSCLNamespace } from './schemas.js';
+
+// Translations
+export { de } from './translations/de.js';
+export { en  } from './translations/en.js';
 
 // Test helpers
 import '../test/mock-open-scd.ts'
