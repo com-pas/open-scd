@@ -1,5 +1,3 @@
-import { EditV2 } from '../edit.js';
-
 type InfoEntryKind = 'info' | 'warning' | 'error';
 
 export type LogEntryType = 'info' | 'warning' | 'error' | 'action' | 'reset';
@@ -42,7 +40,6 @@ export type InfoEntry = Timestamped & InfoDetail;
 
 export type LogEntry = InfoEntry | CommitEntry;
 
-
 export function newLogEvent(
   detail: LogDetail,
   eventInitDict?: CustomEventInit<LogDetail>
@@ -68,9 +65,8 @@ export function newIssueEvent(
 }
 
 declare global {
-    interface ElementEventMap {
-      ['log']: LogEvent;
-      ['issue']: IssueEvent;
-    }
+  interface ElementEventMap {
+    ['log']: LogEvent;
+    ['issue']: IssueEvent;
   }
-  
+}
