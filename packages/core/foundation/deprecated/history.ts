@@ -1,5 +1,3 @@
-import { EditV2 } from '../edit.js';
-
 type InfoEntryKind = 'info' | 'warning' | 'error';
 
 export type LogEntryType = 'info' | 'warning' | 'error' | 'action' | 'reset';
@@ -12,9 +10,6 @@ export interface LogDetailBase {
 /** The [[`LogEntry`]] for a committed [[`EditorAction`]]. */
 export interface CommitDetail extends LogDetailBase {
   kind: 'action';
-  redo: EditV2;
-  undo: EditV2;
-  squash?: boolean;
 }
 /** A [[`LogEntry`]] for notifying the user. */
 export interface InfoDetail extends LogDetailBase {
