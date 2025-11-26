@@ -22,8 +22,8 @@ import { Switch } from '@material/mwc-switch';
 
 import { getTheme } from '../themes.js';
 
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
 import { 
+  newLogEvent,
   Settings, 
   SettingsUIEvent, 
   Language,
@@ -31,7 +31,7 @@ import {
   NsdVersion,
   LoadNsdocEvent,
   newLoadNsdocEvent
-} from '@openscd/core/foundation/deprecated/settings.js';
+} from '@compas-oscd/core';
 import { Languages, languages, loader } from '../translations/loader.js';
 
 import '../WizardDivider.js';
@@ -150,13 +150,13 @@ export class OscdSettings extends LitElement {
 
   private getSetting<T extends keyof Settings>(setting: T): Settings[T] {
     return (
-      <Settings[T] | null>localStorage.getItem(setting) ?? defaults[setting]
+      <Settings[T] | null>localStorage.getItem(String(setting)) ?? defaults[setting]
     );
   }
 
   /** Update the `value` of `setting`, storing to `localStorage`. */
   setSetting<T extends keyof Settings>(setting: T, value: Settings[T]): void {
-    localStorage.setItem(setting, <string>(<unknown>value));
+    localStorage.setItem(String(setting), <string>(<unknown>value));
     this.shadowRoot
       ?.querySelector<WizardDialog>('wizard-dialog')
       ?.requestUpdate();
@@ -165,7 +165,7 @@ export class OscdSettings extends LitElement {
 
   /** Remove the `setting` in `localStorage`. */
   removeSetting<T extends keyof Settings>(setting: T): void {
-    localStorage.removeItem(setting);
+    localStorage.removeItem(String(setting));
     this.shadowRoot
       ?.querySelector<WizardDialog>('wizard-dialog')
       ?.requestUpdate();
@@ -176,7 +176,7 @@ export class OscdSettings extends LitElement {
 
   private onClosing(ae: CustomEvent<{ action: string } | null>): void {
     if (ae.detail?.action === 'reset') {
-      Object.keys(this.settings).forEach(item => localStorage.removeItem(item));
+      Object.keys(this.settings).forEach(item => localStorage.removeItem(String(item)));
       this.requestUpdate('settings');
     } else if (ae.detail?.action === 'save') {
       this.setSetting('language', <Language>this.languageUI.value);
@@ -189,7 +189,7 @@ export class OscdSettings extends LitElement {
 
   updated(changedProperties: Map<string | number | symbol, unknown>): void {
     super.updated(changedProperties);
-    if (changedProperties.has('settings')) use(this.settings.language);
+    if (changedProperties.has('settings' as string)) use(this.settings.language);
   }
 
   private renderFileSelect(): TemplateResult {

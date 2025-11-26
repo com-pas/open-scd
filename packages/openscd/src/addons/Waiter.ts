@@ -8,7 +8,7 @@ import {
 
 import '@material/mwc-linear-progress';
 
-import { PendingStateDetail } from '@openscd/core/foundation/deprecated/waiter.js';
+import { PendingStateDetail } from '@compas-oscd/core';
 
 @customElement('oscd-waiter')
 export class OscdWaiter extends LitElement {
@@ -24,7 +24,7 @@ export class OscdWaiter extends LitElement {
     this.waiting = true;
     this.work.add(e.detail.promise);
     this.workDone = Promise.allSettled(this.work);
-    await e.detail.promise.catch(reason => console.warn(reason));
+    await e.detail.promise.catch((reason: unknown) => console.warn(reason));
     this.work.delete(e.detail.promise);
     this.waiting = this.work.size > 0;
   }
@@ -36,12 +36,20 @@ export class OscdWaiter extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.addEventListener('pending-state', this.onPendingState);
+    this.addEventListener('pending-state', (evt: Event) => {
+      if (evt instanceof CustomEvent) {
+        this.onPendingState(evt as CustomEvent<PendingStateDetail>);
+      }
+    });
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback();
-    this.removeEventListener('pending-state', this.onPendingState);
+    this.removeEventListener('pending-state', (evt: Event) => {
+      if (evt instanceof CustomEvent) {
+        this.onPendingState(evt as CustomEvent<PendingStateDetail>);
+      }
+    });
   }
 
   render(): TemplateResult {

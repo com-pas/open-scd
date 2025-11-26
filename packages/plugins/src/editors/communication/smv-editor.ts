@@ -13,7 +13,7 @@ import '@material/mwc-icon';
 import '@openscd/open-scd/src/action-icon.js';
 import { sizableSmvIcon } from '@openscd/open-scd/src/icons/icons.js';
 import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { editSMvWizard } from '../../wizards/smv.js';
 import { canMoveCommunicationElementToConnectedAP, getAllConnectedAPsOfSameIED } from './foundation.js';
 

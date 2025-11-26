@@ -1,4 +1,4 @@
-import { ComplexAction, SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, SimpleAction } from '@compas-oscd/core';
 
 const element = document.createElement('test-element');
 const parent = document.createElement('test-parent');

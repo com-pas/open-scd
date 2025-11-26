@@ -9,7 +9,7 @@ import '@openscd/open-scd/src/wizard-textfield.js';
 import {
   createElement,
 } from '@openscd/xml';
-import { Create, Delete } from '@openscd/core/foundation/deprecated/editor.js';
+import { Create, Delete } from '@compas-oscd/core';
 import { typeNullable, typePattern } from './foundation/p-types.js';
 
 interface ContentOptions {

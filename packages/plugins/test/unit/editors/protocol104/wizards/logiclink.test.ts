@@ -13,7 +13,7 @@ import {
   Create,
   Delete,
   Replace
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
 import {
   createLogicLinkWizard,

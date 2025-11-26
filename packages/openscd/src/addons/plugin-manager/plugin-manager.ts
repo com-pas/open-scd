@@ -175,7 +175,7 @@ export class OscdPluginManager extends LitElement {
           left
         >
           <mwc-icon slot="meta">
-            ${plugin.icon || pluginIcons[plugin.kind]}
+            ${plugin.icon || pluginIcons[plugin.kind as keyof typeof pluginIcons]}
           </mwc-icon>
           ${plugin.name}
         </mwc-check-list-item>

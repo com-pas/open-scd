@@ -19,8 +19,7 @@
     "./dist/**"
   ],
   "dependencies": {
-    "@material/mwc-dialog": "0.22.1",
-    "@openscd/core": "npm:@compas-oscd/core@*"
+    "@material/mwc-dialog": "0.22.1"
   },
   "//": {
     "clean": "rimraf build",

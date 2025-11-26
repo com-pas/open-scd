@@ -9,7 +9,7 @@ import {
   WizardInputElement,
   patterns,
 } from '@openscd/open-scd/src/foundation.js';
-import { isCreate, Create } from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, Create } from '@compas-oscd/core';
 import { createSubNetworkWizard } from '../../../../../src/editors/protocol104/wizards/subnetwork.js';
 
 describe('SubNetwork 104 wizard', () => {

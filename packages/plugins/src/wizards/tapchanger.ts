@@ -13,7 +13,7 @@ import {
   WizardActor,
   WizardInputElement,
 } from '@openscd/open-scd/src/foundation.js';
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor';
+import { SimpleAction } from '@compas-oscd/core';
 
 function createTapChangerAction(parent: Element): WizardActor {
   return (inputs: WizardInputElement[]) => {

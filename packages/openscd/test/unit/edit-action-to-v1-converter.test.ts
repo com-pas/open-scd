@@ -1,22 +1,15 @@
-import { html, fixture, expect } from '@open-wc/testing';
-
+import {  expect } from '@open-wc/testing';
 import {
   Create,
   Delete,
-  EditorAction,
-  isCreate,
-  isDelete,
-  isMove,
-  isReplace,
-  isSimple,
-  isUpdate,
   Move,
   Replace,
-  SimpleAction,
-  Update,
-  createUpdateAction
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { Edit, Insert, Remove, Update as UpdateV2 } from '@openscd/core';
+  createUpdateAction,
+  Edit,
+  Insert,
+  Remove,
+  Update as UpdateV2,
+} from '@compas-oscd/core';
 
 import { convertEditActiontoV1 } from '../../src/addons/editor/edit-action-to-v1-converter.js';
 

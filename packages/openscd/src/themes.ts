@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-element';
-import { Settings } from '@openscd/core/foundation/deprecated/settings.js';
+import { Settings } from '@compas-oscd/core';
 
 export function getTheme(theme: Settings['theme']): TemplateResult {
   document.body.style.cssText = bodyStyles[theme];

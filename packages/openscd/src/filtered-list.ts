@@ -100,6 +100,7 @@ export class FilteredList extends ListBase {
   }
 
   onFilterInput(): void {
+    if (!this.searchField) return;
     Array.from(
       this.querySelectorAll(
         'mwc-list-item, mwc-check-list-item, mwc-radio-list-item'

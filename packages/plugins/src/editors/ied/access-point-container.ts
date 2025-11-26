@@ -16,7 +16,7 @@ import {
   newWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
 import { accessPointIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { wizards } from '../../wizards/wizard-library.js';
 import { editServicesWizard } from '../../wizards/services.js';
 import { removeAccessPointWizard } from '../../wizards/accesspoint.js';

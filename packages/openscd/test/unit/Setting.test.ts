@@ -6,7 +6,6 @@ import '../../src/addons/Settings.js';
 import { OscdSettings, defaults } from '../../src/addons/Settings.js';
 
 import { Button } from '@material/mwc-button';
-import { LogEvent } from '@openscd/core/foundation/deprecated/history.js';
 
 describe('OSCD-Settings', () => {
   let element: OscdSettings;

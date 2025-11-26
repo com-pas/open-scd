@@ -1,4 +1,4 @@
-import { Edit, Insert, Remove, Update } from '@openscd/core';
+import { Edit, Insert, Remove, Update } from '@compas-oscd/core';
 
 
 const element = document.createElement('test-element');

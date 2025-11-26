@@ -4,7 +4,7 @@ import { SinonSpy, spy } from 'sinon';
 import '@openscd/open-scd/src/addons/Wizards.js';
 import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
 
-import { isSimple, ComplexAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { isSimple, ComplexAction } from '@compas-oscd/core';
 
 import {
   remove104Private,

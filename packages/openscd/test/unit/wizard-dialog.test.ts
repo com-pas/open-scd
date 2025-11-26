@@ -5,11 +5,11 @@ import { Button } from '@material/mwc-button';
 import '../../src/wizard-textfield.js';
 import '../../src/wizard-dialog.js';
 import { WizardDialog } from '../../src/wizard-dialog.js';
-import { checkValidity, WizardInputElement } from '../../src/foundation.js';
+import { WizardInputElement } from '../../src/foundation.js';
 import { WizardCheckbox } from '../../src/wizard-checkbox.js';
 import { WizardSelect } from '../../src/wizard-select.js';
 import { WizardTextField } from '../../src/wizard-textfield.js';
-import { ComplexAction, Create, Delete, EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, Create, Delete, EditorAction } from '@compas-oscd/core';
 
 describe('wizard-dialog', () => {
   let element: WizardDialog;

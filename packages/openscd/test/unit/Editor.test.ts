@@ -2,19 +2,17 @@ import { html, fixture, expect } from '@open-wc/testing';
 
 import '../../src/addons/Editor.js';
 import { OscdEditor } from '../../src/addons/Editor.js';
-import {
-  Insert,
-  InsertV2,
-  newEditEvent,
-  newEditEventV2,
-  Remove,
-  Update,
-  SetAttributesV2,
-  SetTextContentV2,
-  RemoveV2,
-  XMLEditor
-} from '@openscd/core';
-import { CommitDetail, LogDetail } from '@openscd/core/foundation/deprecated/history.js';
+ import {
+   InsertV2,
+   newEditEventV2,
+   Remove,
+   SetAttributesV2,
+   SetTextContentV2,
+   RemoveV2,
+   XMLEditor,
+   CommitDetail,
+   LogDetail,
+ } from '@compas-oscd/core';
 
 
 describe('OSCD-Editor', () => {

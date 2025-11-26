@@ -14,7 +14,7 @@ import { WizardDialog } from './wizard-dialog.js';
  * queued onto on incoming [[`WizardEvent`]]s, first come first displayed. */
 export type WizardingElement = Mixin<typeof Wizarding>;
 
-export function Wizarding<TBase extends LitElementConstructor>(Base: TBase) {
+export function Wizarding<TBase extends LitElementConstructor>(Base: TBase): TBase {
   class WizardingElement extends Base {
     /** FIFO queue of [[`Wizard`]]s to display. */
     @state()
@@ -22,7 +22,7 @@ export function Wizarding<TBase extends LitElementConstructor>(Base: TBase) {
 
     @query('wizard-dialog') wizardUI!: WizardDialog;
 
-    private onWizard(we: WizardEvent) {
+    protected onWizard(we: WizardEvent) {
       const wizard = we.detail.wizard;
       if (wizard === null) this.workflow.shift();
       else if (we.detail.subwizard) this.workflow.unshift(wizard);
@@ -52,5 +52,6 @@ export function Wizarding<TBase extends LitElementConstructor>(Base: TBase) {
     }
   }
 
-  return WizardingElement;
+  // Cast to unknown as TBase to avoid TS4094 when generating declarations
+  return WizardingElement as unknown as TBase;
 }

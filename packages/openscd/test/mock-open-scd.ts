@@ -12,7 +12,6 @@ import { OpenSCD } from '../src/open-scd.js';
 import { WizardDialog } from '../src/wizard-dialog.js';
 import { OscdHistory } from '../src/addons/History.js';
 import { OscdLayout } from '../src/addons/Layout.js';
-// import type { Plugin } from '@openscd/core';
 import { Plugin } from '../src/plugin';
 
 @customElement('mock-open-scd')

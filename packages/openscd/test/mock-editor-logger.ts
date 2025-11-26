@@ -12,7 +12,7 @@ import '../src/addons/Editor.js';
 import '../src/addons/History.js';
 import { OscdEditor } from '../src/addons/Editor.js';
 import { OscdHistory } from '../src/addons/History.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@compas-oscd/core';
 
 @customElement('mock-editor-logger')
 export class MockEditorLogger extends LitElement {

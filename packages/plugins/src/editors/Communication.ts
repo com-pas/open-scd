@@ -8,7 +8,7 @@ import { newWizardEvent, isPublic } from '@openscd/open-scd/src/foundation.js';
 
 import { createElement } from '@openscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { createSubNetworkWizard } from '../wizards/subnetwork.js';
 
 /** An editor [[`plugin`]] for editing the `Communication` section. */

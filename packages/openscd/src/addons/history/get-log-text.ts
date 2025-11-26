@@ -5,7 +5,7 @@ import {
   isSetAttributesV2,
   isSetTextContentV2,
   isComplexV2
-} from '@openscd/core';
+} from '@compas-oscd/core';
 import { get } from 'lit-translate';
 
 export const getLogText = (edit: EditV2): { title: string, message?: string } => {
@@ -23,7 +23,7 @@ export const getLogText = (edit: EditV2): { title: string, message?: string } =>
     get('editing.node');
     return { title: get('editing.deleted', { name }) };
   } else if (isComplexV2(edit)) {
-    const message = edit.map(e => getLogText(e)).map(({ title }) => title).join(', ');
+    const message = edit.map((e: EditV2) => getLogText(e)).map(({ title }: { title: string }) => title).join(', ');
     return { title: get('editing.complex'), message };
   }
   

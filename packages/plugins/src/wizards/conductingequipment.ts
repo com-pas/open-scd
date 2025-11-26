@@ -18,7 +18,7 @@ import {
   createElement,
 } from '@openscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 import { replaceNamingAction } from './foundation/actions.js';
 
 const types: Partial<Record<string, string>> = {

@@ -7,7 +7,7 @@ import { createElement } from '@openscd/xml';
 import {
   newActionEvent,
   SimpleAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 function getElementIndexOf(list: (Element | null)[], match: Element): number {
   for (let i = 0; list.length; i++) if (list[i]?.isEqualNode(match)) return i;

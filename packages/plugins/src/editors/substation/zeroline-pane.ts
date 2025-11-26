@@ -25,7 +25,7 @@ import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import { getAttachedIeds } from './foundation.js';
 
 import { SCLTag, tags } from '@openscd/open-scd/src/foundation.js';
-import { Settings } from '@openscd/core/foundation/deprecated/settings.js';
+import { Settings } from '@compas-oscd/core';
 
 function shouldShowIEDs(): boolean {
   return localStorage.getItem('showieds') === 'on';

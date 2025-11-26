@@ -26,8 +26,7 @@ import '@material/mwc-select';
 import '@material/mwc-switch';
 import '@material/mwc-textfield';
 
-import { newOpenDocEvent } from '@openscd/core/foundation/deprecated/open-event.js';
-import { newPendingStateEvent } from '@openscd/core/foundation/deprecated/waiter.js';
+import { newOpenDocEvent, newPendingStateEvent } from '@compas-oscd/core';
 
 import './addons/Settings.js';
 import './addons/Waiter.js';
@@ -40,16 +39,14 @@ import { ActionDetail } from '@material/mwc-list';
 
 import { officialPlugins as builtinPlugins } from './plugins.js';
 import { initializeNsdoc, Nsdoc } from './foundation/nsdoc.js';
+import { OscdApi, XMLEditor, newLogEvent } from '@compas-oscd/core';
 import type {
   PluginSet,
   Plugin as CorePlugin,
-  EditCompletedEvent,
-} from '@openscd/core';
-import { OscdApi, XMLEditor } from '@openscd/core';
+} from '@compas-oscd/core';
 
 import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin } from "./plugin.js"
-import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history';
+import { ConfigurePluginEvent, newConfigurePluginEvent } from './plugin.events.js';
 import { pluginTag } from './plugin-tag.js';
 
 
@@ -188,8 +185,8 @@ export class OpenSCD extends LitElement {
     this.loadPlugins();
 
     this.unsubscribers.push(
-      this.editor.subscribe(e => this.editCount++),
-      this.editor.subscribeUndoRedo(e => this.editCount++)
+      this.editor.subscribe((_e: unknown) => this.editCount++),
+      this.editor.subscribeUndoRedo((_e: unknown) => this.editCount++)
     );
 
     // TODO: let Lit handle the event listeners, move to render()
@@ -257,8 +254,9 @@ export class OpenSCD extends LitElement {
   }
 
   private resetPlugins(): void {
-    const builtInPlugins = this.getBuiltInPlugins()
-    const allPlugins = [...builtInPlugins, ...this.parsedPlugins]
+    const builtInPlugins = this.getBuiltInPlugins() ?? [];
+    const parsedPlugins = this.parsedPlugins ?? [];
+    const allPlugins = [...builtInPlugins, ...parsedPlugins];
 
     const newPluginConfigs = allPlugins.map(plugin => {
       return {
@@ -275,7 +273,7 @@ export class OpenSCD extends LitElement {
    */
   @property({ type: Object }) plugins: PluginSet = { menu: [], editor: [] };
   get parsedPlugins(): Plugin[] {
-    const menuPlugins: Plugin[] = this.plugins.menu.map((plugin) => {
+    const menuPlugins: Plugin[] = (this.plugins.menu ?? []).map((plugin: any) => {
       let newPosition: MenuPosition | undefined = plugin.position as MenuPosition;
       if(typeof plugin.position === 'number') {
         newPosition = undefined
@@ -289,7 +287,7 @@ export class OpenSCD extends LitElement {
         }
       })
 
-    const editorPlugins: Plugin[] = this.plugins.editor.map((plugin) => {
+    const editorPlugins: Plugin[] = (this.plugins.editor ?? []).map((plugin: any) => {
       const editorPlugin: Plugin = {
         ...plugin,
         position: undefined,
@@ -580,7 +578,8 @@ function staticTagHtml(
 function withoutContent<P extends Plugin | InstalledOfficialPlugin>(
   plugin: P
 ): P {
-  return { ...plugin, content: undefined };
+  const { content, ...rest } = plugin as any;
+  return { ...rest, content: undefined } as P;
 }
 
 export const pluginIcons: Record<PluginKind | MenuPosition, string> = {

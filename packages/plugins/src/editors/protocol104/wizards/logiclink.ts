@@ -19,7 +19,7 @@ import {
   EditorAction,
   newActionEvent,
   SimpleAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { createNetworkTextField } from '../foundation/foundation.js';
 
 export function editLogicLinkWizard(

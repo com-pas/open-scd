@@ -38,7 +38,7 @@ import {
   EditorAction,
   newActionEvent,
   Replace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
 import {
   addReferencedDataTypes,

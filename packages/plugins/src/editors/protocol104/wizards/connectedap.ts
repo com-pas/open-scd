@@ -41,7 +41,7 @@ import { cloneElement, createElement } from '@openscd/xml';
 import {
   ComplexAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { getTypeAttribute } from '../foundation/foundation.js';
 import {
   createRedundancyGroupWizard,

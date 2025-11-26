@@ -12,7 +12,7 @@ import {
   isReplace,
   Create, 
   Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import {
   createProcessWizard,
   editProcessWizard,

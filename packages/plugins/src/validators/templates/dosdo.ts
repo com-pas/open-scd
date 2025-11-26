@@ -1,6 +1,6 @@
 import { get } from 'lit-translate';
 import { identity } from '@openscd/open-scd/src/foundation.js';
-import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
+import { LogDetailBase } from '@compas-oscd/core';
 import { getTypeChild, isTypeMissing } from './foundation.js';
 
 export async function dOValidator(element: Element): Promise<LogDetailBase[]> {

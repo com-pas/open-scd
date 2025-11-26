@@ -20,7 +20,7 @@ import {
   Delete,
   EditorAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { patterns } from './foundation/limits.js';
 
 import { updateNamingAttributeWithReferencesAction } from './foundation/actions.js';

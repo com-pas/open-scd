@@ -70,3 +70,4 @@ declare global {
     ['issue']: IssueEvent;
   }
 }
+

@@ -1,5 +1,5 @@
 import { TemplateResult } from 'lit-element';
-import { Plugin as CorePlugin } from "@openscd/core"
+import { Plugin as CorePlugin } from "@compas-oscd/core"
 
 export type Plugin = CorePlugin & {
   official?: boolean;

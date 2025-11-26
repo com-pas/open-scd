@@ -17,8 +17,6 @@
     "inlineSources": true,
     "resolveJsonModule": true,
     "paths": {
-      "@openscd/core": ["../core/foundation.ts"],
-      "@openscd/core/*": ["../core/*"],
       "@openscd/open-scd": ["../openscd/src/open-scd.ts"],
       "@openscd/open-scd/*": ["../openscd/*"],
       "@openscd/wizards": ["../wizards/src"],

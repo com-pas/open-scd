@@ -30,7 +30,7 @@ import {
   EditorAction,
   newActionEvent,
   Replace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { CreateOptions, UpdateOptions, WizardOptions } from './foundation.js';
 
 function remove(element: Element): WizardMenuActor {

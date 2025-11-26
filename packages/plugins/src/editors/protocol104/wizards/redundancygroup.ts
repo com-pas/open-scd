@@ -23,7 +23,7 @@ import {
   EditorAction,
   newActionEvent,
   SimpleAction
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 import { createLogicLinkWizard, editLogicLinkWizard } from './logiclink.js';
 import {

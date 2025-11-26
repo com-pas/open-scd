@@ -28,7 +28,7 @@ import {
 
 import { getChildElementsByTagName } from '@openscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { renderGeneralEquipment } from './foundation.js';
