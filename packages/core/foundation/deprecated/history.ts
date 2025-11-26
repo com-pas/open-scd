@@ -1,5 +1,3 @@
-import { EditV2 } from '../edit.js';
-
 type InfoEntryKind = 'info' | 'warning' | 'error';
 
 export type LogEntryType = 'info' | 'warning' | 'error' | 'action' | 'reset';
