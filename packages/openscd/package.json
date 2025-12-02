@@ -22,6 +22,7 @@
   ],
   "exports": {
     ".": "./dist/index.js",
+    "./foundation.js": "./dist/foundation.js",
     "./addons/Waiter.js": "./dist/addons/Waiter.js",
     "./addons/Settings.js": "./dist/addons/Settings.js",
     "./addons/History.js": "./dist/addons/History.js",
