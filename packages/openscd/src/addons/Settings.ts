@@ -7,7 +7,13 @@ import {
   LitElement,
   css,
 } from 'lit-element';
-import { get, translate, registerTranslateConfig, Strings, use } from 'lit-translate';
+import {
+  get,
+  translate,
+  registerTranslateConfig,
+  Strings,
+  use,
+} from 'lit-translate';
 
 import '@material/mwc-button';
 import '@material/mwc-dialog';
@@ -23,26 +29,21 @@ import { Switch } from '@material/mwc-switch';
 import { getTheme } from '../themes.js';
 
 import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
-import { 
-  Settings, 
-  SettingsUIEvent, 
+import {
+  Settings,
+  SettingsUIEvent,
   Language,
   NsdVersions,
   NsdVersion,
   LoadNsdocEvent,
-  newLoadNsdocEvent
+  newLoadNsdocEvent,
 } from '@openscd/core/foundation/deprecated/settings.js';
 import { Languages, languages, loader } from '../translations/loader.js';
 
 import '../WizardDivider.js';
 import { WizardDialog } from '../wizard-dialog.js';
 
-import {
-  iec6185072,
-  iec6185073,
-  iec6185074,
-  iec6185081,
-} from '../foundation/nsd.js';
+import { nsd72, nsd73, nsd74, nsd81 } from '../foundation/nsd.js';
 import { initializeNsdoc, Nsdoc } from '../foundation/nsdoc.js';
 
 interface LanguageConfig {
@@ -97,12 +98,6 @@ export class OscdSettings extends LitElement {
    * @returns Current version, revision and release for all current OpenSCD NSD files.
    */
   private async nsdVersions(): Promise<NsdVersions> {
-    const [nsd72, nsd73, nsd74, nsd81] = await Promise.all([
-      iec6185072,
-      iec6185073,
-      iec6185074,
-      iec6185081,
-    ]);
     const [nsd72Ns, nsd73Ns, nsd74Ns, nsd81Ns] = [
       nsd72.querySelector('NS'),
       nsd73.querySelector('NS'),
@@ -344,7 +339,10 @@ export class OscdSettings extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
-    registerTranslateConfig({ loader: this.languageConfig.loader, empty: key => key });
+    registerTranslateConfig({
+      loader: this.languageConfig.loader,
+      empty: key => key,
+    });
     use(this.settings.language);
 
     if (this.host) {
