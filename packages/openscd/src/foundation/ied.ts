@@ -1,5 +1,5 @@
 import { find, identity } from '../foundation.js';
-import { Delete } from '@openscd/core/foundation/deprecated/editor.js';
+import { Delete } from '@compas-oscd/core/foundation/deprecated/editor.js';
 
 /**
  * All available FCDA references that are used to link ExtRefs.

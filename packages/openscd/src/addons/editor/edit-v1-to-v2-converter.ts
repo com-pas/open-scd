@@ -1,4 +1,4 @@
-import { Edit, EditV2, isComplex, isInsert, isNamespaced, isRemove, isUpdate, Update } from '@openscd/core';
+import { Edit, EditV2, isComplex, isInsert, isNamespaced, isRemove, isUpdate, Update } from '@compas-oscd/core';
 
 export function convertEditV1toV2(edit: Edit): EditV2 {
   if (isComplex(edit)) {

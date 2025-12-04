@@ -31,12 +31,12 @@ import {
   LogEntry,
   LogEntryType,
   LogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core/foundation/deprecated/history.js';
 
 import { getFilterIcon, iconColors } from '../icons/icons.js';
 
 import { Plugin } from '../plugin.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@compas-oscd/core';
 
 import { getLogText } from './history/get-log-text.js';
 

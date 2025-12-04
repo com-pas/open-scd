@@ -12,8 +12,8 @@ import {
   Replace,
   SimpleAction,
   Update
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { Edit, Insert, Remove, Update as UpdateV2 } from '@openscd/core';
+} from '@compas-oscd/core/foundation/deprecated/editor.js';
+import { Edit, Insert, Remove, Update as UpdateV2 } from '@compas-oscd/core';
 import { getReference, SCLTag } from '../../foundation.js';
 
 

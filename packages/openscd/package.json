@@ -40,6 +40,8 @@
     "TODO:": "Open scd base class and web component"
   },
   "dependencies": {
+    "@compas-oscd/core": "^0.1.23",
+    "@compas-oscd/xml": "^0.0.1",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-drawer": "0.22.1",
     "@material/mwc-fab": "0.22.1",
@@ -59,8 +61,6 @@
     "@material/mwc-textfield": "0.22.1",
     "@material/mwc-top-app-bar-fixed": "0.22.1",
     "@openscd/oscd-api": "^0.1.5",
-    "@openscd/core": "*",
-    "@openscd/xml": "*",
     "ace-custom-element": "^1.6.5",
     "lit": "^2.2.7",
     "lit-translate": "^1.2.1",

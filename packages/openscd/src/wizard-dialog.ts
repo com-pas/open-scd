@@ -22,7 +22,7 @@ import { IconButton } from '@material/mwc-icon-button';
 import { List } from '@material/mwc-list';
 import { Menu } from '@material/mwc-menu';
 
-import { formatXml } from '@openscd/xml';
+import { formatXml } from '@compas-oscd/xml';
 
 import 'ace-custom-element';
 import './wizard-checkbox.js';
@@ -33,7 +33,7 @@ import {
   newActionEvent,
   Delete,
   Create,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core/foundation/deprecated/editor.js';
 import {
   Wizard,
   WizardInputElement,

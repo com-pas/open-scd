@@ -4,7 +4,7 @@ import {
   newEditEvent,
   newEditEventV2,
   XMLEditor
-} from '@openscd/core';
+} from '@compas-oscd/core';
 import {
   property,
   LitElement,
@@ -17,11 +17,11 @@ import { get } from 'lit-translate';
 import {
   EditorAction,
   EditorActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core/foundation/deprecated/editor.js';
 
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
-import { newValidateEvent } from '@openscd/core/foundation/deprecated/validation.js';
-import { OpenDocEvent } from '@openscd/core/foundation/deprecated/open-event.js';
+import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
+import { newValidateEvent } from '@compas-oscd/core/foundation/deprecated/validation.js';
+import { OpenDocEvent } from '@compas-oscd/core/foundation/deprecated/open-event.js';
 
 import {
   Edit,
@@ -30,7 +30,7 @@ import {
   isInsert,
   isRemove,
   isUpdate,
-} from '@openscd/core';
+} from '@compas-oscd/core';
 
 import { convertEditActiontoV1 } from './editor/edit-action-to-v1-converter.js';
 import { convertEditV1toV2 } from './editor/edit-v1-to-v2-converter.js';

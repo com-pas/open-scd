@@ -9,9 +9,9 @@ import {
   css,
 } from 'lit-element';
 import { get } from 'lit-translate';
-import { newPendingStateEvent } from '@openscd/core/foundation/deprecated/waiter.js';
-import { newSettingsUIEvent } from '@openscd/core/foundation/deprecated/settings.js';
-import { XMLEditor } from '@openscd/core';
+import { newPendingStateEvent } from '@compas-oscd/core/foundation/deprecated/waiter.js';
+import { newSettingsUIEvent } from '@compas-oscd/core/foundation/deprecated/settings.js';
+import { XMLEditor } from '@compas-oscd/core';
 import {
   MenuItem,
   Validator,
