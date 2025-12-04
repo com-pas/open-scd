@@ -31,7 +31,7 @@ import {
   LogEntry,
   LogEntryType,
   LogEvent,
-} from '@compas-oscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core';
 
 import { getFilterIcon, iconColors } from '../icons/icons.js';
 

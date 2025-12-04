@@ -22,7 +22,7 @@ import { Switch } from '@material/mwc-switch';
 
 import { getTheme } from '../themes.js';
 
-import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
+import { newLogEvent } from '@compas-oscd/core';
 import { 
   Settings, 
   SettingsUIEvent, 
@@ -31,7 +31,7 @@ import {
   NsdVersion,
   LoadNsdocEvent,
   newLoadNsdocEvent
-} from '@compas-oscd/core/foundation/deprecated/settings.js';
+} from '@compas-oscd/core';
 import { Languages, languages, loader } from '../translations/loader.js';
 
 import '../WizardDivider.js';

@@ -8,7 +8,7 @@ import {
 
 import '@material/mwc-linear-progress';
 
-import { PendingStateDetail } from '@compas-oscd/core/foundation/deprecated/waiter.js';
+import { PendingStateDetail } from '@compas-oscd/core';
 
 @customElement('oscd-waiter')
 export class OscdWaiter extends LitElement {

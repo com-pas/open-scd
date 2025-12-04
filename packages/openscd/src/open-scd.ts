@@ -26,8 +26,8 @@ import '@material/mwc-select';
 import '@material/mwc-switch';
 import '@material/mwc-textfield';
 
-import { newOpenDocEvent } from '@compas-oscd/core/foundation/deprecated/open-event.js';
-import { newPendingStateEvent } from '@compas-oscd/core/foundation/deprecated/waiter.js';
+import { newOpenDocEvent } from '@compas-oscd/core';
+import { newPendingStateEvent } from '@compas-oscd/core';
 
 import './addons/Settings.js';
 import './addons/Waiter.js';
@@ -49,7 +49,7 @@ import { OscdApi, XMLEditor } from '@compas-oscd/core';
 
 import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin } from "./plugin.js"
 import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
-import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history';
+import { newLogEvent } from '@compas-oscd/core';
 import { pluginTag } from './plugin-tag.js';
 
 

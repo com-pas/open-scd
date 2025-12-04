@@ -17,11 +17,11 @@ import { get } from 'lit-translate';
 import {
   EditorAction,
   EditorActionEvent,
-} from '@compas-oscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
-import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
-import { newValidateEvent } from '@compas-oscd/core/foundation/deprecated/validation.js';
-import { OpenDocEvent } from '@compas-oscd/core/foundation/deprecated/open-event.js';
+import { newLogEvent } from '@compas-oscd/core';
+import { newValidateEvent } from '@compas-oscd/core';
+import { OpenDocEvent } from '@compas-oscd/core';
 
 import {
   Edit,
