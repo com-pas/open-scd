@@ -2,15 +2,8 @@ import { get } from 'lit-translate';
 
 import { identity } from '@openscd/open-scd/src/foundation.js';
 import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
-import {
-  getAdjacentClass,
-  validateChildren,
-} from './foundation.js';
-import {
-  iec6185073,
-  iec6185074,
-  iec6185081,
-} from '@openscd/open-scd/src/foundation/nsd.js';
+import { getAdjacentClass, validateChildren } from './foundation.js';
+import { nsd73, nsd74, nsd81 } from '@openscd/open-scd/src/foundation/nsd.js';
 
 async function getSpecificDataObject(
   lnClass: string | null | undefined,
@@ -18,7 +11,7 @@ async function getSpecificDataObject(
 ): Promise<Element | null> {
   if (!lnClass || !doName) return null;
 
-  const lnodeclasses = getAdjacentClass(await iec6185074, lnClass!);
+  const lnodeclasses = getAdjacentClass(nsd74, lnClass!);
 
   return (
     lnodeclasses
@@ -66,9 +59,6 @@ async function getMandatoryDataAttribute(
   dotype: Element,
   cdc: string
 ): Promise<Element[]> {
-  const nsd73 = await iec6185073;
-  const nsd81 = await iec6185081;
-
   const dataAttributes = Array.from(
     nsd73.querySelectorAll(`CDC[name="${cdc}"] > DataAttribute[presCond="M"]`)
   );

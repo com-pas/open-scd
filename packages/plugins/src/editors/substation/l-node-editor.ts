@@ -86,7 +86,7 @@ export class LNodeEditor extends LitElement {
   }
   @state()
   private get missingIedReference(): boolean {
-    return this.element.getAttribute('iedName') === 'None' ?? false;
+    return this.element.getAttribute('iedName') === 'None';
   }
   @state()
   private get isIEDReference(): boolean {

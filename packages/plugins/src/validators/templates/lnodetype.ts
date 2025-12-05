@@ -1,14 +1,11 @@
 import { get } from 'lit-translate';
 import { identity } from '@openscd/open-scd/src/foundation.js';
 import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
-import {
-  getAdjacentClass,
-  validateChildren,
-} from './foundation.js';
-import { iec6185074 } from '@openscd/open-scd/src/foundation/nsd.js';
+import { getAdjacentClass, validateChildren } from './foundation.js';
+import { nsd74 } from '@openscd/open-scd/src/foundation/nsd.js';
 
 async function getMandatoryDataObject(base: string): Promise<Element[]> {
-  const lnodeclasses = getAdjacentClass(await iec6185074, base);
+  const lnodeclasses = getAdjacentClass(nsd74, base);
 
   return lnodeclasses.flatMap(lnodeclass =>
     Array.from(lnodeclass.querySelectorAll('DataObject[presCond="M"]'))

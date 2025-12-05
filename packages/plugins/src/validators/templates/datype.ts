@@ -2,14 +2,12 @@ import { get } from 'lit-translate';
 import { identity } from '@openscd/open-scd/src/foundation.js';
 import { LogDetailBase } from '@openscd/core/foundation/deprecated/history.js';
 import { validateChildren } from './foundation.js';
-import { iec6185073, iec6185081 } from '@openscd/open-scd/src/foundation/nsd.js';
+import { nsd73, nsd81 } from '@openscd/open-scd/src/foundation/nsd.js';
 
 async function getChildren(
   cdc: string | null | undefined,
   daName: string | null | undefined
 ): Promise<Element[]> {
-  const nsd73 = await iec6185073;
-
   const dataAttribute = nsd73
     .querySelector(`CDC[name="${cdc}"] > DataAttribute[name="${daName}"]`)
     ?.getAttribute('type');
@@ -24,8 +22,6 @@ async function getChildren(
 async function getServiceChildren(
   daName: string | null | undefined
 ): Promise<Element[]> {
-  const nsd81 = await iec6185081;
-
   return Array.from(
     nsd81.querySelectorAll(
       `ServiceConstructedAttributes > ServiceConstructedAttribute[name="${daName}"] > ` +

@@ -1,5 +1,5 @@
+import { EditV2 } from '@openscd/oscd-api';
 import { expect } from '@open-wc/testing';
-import { EditV2 } from '@openscd/oscd-api/dist/editv2.js';
 
 import { OscdCommit, XMLEditor } from '../api/editor/xml-editor.js';
 import { RemoveV2 } from '../foundation.js';
@@ -38,31 +38,31 @@ describe('XMLEditor', () => {
     editor.subscribe(c => subscriberValues.push(c as any));
 
     const deleteBay: RemoveV2 = {
-      node: bay1
+      node: bay1,
     };
 
     editor.commit(deleteBay);
 
-    const [ commit ] = subscriberValues;
-    expect(commit.redo).to.deep.equal([ deleteBay ]);
+    const [commit] = subscriberValues;
+    expect(commit.redo).to.deep.equal([deleteBay]);
   });
 
   it('should set title in commit', () => {
     const title = 'Important change';
 
     const deleteBay: RemoveV2 = {
-      node: bay1
+      node: bay1,
     };
 
     editor.commit(deleteBay, { title });
 
-    const [ commit ] = editor.past;
+    const [commit] = editor.past;
     expect(commit.title).to.equal(title);
   });
 
   it('should undo and redo changes', () => {
     const deleteBay: RemoveV2 = {
-      node: bay1
+      node: bay1,
     };
 
     editor.commit(deleteBay);
@@ -89,19 +89,19 @@ describe('XMLEditor', () => {
     editor.subscribeRedo(c => redos.push(c));
 
     const deleteBay: RemoveV2 = {
-      node: bay1
+      node: bay1,
     };
 
     editor.commit(deleteBay);
 
     editor.undo();
 
-    const [ lastUndo ] = undos;
-    expect(lastUndo.redo).to.deep.equal([ deleteBay ]);
+    const [lastUndo] = undos;
+    expect(lastUndo.redo).to.deep.equal([deleteBay]);
 
     editor.redo();
 
-    const [ lastRedo ] = redos;
-    expect(lastRedo.redo).to.deep.equal([ deleteBay ]);
+    const [lastRedo] = redos;
+    expect(lastRedo.redo).to.deep.equal([deleteBay]);
   });
 });
