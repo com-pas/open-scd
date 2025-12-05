@@ -82,7 +82,7 @@ export class FcdaBindingList extends LitElement {
         `fcda-binding-list-${
           this.includeLaterBinding ? 'later-binding' : 'data-binding'
         }-${this.controlTag}$hideSubscribed`
-      ) === 'true' ?? false
+      ) === 'true'
     );
   }
 
@@ -109,7 +109,7 @@ export class FcdaBindingList extends LitElement {
         `fcda-binding-list-${
           this.includeLaterBinding ? 'later-binding' : 'data-binding'
         }-${this.controlTag}$hideNotSubscribed`
-      ) === 'true' ?? false
+      ) === 'true'
     );
   }
 

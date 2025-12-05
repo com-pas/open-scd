@@ -373,7 +373,7 @@ export function getDaElementByDaiElement(
  * @param daElement - The DA Element for which to check.
  */
 function isEnumType(daElement: Element | undefined) {
-  return daElement?.getAttribute('bType') === 'Enum' ?? false;
+  return daElement?.getAttribute('bType') === 'Enum';
 }
 
 /**
