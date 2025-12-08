@@ -10,7 +10,6 @@ var __decorate = (decorators, target, key, kind) => {
   return result;
 };
 import {
-  customElement,
   html,
   LitElement,
   property,
@@ -48,7 +47,7 @@ import {OscdApi, XMLEditor} from "../../_snowpack/link/packages/core/dist/index.
 import {newConfigurePluginEvent} from "./plugin.events.js";
 import {newLogEvent} from "../../_snowpack/link/packages/core/dist/index.js";
 import {pluginTag} from "./plugin-tag.js";
-export let OpenSCD = class extends LitElement {
+export class OpenSCD extends LitElement {
   constructor() {
     super(...arguments);
     this.doc = null;
@@ -345,7 +344,7 @@ export let OpenSCD = class extends LitElement {
     }
     return this.pluginTags.get(uri);
   }
-};
+}
 __decorate([
   property({attribute: false})
 ], OpenSCD.prototype, "doc", 2);
@@ -376,9 +375,6 @@ __decorate([
 __decorate([
   state()
 ], OpenSCD.prototype, "pluginTags", 2);
-OpenSCD = __decorate([
-  customElement("open-scd")
-], OpenSCD);
 export function newResetPluginsEvent() {
   return new CustomEvent("reset-plugins", {bubbles: true, composed: true});
 }

@@ -1,5 +1,5 @@
 import { __decorate } from "../../_snowpack/pkg/tslib.js";
-import { customElement, html, LitElement, property, state, } from '../../_snowpack/pkg/lit-element.js';
+import { html, LitElement, property, state, } from '../../_snowpack/pkg/lit-element.js';
 import { classMap } from '../../_snowpack/pkg/lit-html/directives/class-map.js';
 import '../../_snowpack/pkg/@material/mwc-icon.js';
 import '../../_snowpack/pkg/@material/mwc-icon-button.js';
@@ -32,9 +32,7 @@ import { OscdApi, XMLEditor } from '../../_snowpack/link/packages/core/dist/inde
 import { newConfigurePluginEvent } from './plugin.events.js';
 import { newLogEvent } from '../../_snowpack/link/packages/core/dist/index.js';
 import { pluginTag } from './plugin-tag.js';
-/** The `<open-scd>` custom element is the main entry point of the
- * Open Substation Configuration Designer. */
-let OpenSCD = class OpenSCD extends LitElement {
+export class OpenSCD extends LitElement {
     constructor() {
         super(...arguments);
         this.doc = null;
@@ -370,7 +368,7 @@ let OpenSCD = class OpenSCD extends LitElement {
         }
         return this.pluginTags.get(uri);
     }
-};
+}
 __decorate([
     property({ attribute: false })
 ], OpenSCD.prototype, "doc", void 0);
@@ -401,10 +399,6 @@ __decorate([
 __decorate([
     state()
 ], OpenSCD.prototype, "pluginTags", void 0);
-OpenSCD = __decorate([
-    customElement('open-scd')
-], OpenSCD);
-export { OpenSCD };
 export function newResetPluginsEvent() {
     return new CustomEvent('reset-plugins', { bubbles: true, composed: true });
 }
