@@ -5,7 +5,7 @@ import {
   state,
   TemplateResult,
 } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map';
+import { classMap } from 'lit-html/directives/class-map.js';
 
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';

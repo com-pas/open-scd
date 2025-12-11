@@ -7,7 +7,7 @@ import {
   query,
   TemplateResult,
 } from 'lit-element';
-import { until } from 'lit-html/directives/until';
+import { until } from 'lit-html/directives/until.js';
 import { get } from 'lit-translate';
 
 import '@material/mwc-icon';
@@ -19,7 +19,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 
 import './filtered-list.js';
 import { depth } from './foundation.js';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 export type Selection = { [name: string]: Selection };
 

@@ -9,7 +9,7 @@ import {
   html,
   query,
 } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { get } from 'lit-translate';
 
 import '@material/mwc-button';

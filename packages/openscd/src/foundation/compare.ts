@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat';
+import { repeat } from 'lit-html/directives/repeat.js';
 import { get } from 'lit-translate';
 
 import '@material/mwc-list';
