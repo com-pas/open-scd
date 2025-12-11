@@ -710,7 +710,7 @@ export class OscdLayout extends LitElement {
     }
 
     #menuContent {
-      display: none;
+      height: 0px;
     }
 
     .landing {
