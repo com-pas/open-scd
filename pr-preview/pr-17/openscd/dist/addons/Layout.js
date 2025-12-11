@@ -1,9 +1,11 @@
 import { __decorate } from "../../../_snowpack/pkg/tslib.js";
 import { customElement, html, LitElement, property, state, query, css, } from '../../../_snowpack/pkg/lit-element.js';
 import { get } from '../../../_snowpack/pkg/lit-translate.js';
+import { classMap } from '../../../_snowpack/pkg/lit-html/directives/class-map.js';
 import { newPendingStateEvent } from '../../../_snowpack/link/packages/core/dist/index.js';
 import { newSettingsUIEvent } from '../../../_snowpack/link/packages/core/dist/index.js';
-import { pluginIcons, } from '../open-scd.js';
+import { OscdApi } from '../../../_snowpack/link/packages/core/dist/index.js';
+import { pluginIcons } from '../open-scd.js';
 import { HistoryUIKind, newEmptyIssuesEvent, newHistoryUIEvent } from './History.js';
 import { List } from '../../../_snowpack/pkg/@material/mwc-list.js';
 import '../../../_snowpack/pkg/@material/mwc-drawer.js';
@@ -16,6 +18,35 @@ import { pluginTag } from '../plugin-tag.js';
 import "./plugin-manager/plugin-manager.js";
 import "./plugin-manager/custom-plugin-dialog.js";
 import "./menu-tabs/menu-tabs.js";
+/**
+ * This is a template literal tag function. See:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
+ *
+ * Passes its arguments to LitElement's `html` tag after combining the first and
+ * last expressions with the first two and last two static strings.
+ * Throws unless the first and last expressions are identical strings.
+ *
+ * We need this to get around the expression location limitations documented in
+ * https://lit.dev/docs/templates/expressions/#expression-locations
+ *
+ * After upgrading to Lit 2 we can use their static HTML functions instead:
+ * https://lit.dev/docs/api/static-html/
+ */
+function staticTagHtml(oldStrings, ...oldArgs) {
+    const args = [...oldArgs];
+    const firstArg = args.shift();
+    const lastArg = args.pop();
+    if (firstArg !== lastArg)
+        throw new Error(`Opening tag <${firstArg}> does not match closing tag </${lastArg}>.`);
+    const strings = [...oldStrings];
+    const firstString = strings.shift();
+    const secondString = strings.shift();
+    const lastString = strings.pop();
+    const penultimateString = strings.pop();
+    strings.unshift(`${firstString}${firstArg}${secondString}`);
+    strings.push(`${penultimateString}${lastArg}${lastString}`);
+    return html(strings, ...args);
+}
 let OscdLayout = class OscdLayout extends LitElement {
     constructor() {
         super(...arguments);
@@ -43,6 +74,9 @@ let OscdLayout = class OscdLayout extends LitElement {
         ${this.renderContent()} ${this.renderLanding()} ${this.renderPlugging()}
       </div>
     `;
+    }
+    componentHtml(strings, ...values) {
+        return html(strings, ...values);
     }
     renderPlugging() {
         return html ` ${this.renderPluginUI()} ${this.renderDownloadUI()} `;
@@ -103,7 +137,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                 },
                 disabled: () => !this.editor.canUndo,
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             {
                 icon: 'redo',
@@ -114,7 +148,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                 },
                 disabled: () => !this.editor.canRedo,
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             ...validators,
             {
@@ -125,7 +159,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.log));
                 },
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             {
                 icon: 'history',
@@ -135,7 +169,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.history));
                 },
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             {
                 icon: 'rule',
@@ -145,7 +179,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.diagnostic));
                 },
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             'divider',
             ...middleMenu,
@@ -156,7 +190,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newSettingsUIEvent(true));
                 },
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
             ...bottomMenu,
             {
@@ -164,7 +198,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                 name: 'plugins.heading',
                 action: () => this.pluginUI.show(),
                 kind: 'static',
-                content: () => html ``,
+                content: { tag: '' },
             },
         ];
     }
@@ -236,12 +270,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newPendingStateEvent(menuContentElement.run()));
                 },
                 disabled: () => plugin.requireDoc && this.doc === null,
-                content: () => {
-                    if (plugin.content) {
-                        return plugin.content();
-                    }
-                    return html ``;
-                },
+                content: plugin.content ?? { tag: '' },
                 kind: kind,
             };
         });
@@ -261,7 +290,7 @@ let OscdLayout = class OscdLayout extends LitElement {
                     this.dispatchEvent(newPendingStateEvent(menuContentElement.validate()));
                 },
                 disabled: () => this.doc === null,
-                content: plugin.content ?? (() => html ``),
+                content: plugin.content ?? { tag: '' },
                 kind: 'validator',
             };
         });
@@ -339,7 +368,7 @@ let OscdLayout = class OscdLayout extends LitElement {
       <div id="menuContent">
         ${this.menu
             .filter(p => p.content)
-            .map(p => p.content())}
+            .map(p => this.renderPluginContent(p))}
       </div>
     `;
     }
@@ -392,6 +421,18 @@ let OscdLayout = class OscdLayout extends LitElement {
         if (!hasActiveEditors) {
             return html ``;
         }
+        const renderEditorContent = (doc, activeEditor) => {
+            const editor = activeEditor;
+            const requireDoc = editor?.requireDoc;
+            if (requireDoc && !doc) {
+                return html ``;
+            }
+            const tag = editor?.content?.tag;
+            if (!tag) {
+                return html ``;
+            }
+            return this.renderPluginContent(editor);
+        };
         return html `
       <oscd-menu-tabs
         .editors=${this.calcActiveEditors()}
@@ -401,18 +442,6 @@ let OscdLayout = class OscdLayout extends LitElement {
       </oscd-menu-tabs>
       ${renderEditorContent(this.doc, this.activeEditor)}
     `;
-        function renderEditorContent(doc, activeEditor) {
-            const editor = activeEditor;
-            const requireDoc = editor?.requireDoc;
-            if (requireDoc && !doc) {
-                return html ``;
-            }
-            const content = editor?.content;
-            if (!content) {
-                return html ``;
-            }
-            return html `${content()}`;
-        }
     }
     handleEditorTabActivated(e) {
         this.activeEditor = e.detail.editor;
@@ -474,6 +503,32 @@ let OscdLayout = class OscdLayout extends LitElement {
             }
         }
     }
+    renderPluginContent(plugin) {
+        const tag = plugin.content?.tag ?? '';
+        if (!tag) {
+            return html ``;
+        }
+        const osdcApi = new OscdApi(tag);
+        return staticTagHtml `<${tag}
+          .doc=${this.doc}
+          .docName=${this.docName}
+          .editCount=${this.editCount}
+          .plugins=${this.host.storedPlugins}
+          .docId=${this.host.docId}
+          .pluginId=${plugin.src}
+          .nsdoc=${this.host.nsdoc}
+          .docs=${this.host.docs}
+          .locale=${this.host.locale}
+          .oscdApi=${osdcApi}
+          .editor=${this.editor}
+          class="${classMap({
+            plugin: true,
+            menu: plugin.kind === 'menu',
+            validator: plugin.kind === 'validator',
+            editor: plugin.kind === 'editor',
+        })}"
+        ></${tag}>`;
+    }
 };
 OscdLayout.styles = css `
     mwc-drawer {
@@ -522,6 +577,10 @@ OscdLayout.styles = css `
     tt {
       font-family: 'Roboto Mono', monospace;
       font-weight: 300;
+    }
+
+    #menuContent {
+      display: none;
     }
 
     .landing {

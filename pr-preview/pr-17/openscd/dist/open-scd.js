@@ -1,6 +1,5 @@
 import { __decorate } from "../../_snowpack/pkg/tslib.js";
 import { html, LitElement, property, state, } from '../../_snowpack/pkg/lit-element.js';
-import { classMap } from '../../_snowpack/pkg/lit-html/directives/class-map.js';
 import '../../_snowpack/pkg/@material/mwc-icon.js';
 import '../../_snowpack/pkg/@material/mwc-icon-button.js';
 import '../../_snowpack/pkg/@material/mwc-linear-progress.js';
@@ -28,7 +27,7 @@ import './addons/History.js';
 import './addons/Layout.js';
 import { officialPlugins as builtinPlugins } from './plugins.js';
 import { initializeNsdoc } from './foundation/nsdoc.js';
-import { OscdApi, XMLEditor } from '../../_snowpack/link/packages/core/dist/index.js';
+import { XMLEditor } from '../../_snowpack/link/packages/core/dist/index.js';
 import { newConfigurePluginEvent } from './plugin.events.js';
 import { newLogEvent } from '../../_snowpack/link/packages/core/dist/index.js';
 import { pluginTag } from './plugin-tag.js';
@@ -338,26 +337,8 @@ export class OpenSCD extends LitElement {
         }
         return {
             ...plugin,
-            content: () => {
-                return staticTagHtml `<${tag}
-            .doc=${this.doc}
-            .docName=${this.docName}
-            .editCount=${this.editCount}
-            .plugins=${this.storedPlugins}
-            .docId=${this.docId}
-            .pluginId=${plugin.src}
-            .nsdoc=${this.nsdoc}
-            .docs=${this.docs}
-            .locale=${this.locale}
-            .oscdApi=${new OscdApi(tag)}
-            .editor=${this.editor}
-            class="${classMap({
-                    plugin: true,
-                    menu: plugin.kind === 'menu',
-                    validator: plugin.kind === 'validator',
-                    editor: plugin.kind === 'editor',
-                })}"
-          ></${tag}>`;
+            content: {
+                tag
             },
         };
     }
@@ -415,35 +396,6 @@ export function newSetPluginsEvent(selectedPlugins) {
         composed: true,
         detail: { selectedPlugins },
     });
-}
-/**
- * This is a template literal tag function. See:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
- *
- * Passes its arguments to LitElement's `html` tag after combining the first and
- * last expressions with the first two and last two static strings.
- * Throws unless the first and last expressions are identical strings.
- *
- * We need this to get around the expression location limitations documented in
- * https://lit.dev/docs/templates/expressions/#expression-locations
- *
- * After upgrading to Lit 2 we can use their static HTML functions instead:
- * https://lit.dev/docs/api/static-html/
- */
-function staticTagHtml(oldStrings, ...oldArgs) {
-    const args = [...oldArgs];
-    const firstArg = args.shift();
-    const lastArg = args.pop();
-    if (firstArg !== lastArg)
-        throw new Error(`Opening tag <${firstArg}> does not match closing tag </${lastArg}>.`);
-    const strings = [...oldStrings];
-    const firstString = strings.shift();
-    const secondString = strings.shift();
-    const lastString = strings.pop();
-    const penultimateString = strings.pop();
-    strings.unshift(`${firstString}${firstArg}${secondString}`);
-    strings.push(`${penultimateString}${lastArg}${lastString}`);
-    return html(strings, ...args);
 }
 function withoutContent(plugin) {
     return { ...plugin, content: undefined };

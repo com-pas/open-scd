@@ -19,8 +19,10 @@ import {
   css
 } from "../../../_snowpack/pkg/lit-element.js";
 import {get} from "../../../_snowpack/pkg/lit-translate.js";
+import {classMap} from "../../../_snowpack/pkg/lit-html/directives/class-map.js";
 import {newPendingStateEvent} from "../../../_snowpack/link/packages/core/dist/index.js";
 import {newSettingsUIEvent} from "../../../_snowpack/link/packages/core/dist/index.js";
+import {OscdApi} from "../../../_snowpack/link/packages/core/dist/index.js";
 import {
   pluginIcons
 } from "../open-scd.js";
@@ -40,6 +42,21 @@ import {pluginTag} from "../plugin-tag.js";
 import "./plugin-manager/plugin-manager.js";
 import "./plugin-manager/custom-plugin-dialog.js";
 import "./menu-tabs/menu-tabs.js";
+function staticTagHtml(oldStrings, ...oldArgs) {
+  const args = [...oldArgs];
+  const firstArg = args.shift();
+  const lastArg = args.pop();
+  if (firstArg !== lastArg)
+    throw new Error(`Opening tag <${firstArg}> does not match closing tag </${lastArg}>.`);
+  const strings = [...oldStrings];
+  const firstString = strings.shift();
+  const secondString = strings.shift();
+  const lastString = strings.pop();
+  const penultimateString = strings.pop();
+  strings.unshift(`${firstString}${firstArg}${secondString}`);
+  strings.push(`${penultimateString}${lastArg}${lastString}`);
+  return html(strings, ...args);
+}
 export let OscdLayout = class extends LitElement {
   constructor() {
     super(...arguments);
@@ -63,6 +80,9 @@ export let OscdLayout = class extends LitElement {
         ${this.renderContent()} ${this.renderLanding()} ${this.renderPlugging()}
       </div>
     `;
+  }
+  componentHtml(strings, ...values) {
+    return html(strings, ...values);
   }
   renderPlugging() {
     return html` ${this.renderPluginUI()} ${this.renderDownloadUI()} `;
@@ -118,7 +138,7 @@ export let OscdLayout = class extends LitElement {
         },
         disabled: () => !this.editor.canUndo,
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       {
         icon: "redo",
@@ -129,7 +149,7 @@ export let OscdLayout = class extends LitElement {
         },
         disabled: () => !this.editor.canRedo,
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       ...validators,
       {
@@ -140,7 +160,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.log));
         },
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       {
         icon: "history",
@@ -150,7 +170,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.history));
         },
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       {
         icon: "rule",
@@ -160,7 +180,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.diagnostic));
         },
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       "divider",
       ...middleMenu,
@@ -171,7 +191,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newSettingsUIEvent(true));
         },
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       },
       ...bottomMenu,
       {
@@ -179,7 +199,7 @@ export let OscdLayout = class extends LitElement {
         name: "plugins.heading",
         action: () => this.pluginUI.show(),
         kind: "static",
-        content: () => html``
+        content: {tag: ""}
       }
     ];
   }
@@ -246,12 +266,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newPendingStateEvent(menuContentElement.run()));
         },
         disabled: () => plugin.requireDoc && this.doc === null,
-        content: () => {
-          if (plugin.content) {
-            return plugin.content();
-          }
-          return html``;
-        },
+        content: plugin.content ?? {tag: ""},
         kind
       };
     });
@@ -271,7 +286,7 @@ export let OscdLayout = class extends LitElement {
           this.dispatchEvent(newPendingStateEvent(menuContentElement.validate()));
         },
         disabled: () => this.doc === null,
-        content: plugin.content ?? (() => html``),
+        content: plugin.content ?? {tag: ""},
         kind: "validator"
       };
     });
@@ -336,7 +351,7 @@ export let OscdLayout = class extends LitElement {
   renderMenuContent() {
     return html`
       <div id="menuContent">
-        ${this.menu.filter((p) => p.content).map((p) => p.content())}
+        ${this.menu.filter((p) => p.content).map((p) => this.renderPluginContent(p))}
       </div>
     `;
   }
@@ -378,6 +393,18 @@ export let OscdLayout = class extends LitElement {
     if (!hasActiveEditors) {
       return html``;
     }
+    const renderEditorContent = (doc, activeEditor) => {
+      const editor = activeEditor;
+      const requireDoc = editor?.requireDoc;
+      if (requireDoc && !doc) {
+        return html``;
+      }
+      const tag = editor?.content?.tag;
+      if (!tag) {
+        return html``;
+      }
+      return this.renderPluginContent(editor);
+    };
     return html`
       <oscd-menu-tabs
         .editors=${this.calcActiveEditors()}
@@ -387,18 +414,6 @@ export let OscdLayout = class extends LitElement {
       </oscd-menu-tabs>
       ${renderEditorContent(this.doc, this.activeEditor)}
     `;
-    function renderEditorContent(doc, activeEditor) {
-      const editor = activeEditor;
-      const requireDoc = editor?.requireDoc;
-      if (requireDoc && !doc) {
-        return html``;
-      }
-      const content = editor?.content;
-      if (!content) {
-        return html``;
-      }
-      return html`${content()}`;
-    }
   }
   handleEditorTabActivated(e) {
     this.activeEditor = e.detail.editor;
@@ -451,6 +466,32 @@ export let OscdLayout = class extends LitElement {
       }
     }
   }
+  renderPluginContent(plugin) {
+    const tag = plugin.content?.tag ?? "";
+    if (!tag) {
+      return html``;
+    }
+    const osdcApi = new OscdApi(tag);
+    return staticTagHtml`<${tag}
+          .doc=${this.doc}
+          .docName=${this.docName}
+          .editCount=${this.editCount}
+          .plugins=${this.host.storedPlugins}
+          .docId=${this.host.docId}
+          .pluginId=${plugin.src}
+          .nsdoc=${this.host.nsdoc}
+          .docs=${this.host.docs}
+          .locale=${this.host.locale}
+          .oscdApi=${osdcApi}
+          .editor=${this.editor}
+          class="${classMap({
+      plugin: true,
+      menu: plugin.kind === "menu",
+      validator: plugin.kind === "validator",
+      editor: plugin.kind === "editor"
+    })}"
+        ></${tag}>`;
+  }
 };
 OscdLayout.styles = css`
     mwc-drawer {
@@ -499,6 +540,10 @@ OscdLayout.styles = css`
     tt {
       font-family: 'Roboto Mono', monospace;
       font-weight: 300;
+    }
+
+    #menuContent {
+      display: none;
     }
 
     .landing {
