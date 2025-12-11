@@ -9,18 +9,22 @@ import {
   css,
 } from 'lit-element';
 import { get } from 'lit-translate';
+import { classMap } from 'lit-html/directives/class-map.js';
 import { newPendingStateEvent } from '@compas-oscd/core';
 import { newSettingsUIEvent } from '@compas-oscd/core';
-import { XMLEditor } from '@compas-oscd/core';
+import { XMLEditor, OscdApi } from '@compas-oscd/core';
 import {
   MenuItem,
   Validator,
   MenuPlugin,
   pluginIcons,
+  OpenSCD
 } from '../open-scd.js';
 
 import {
   Plugin,
+  ContentContext,
+  PluginKind
 } from "../plugin.js"
 
 import {
@@ -48,6 +52,51 @@ import "./plugin-manager/custom-plugin-dialog.js";
 import "./menu-tabs/menu-tabs.js";
 import { TabActivatedEvent } from "./menu-tabs/menu-tabs.js";
 
+/**
+ * This is a template literal tag function. See:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
+ *
+ * Passes its arguments to LitElement's `html` tag after combining the first and
+ * last expressions with the first two and last two static strings.
+ * Throws unless the first and last expressions are identical strings.
+ *
+ * We need this to get around the expression location limitations documented in
+ * https://lit.dev/docs/templates/expressions/#expression-locations
+ *
+ * After upgrading to Lit 2 we can use their static HTML functions instead:
+ * https://lit.dev/docs/api/static-html/
+ */
+function staticTagHtml(
+  oldStrings: ReadonlyArray<string>,
+  ...oldArgs: unknown[]
+): TemplateResult {
+  const args = [...oldArgs];
+  const firstArg = args.shift();
+  const lastArg = args.pop();
+
+  if (firstArg !== lastArg)
+    throw new Error(
+      `Opening tag <${firstArg}> does not match closing tag </${lastArg}>.`
+    );
+
+  const strings = [...oldStrings] as string[] & { raw: string[] };
+  const firstString = strings.shift();
+  const secondString = strings.shift();
+
+  const lastString = strings.pop();
+  const penultimateString = strings.pop();
+
+  strings.unshift(`${firstString}${firstArg}${secondString}`);
+  strings.push(`${penultimateString}${lastArg}${lastString}`);
+
+  return html(<TemplateStringsArray>strings, ...args);
+}
+
+interface RenderAblePlugin {
+  src?: string;
+  kind: string;
+  content?: ContentContext;
+}
 
 @customElement('oscd-layout')
 export class OscdLayout extends LitElement {
@@ -66,7 +115,7 @@ export class OscdLayout extends LitElement {
   @property({ type: Array }) plugins: Plugin[] = [];
 
   /** The open-scd host element */
-  @property({ type: Object }) host!: HTMLElement;
+  @property({ type: Object }) host!: OpenSCD;
 
   @state() validated: Promise<void> = Promise.resolve();
   @state() shouldValidate = false;
@@ -91,6 +140,10 @@ export class OscdLayout extends LitElement {
         ${this.renderContent()} ${this.renderLanding()} ${this.renderPlugging()}
       </div>
     `;
+  }
+
+  protected componentHtml(strings: TemplateStringsArray, ...values: unknown[]): TemplateResult {
+    return html(strings, ...values);
   }
 
 
@@ -165,7 +218,7 @@ export class OscdLayout extends LitElement {
         },
         disabled: (): boolean => !this.editor.canUndo,
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       {
         icon: 'redo',
@@ -176,7 +229,7 @@ export class OscdLayout extends LitElement {
         },
         disabled: (): boolean => !this.editor.canRedo,
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       ...validators,
       {
@@ -187,7 +240,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.log));
         },
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       {
         icon: 'history',
@@ -197,7 +250,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.history));
         },
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       {
         icon: 'rule',
@@ -207,7 +260,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newHistoryUIEvent(true, HistoryUIKind.diagnostic));
         },
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       'divider',
       ...middleMenu,
@@ -218,7 +271,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newSettingsUIEvent(true));
         },
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
       ...bottomMenu,
       {
@@ -226,7 +279,7 @@ export class OscdLayout extends LitElement {
         name: 'plugins.heading',
         action: (): void => this.pluginUI.show(),
         kind: 'static',
-        content: () => html``,
+        content: { tag: '' },
       },
     ];
   }
@@ -311,10 +364,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newPendingStateEvent((menuContentElement as unknown as MenuPlugin).run()))
         },
         disabled: (): boolean => plugin.requireDoc! && this.doc === null,
-        content: () => {
-          if(plugin.content){ return plugin.content(); }
-          return html``;
-        },
+        content: plugin.content ?? { tag: '' },
         kind: kind,
       }
     })
@@ -337,7 +387,7 @@ export class OscdLayout extends LitElement {
           this.dispatchEvent(newPendingStateEvent((menuContentElement as unknown as Validator).validate()))
         },
         disabled: (): boolean => this.doc === null,
-        content: plugin.content ?? (() => html``),
+        content: plugin.content ?? { tag: '' },
         kind: 'validator',
       }
     });
@@ -419,7 +469,7 @@ export class OscdLayout extends LitElement {
         ${
           this.menu
             .filter(p => (p as MenuItem).content)
-            .map(p => (p as MenuItem).content())
+            .map(p => this.renderPluginContent((p as MenuItem)))
         }
       </div>
     `;
@@ -487,6 +537,17 @@ export class OscdLayout extends LitElement {
     const hasActiveEditors = activeEditors.length > 0;
     if(!hasActiveEditors){ return html``; }
 
+    const renderEditorContent = (doc: XMLDocument | null, activeEditor?: Plugin) => {
+      const editor = activeEditor;
+      const requireDoc = editor?.requireDoc
+      if(requireDoc && !doc) { return html`` }
+
+      const tag = editor?.content?.tag;
+      if(!tag) { return html`` }
+
+      return this.renderPluginContent(editor);
+    }
+
     return html`
       <oscd-menu-tabs
         .editors=${this.calcActiveEditors()}
@@ -496,17 +557,6 @@ export class OscdLayout extends LitElement {
       </oscd-menu-tabs>
       ${renderEditorContent(this.doc, this.activeEditor, )}
     `;
-
-    function renderEditorContent(doc: XMLDocument | null, activeEditor?: Plugin){
-      const editor = activeEditor;
-      const requireDoc = editor?.requireDoc
-      if(requireDoc && !doc) { return html`` }
-
-      const content = editor?.content;
-      if(!content) { return html`` }
-
-      return html`${content()}`;
-    }
   }
 
   private handleEditorTabActivated(e: TabActivatedEvent){
@@ -578,6 +628,35 @@ export class OscdLayout extends LitElement {
       }
     }
 
+    protected renderPluginContent(plugin: RenderAblePlugin): TemplateResult {
+      const tag = plugin.content?.tag ?? '';
+
+      if (!tag) {
+        return html``;
+      }
+
+      const osdcApi = new OscdApi(tag);
+      return staticTagHtml`<${tag}
+          .doc=${this.doc}
+          .docName=${this.docName}
+          .editCount=${this.editCount}
+          .plugins=${this.host.storedPlugins}
+          .docId=${this.host.docId}
+          .pluginId=${plugin.src}
+          .nsdoc=${this.host.nsdoc}
+          .docs=${this.host.docs}
+          .locale=${this.host.locale}
+          .oscdApi=${osdcApi}
+          .editor=${this.editor}
+          class="${classMap({
+            plugin: true,
+            menu: plugin.kind === 'menu',
+            validator: plugin.kind === 'validator',
+            editor: plugin.kind === 'editor',
+          })}"
+        ></${tag}>`
+    }
+
 
 
 
@@ -628,6 +707,10 @@ export class OscdLayout extends LitElement {
     tt {
       font-family: 'Roboto Mono', monospace;
       font-weight: 300;
+    }
+
+    #menuContent {
+      display: none;
     }
 
     .landing {

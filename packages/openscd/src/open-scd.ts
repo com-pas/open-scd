@@ -5,7 +5,6 @@ import {
   state,
   TemplateResult,
 } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map.js';
 
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';
@@ -46,7 +45,7 @@ import type {
 } from '@compas-oscd/core';
 import { OscdApi, XMLEditor } from '@compas-oscd/core';
 
-import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin } from "./plugin.js"
+import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin, ContentContext } from "./plugin.js"
 import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
 import { newLogEvent } from '@compas-oscd/core';
 import { pluginTag } from './plugin-tag.js';
@@ -116,7 +115,7 @@ export class OpenSCD extends LitElement {
     this.dispatchEvent(newPendingStateEvent(this.loadDoc(value)));
   }
 
-  @state() private storedPlugins: Plugin[] = [];
+  @state() storedPlugins: Plugin[] = [];
 
   @state() private editCount = -1;
 
@@ -341,7 +340,7 @@ export class OpenSCD extends LitElement {
   }
 
 
-  protected get locale(): string {
+  public get locale(): string {
     return navigator.language || 'en-US';
   }
 
@@ -423,27 +422,9 @@ export class OpenSCD extends LitElement {
     }
     return {
       ...plugin,
-      content: () => {
-        return staticTagHtml`<${tag}
-            .doc=${this.doc}
-            .docName=${this.docName}
-            .editCount=${this.editCount}
-            .plugins=${this.storedPlugins}
-            .docId=${this.docId}
-            .pluginId=${plugin.src}
-            .nsdoc=${this.nsdoc}
-            .docs=${this.docs}
-            .locale=${this.locale}
-            .oscdApi=${new OscdApi(tag)}
-            .editor=${this.editor}
-            class="${classMap({
-              plugin: true,
-              menu: plugin.kind === 'menu',
-              validator: plugin.kind === 'validator',
-              editor: plugin.kind === 'editor',
-            })}"
-          ></${tag}>`
-        },
+      content: {
+        tag
+      },
     };
   }
 
@@ -483,7 +464,7 @@ export interface MenuItem {
   actionItem?: boolean;
   action?: (event: CustomEvent<ActionDetail>) => void;
   disabled?: () => boolean;
-  content: () => TemplateResult;
+  content: ContentContext;
   kind: string;
 }
 
@@ -529,48 +510,6 @@ export function newSetPluginsEvent(selectedPlugins: Plugin[]): SetPluginsEvent {
   });
 }
 
-
-
-
-/**
- * This is a template literal tag function. See:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
- *
- * Passes its arguments to LitElement's `html` tag after combining the first and
- * last expressions with the first two and last two static strings.
- * Throws unless the first and last expressions are identical strings.
- *
- * We need this to get around the expression location limitations documented in
- * https://lit.dev/docs/templates/expressions/#expression-locations
- *
- * After upgrading to Lit 2 we can use their static HTML functions instead:
- * https://lit.dev/docs/api/static-html/
- */
-function staticTagHtml(
-  oldStrings: ReadonlyArray<string>,
-  ...oldArgs: unknown[]
-): TemplateResult {
-  const args = [...oldArgs];
-  const firstArg = args.shift();
-  const lastArg = args.pop();
-
-  if (firstArg !== lastArg)
-    throw new Error(
-      `Opening tag <${firstArg}> does not match closing tag </${lastArg}>.`
-    );
-
-  const strings = [...oldStrings] as string[] & { raw: string[] };
-  const firstString = strings.shift();
-  const secondString = strings.shift();
-
-  const lastString = strings.pop();
-  const penultimateString = strings.pop();
-
-  strings.unshift(`${firstString}${firstArg}${secondString}`);
-  strings.push(`${penultimateString}${lastArg}${lastString}`);
-
-  return html(<TemplateStringsArray>strings, ...args);
-}
 
 
 function withoutContent<P extends Plugin | InstalledOfficialPlugin>(

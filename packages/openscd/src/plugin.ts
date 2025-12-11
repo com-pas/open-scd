@@ -1,10 +1,13 @@
-import { TemplateResult } from 'lit-element';
 import { Plugin as CorePlugin } from "@compas-oscd/core"
+
+export interface ContentContext {
+  tag: string;
+}
 
 export type Plugin = CorePlugin & {
   official?: boolean;
   active: boolean;
-  content?: () => TemplateResult;
+  content?: ContentContext;
 };
 
 export type PluginConfig = PluginConfigNotMenu | PluginConfigMenu
