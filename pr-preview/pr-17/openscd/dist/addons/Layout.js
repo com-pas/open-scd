@@ -580,7 +580,7 @@ OscdLayout.styles = css `
     }
 
     #menuContent {
-      display: none;
+      height: 0px;
     }
 
     .landing {
