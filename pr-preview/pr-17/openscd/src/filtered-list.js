@@ -13,6 +13,7 @@ import {
   css,
   customElement,
   html,
+  LitElement,
   property,
   query,
   state,
@@ -22,9 +23,9 @@ import {get} from "../../_snowpack/pkg/lit-translate.js";
 import "../../_snowpack/pkg/@material/mwc-checkbox.js";
 import "../../_snowpack/pkg/@material/mwc-formfield.js";
 import "../../_snowpack/pkg/@material/mwc-textfield.js";
+import "../../_snowpack/pkg/@material/mwc-list.js";
 import {CheckListItem} from "../../_snowpack/pkg/@material/mwc-list/mwc-check-list-item.js";
 import {List} from "../../_snowpack/pkg/@material/mwc-list.js";
-import {ListBase} from "../../_snowpack/pkg/@material/mwc-list/mwc-list-base.js";
 function slotItem(item) {
   if (!item.closest("filtered-list") || !item.parentElement)
     return item;
@@ -43,10 +44,12 @@ function hideFiltered(item, searchText) {
     return reTerm.test(filterTarget);
   }) ? slotItem(item).classList.remove("hidden") : slotItem(item).classList.add("hidden");
 }
-export let FilteredList = class extends ListBase {
+export let FilteredList = class extends LitElement {
   constructor() {
     super();
     this.disableCheckAll = false;
+    this.multi = false;
+    this.activatable = false;
     this.addEventListener("selected", () => {
       this.requestUpdate();
     });
@@ -60,6 +63,12 @@ export let FilteredList = class extends ListBase {
   get isSomeSelected() {
     return this.items.filter((item) => !item.disabled).filter((item) => item instanceof CheckListItem).some((checkItem) => checkItem.selected);
   }
+  get items() {
+    return this.list?.items ?? [];
+  }
+  get selected() {
+    return this.list.selected;
+  }
   onCheckAll() {
     const select = !this.isAllSelected;
     this.items.filter((item) => !item.disabled && !item.classList.contains("hidden")).forEach((item) => item.selected = select);
@@ -68,7 +77,6 @@ export let FilteredList = class extends ListBase {
     Array.from(this.querySelectorAll("mwc-list-item, mwc-check-list-item, mwc-radio-list-item")).forEach((item) => hideFiltered(item, this.searchField.value));
   }
   onListItemConnected(e) {
-    super.onListItemConnected(e);
     this.requestUpdate();
   }
   update(changedProperties) {
@@ -98,7 +106,11 @@ export let FilteredList = class extends ListBase {
         ></abbr>
         ${this.renderCheckAll()}
       </div>
-      ${super.render()}`;
+      <mwc-list
+        .multi=${this.multi}
+        .activatable=${this.activatable}>
+        <slot></slot>
+      </mwc-list>`;
   }
 };
 FilteredList.styles = css`
@@ -141,6 +153,12 @@ __decorate([
   property({type: Boolean})
 ], FilteredList.prototype, "disableCheckAll", 2);
 __decorate([
+  property({type: Boolean})
+], FilteredList.prototype, "multi", 2);
+__decorate([
+  property({type: Boolean})
+], FilteredList.prototype, "activatable", 2);
+__decorate([
   state()
 ], FilteredList.prototype, "existCheckListItem", 1);
 __decorate([
@@ -152,6 +170,9 @@ __decorate([
 __decorate([
   query("mwc-textfield")
 ], FilteredList.prototype, "searchField", 2);
+__decorate([
+  query("mwc-list")
+], FilteredList.prototype, "list", 2);
 FilteredList = __decorate([
   customElement("filtered-list")
 ], FilteredList);

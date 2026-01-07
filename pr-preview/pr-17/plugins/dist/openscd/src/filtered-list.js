@@ -1,12 +1,12 @@
 import { __decorate } from "../../../../_snowpack/pkg/tslib.js";
-import { css, customElement, html, property, query, state, unsafeCSS, } from '../../../../_snowpack/pkg/lit-element.js';
+import { css, customElement, html, LitElement, property, query, state, unsafeCSS, } from '../../../../_snowpack/pkg/lit-element.js';
 import { get } from '../../../../_snowpack/pkg/lit-translate.js';
 import '../../../../_snowpack/pkg/@material/mwc-checkbox.js';
 import '../../../../_snowpack/pkg/@material/mwc-formfield.js';
 import '../../../../_snowpack/pkg/@material/mwc-textfield.js';
+import '../../../../_snowpack/pkg/@material/mwc-list.js';
 import { CheckListItem } from '../../../../_snowpack/pkg/@material/mwc-list/mwc-check-list-item.js';
 import { List } from '../../../../_snowpack/pkg/@material/mwc-list.js';
-import { ListBase } from '../../../../_snowpack/pkg/@material/mwc-list/mwc-list-base.js';
 function slotItem(item) {
     if (!item.closest('filtered-list') || !item.parentElement)
         return item;
@@ -40,7 +40,7 @@ function hideFiltered(item, searchText) {
 /**
  * A mwc-list with mwc-textfield that filters the list items for given or separated terms
  */
-let FilteredList = class FilteredList extends ListBase {
+let FilteredList = class FilteredList extends LitElement {
     get existCheckListItem() {
         return this.items.some(item => item instanceof CheckListItem);
     }
@@ -56,6 +56,12 @@ let FilteredList = class FilteredList extends ListBase {
             .filter(item => item instanceof CheckListItem)
             .some(checkItem => checkItem.selected);
     }
+    get items() {
+        return this.list?.items ?? [];
+    }
+    get selected() {
+        return this.list.selected;
+    }
     onCheckAll() {
         const select = !this.isAllSelected;
         this.items
@@ -66,7 +72,6 @@ let FilteredList = class FilteredList extends ListBase {
         Array.from(this.querySelectorAll('mwc-list-item, mwc-check-list-item, mwc-radio-list-item')).forEach(item => hideFiltered(item, this.searchField.value));
     }
     onListItemConnected(e) {
-        super.onListItemConnected(e);
         this.requestUpdate();
     }
     update(changedProperties) {
@@ -78,6 +83,8 @@ let FilteredList = class FilteredList extends ListBase {
         super();
         /** Whether the check all option (checkbox next to search text field) is activated */
         this.disableCheckAll = false;
+        this.multi = false;
+        this.activatable = false;
         this.addEventListener('selected', () => {
             this.requestUpdate();
         });
@@ -107,7 +114,11 @@ let FilteredList = class FilteredList extends ListBase {
         ></abbr>
         ${this.renderCheckAll()}
       </div>
-      ${super.render()}`;
+      <mwc-list
+        .multi=${this.multi}
+        .activatable=${this.activatable}>
+        <slot></slot>
+      </mwc-list>`;
     }
 };
 FilteredList.styles = css `
@@ -150,6 +161,12 @@ __decorate([
     property({ type: Boolean })
 ], FilteredList.prototype, "disableCheckAll", void 0);
 __decorate([
+    property({ type: Boolean })
+], FilteredList.prototype, "multi", void 0);
+__decorate([
+    property({ type: Boolean })
+], FilteredList.prototype, "activatable", void 0);
+__decorate([
     state()
 ], FilteredList.prototype, "existCheckListItem", null);
 __decorate([
@@ -161,6 +178,9 @@ __decorate([
 __decorate([
     query('mwc-textfield')
 ], FilteredList.prototype, "searchField", void 0);
+__decorate([
+    query('mwc-list')
+], FilteredList.prototype, "list", void 0);
 FilteredList = __decorate([
     customElement('filtered-list')
 ], FilteredList);
