@@ -2,6 +2,7 @@ import {
   css,
   customElement,
   html,
+  LitElement,
   property,
   query,
   state,
@@ -13,9 +14,9 @@ import { get } from 'lit-translate';
 import '@material/mwc-checkbox';
 import '@material/mwc-formfield';
 import '@material/mwc-textfield';
+import '@material/mwc-list';
 import { CheckListItem } from '@material/mwc-list/mwc-check-list-item';
 import { List } from '@material/mwc-list';
-import { ListBase } from '@material/mwc-list/mwc-list-base';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 import { TextField } from '@material/mwc-textfield';
 
@@ -61,13 +62,18 @@ function hideFiltered(item: ListItemBase, searchText: string): void {
  * A mwc-list with mwc-textfield that filters the list items for given or separated terms
  */
 @customElement('filtered-list')
-export class FilteredList extends ListBase {
+export class FilteredList extends LitElement {
   /** search mwc-textfield label property */
   @property({ type: String })
   searchFieldLabel?: string;
   /** Whether the check all option (checkbox next to search text field) is activated */
   @property({ type: Boolean })
   disableCheckAll = false;
+
+  @property({ type: Boolean })
+  multi = false;
+  @property({ type: Boolean })
+  activatable = false;
 
   @state()
   private get existCheckListItem(): boolean {
@@ -91,6 +97,15 @@ export class FilteredList extends ListBase {
   }
 
   @query('mwc-textfield') searchField!: TextField;
+  @query('mwc-list') list!: List;
+
+  get items() {
+    return this.list?.items ?? [];
+  }
+
+  get selected() {
+    return this.list.selected;
+  }
 
   private onCheckAll(): void {
     const select = !this.isAllSelected;
@@ -110,7 +125,6 @@ export class FilteredList extends ListBase {
   }
 
   protected onListItemConnected(e: CustomEvent): void {
-    super.onListItemConnected(e);
     this.requestUpdate();
   }
 
@@ -155,7 +169,11 @@ export class FilteredList extends ListBase {
         ></abbr>
         ${this.renderCheckAll()}
       </div>
-      ${super.render()}`;
+      <mwc-list
+        .multi=${this.multi}
+        .activatable=${this.activatable}>
+        <slot></slot>
+      </mwc-list>`;
   }
 
   static styles = css`
