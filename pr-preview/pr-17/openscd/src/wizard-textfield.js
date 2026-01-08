@@ -14,20 +14,29 @@ import {
   html,
   state,
   property,
-  query
+  query,
+  LitElement
 } from "../../_snowpack/pkg/lit-element.js";
 import {get} from "../../_snowpack/pkg/lit-translate.js";
+import {ifDefined} from "../../_snowpack/pkg/lit-html/directives/if-defined.js";
 import "../../_snowpack/pkg/@material/mwc-icon-button.js";
 import "../../_snowpack/pkg/@material/mwc-list/mwc-list-item.js";
 import "../../_snowpack/pkg/@material/mwc-menu.js";
 import "../../_snowpack/pkg/@material/mwc-switch.js";
-import {TextField} from "../../_snowpack/pkg/@material/mwc-textfield.js";
-export let WizardTextField = class extends TextField {
+import "../../_snowpack/pkg/@material/mwc-textfield.js";
+export let WizardTextField = class extends LitElement {
   constructor() {
     super();
     this.nullable = false;
     this.multipliers = [null, ""];
     this.multiplierIndex = 0;
+    this.value = "";
+    this.suffix = "";
+    this.helperPersistent = false;
+    this.disabled = false;
+    this.required = false;
+    this.label = "";
+    this.dialogInitialFocus = false;
     this.unit = "";
     this.isNull = false;
     this.defaultValue = "";
@@ -89,18 +98,20 @@ export let WizardTextField = class extends TextField {
     this.helperPersistent = true;
     this.disabled = true;
   }
-  async firstUpdated() {
-    await super.firstUpdated();
+  firstUpdated() {
     if (this.multiplierMenu)
       this.multiplierMenu.anchor = this.multiplierButton ?? null;
   }
   checkValidity() {
     if (this.reservedValues && this.reservedValues.some((array) => array === this.value)) {
-      this.setCustomValidity(get("textfield.unique"));
+      this.textfield.setCustomValidity(get("textfield.unique"));
       return false;
     }
-    this.setCustomValidity("");
-    return super.checkValidity();
+    this.textfield.setCustomValidity("");
+    return this.textfield.checkValidity();
+  }
+  reportValidity() {
+    return this.textfield.reportValidity();
   }
   renderUnitSelector() {
     if (this.multipliers.length && this.unit)
@@ -142,7 +153,22 @@ export let WizardTextField = class extends TextField {
   render() {
     return html`
       <div style="display: flex; flex-direction: row;">
-        <div style="flex: auto;">${super.render()}</div>
+        <mwc-textfield style="flex: auto;"
+          .value=${this.value}
+          .suffix=${this.suffix}
+          .helperPersistent=${this.helperPersistent}
+          .disabled=${this.disabled}
+          .required=${this.required}
+          label=${this.label}
+          helper="${ifDefined(this.helper)}"
+          validationMessage="${ifDefined(this.helper)}"
+          pattern="${ifDefined(this.pattern)}"
+          minLength="${ifDefined(this.minLength)}"
+          maxLength="${ifDefined(this.maxLength)}"
+          type="${ifDefined(this.type)}"
+          min="${ifDefined(this.min)}"
+          max="${ifDefined(this.max)}">
+        </mwc-textfield>
         ${this.renderUnitSelector()}
         <div style="display: flex; align-items: center; height: 56px;">
           ${this.renderSwitch()}
@@ -157,6 +183,51 @@ __decorate([
 __decorate([
   property({type: Array})
 ], WizardTextField.prototype, "multipliers", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "value", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "suffix", 2);
+__decorate([
+  property({type: Boolean})
+], WizardTextField.prototype, "helperPersistent", 2);
+__decorate([
+  property({type: Boolean})
+], WizardTextField.prototype, "disabled", 2);
+__decorate([
+  property({type: Boolean})
+], WizardTextField.prototype, "required", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "label", 2);
+__decorate([
+  property({type: Boolean})
+], WizardTextField.prototype, "dialogInitialFocus", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "helper", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "validationMessage", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "pattern", 2);
+__decorate([
+  property({type: Number})
+], WizardTextField.prototype, "minLength", 2);
+__decorate([
+  property({type: Number})
+], WizardTextField.prototype, "maxLength", 2);
+__decorate([
+  property({type: String})
+], WizardTextField.prototype, "type", 2);
+__decorate([
+  property({type: Number})
+], WizardTextField.prototype, "min", 2);
+__decorate([
+  property({type: Number})
+], WizardTextField.prototype, "max", 2);
 __decorate([
   property({type: String})
 ], WizardTextField.prototype, "multiplier", 1);
@@ -175,6 +246,9 @@ __decorate([
 __decorate([
   property({type: Array})
 ], WizardTextField.prototype, "reservedValues", 2);
+__decorate([
+  query("mwc-textfield")
+], WizardTextField.prototype, "textfield", 2);
 __decorate([
   query("mwc-switch")
 ], WizardTextField.prototype, "nullSwitch", 2);

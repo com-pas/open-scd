@@ -1,16 +1,17 @@
 import { __decorate } from "../../_snowpack/pkg/tslib.js";
-import { customElement, html, state, property, query, } from '../../_snowpack/pkg/lit-element.js';
+import { customElement, html, state, property, query, LitElement, } from '../../_snowpack/pkg/lit-element.js';
 import { get } from '../../_snowpack/pkg/lit-translate.js';
+import { ifDefined } from '../../_snowpack/pkg/lit-html/directives/if-defined.js';
 import '../../_snowpack/pkg/@material/mwc-icon-button.js';
 import '../../_snowpack/pkg/@material/mwc-list/mwc-list-item.js';
 import '../../_snowpack/pkg/@material/mwc-menu.js';
 import '../../_snowpack/pkg/@material/mwc-switch.js';
-import { TextField } from '../../_snowpack/pkg/@material/mwc-textfield.js';
+import '../../_snowpack/pkg/@material/mwc-textfield.js';
 /** A potentially `nullable` `TextField` that allows for selection of an SI
  * `multiplier` if an SI `unit` is given.
  *
  * NB: Use `maybeValue: string | null` instead of `value` if `nullable`!*/
-let WizardTextField = class WizardTextField extends TextField {
+let WizardTextField = class WizardTextField extends LitElement {
     get multiplier() {
         if (this.unit == '')
             return null;
@@ -65,8 +66,8 @@ let WizardTextField = class WizardTextField extends TextField {
         this.helperPersistent = true;
         this.disabled = true;
     }
-    async firstUpdated() {
-        await super.firstUpdated();
+    firstUpdated() {
+        // await super.firstUpdated();
         if (this.multiplierMenu)
             this.multiplierMenu.anchor =
                 this.multiplierButton ?? null;
@@ -74,11 +75,14 @@ let WizardTextField = class WizardTextField extends TextField {
     checkValidity() {
         if (this.reservedValues &&
             this.reservedValues.some(array => array === this.value)) {
-            this.setCustomValidity(get('textfield.unique'));
+            this.textfield.setCustomValidity(get('textfield.unique'));
             return false;
         }
-        this.setCustomValidity(''); //Reset. Otherwise super.checkValidity always falseM
-        return super.checkValidity();
+        this.textfield.setCustomValidity(''); //Reset. Otherwise super.checkValidity always falseM
+        return this.textfield.checkValidity();
+    }
+    reportValidity() {
+        return this.textfield.reportValidity();
     }
     constructor() {
         super();
@@ -87,6 +91,13 @@ let WizardTextField = class WizardTextField extends TextField {
         /** Selectable SI multipliers for a non-empty [[`unit`]]. */
         this.multipliers = [null, ''];
         this.multiplierIndex = 0;
+        this.value = '';
+        this.suffix = '';
+        this.helperPersistent = false;
+        this.disabled = false;
+        this.required = false;
+        this.label = '';
+        this.dialogInitialFocus = false;
         /** SI Unit, must be non-empty to allow for selecting a [[`multiplier`]].
          * Overrides `suffix`. */
         this.unit = '';
@@ -142,7 +153,22 @@ let WizardTextField = class WizardTextField extends TextField {
     render() {
         return html `
       <div style="display: flex; flex-direction: row;">
-        <div style="flex: auto;">${super.render()}</div>
+        <mwc-textfield style="flex: auto;"
+          .value=${this.value}
+          .suffix=${this.suffix}
+          .helperPersistent=${this.helperPersistent}
+          .disabled=${this.disabled}
+          .required=${this.required}
+          label=${this.label}
+          helper="${ifDefined(this.helper)}"
+          validationMessage="${ifDefined(this.helper)}"
+          pattern="${ifDefined(this.pattern)}"
+          minLength="${ifDefined(this.minLength)}"
+          maxLength="${ifDefined(this.maxLength)}"
+          type="${ifDefined(this.type)}"
+          min="${ifDefined(this.min)}"
+          max="${ifDefined(this.max)}">
+        </mwc-textfield>
         ${this.renderUnitSelector()}
         <div style="display: flex; align-items: center; height: 56px;">
           ${this.renderSwitch()}
@@ -157,6 +183,51 @@ __decorate([
 __decorate([
     property({ type: Array })
 ], WizardTextField.prototype, "multipliers", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "value", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "suffix", void 0);
+__decorate([
+    property({ type: Boolean })
+], WizardTextField.prototype, "helperPersistent", void 0);
+__decorate([
+    property({ type: Boolean })
+], WizardTextField.prototype, "disabled", void 0);
+__decorate([
+    property({ type: Boolean })
+], WizardTextField.prototype, "required", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "label", void 0);
+__decorate([
+    property({ type: Boolean })
+], WizardTextField.prototype, "dialogInitialFocus", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "helper", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "validationMessage", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "pattern", void 0);
+__decorate([
+    property({ type: Number })
+], WizardTextField.prototype, "minLength", void 0);
+__decorate([
+    property({ type: Number })
+], WizardTextField.prototype, "maxLength", void 0);
+__decorate([
+    property({ type: String })
+], WizardTextField.prototype, "type", void 0);
+__decorate([
+    property({ type: Number })
+], WizardTextField.prototype, "min", void 0);
+__decorate([
+    property({ type: Number })
+], WizardTextField.prototype, "max", void 0);
 __decorate([
     property({ type: String })
 ], WizardTextField.prototype, "multiplier", null);
@@ -175,6 +246,9 @@ __decorate([
 __decorate([
     property({ type: Array })
 ], WizardTextField.prototype, "reservedValues", void 0);
+__decorate([
+    query('mwc-textfield')
+], WizardTextField.prototype, "textfield", void 0);
 __decorate([
     query('mwc-switch')
 ], WizardTextField.prototype, "nullSwitch", void 0);
