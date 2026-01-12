@@ -301,14 +301,14 @@ export let OscdSettings = class extends LitElement {
           ${this.renderNsdocItem("IEC 61850-8-1")}
         </mwc-list>
         <mwc-button slot="secondaryAction" dialogAction="close">
-          ${translate("cancel")}
+          ${get("cancel")}
         </mwc-button>
         <mwc-button
           style="--mdc-theme-primary: var(--mdc-theme-error)"
           slot="secondaryAction"
           dialogAction="reset"
         >
-          ${translate("reset")}
+          ${get("reset")}
         </mwc-button>
         <mwc-button
           icon="save"
@@ -316,7 +316,7 @@ export let OscdSettings = class extends LitElement {
           slot="primaryAction"
           dialogAction="save"
         >
-          ${translate("save")}
+          ${get("save")}
         </mwc-button>
       </mwc-dialog>
       <slot></slot>
