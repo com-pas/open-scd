@@ -1,9 +1,11 @@
+import { html } from '../../_snowpack/pkg/lit-element.js';
 import { directive } from '../../_snowpack/pkg/lit-html.js';
 import { Select } from '../../_snowpack/pkg/@material/mwc-select.js';
 import { getChildElementsByTagName } from '../../_snowpack/link/packages/xml/dist/index.js';
 import { WizardTextField } from './wizard-textfield.js';
 import { WizardSelect } from './wizard-select.js';
 import { WizardCheckbox } from './wizard-checkbox.js';
+export const oscdHtml = html;
 export const wizardInputSelector = 'wizard-textfield, mwc-textfield, ace-editor, mwc-select, wizard-select, wizard-checkbox';
 export function isWizardFactory(maybeFactory) {
     return typeof maybeFactory === 'function';
