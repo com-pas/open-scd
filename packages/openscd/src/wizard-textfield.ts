@@ -232,7 +232,8 @@ export class WizardTextField extends LitElement {
           maxLength="${ifDefined(this.maxLength)}"
           type="${ifDefined(this.type)}"
           min="${ifDefined(this.min)}"
-          max="${ifDefined(this.max)}">
+          max="${ifDefined(this.max)}"
+          @change="${(e: Event) => this.value = (e.target as HTMLInputElement).value}">
         </mwc-textfield>
         ${this.renderUnitSelector()}
         <div style="display: flex; align-items: center; height: 56px;">
