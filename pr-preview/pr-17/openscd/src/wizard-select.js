@@ -14,13 +14,19 @@ import {
   html,
   state,
   property,
-  query
+  query,
+  LitElement
 } from "../../_snowpack/pkg/lit-element.js";
+import {ifDefined} from "../../_snowpack/pkg/lit-html/directives/if-defined.js";
 import "../../_snowpack/pkg/@material/mwc-switch.js";
-import {Select} from "../../_snowpack/pkg/@material/mwc-select.js";
-export let WizardSelect = class extends Select {
+import "../../_snowpack/pkg/@material/mwc-select.js";
+export let WizardSelect = class extends LitElement {
   constructor() {
     super();
+    this.value = "";
+    this.label = "";
+    this.dialogInitialFocus = false;
+    this.disabled = false;
     this.nullable = false;
     this.isNull = false;
     this.defaultValue = "";
@@ -67,12 +73,11 @@ export let WizardSelect = class extends Select {
     this.disabled = true;
   }
   async firstUpdated() {
-    await super.firstUpdated();
   }
   checkValidity() {
     if (this.nullable && !this.nullSwitch?.checked)
       return true;
-    return super.checkValidity();
+    return this.select.checkValidity();
   }
   renderSwitch() {
     if (this.nullable) {
@@ -90,7 +95,18 @@ export let WizardSelect = class extends Select {
   render() {
     return html`
       <div style="display: flex; flex-direction: row;">
-        <div style="flex: auto;">${super.render()}</div>
+        <div style="flex: auto;">
+          <mwc-select
+            .value=${this.value}
+            .disabled=${this.disabled}
+            label=${this.label}
+            helper="${ifDefined(this.helper)}"
+            validationMessage="${ifDefined(this.validationMessage)}"
+            @change="${(e) => this.value = e.target.value}"
+            >
+              <slot></slot>
+          </mwc-select>
+        </div>
         <div style="display: flex; align-items: center; height: 56px;">
           ${this.renderSwitch()}
         </div>
@@ -98,6 +114,24 @@ export let WizardSelect = class extends Select {
     `;
   }
 };
+__decorate([
+  property({type: String})
+], WizardSelect.prototype, "value", 2);
+__decorate([
+  property({type: String})
+], WizardSelect.prototype, "label", 2);
+__decorate([
+  property({type: String})
+], WizardSelect.prototype, "helper", 2);
+__decorate([
+  property({type: String})
+], WizardSelect.prototype, "validationMessage", 2);
+__decorate([
+  property({type: Boolean})
+], WizardSelect.prototype, "dialogInitialFocus", 2);
+__decorate([
+  property({type: Boolean})
+], WizardSelect.prototype, "disabled", 2);
 __decorate([
   property({type: Boolean})
 ], WizardSelect.prototype, "nullable", 2);
@@ -113,6 +147,9 @@ __decorate([
 __decorate([
   property({type: Array})
 ], WizardSelect.prototype, "reservedValues", 2);
+__decorate([
+  query("mwc-select")
+], WizardSelect.prototype, "select", 2);
 __decorate([
   query("mwc-switch")
 ], WizardSelect.prototype, "nullSwitch", 2);
