@@ -93,13 +93,10 @@ snapshots["wizard-dialog with content definition throught WizardInputs for anoth
 snapshots["wizard-dialog with content definition throught WizardInputs for a specific WizardInput of the kind Select the dom looks like the latest snapshot"] = 
 `<wizard-select label="myLabel">
   <mwc-list-item
-    activated=""
     aria-disabled="false"
-    aria-selected="true"
     mwc-list-item=""
     role="option"
-    selected=""
-    tabindex="0"
+    tabindex="-1"
     value="multi1"
   >
     multi1
@@ -119,7 +116,6 @@ snapshots["wizard-dialog with content definition throught WizardInputs for a spe
 
 snapshots["wizard-dialog with content definition throught WizardInputs for a specific WizardInput of the kind TextField the dom looks like the latest snapshot"] = 
 `<wizard-textfield
-  disabled=""
   label="myLabel"
   nullable=""
 >

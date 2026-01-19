@@ -356,29 +356,29 @@ snapshots["open-scd renders menu plugins passed down as props and it looks like 
     </mwc-list>
   </mwc-drawer>
   <div id="menuContent">
-    <oscd-plugind0b9863131b4146e class="menu plugin">
+    <oscd-plugind0b9863131b4146e class="plugin">
     </oscd-plugind0b9863131b4146e>
-    <oscd-plugin9b4f3043bce10a59 class="menu plugin">
+    <oscd-plugin9b4f3043bce10a59 class="plugin">
     </oscd-plugin9b4f3043bce10a59>
-    <oscd-pluginf3b6b19f30371924 class="menu plugin">
+    <oscd-pluginf3b6b19f30371924 class="plugin">
     </oscd-pluginf3b6b19f30371924>
     <oscd-plugin8126aea23c207f03 class="plugin validator">
     </oscd-plugin8126aea23c207f03>
     <oscd-pluginb7f7ea2822da160b class="plugin validator">
     </oscd-pluginb7f7ea2822da160b>
-    <oscd-plugin164035de870e3ce2 class="menu plugin">
+    <oscd-plugin164035de870e3ce2 class="plugin">
     </oscd-plugin164035de870e3ce2>
-    <oscd-plugin73c7200b70bd16a6 class="menu plugin">
+    <oscd-plugin73c7200b70bd16a6 class="plugin">
     </oscd-plugin73c7200b70bd16a6>
-    <oscd-plugin96a38f00c3583f5a class="menu plugin">
+    <oscd-plugin96a38f00c3583f5a class="plugin">
     </oscd-plugin96a38f00c3583f5a>
-    <oscd-plugind42cb104caa5b137 class="menu plugin">
+    <oscd-plugind42cb104caa5b137 class="plugin">
     </oscd-plugind42cb104caa5b137>
-    <oscd-plugin531256cb341ab97e class="menu plugin">
+    <oscd-plugin531256cb341ab97e class="plugin">
     </oscd-plugin531256cb341ab97e>
-    <oscd-plugin70e8eaeb84bf47f6 class="menu plugin">
+    <oscd-plugin70e8eaeb84bf47f6 class="plugin">
     </oscd-plugin70e8eaeb84bf47f6>
-    <oscd-plugin6589bc97026c833d class="menu plugin">
+    <oscd-plugin6589bc97026c833d class="plugin">
     </oscd-plugin6589bc97026c833d>
   </div>
   <div class="landing">
@@ -746,29 +746,29 @@ snapshots["open-scd renders editor plugins passed down as props and it looks lik
     </mwc-list>
   </mwc-drawer>
   <div id="menuContent">
-    <oscd-plugind0b9863131b4146e class="menu plugin">
+    <oscd-plugind0b9863131b4146e class="plugin">
     </oscd-plugind0b9863131b4146e>
-    <oscd-plugin9b4f3043bce10a59 class="menu plugin">
+    <oscd-plugin9b4f3043bce10a59 class="plugin">
     </oscd-plugin9b4f3043bce10a59>
-    <oscd-pluginf3b6b19f30371924 class="menu plugin">
+    <oscd-pluginf3b6b19f30371924 class="plugin">
     </oscd-pluginf3b6b19f30371924>
     <oscd-plugin8126aea23c207f03 class="plugin validator">
     </oscd-plugin8126aea23c207f03>
     <oscd-pluginb7f7ea2822da160b class="plugin validator">
     </oscd-pluginb7f7ea2822da160b>
-    <oscd-plugin164035de870e3ce2 class="menu plugin">
+    <oscd-plugin164035de870e3ce2 class="plugin">
     </oscd-plugin164035de870e3ce2>
-    <oscd-plugin73c7200b70bd16a6 class="menu plugin">
+    <oscd-plugin73c7200b70bd16a6 class="plugin">
     </oscd-plugin73c7200b70bd16a6>
-    <oscd-plugin96a38f00c3583f5a class="menu plugin">
+    <oscd-plugin96a38f00c3583f5a class="plugin">
     </oscd-plugin96a38f00c3583f5a>
-    <oscd-plugind42cb104caa5b137 class="menu plugin">
+    <oscd-plugind42cb104caa5b137 class="plugin">
     </oscd-plugind42cb104caa5b137>
-    <oscd-plugin531256cb341ab97e class="menu plugin">
+    <oscd-plugin531256cb341ab97e class="plugin">
     </oscd-plugin531256cb341ab97e>
-    <oscd-plugin70e8eaeb84bf47f6 class="menu plugin">
+    <oscd-plugin70e8eaeb84bf47f6 class="plugin">
     </oscd-plugin70e8eaeb84bf47f6>
-    <oscd-plugin6589bc97026c833d class="menu plugin">
+    <oscd-plugin6589bc97026c833d class="plugin">
     </oscd-plugin6589bc97026c833d>
   </div>
   <div class="landing">
@@ -1136,29 +1136,29 @@ snapshots["open-scd layout looks like its snapshot"] =
     </mwc-list>
   </mwc-drawer>
   <div id="menuContent">
-    <oscd-plugind0b9863131b4146e class="menu plugin">
+    <oscd-plugind0b9863131b4146e class="plugin">
     </oscd-plugind0b9863131b4146e>
-    <oscd-plugin9b4f3043bce10a59 class="menu plugin">
+    <oscd-plugin9b4f3043bce10a59 class="plugin">
     </oscd-plugin9b4f3043bce10a59>
-    <oscd-pluginf3b6b19f30371924 class="menu plugin">
+    <oscd-pluginf3b6b19f30371924 class="plugin">
     </oscd-pluginf3b6b19f30371924>
     <oscd-plugin8126aea23c207f03 class="plugin validator">
     </oscd-plugin8126aea23c207f03>
     <oscd-pluginb7f7ea2822da160b class="plugin validator">
     </oscd-pluginb7f7ea2822da160b>
-    <oscd-plugin164035de870e3ce2 class="menu plugin">
+    <oscd-plugin164035de870e3ce2 class="plugin">
     </oscd-plugin164035de870e3ce2>
-    <oscd-plugin73c7200b70bd16a6 class="menu plugin">
+    <oscd-plugin73c7200b70bd16a6 class="plugin">
     </oscd-plugin73c7200b70bd16a6>
-    <oscd-plugin96a38f00c3583f5a class="menu plugin">
+    <oscd-plugin96a38f00c3583f5a class="plugin">
     </oscd-plugin96a38f00c3583f5a>
-    <oscd-plugind42cb104caa5b137 class="menu plugin">
+    <oscd-plugind42cb104caa5b137 class="plugin">
     </oscd-plugind42cb104caa5b137>
-    <oscd-plugin531256cb341ab97e class="menu plugin">
+    <oscd-plugin531256cb341ab97e class="plugin">
     </oscd-plugin531256cb341ab97e>
-    <oscd-plugin70e8eaeb84bf47f6 class="menu plugin">
+    <oscd-plugin70e8eaeb84bf47f6 class="plugin">
     </oscd-plugin70e8eaeb84bf47f6>
-    <oscd-plugin6589bc97026c833d class="menu plugin">
+    <oscd-plugin6589bc97026c833d class="plugin">
     </oscd-plugin6589bc97026c833d>
   </div>
   <div class="landing">

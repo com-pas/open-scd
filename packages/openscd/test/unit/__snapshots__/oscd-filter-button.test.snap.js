@@ -1,7 +1,7 @@
 /* @web/test-runner snapshot v1 */
 export const snapshots = {};
 
-snapshots["oscd-filter-button multi selection with custom header and standard icon looks like its latest snapshot"] =
+snapshots["oscd-filter-button multi selection with custom header and standard icon looks like its latest snapshot"] = 
 `<mwc-icon-button icon="developer_board">
   <slot name="icon">
   </slot>
@@ -25,13 +25,10 @@ snapshots["oscd-filter-button multi selection with custom header and standard ic
       </mwc-checkbox>
     </mwc-formfield>
   </div>
-  <ul
-    class="mdc-deprecated-list"
-    tabindex="-1"
-  >
+  <mwc-list>
     <slot>
     </slot>
-  </ul>
+  </mwc-list>
   <mwc-button
     dialogaction="close"
     slot="primaryAction"
@@ -42,7 +39,7 @@ snapshots["oscd-filter-button multi selection with custom header and standard ic
 `;
 /* end snapshot oscd-filter-button multi selection with custom header and standard icon looks like its latest snapshot */
 
-snapshots["oscd-filter-button single selection with default header and custom icon looks like its latest snapshot"] =
+snapshots["oscd-filter-button single selection with default header and custom icon looks like its latest snapshot"] = 
 `<mwc-icon-button icon="undefined">
   <slot name="icon">
   </slot>
@@ -62,13 +59,10 @@ snapshots["oscd-filter-button single selection with default header and custom ic
       </mwc-textfield>
     </abbr>
   </div>
-  <ul
-    class="mdc-deprecated-list"
-    tabindex="-1"
-  >
+  <mwc-list>
     <slot>
     </slot>
-  </ul>
+  </mwc-list>
   <mwc-button
     dialogaction="close"
     slot="primaryAction"
@@ -79,7 +73,7 @@ snapshots["oscd-filter-button single selection with default header and custom ic
 `;
 /* end snapshot oscd-filter-button single selection with default header and custom icon looks like its latest snapshot */
 
-snapshots["oscd-filter-button is disabled looks like its latest snapshot"] =
+snapshots["oscd-filter-button is disabled looks like its latest snapshot"] = 
 `<mwc-icon-button
   disabled=""
   icon="developer_board"
@@ -106,13 +100,10 @@ snapshots["oscd-filter-button is disabled looks like its latest snapshot"] =
       </mwc-checkbox>
     </mwc-formfield>
   </div>
-  <ul
-    class="mdc-deprecated-list"
-    tabindex="-1"
-  >
+  <mwc-list>
     <slot>
     </slot>
-  </ul>
+  </mwc-list>
   <mwc-button
     dialogaction="close"
     slot="primaryAction"

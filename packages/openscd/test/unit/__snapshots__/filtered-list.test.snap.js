@@ -16,13 +16,10 @@ snapshots["filtered-list looks like its latest snapshot"] =
     </mwc-checkbox>
   </mwc-formfield>
 </div>
-<ul
-  class="mdc-deprecated-list"
-  tabindex="-1"
->
+<mwc-list>
   <slot>
   </slot>
-</ul>
+</mwc-list>
 `;
 /* end snapshot filtered-list looks like its latest snapshot */
 
