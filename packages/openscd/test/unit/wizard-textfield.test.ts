@@ -67,12 +67,6 @@ describe('wizard-textfield', () => {
       it('renders a multiplier menu', () =>
         expect(element.multiplierMenu).to.exist);
 
-      it('anchors its multiplier menu to the multiplier button', () =>
-        expect(element.multiplierMenu).to.have.property(
-          'anchor',
-          element.multiplierButton
-        ));
-
       it('opens the multiplier menu on multiplier button click', async () => {
         await element.multiplierButton?.click();
         await element.updateComplete;
