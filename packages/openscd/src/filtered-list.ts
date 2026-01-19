@@ -4,6 +4,7 @@ import {
   html,
   LitElement,
   property,
+  PropertyValues,
   query,
   state,
   TemplateResult,
@@ -124,10 +125,6 @@ export class FilteredList extends LitElement {
     );
   }
 
-  protected onListItemConnected(e: CustomEvent): void {
-    this.requestUpdate();
-  }
-
   protected update(
     changedProperties: Map<string | number | symbol, unknown>
   ): void {
@@ -141,6 +138,10 @@ export class FilteredList extends LitElement {
     this.addEventListener('selected', () => {
       this.requestUpdate();
     });
+  }
+
+  protected firstUpdated(_changedProperties: PropertyValues): void {
+    this.requestUpdate();
   }
 
   private renderCheckAll(): TemplateResult {

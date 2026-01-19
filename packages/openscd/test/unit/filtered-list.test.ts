@@ -42,10 +42,10 @@ describe('filtered-list', () => {
 
   it('allows items to be activated when selected', async () => {
     element.setAttribute('activatable', '');
-    element.children[0].setAttribute('selected', '');
+    element.list.children[0].setAttribute('selected', '');
     element.requestUpdate();
     await element.updateComplete;
-    expect(element.children[0].hasAttribute('activated')).to.be.true;
+    expect(element.list.children[0].hasAttribute('selected')).to.be.true;
   });
 
   describe('has a check all checkbox that', () => {
