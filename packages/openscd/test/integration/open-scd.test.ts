@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '../../src/open-scd.js';
+import '../../src/open-scd.component.js';
 import { newEmptySCD } from '../../src/schemas.js';
 import { OpenSCD } from '../../src/open-scd.js';
 import { OscdWaiter } from '../../src/addons/Waiter.js';
