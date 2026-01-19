@@ -71,9 +71,6 @@ let FilteredList = class FilteredList extends LitElement {
     onFilterInput() {
         Array.from(this.querySelectorAll('mwc-list-item, mwc-check-list-item, mwc-radio-list-item')).forEach(item => hideFiltered(item, this.searchField.value));
     }
-    onListItemConnected(e) {
-        this.requestUpdate();
-    }
     update(changedProperties) {
         super.update(changedProperties);
         // regenerate filtering of text
@@ -88,6 +85,9 @@ let FilteredList = class FilteredList extends LitElement {
         this.addEventListener('selected', () => {
             this.requestUpdate();
         });
+    }
+    firstUpdated(_changedProperties) {
+        this.requestUpdate();
     }
     renderCheckAll() {
         return this.existCheckListItem && !this.disableCheckAll
