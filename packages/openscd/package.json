@@ -42,8 +42,10 @@
     "./dist/wizard-checkbox.js": "./dist/wizard-checkbox.js",
     "./dist/wizard-select.js": "./dist/wizard-select.js",
     "./dist/WizardDivider.js": "./dist/WizardDivider.js",
+    "./dist/wizards.js": "./dist/wizards.js",
     "./dist/oscd-filter-button.js": "./dist/oscd-filter-button.js",
-    "TODO:": "Open scd base class and web component"
+    "./dist/translations/de.js": "./dist/translations/de.js",
+    "./dist/translations/en.js": "./dist/translations/en.js"
   },
   "dependencies": {
     "@compas-oscd/core": "^0.1.23",
