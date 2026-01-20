@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.44.1](https://github.com/com-pas/open-scd/compare/v0.44.0...v0.44.1) (2026-01-20)
+
+
+### Bug Fixes
+
+* add missing exports for CommitDetail, LogDetail, and EditorActionEvent ([c3109ed](https://github.com/com-pas/open-scd/commit/c3109ed4b0c755912a7a3b93705b19dac4a4b894))
+* add missing exports for deprecated foundation components ([c81cff9](https://github.com/com-pas/open-scd/commit/c81cff99ed39abbbef4bc3e9f3faf70b44e4b736))
+* restore original names for deprecated editor actions ([d940480](https://github.com/com-pas/open-scd/commit/d9404802dc8b085b5393cd552f7cebc43d1cbbbe))
+* update core package version and restructure exports ([1cd643d](https://github.com/com-pas/open-scd/commit/1cd643d651f9e34ccfa91be013f94dfccc26bf80))
+* update core package version and restructure exports ([8a61a0e](https://github.com/com-pas/open-scd/commit/8a61a0e089d547873e67cddfd02dc75ad605d282))
+* update core package version to 0.1.23 ([6f1cfca](https://github.com/com-pas/open-scd/commit/6f1cfca8cc7ae1baf0fa9adb61f1cb2565b635b5))
+* update exports for editor actions and types for clarity ([bc04400](https://github.com/com-pas/open-scd/commit/bc04400b9151daa895adc9efac718eb725d9138c))
+* update history to match compas ([ecec576](https://github.com/com-pas/open-scd/commit/ecec576fa8923b9bd2446f855a423f35664213ed))
+
 ## [0.44.0](https://github.com/com-pas/open-scd/compare/v0.43.0...v0.44.0) (2025-11-13)
 
 
