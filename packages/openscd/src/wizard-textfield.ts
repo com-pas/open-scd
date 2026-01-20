@@ -5,13 +5,16 @@ import {
   property,
   query,
   TemplateResult,
+  LitElement,
 } from 'lit-element';
 import { get } from 'lit-translate';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 import '@material/mwc-icon-button';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-menu';
 import '@material/mwc-switch';
+import '@material/mwc-textfield';
 import { IconButton } from '@material/mwc-icon-button';
 import { Menu } from '@material/mwc-menu';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
@@ -23,7 +26,7 @@ import { TextField } from '@material/mwc-textfield';
  *
  * NB: Use `maybeValue: string | null` instead of `value` if `nullable`!*/
 @customElement('wizard-textfield')
-export class WizardTextField extends TextField {
+export class WizardTextField extends LitElement {
   /** Whether [[`maybeValue`]] may be `null` */
   @property({ type: Boolean })
   nullable = false;
@@ -31,6 +34,38 @@ export class WizardTextField extends TextField {
   @property({ type: Array })
   multipliers = [null, ''];
   private multiplierIndex = 0;
+
+  @property({ type: String })
+  value = '';
+  @property({ type: String })
+  suffix = '';
+  @property({ type: Boolean })
+  helperPersistent = false;
+  @property({ type: Boolean })
+  disabled = false;
+  @property({ type: Boolean })
+  required = false;
+  @property({ type: String })
+  label = '';
+  @property({ type: Boolean })
+  dialogInitialFocus = false;
+  @property({ type: String })
+  helper: string | undefined;
+  @property({ type: String })
+  validationMessage: string | undefined;
+  @property({ type: String })
+  pattern: string | undefined;
+  @property({ type: Number })
+  minLength: number | undefined;
+  @property({ type: Number })
+  maxLength: number | undefined;
+  @property({ type: String })
+  type: string | undefined;
+  @property({ type: Number })
+  min: number | undefined;
+  @property({ type: Number })
+  max: number | undefined;
+
   @property({ type: String })
   get multiplier(): string | null {
     if (this.unit == '') return null;
@@ -80,6 +115,7 @@ export class WizardTextField extends TextField {
   // FIXME: workaround to allow disable of the whole component - need basic refactor
   private disabledSwitch = false;
 
+  @query('mwc-textfield') textfield!: TextField;
   @query('mwc-switch') nullSwitch?: Switch;
   @query('mwc-menu') multiplierMenu?: Menu;
   @query('mwc-icon-button') multiplierButton?: IconButton;
@@ -106,8 +142,8 @@ export class WizardTextField extends TextField {
     this.disabled = true;
   }
 
-  async firstUpdated(): Promise<void> {
-    await super.firstUpdated();
+  firstUpdated(): void {
+    // await super.firstUpdated();
     if (this.multiplierMenu)
       this.multiplierMenu.anchor =
         (this.multiplierButton as HTMLElement) ?? null;
@@ -118,11 +154,15 @@ export class WizardTextField extends TextField {
       this.reservedValues &&
       this.reservedValues.some(array => array === this.value)
     ) {
-      this.setCustomValidity(get('textfield.unique'));
+      this.textfield.setCustomValidity(get('textfield.unique'));
       return false;
     }
-    this.setCustomValidity(''); //Reset. Otherwise super.checkValidity always falseM
-    return super.checkValidity();
+    this.textfield.setCustomValidity(''); //Reset. Otherwise super.checkValidity always falseM
+    return this.textfield.checkValidity();
+  }
+
+  reportValidity(): boolean {
+    return this.textfield.reportValidity();
   }
 
   constructor() {
@@ -178,7 +218,23 @@ export class WizardTextField extends TextField {
   render(): TemplateResult {
     return html`
       <div style="display: flex; flex-direction: row;">
-        <div style="flex: auto;">${super.render()}</div>
+        <mwc-textfield style="flex: auto;"
+          .value=${this.value}
+          .suffix=${this.suffix}
+          .helperPersistent=${this.helperPersistent}
+          .disabled=${this.disabled}
+          .required=${this.required}
+          label=${this.label}
+          helper="${ifDefined(this.helper)}"
+          validationMessage="${ifDefined(this.helper)}"
+          pattern="${ifDefined(this.pattern)}"
+          minLength="${ifDefined(this.minLength)}"
+          maxLength="${ifDefined(this.maxLength)}"
+          type="${ifDefined(this.type)}"
+          min="${ifDefined(this.min)}"
+          max="${ifDefined(this.max)}"
+          @change="${(e: Event) => this.value = (e.target as HTMLInputElement).value}">
+        </mwc-textfield>
         ${this.renderUnitSelector()}
         <div style="display: flex; align-items: center; height: 56px;">
           ${this.renderSwitch()}

@@ -9,7 +9,7 @@ import {
   html,
   query,
 } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { get } from 'lit-translate';
 
 import '@material/mwc-button';
@@ -22,7 +22,7 @@ import { IconButton } from '@material/mwc-icon-button';
 import { List } from '@material/mwc-list';
 import { Menu } from '@material/mwc-menu';
 
-import { formatXml } from '@openscd/xml';
+import { formatXml } from '@compas-oscd/xml';
 
 import 'ace-custom-element';
 import './wizard-checkbox.js';
@@ -33,7 +33,7 @@ import {
   newActionEvent,
   Delete,
   Create,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import {
   Wizard,
   WizardInputElement,

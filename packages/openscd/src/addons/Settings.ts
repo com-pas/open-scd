@@ -22,7 +22,7 @@ import { Switch } from '@material/mwc-switch';
 
 import { getTheme } from '../themes.js';
 
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+import { newLogEvent } from '@compas-oscd/core';
 import { 
   Settings, 
   SettingsUIEvent, 
@@ -31,7 +31,7 @@ import {
   NsdVersion,
   LoadNsdocEvent,
   newLoadNsdocEvent
-} from '@openscd/core/foundation/deprecated/settings.js';
+} from '@compas-oscd/core';
 import { Languages, languages, loader } from '../translations/loader.js';
 
 import '../WizardDivider.js';
@@ -413,14 +413,14 @@ export class OscdSettings extends LitElement {
           ${this.renderNsdocItem('IEC 61850-8-1')}
         </mwc-list>
         <mwc-button slot="secondaryAction" dialogAction="close">
-          ${translate('cancel')}
+          ${get('cancel')}
         </mwc-button>
         <mwc-button
           style="--mdc-theme-primary: var(--mdc-theme-error)"
           slot="secondaryAction"
           dialogAction="reset"
         >
-          ${translate('reset')}
+          ${get('reset')}
         </mwc-button>
         <mwc-button
           icon="save"
@@ -428,7 +428,7 @@ export class OscdSettings extends LitElement {
           slot="primaryAction"
           dialogAction="save"
         >
-          ${translate('save')}
+          ${get('save')}
         </mwc-button>
       </mwc-dialog>
       <slot></slot>

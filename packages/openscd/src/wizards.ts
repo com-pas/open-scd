@@ -1,5 +1,5 @@
 import { html } from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat';
+import { repeat } from 'lit-html/directives/repeat.js';
 import { get } from 'lit-translate';
 
 import '@material/mwc-icon';
@@ -16,7 +16,7 @@ import {
   Wizard,
   WizardActor,
 } from './foundation.js';
-import { EditorAction, SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction, SimpleAction } from '@compas-oscd/core';
 interface MergeOptions {
   title?: string;
   selected?: (diff: Diff<Element | string>) => boolean;

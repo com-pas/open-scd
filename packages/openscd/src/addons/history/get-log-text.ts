@@ -5,7 +5,7 @@ import {
   isSetAttributesV2,
   isSetTextContentV2,
   isComplexV2
-} from '@openscd/core';
+} from '@compas-oscd/core';
 import { get } from 'lit-translate';
 
 export const getLogText = (edit: EditV2): { title: string, message?: string } => {

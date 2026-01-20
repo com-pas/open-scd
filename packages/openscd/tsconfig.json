@@ -9,6 +9,7 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "declaration": true,
     "importHelpers": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,12 +17,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "resolveJsonModule": true,
-    "paths": {
-      "@openscd/core": ["../core/foundation.ts"],
-      "@openscd/core/*": ["../core/*"],
-      "@openscd/xml": ["../xml/src"],
-      "@openscd/xml/*": ["../xml/*"]
-    }
+    "rootDir": "./src"
   },
   "include": ["./src/**/*.ts"]
 }

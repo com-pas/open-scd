@@ -31,12 +31,12 @@ import {
   LogEntry,
   LogEntryType,
   LogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core';
 
 import { getFilterIcon, iconColors } from '../icons/icons.js';
 
 import { Plugin } from '../plugin.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@compas-oscd/core';
 
 import { getLogText } from './history/get-log-text.js';
 
@@ -366,7 +366,7 @@ export class OscdHistory extends LitElement {
       </mwc-list-item>`;
   }
 
-  private renderIssueEntry(issue: IssueDetail): TemplateResult {
+  protected renderIssueEntry(issue: IssueDetail): TemplateResult {
     return html` <abbr title="${issue.title + '\n' + issue.message}"
       ><mwc-list-item ?twoline=${!!issue.message}>
         <span> ${issue.title}</span>

@@ -5,17 +5,33 @@ import {
   property,
   query,
   TemplateResult,
+  LitElement,
 } from 'lit-element';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 import '@material/mwc-switch';
 import { Switch } from '@material/mwc-switch';
+import '@material/mwc-select';
 import { Select } from '@material/mwc-select';
 
 /** A potentially `nullable` `Select`.
  *
  * NB: Use `maybeValue: string | null` instead of `value` if `nullable`!*/
 @customElement('wizard-select')
-export class WizardSelect extends Select {
+export class WizardSelect extends LitElement {
+  @property({ type: String })
+  value = '';
+  @property({ type: String })
+  label = '';
+  @property({ type: String })
+  helper: string | undefined;
+  @property({ type: String })
+  validationMessage: string | undefined;
+  @property({ type: Boolean })
+  dialogInitialFocus = false;
+  @property({ type: Boolean })
+  disabled = false;
+
   /** Whether [[`maybeValue`]] may be `null` */
   @property({ type: Boolean })
   nullable = false;
@@ -52,6 +68,7 @@ export class WizardSelect extends Select {
   // FIXME: workaround to allow disable of the whole component - need basic refactor
   private disabledSwitch = false;
 
+  @query('mwc-select') select!: Select;
   @query('mwc-switch') nullSwitch?: Switch;
 
   private nulled: string | null = null;
@@ -71,12 +88,12 @@ export class WizardSelect extends Select {
   }
 
   async firstUpdated(): Promise<void> {
-    await super.firstUpdated();
+    // await super.firstUpdated();
   }
 
   checkValidity(): boolean {
     if (this.nullable && !this.nullSwitch?.checked) return true;
-    return super.checkValidity();
+    return this.select.checkValidity();
   }
 
   constructor() {
@@ -102,7 +119,18 @@ export class WizardSelect extends Select {
   render(): TemplateResult {
     return html`
       <div style="display: flex; flex-direction: row;">
-        <div style="flex: auto;">${super.render()}</div>
+        <div style="flex: auto;">
+          <mwc-select
+            .value=${this.value}
+            .disabled=${this.disabled}
+            label=${this.label}
+            helper="${ifDefined(this.helper)}"
+            validationMessage="${ifDefined(this.validationMessage)}"
+            @change="${(e: Event) => this.value = (e.target as HTMLInputElement).value}"
+            >
+              <slot></slot>
+          </mwc-select>
+        </div>
         <div style="display: flex; align-items: center; height: 56px;">
           ${this.renderSwitch()}
         </div>

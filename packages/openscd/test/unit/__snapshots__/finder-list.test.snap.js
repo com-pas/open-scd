@@ -67,7 +67,7 @@ snapshots["finder-list given a .path and a .read method when provided with .getT
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         Testing 3 e2
@@ -176,7 +176,7 @@ snapshots["finder-list given a .path and a .read method when an item in the last
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         e2
@@ -250,7 +250,7 @@ snapshots["finder-list given a .path and a .read method when the selected item i
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e3"
       >
         e3
@@ -279,7 +279,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e3"
       >
         e3
@@ -301,7 +301,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         e2
@@ -480,7 +480,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         e2
@@ -515,7 +515,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         e2
@@ -567,7 +567,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e3"
       >
         e3
@@ -588,7 +588,7 @@ snapshots["finder-list given the \"multi\" attribute, some .paths, and a .read m
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="e2"
       >
         e2

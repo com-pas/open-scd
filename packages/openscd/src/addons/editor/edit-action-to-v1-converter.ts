@@ -7,13 +7,13 @@ import {
   isMove,
   isReplace,
   isSimple,
-  isUpdate,
+  isEditorUpdate,
   Move,
   Replace,
   SimpleAction,
-  Update
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { Edit, Insert, Remove, Update as UpdateV2 } from '@openscd/core';
+  EditorUpdate
+} from '@compas-oscd/core';
+import { Edit, Insert, Remove, Update as UpdateV2 } from '@compas-oscd/core';
 import { getReference, SCLTag } from '../../foundation.js';
 
 
@@ -30,7 +30,7 @@ function convertSimpleAction(action: SimpleAction): Edit {
     return convertCreate(action);
   } else if (isDelete(action)) {
     return convertDelete(action);
-  } else if (isUpdate(action)) {
+  } else if (isEditorUpdate(action)) {
     return convertUpdate(action);
   } else if (isMove(action)) {
     return convertMove(action);
@@ -69,7 +69,7 @@ function convertDelete(action: Delete): Remove {
   };
 }
 
-function convertUpdate(action: Update): UpdateV2 {
+function convertUpdate(action: EditorUpdate): UpdateV2 {
   const oldAttributesToRemove: Record<string, string | null> = {};
   Array.from(action.element.attributes).forEach(attr => {
     oldAttributesToRemove[attr.name] = null;
