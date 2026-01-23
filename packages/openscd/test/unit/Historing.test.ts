@@ -207,5 +207,24 @@ describe('HistoringElement', () => {
         expect(issue.title).to.equal('test run 3');
       });
     });
+
+    it('clears diagnoses when a new SCD file is opened (reset)', async () => {
+      element.dispatchEvent(
+        newIssueEvent({
+          validatorId: '/src/validators/ValidateSchema.js',
+          title: 'test run 1',
+        })
+      );
+      element.dispatchEvent(
+        newIssueEvent({
+          validatorId: '/src/validators/ValidateTemplates.js',
+          title: 'test run 3',
+        })
+      );
+      expect(element.diagnoses.size).to.equal(2);
+      element.dispatchEvent(newLogEvent({ kind: 'reset' }));
+      await element.updateComplete;
+      expect(element.diagnoses.size).to.equal(0);
+    });
   });
 });

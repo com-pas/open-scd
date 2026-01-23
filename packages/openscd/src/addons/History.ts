@@ -175,6 +175,7 @@ export class OscdHistory extends LitElement {
 
   private onReset() {
     this.log = [];
+    this.diagnoses.clear();
     this.editor.reset();
     this.updateHistory();
   }
@@ -287,7 +288,6 @@ export class OscdHistory extends LitElement {
     this.host.addEventListener('issue', this.onIssue);
     this.host.addEventListener('history-dialog-ui', this.historyUIHandler);
     this.host.addEventListener('empty-issues', this.emptyIssuesHandler);
-    this.diagnoses.clear();
   }
 
   disconnectedCallback(): void {
