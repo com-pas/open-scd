@@ -109,7 +109,6 @@ export let OscdHistory = class extends LitElement {
     this.editor.redo();
   }
   onReset() {
-    console.log("Resetting history log and diagnoses");
     this.log = [];
     this.diagnoses.clear();
     this.editor.reset();
