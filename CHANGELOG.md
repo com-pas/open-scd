@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.44.2](https://github.com/com-pas/open-scd/compare/v0.44.1...v0.44.2) (2026-01-26)
+
+
+### Bug Fixes
+
+* clear diagnoses on history reset and add corresponding test ([0ce47ed](https://github.com/com-pas/open-scd/commit/0ce47ede2e885825c1a9629e3a91197d77f1f220))
+* clear diagnostics when new file is opened ([b38bbf2](https://github.com/com-pas/open-scd/commit/b38bbf24a6f5fda1ca677a82bda41bdb24555042))
+
 ## [0.44.1](https://github.com/com-pas/open-scd/compare/v0.44.0...v0.44.1) (2026-01-20)
 
 
