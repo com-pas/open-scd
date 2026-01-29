@@ -51,8 +51,7 @@ export function isRemoveV2(edit: EditV2): edit is RemoveV2 {
 export function isSetAttributesV2(edit: EditV2): edit is SetAttributesV2 {
   return (
     (edit as SetAttributesV2).element !== undefined &&
-    (edit as SetAttributesV2).attributes !== undefined &&
-    (edit as SetAttributesV2).attributesNS !== undefined
+    (edit as SetAttributesV2).attributes !== undefined
   );
 }
 
