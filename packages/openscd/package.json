@@ -22,6 +22,8 @@
   ],
   "exports": {
     ".": "./dist/index.js",
+    "./open-scd.js": "./dist/open-scd.js",
+    "./open-scd.component.js": "./dist/open-scd.component.js",
     "./dist/plugin.js": "./dist/plugin.js",
     "./dist/plugin-tag.js": "./dist/plugin-tag.js",
     "./dist/foundation/nsdoc.js": "./dist/foundation/nsdoc.js",
