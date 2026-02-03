@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.44.3](https://github.com/com-pas/open-scd/compare/v0.44.2...v0.44.3) (2026-02-02)
+
+
+### Bug Fixes
+
+* Allow SetAttributes without namespace object ([58b67bf](https://github.com/com-pas/open-scd/commit/58b67bfb762c5aae4f98c5ca1dabff53eb93f623))
+* Allow setattributes without ns object ([01c0420](https://github.com/com-pas/open-scd/commit/01c04208bd41287b54cbca7703bbd2025fb11250))
+* Export open scd component ([876ceeb](https://github.com/com-pas/open-scd/commit/876ceeb9ec8307fca6aa4a8fb06221ce2dedb36e))
+* Export open-scd and component ([859d0f4](https://github.com/com-pas/open-scd/commit/859d0f498c8e3eaf9180b4ee8cda75e13f5b01fc))
+
 ## [0.44.2](https://github.com/com-pas/open-scd/compare/v0.44.1...v0.44.2) (2026-01-26)
 
 
