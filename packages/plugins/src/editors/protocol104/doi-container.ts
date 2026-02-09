@@ -95,11 +95,11 @@ export class Doi104Container extends Base104Container {
   }
 
   @property()
-  get header(): TemplateResult {
+  get header(): string {
     const fullPath = getFullPath(this.element, 'IED');
     const cdc = getCdcValueFromDOIElement(this.element);
 
-    return html`${fullPath}${cdc ? html` (${cdc})` : nothing}`;
+    return `${fullPath}${cdc ? ` (${cdc})` : ''}`;
   }
 
   private renderAddressList(daiElement: Element): TemplateResult {
