@@ -10,7 +10,7 @@ import { get } from 'lit-translate';
 import {
   compareNames,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import './ied-container.js';
 

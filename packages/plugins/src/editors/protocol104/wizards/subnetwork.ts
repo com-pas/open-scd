@@ -7,13 +7,13 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor';
+import { EditorAction } from '@compas-oscd/core';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 
 /** Initial attribute values suggested for `SubNetwork` creation for the 104 plugin */
 const initial = {

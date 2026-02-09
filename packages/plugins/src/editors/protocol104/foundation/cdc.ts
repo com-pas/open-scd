@@ -1,9 +1,8 @@
 import {
   getNameAttribute,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
-import { Create } from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { Create, newLogEvent } from '@compas-oscd/core';
 
 import {
   addPrefixAndNamespaceToDocument,
@@ -22,7 +21,7 @@ import { editAddressWizard } from '../wizards/address.js';
 import {
   determineUninitializedStructure,
   initializeElements,
-} from '@openscd/open-scd/src/foundation/dai.js';
+} from '@compas-oscd/open-scd/dist/foundation/dai.js';
 import { get } from 'lit-translate';
 
 /**

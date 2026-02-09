@@ -5,11 +5,11 @@ import './subnetwork-container.js';
 import {
   compareNames,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { createSubNetworkWizard } from './wizards/subnetwork.js';
 import { Base104Container } from './base-container.js';
 import { getTypeAttribute } from './foundation/foundation.js';
