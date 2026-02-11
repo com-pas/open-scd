@@ -34,6 +34,7 @@
     "@compas-oscd/core": "^0.1.23",
     "@compas-oscd/xml": "^0.0.1",
     "@compas-oscd/open-scd": "^0.34.44",
+    "@omicronenergy/oscd-ui": "0.0.11",
     "@openenergytools/scl-lib": "^1.8.0",
     "@openscd/core": "npm:@compas-oscd/core@*",
     "@openscd/open-scd": "npm:@compas-oscd/open-scd@*",

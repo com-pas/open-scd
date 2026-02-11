@@ -14,12 +14,13 @@ import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';
 import '@material/mwc-icon-button-toggle';
-import '@material/mwc-list';
-import '@material/mwc-list/mwc-list-item';
+// Test
+import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
+import '@omicronenergy/oscd-ui/list/oscd-list.js';
 
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@omicronenergy/oscd-ui/action-pane/oscd-action-pane.js';
 
 import {
   get104DetailsLine,
@@ -106,7 +107,7 @@ export class Doi104Container extends Base104Container {
     const addresses = this.getAddressElements(daiElement);
     return html`${addresses.map(addressElement => {
       return html`
-        <mwc-list-item graphic="icon" hasMeta>
+        <oscd-list-item graphic="icon" hasMeta>
           <span slot="graphic">&nbsp;</span>
           <span>${get104DetailsLine(daiElement, addressElement)}</span>
           <span slot="meta">
@@ -117,7 +118,7 @@ export class Doi104Container extends Base104Container {
             >
             </mwc-icon-button>
           </span>
-        </mwc-list-item>
+        </oscd-list-item>
       `;
     })}`;
   }
@@ -126,9 +127,9 @@ export class Doi104Container extends Base104Container {
     const daiElements = this.daiElements;
     return html`${daiElements.map(daiElement => {
       return html`
-        <mwc-list-item noninteractive>
+        <oscd-list-item noninteractive>
           <span>${getFullPath(daiElement, 'DOI')}</span>
-        </mwc-list-item>
+        </oscd-list-item>
         ${this.renderAddressList(daiElement)}
       `;
     })}`;
@@ -136,7 +137,7 @@ export class Doi104Container extends Base104Container {
 
   render(): TemplateResult {
     return html`
-      <action-pane .label="${this.header}">
+      <oscd-action-pane .label="${this.header}">
         <abbr slot="action" title="${get('edit')}">
           <mwc-icon-button
             icon="info"
@@ -154,9 +155,9 @@ export class Doi104Container extends Base104Container {
           </mwc-icon-button-toggle>
         </abbr>
         ${this.toggleButton?.on
-          ? html` <mwc-list id="dailist"> ${this.renderDaiList()} </mwc-list>`
+          ? html` <oscd-list id="dailist"> ${this.renderDaiList()} </oscd-list>`
           : nothing}
-      </action-pane>
+      </oscd-action-pane>
     `;
   }
 
@@ -166,7 +167,7 @@ export class Doi104Container extends Base104Container {
       border-bottom: none;
     }
 
-    mwc-list-item {
+    oscd-list-item {
       --mdc-list-item-meta-size: 48px;
     }
   `;

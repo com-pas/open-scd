@@ -19,7 +19,7 @@ import {
   getNameAttribute,
 } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@omicronenergy/oscd-ui/action-pane/oscd-action-pane.js';
 
 import { getFullPath } from './foundation/foundation.js';
 
@@ -80,7 +80,7 @@ export class Ied104Container extends Base104Container {
 
   render(): TemplateResult {
     return html`
-      <action-pane .label="${this.header}">
+      <oscd-action-pane .label="${this.header}">
         <mwc-icon slot="icon">developer_board</mwc-icon>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
           <mwc-icon-button-toggle
@@ -93,7 +93,7 @@ export class Ied104Container extends Base104Container {
           </mwc-icon-button-toggle>
         </abbr>
         ${this.toggleButton?.on ? html`${this.renderDoiList()}` : nothing}
-      </action-pane>
+      </oscd-action-pane>
     `;
   }
 

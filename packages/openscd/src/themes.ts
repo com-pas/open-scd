@@ -54,6 +54,28 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
 
         --oscd-text-font: var(--oscd-theme-text-font, 'Roboto');
         --oscd-icon-font: var(--oscd-theme-icon-font, 'Material Icons');
+
+        /* Fallbacks for Material Design variables */
+        --md-sys-color-primary: var(--oscd-primary);
+        --md-sys-color-on-primary: var(--oscd-base3);
+        --md-sys-color-secondary: var(--oscd-secondary);
+        --md-sys-color-on-secondary: var(--oscd-base3);
+        --md-sys-color-secondary-container: var(--oscd-base2);
+        --md-sys-color-surface: var(--oscd-base3);
+        --md-sys-color-on-surface: var(--oscd-base00);
+        --md-sys-color-surface-variant: var(--oscd-base3);
+        --md-sys-color-on-surface-variant: var(--oscd-base00);
+        --md-sys-color-surface-bright: var(--oscd-base2);
+        --md-sys-color-surface-container: var(--oscd-base3);
+        --md-sys-color-surface-container-high: var(--oscd-base3);
+        --md-sys-color-surface-container-highest: var(--oscd-base3);
+        --md-sys-color-outline-variant: var(--oscd-primary);
+        --md-sys-color-scrim: #000000;
+        --md-sys-color-error: var(--oscd-error);
+        --md-sys-color-on-error: var(--oscd-base3);
+        --md-icon-button-disabled-icon-color: var(--oscd-base3);
+        /* --md-menu-item-selected-label-text-color: var(--oscd-base01); */
+        --md-icon-button-disabled-icon-color: var(--oscd-base3);
       }
 
       .mdc-drawer span.mdc-drawer__title {
