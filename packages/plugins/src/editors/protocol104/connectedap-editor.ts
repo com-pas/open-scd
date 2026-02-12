@@ -1,6 +1,6 @@
 import { customElement, html, property, TemplateResult } from 'lit-element';
 
-import '@material/mwc-fab';
+import '@omicronenergy/oscd-ui/fab/oscd-fab.js';
 
 import '@compas-oscd/open-scd/dist/action-icon.js';
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
@@ -44,18 +44,18 @@ export class ConnectedAP104Editor extends Base104Container {
       <action-icon
         label="${this.element.getAttribute('apName') ?? 'UNDEFINED'}"
         icon="settings_input_hdmi"
-        ><mwc-fab
+        ><oscd-fab
           slot="action"
           mini
           icon="edit"
           @click="${() => this.openEditWizard()}"
-        ></mwc-fab>
-        <mwc-fab
+        ></oscd-fab>
+        <oscd-fab
           slot="action"
           mini
           icon="delete"
           @click="${() => this.remove()}}"
-        ></mwc-fab
+        ></oscd-fab
       ></action-icon>
     `;
   }

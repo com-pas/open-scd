@@ -3,7 +3,7 @@ import { get } from 'lit-translate';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
 import '@material/mwc-checkbox';
-import '@material/mwc-switch';
+import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 import '@material/mwc-formfield';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-list/mwc-check-list-item';

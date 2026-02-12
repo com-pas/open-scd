@@ -3,7 +3,6 @@ import { get } from 'lit-translate';
 import { live } from 'lit-html/directives/live';
 
 import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-select';
 import '@material/mwc-textarea';
 
 import {

@@ -14,7 +14,7 @@ import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';
 import '@material/mwc-icon-button-toggle';
-// Test
+
 import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
 import '@omicronenergy/oscd-ui/list/oscd-list.js';
 
