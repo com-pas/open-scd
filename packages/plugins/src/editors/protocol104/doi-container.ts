@@ -11,8 +11,8 @@ import { nothing } from 'lit-html';
 
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
-import '@material/mwc-icon';
-import '@material/mwc-icon-button';
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import '@omicronenergy/oscd-ui/iconbutton/oscd-icon-button.js';
 import '@material/mwc-icon-button-toggle';
 
 import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
@@ -110,13 +110,13 @@ export class Doi104Container extends Base104Container {
         <oscd-list-item graphic="icon" hasMeta>
           <span slot="graphic">&nbsp;</span>
           <span>${get104DetailsLine(daiElement, addressElement)}</span>
-          <span slot="meta">
-            <mwc-icon-button
-              icon="edit"
+          <span slot="end">
+            <oscd-icon-button
               @click=${() =>
                 this.openEditAddressWizard(daiElement, addressElement)}
             >
-            </mwc-icon-button>
+              <oscd-icon>edit</oscd-icon>
+            </oscd-icon-button>
           </span>
         </oscd-list-item>
       `;
@@ -139,10 +139,9 @@ export class Doi104Container extends Base104Container {
     return html`
       <oscd-action-pane .label="${this.header}">
         <abbr slot="action" title="${get('edit')}">
-          <mwc-icon-button
-            icon="info"
-            @click=${() => this.openEditTiWizard()}
-          ></mwc-icon-button>
+          <oscd-icon-button @click=${() => this.openEditTiWizard()}>
+            <oscd-icon>info</oscd-icon>
+          </oscd-icon-button>
         </abbr>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
           <mwc-icon-button-toggle

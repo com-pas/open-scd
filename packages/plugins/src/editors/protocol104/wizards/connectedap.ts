@@ -7,7 +7,7 @@ import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 import '@material/mwc-formfield';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-list/mwc-check-list-item';
-import '@material/mwc-icon';
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 
 import { Checkbox } from '@material/mwc-checkbox';
 import { List } from '@material/mwc-list';

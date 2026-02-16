@@ -3,11 +3,11 @@ import { html, TemplateResult } from 'lit-element';
 import { Select } from '@material/mwc-select';
 import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import { Switch } from '@material/mwc-switch';
+import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
 import '@material/mwc-formfield';
 import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-switch';
+import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/WizardDivider.js';
@@ -205,7 +205,7 @@ export function createAddressesWizard(
     const fullPath = getFullPath(lnElement, 'IED');
 
     function setMonitorInvertedSwitch(e: SelectedEvent): void {
-      const selectedTi = (<Select>e.target).selected!.value;
+      const selectedTi = (<Select>e.target!.select).selected!.value;
       const selectElement = (<Select>e.target).parentElement!.querySelector(
         'mwc-switch[id="monitorInverted"]'
       );
@@ -222,7 +222,7 @@ export function createAddressesWizard(
       e: SelectedEvent,
       isMonitor: boolean
     ): void {
-      const selectedTi = (<Select>e.target).selected!.value;
+      const selectedTi = (<Select>e.target!.select).selected!.value;
       const counterType = isMonitor ? 'controlTi' : 'monitorTi';
       const availableTis = (<Select>e.target).parentElement!.querySelector(
         `wizard-select[label="${counterType}"]`

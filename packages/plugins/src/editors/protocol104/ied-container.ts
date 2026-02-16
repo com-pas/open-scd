@@ -11,7 +11,7 @@ import { nothing } from 'lit-html';
 
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
-import '@material/mwc-icon';
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 import '@material/mwc-icon-button-toggle';
 
 import {
@@ -81,7 +81,7 @@ export class Ied104Container extends Base104Container {
   render(): TemplateResult {
     return html`
       <oscd-action-pane .label="${this.header}">
-        <mwc-icon slot="icon">developer_board</mwc-icon>
+        <oscd-icon slot="icon">developer_board</oscd-icon>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
           <mwc-icon-button-toggle
             id="toggleButton"
