@@ -5,14 +5,12 @@ import {
   property,
   query,
   TemplateResult,
+  state,
 } from 'lit-element';
 import { get } from 'lit-translate';
 import { nothing } from 'lit-html';
 
-import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
-
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
-import '@material/mwc-icon-button-toggle';
 
 import {
   getDescriptionAttribute,
@@ -35,8 +33,8 @@ export class Ied104Container extends Base104Container {
   @property()
   element!: Element;
 
-  @query('#toggleButton')
-  toggleButton!: IconButtonToggle | undefined;
+  @state()
+  isExpanded = true;
 
   @property()
   get doiElements(): Element[] {
@@ -83,16 +81,12 @@ export class Ied104Container extends Base104Container {
       <oscd-action-pane .label="${this.header}">
         <oscd-icon slot="icon">developer_board</oscd-icon>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
-          <mwc-icon-button-toggle
-            id="toggleButton"
-            on
-            onIcon="keyboard_arrow_up"
-            offIcon="keyboard_arrow_down"
-            @click=${() => this.requestUpdate()}
-          >
-          </mwc-icon-button-toggle>
+          <oscd-icon-button toggle selected @click=${() => this.isExpanded = !this.isExpanded}>
+            <oscd-icon>keyboard_arrow_up</oscd-icon>
+            <oscd-icon slot="selected">keyboard_arrow_down</oscd-icon>
+          </oscd-icon-button>
         </abbr>
-        ${this.toggleButton?.on ? html`${this.renderDoiList()}` : nothing}
+        ${this.isExpanded ? html`${this.renderDoiList()}` : nothing}
       </oscd-action-pane>
     `;
   }

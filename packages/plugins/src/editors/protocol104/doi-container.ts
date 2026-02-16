@@ -5,15 +5,13 @@ import {
   property,
   query,
   TemplateResult,
+  state
 } from 'lit-element';
 import { get } from 'lit-translate';
 import { nothing } from 'lit-html';
 
-import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
-
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 import '@omicronenergy/oscd-ui/iconbutton/oscd-icon-button.js';
-import '@material/mwc-icon-button-toggle';
 
 import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
 import '@omicronenergy/oscd-ui/list/oscd-list.js';
@@ -41,8 +39,8 @@ export class Doi104Container extends Base104Container {
   @property()
   element!: Element;
 
-  @query('#toggleButton')
-  toggleButton!: IconButtonToggle | undefined;
+  @state()
+  isExpanded = true;
 
   @property()
   get daiElements(): Element[] {
@@ -144,16 +142,12 @@ export class Doi104Container extends Base104Container {
           </oscd-icon-button>
         </abbr>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
-          <mwc-icon-button-toggle
-            id="toggleButton"
-            on
-            onIcon="keyboard_arrow_up"
-            offIcon="keyboard_arrow_down"
-            @click=${() => this.requestUpdate()}
-          >
-          </mwc-icon-button-toggle>
+          <oscd-icon-button toggle selected @click=${() => this.isExpanded = !this.isExpanded}>
+            <oscd-icon>keyboard_arrow_up</oscd-icon>
+            <oscd-icon slot="selected">keyboard_arrow_down</oscd-icon>
+          </oscd-icon-button>
         </abbr>
-        ${this.toggleButton?.on
+        ${this.isExpanded
           ? html` <oscd-list id="dailist"> ${this.renderDaiList()} </oscd-list>`
           : nothing}
       </oscd-action-pane>
