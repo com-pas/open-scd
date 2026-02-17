@@ -76,6 +76,12 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
         --md-icon-button-disabled-icon-color: var(--oscd-base3);
         /* --md-menu-item-selected-label-text-color: var(--oscd-base01); */
         --md-icon-button-disabled-icon-color: var(--oscd-base3);
+
+        /* textfield */ disabled-label-text-color
+        --md-filled-text-field-container-color: var(--oscd-base2);
+        --md-filled-text-field-disabled-container-color: var(--oscd-base3);
+        --md-filled-text-field-disabled-input-text-color: var(--oscd-base00);
+        --md-filled-text-field-disabled-label-text-color: var(--oscd-base00);
       }
 
       .mdc-drawer span.mdc-drawer__title {

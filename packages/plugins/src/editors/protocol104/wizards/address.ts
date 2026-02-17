@@ -3,7 +3,7 @@ import { get } from 'lit-translate';
 import { live } from 'lit-html/directives/live';
 
 import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-textarea';
+import '@omicronenergy/oscd-ui/textfield/oscd-filled-text-field.js';
 
 import {
   getNameAttribute,
@@ -138,15 +138,16 @@ export function editAddressWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="DOI"
+        type="textarea"
         value="${getFullPath(doiElement, 'IED')}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="cdc"
         .maybeValue="${cdc}"
@@ -158,15 +159,16 @@ export function editAddressWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="DAI"
+        type="textarea"
         value="${getFullPath(daiElement!, 'DOI')}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="casdu"
         @change="${(evt: Event) => {

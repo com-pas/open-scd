@@ -246,15 +246,16 @@ export function createAddressesWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="LN(0)"
+        type="textarea"
         value="${fullPath}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="DO"
         .maybeValue="${doName}"

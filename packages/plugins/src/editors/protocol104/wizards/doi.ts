@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
-import '@material/mwc-textarea';
+import '@omicronenergy/oscd-ui/textfield/oscd-filled-text-field.js';
 
 import {
   getNameAttribute,
@@ -52,15 +52,16 @@ export function renderDOIWizard(doiElement: Element): TemplateResult[] {
       readonly
     >
     </wizard-textfield>`,
-    html`<mwc-textarea
+    html`<oscd-filled-text-field
       label="DOI"
+      type="textarea"
       value="${fullpath}"
       rows="2"
       cols="40"
       readonly
       disabled
     >
-    </mwc-textarea>`,
+    </oscd-filled-text-field>`,
     html`<wizard-textfield
       label="Common Data Class"
       .maybeValue=${cdc}
