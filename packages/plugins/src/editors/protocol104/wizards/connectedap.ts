@@ -2,16 +2,15 @@ import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import '@material/mwc-checkbox';
+import '@omicronenergy/oscd-ui/checkbox/oscd-checkbox.js';
 import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
-import '@material/mwc-formfield';
-import '@material/mwc-list/mwc-list-item';
+import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
 import '@material/mwc-list/mwc-check-list-item';
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 
-import { Checkbox } from '@material/mwc-checkbox';
-import { List } from '@material/mwc-list';
-import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
+import { Checkbox } from '@omicronenergy/oscd-ui/checkbox/OscdCheckbox.js';
+import { List } from '@omicronenergy/oscd-ui/list/OscdList.js';
+import { ListItem } from '@omicronenergy/oscd-ui/list/OscdListItem.js';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
@@ -70,7 +69,7 @@ function createConnectedApAction(parent: Element): WizardActor {
   ): EditorAction[] => {
     if (!list) return [];
 
-    const identities = (<ListItemBase[]>list.selected).map(item => item.value);
+    const identities = (<ListItem[]>list.selected).map(item => item.value);
 
     const actions = identities.map(identity => {
       const [iedName, apName] = identity.split('>');
@@ -205,14 +204,10 @@ export function editConnectedApWizard(
         action: editConnectedApAction(parent, redundancy),
       },
       content: [
-        html`<mwc-formfield
-            label="${get(
-              'protocol104.network.connectedAp.wizard.redundancySwitchLabel'
-            )}"
-          >
-            <mwc-switch
+        html`<label>
+            <oscd-switch
               id="redundancy"
-              ?checked=${redundancy}
+              ?selected=${redundancy}
               @change=${(event: Event) => {
                 event.target!.dispatchEvent(newWizardEvent());
                 event.target!.dispatchEvent(
@@ -221,8 +216,9 @@ export function editConnectedApWizard(
                   )
                 );
               }}
-            ></mwc-switch>
-          </mwc-formfield>
+            ></oscd-switch>
+            ${get('protocol104.network.connectedAp.wizard.redundancySwitchLabel')}
+          </label>
           <wizard-divider></wizard-divider>
           ${createTypeRestrictionCheckbox(parent)}
           <wizard-select
@@ -245,7 +241,7 @@ export function editConnectedApWizard(
                     'protocol104.network.connectedAp.wizard.redundancyGroupTitle'
                   )}
                 </h3>
-                <mwc-list
+                <oscd-list
                   @selected=${(e: SingleSelectedEvent) => {
                     e.target!.dispatchEvent(
                       newSubWizardEvent(() =>
@@ -260,8 +256,8 @@ export function editConnectedApWizard(
                   ${redundancyGroupNumbers.length != 0
                     ? redundancyGroupNumbers.map(
                         number =>
-                          html`<mwc-list-item
-                            >Redundancy Group ${number}</mwc-list-item
+                          html`<oscd-list-item
+                            >Redundancy Group ${number}</oscd-list-item
                           >`
                       )
                     : html`<p>
@@ -269,7 +265,7 @@ export function editConnectedApWizard(
                           'protocol104.network.connectedAp.wizard.noRedundancyGroupsAvailable'
                         )}
                       </p>`}
-                </mwc-list>`
+                </oscd-list>`
             : html`${pTypes104.map(
                 pType => html`${createEditTextField(parent, pType)}`
               )}`} `,
@@ -390,13 +386,13 @@ function createEditTextField(parent: Element, pType: string): TemplateResult {
 }
 
 function createTypeRestrictionCheckbox(element: Element): TemplateResult {
-  return html`<mwc-formfield
-    label="${get('connectedap.wizard.addschemainsttype')}"
-    ><mwc-checkbox
+  return html`<label>
+    <oscd-checkbox
       id="typeRestriction"
       ?checked=${hasTypeRestriction(element)}
-    ></mwc-checkbox>
-  </mwc-formfield>`;
+    ></oscd-checkbox>
+    ${get('connectedap.wizard.addschemainsttype')}
+  </label>`;
 }
 
 function hasTypeRestriction(element: Element): boolean {
