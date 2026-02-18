@@ -5,6 +5,7 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import '@omicronenergy/oscd-ui/checkbox/oscd-checkbox.js';
 import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
+// Migrate together with filtered-list
 import '@material/mwc-list/mwc-check-list-item';
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 
@@ -241,22 +242,21 @@ export function editConnectedApWizard(
                     'protocol104.network.connectedAp.wizard.redundancyGroupTitle'
                   )}
                 </h3>
-                <oscd-list
-                  @selected=${(e: SingleSelectedEvent) => {
-                    e.target!.dispatchEvent(
-                      newSubWizardEvent(() =>
-                        editRedundancyGroupWizard(
-                          parent,
-                          redundancyGroupNumbers[e.detail.index]
-                        )
-                      )
-                    );
-                  }}
-                >
+                <oscd-list>
                   ${redundancyGroupNumbers.length != 0
                     ? redundancyGroupNumbers.map(
                         number =>
-                          html`<oscd-list-item
+                          html`<oscd-list-item type="button"
+                              @click=${(e: PointerEvent) => {
+                                e.target!.dispatchEvent(
+                                  newSubWizardEvent(() =>
+                                    editRedundancyGroupWizard(
+                                      parent,
+                                      number
+                                    )
+                                  )
+                                );
+                              }}
                             >Redundancy Group ${number}</oscd-list-item
                           >`
                       )

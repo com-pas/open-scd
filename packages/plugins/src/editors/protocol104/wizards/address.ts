@@ -2,6 +2,7 @@ import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 import { live } from 'lit-html/directives/live';
 
+// Keep it for now, wizard selects needs mwc-list-item
 import '@material/mwc-list/mwc-list-item';
 import '@omicronenergy/oscd-ui/textfield/oscd-filled-text-field.js';
 

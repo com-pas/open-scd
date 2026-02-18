@@ -5,7 +5,7 @@ import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
-import '@material/mwc-formfield';
+// Keep for now, needed for wizard select
 import '@material/mwc-list/mwc-list-item';
 import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 
@@ -40,9 +40,9 @@ import { getSignalName } from '../foundation/signalNames.js';
 
 function getSwitchValue(wizard: Element, name: string): boolean {
   const switchElement = wizard.shadowRoot?.querySelector(
-    `mwc-switch[id="${name}"`
+    `oscd-switch[id="${name}"`
   ) as Switch;
-  return switchElement?.checked ?? false;
+  return switchElement?.selected ?? false;
 }
 
 export function createAddressesAction(
@@ -207,7 +207,7 @@ export function createAddressesWizard(
     function setMonitorInvertedSwitch(e: SelectedEvent): void {
       const selectedTi = (<Select>e.target!.select).selected!.value;
       const selectElement = (<Select>e.target).parentElement!.querySelector(
-        'mwc-switch[id="monitorInverted"]'
+        'oscd-switch[id="monitorInverted"]'
       );
 
       if (!selectElement) return;
@@ -318,24 +318,24 @@ export function createAddressesWizard(
         );
       }
       fields.push(
-        html`<mwc-formfield
-          label="${get('protocol104.wizard.monitorInverted')}"
-        >
-          <mwc-switch
+        html`<label>
+          <oscd-switch
             id="monitorInverted"
             .disabled="${disabledSwitchByDefault}"
           >
-          </mwc-switch>
-        </mwc-formfield>`
+          </oscd-switch>
+          ${get('protocol104.wizard.monitorInverted')}
+        </label>`
       );
       fields.push(
-        html`<mwc-formfield label="${get('protocol104.wizard.monitorCheck')}">
-          <mwc-switch
+        html`<label>
+          <oscd-switch
             id="monitorCheck"
             .disabled="${disableCheckSwitch(cdcProcessing.monitor)}"
           >
-          </mwc-switch>
-        </mwc-formfield>`
+          </oscd-switch>
+          ${get('protocol104.wizard.monitorCheck')}
+        </label>`
       );
     }
 
@@ -391,26 +391,24 @@ export function createAddressesWizard(
           );
         }
         fields.push(
-          html` <mwc-formfield
-            label="${get('protocol104.wizard.controlInverted')}"
-          >
-            <mwc-switch
+          html` <label>
+            <oscd-switch
               id="controlInverted"
               .disabled="${disableInvertedSwitch(cdcProcessing.control)}"
             >
-            </mwc-switch>
-          </mwc-formfield>`
+            </oscd-switch>
+            ${get('protocol104.wizard.controlInverted')}
+          </label>`
         );
         fields.push(
-          html` <mwc-formfield
-            label="${get('protocol104.wizard.controlCheck')}"
-          >
-            <mwc-switch
+          html` <label>
+            <oscd-switch
               id="controlCheck"
               .disabled="${disableCheckSwitch(cdcProcessing.control)}"
             >
-            </mwc-switch>
-          </mwc-formfield>`
+            </oscd-switch>
+            ${get('protocol104.wizard.controlCheck')}
+          </label>`
         );
       }
     }
