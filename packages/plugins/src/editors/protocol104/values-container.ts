@@ -7,6 +7,9 @@ import {
 } from 'lit-element';
 import { get } from 'lit-translate';
 
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import '@omicronenergy/oscd-ui/fab/oscd-fab.js';
+
 import {
   compareNames,
   newWizardEvent,
@@ -43,13 +46,13 @@ export class Values104Container extends Base104Container {
 
   private renderAddButton(): TemplateResult {
     return html`<h1>
-      <mwc-fab
+      <oscd-fab
         extended
-        icon="add"
         label="${get('protocol104.wizard.title.addAddress')}"
         @click=${() => this.openCreateAddressWizard()}
       >
-      </mwc-fab>
+        <oscd-icon slot="icon">add</oscd-icon>
+      </oscd-fab>
     </h1>`;
   }
 
@@ -76,7 +79,7 @@ export class Values104Container extends Base104Container {
   }
 
   static styles = css`
-    mwc-fab {
+    oscd-fab {
       position: fixed;
       bottom: 32px;
       right: 32px;

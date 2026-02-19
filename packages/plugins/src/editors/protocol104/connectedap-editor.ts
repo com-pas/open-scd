@@ -47,15 +47,17 @@ export class ConnectedAP104Editor extends Base104Container {
         ><oscd-fab
           slot="action"
           mini
-          icon="edit"
           @click="${() => this.openEditWizard()}"
-        ></oscd-fab>
+        >
+          <oscd-icon slot="icon">edit</oscd-icon>
+        </oscd-fab>
         <oscd-fab
           slot="action"
           mini
-          icon="delete"
           @click="${() => this.remove()}}"
-        ></oscd-fab
+        >
+          <oscd-icon slot="icon">delete</oscd-icon>
+        </oscd-fab
       ></action-icon>
     `;
   }

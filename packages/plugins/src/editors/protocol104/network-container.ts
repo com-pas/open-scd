@@ -1,6 +1,9 @@
 import { get } from 'lit-translate';
 import { css, customElement, html, TemplateResult } from 'lit-element';
 
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import '@omicronenergy/oscd-ui/fab/oscd-fab.js';
+
 import './subnetwork-container.js';
 import {
   compareNames,
@@ -41,12 +44,13 @@ export class Network104Container extends Base104Container {
   }
 
   render(): TemplateResult {
-    return html`<mwc-fab
+    return html`<oscd-fab
         extended
-        icon="add"
         label="${get('subnetwork.wizard.title.add')}"
         @click=${() => this.openCreateSubNetworkWizard()}
-      ></mwc-fab>
+      >
+        <oscd-icon slot="icon">add</oscd-icon>
+      </oscd-fab>
       <section>
         ${this.getSubNetworkElements().map(
           subnetwork =>
@@ -63,7 +67,7 @@ export class Network104Container extends Base104Container {
       width: 100vw;
     }
 
-    mwc-fab {
+    oscd-fab {
       position: fixed;
       bottom: 32px;
       right: 32px;

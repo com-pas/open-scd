@@ -12,7 +12,6 @@ import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 import { Checkbox } from '@omicronenergy/oscd-ui/checkbox/OscdCheckbox.js';
 import { List } from '@omicronenergy/oscd-ui/list/OscdList.js';
 import { ListItem } from '@omicronenergy/oscd-ui/list/OscdListItem.js';
-import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/filtered-list.js';
