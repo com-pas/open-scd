@@ -20,6 +20,7 @@ import './ied-container.js';
 import { selectDoWizard } from './wizards/selectDo.js';
 import { PROTOCOL_104_PRIVATE } from './foundation/private.js';
 import { Base104Container } from './base-container.js';
+import { DialogManager } from './dialogs/dialog-manager.js';
 
 /**
  * Container that will render an 'ied-104-container' for every IED which contains DAI Elements related to the
@@ -39,9 +40,18 @@ export class Values104Container extends Base104Container {
       .sort((a, b) => compareNames(a, b));
   }
 
+  @property({ type: Object })
+  dialogManager!: DialogManager;
+
   /** Opens a [[`WizardDialog`]] for creating a new `Substation` element. */
   private openCreateAddressWizard(): void {
-    this.dispatchEvent(newWizardEvent(selectDoWizard(this.doc)));
+    console.log('openCreateAddressWizard')
+    this.dialogManager.showSelectDODialog({ doc: this.doc })
+      .then(v => {
+        console.log('After confirm')
+        console.log(v)
+      });
+    // this.dispatchEvent(newWizardEvent(selectDoWizard(this.doc)));
   }
 
   private renderAddButton(): TemplateResult {
