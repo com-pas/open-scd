@@ -31,13 +31,14 @@ export class BaseDialog<TParams, TResult> extends LitElement {
   }
 
   protected confirm(value: TResult): void {
-    this.dialog.close();
     this.dialogPromise?.resolve(value);
+    this.dialogPromise = null;
+
+    this.dialog.close();
   }
 
   protected close(): void {
     this.dialog.close();
-    this.dialogPromise?.resolve(null);
   }
 
   protected renderActions(): TemplateResult | typeof nothing {
@@ -49,7 +50,7 @@ export class BaseDialog<TParams, TResult> extends LitElement {
   }
 
   protected render(): TemplateResult {
-    return html`<oscd-dialog>
+    return html`<oscd-dialog @closed="${() => this.dialogPromise?.resolve(null)}">
       <div slot="headline">
         ${this.headline}
       </div>

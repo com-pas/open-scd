@@ -21,6 +21,7 @@ import { selectDoWizard } from './wizards/selectDo.js';
 import { PROTOCOL_104_PRIVATE } from './foundation/private.js';
 import { Base104Container } from './base-container.js';
 import { DialogManager } from './dialogs/dialog-manager.js';
+import { checkAndGetLastElementFromPath } from './wizards/selectDo.js';
 
 /**
  * Container that will render an 'ied-104-container' for every IED which contains DAI Elements related to the
@@ -45,11 +46,23 @@ export class Values104Container extends Base104Container {
 
   /** Opens a [[`WizardDialog`]] for creating a new `Substation` element. */
   private openCreateAddressWizard(): void {
-    console.log('openCreateAddressWizard')
     this.dialogManager.showSelectDODialog({ doc: this.doc })
-      .then(v => {
+      .then(path => {
+        if (!path) {
+          return null;
+        }
+
         console.log('After confirm')
-        console.log(v)
+        console.log(path)
+
+        const doElement = checkAndGetLastElementFromPath(this.doc, path, ['DO']);
+        const lnElement = checkAndGetLastElementFromPath(this.doc, path, ['LN0', 'LN']);
+
+        if (!doElement || !lnElement) {
+          return null;
+        }
+
+        return this.dialogManager.showCreateAddressesDialog({ doElement, lnElement });
       });
     // this.dispatchEvent(newWizardEvent(selectDoWizard(this.doc)));
   }

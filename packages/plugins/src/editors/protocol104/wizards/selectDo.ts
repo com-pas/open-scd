@@ -150,7 +150,7 @@ function openPrepareAddressWizard(doc: XMLDocument): WizardActor {
  * @param path        - The array of selected element to pop the last element name from.
  * @param expectedTag - The tagname expected to be found when popping the lats element.
  */
-function checkAndGetLastElementFromPath(
+export function checkAndGetLastElementFromPath(
   doc: XMLDocument,
   path: Path,
   expectedTag: string[]
