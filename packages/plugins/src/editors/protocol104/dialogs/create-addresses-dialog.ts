@@ -6,6 +6,7 @@ import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import '@omicronenergy/oscd-ui/button/oscd-text-button.js';
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/WizardDivider.js';
@@ -40,6 +41,18 @@ function disableCheckSwitch(
   let disableSwitch = true;
   Object.values(tiInfo).forEach(tiInformation => {
     if (tiInformation.checkDaPaths && tiInformation.checkCreate) {
+      disableSwitch = false;
+    }
+  });
+  return disableSwitch;
+}
+
+function disableInvertedSwitch(
+  tiInfo: Record<string, TiInformation>
+): boolean {
+  let disableSwitch = true;
+  Object.values(tiInfo).forEach(tiInformation => {
+    if (tiInformation.inverted === true) {
       disableSwitch = false;
     }
   });
@@ -94,7 +107,35 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
     `;
   }
 
-  private renderMonitorTis(monitorTis: string[], cdcProcessing: CdcProcessing): TemplateResult {
+  private setMonitorControlValue(selected: string, isMonitor: boolean): void {
+    const counterType = isMonitor ? 'controlTi' : 'monitorTi';
+    const availableTis = this.shadowRoot?.querySelector(
+      `wizard-select[label="${counterType}"]`
+    )as WizardSelect;
+
+    availableTis.maybeValue = isMonitor
+      ? selected === '30'
+        ? '58'
+        : '62'
+      : selected === '58'
+      ? '30'
+      : '35';
+  }
+
+  private setMonitorInvertedSwitch(selected: string, cdcProcessing: CdcProcessing): void {
+    const selectElement = this.shadowRoot!.querySelector(
+      'oscd-switch[id="monitorInverted"]'
+    );
+
+    if (!selectElement) return;
+
+    (<Switch>selectElement).disabled = disableMonitorInvertedSwitch(
+      cdcProcessing.monitor,
+      selected
+    );
+  }
+
+  private renderMonitorTis(monitorTis: string[], cdcProcessing: CdcProcessing, cdc: string): TemplateResult {
     if (monitorTis.length === 0) {
       return html``;
     }
@@ -113,11 +154,10 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
             fixedMenuPosition
             required
             @selected=${(e: SelectedEvent) => {
-              // TODO
-              /*
-              setMonitorInvertedSwitch(e);
-              if (cdc === 'ENC') setMonitorControlValue(e, true);
-              */
+              const selectedTi = monitorTis[e.detail.index as number];
+
+              this.setMonitorInvertedSwitch(selectedTi, cdcProcessing);
+              if (cdc === 'ENC') this.setMonitorControlValue(selectedTi, true);
             }}
           >
             ${monitorTis.map(
@@ -160,10 +200,88 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
     `;
   }
 
-  private renderControlTis(controlTis: string[]): TemplateResult {
-    // TODO
+  private renderControlTis(controlTis: string[], cdcProcessing: CdcProcessing, cdc: string): TemplateResult {
+    if (controlTis.length === 0) {
+      return html``;
+    }
 
-    return html``;
+    const ctlModel = getCtlModel(this.lnElement!, this.doElement!);
+    const hasCtlModel = Boolean(ctlModel);
+    const isNotStatusOnly = hasCtlModel && ctlModel !== 'status-only';
+    const hasMultipleControlTis = controlTis.length > 1;
+
+    return html`
+      <wizard-divider></wizard-divider>
+      ${hasCtlModel ? 
+        html`
+          <wizard-textfield
+            label="ctlModel"
+            .maybeValue=${ctlModel}
+            disabled
+            readonly
+          >
+          </wizard-textfield>
+        ` : html``
+      }
+      ${isNotStatusOnly && hasMultipleControlTis ? 
+        html`
+          <wizard-select
+            label="controlTi"
+            helper="${get('protocol104.wizard.controlTiHelper')}"
+            fixedMenuPosition
+            required
+            @selected=${(e: SelectedEvent) => {
+              const selectedTi = controlTis[e.detail.index as number];
+              if (cdc === 'ENC') this.setMonitorControlValue(selectedTi, false);
+            }}
+          >
+            ${controlTis.map(
+              controlTi =>
+                html` <mwc-list-item value="${controlTi}">
+                  <span
+                    >${controlTi +
+                    ' (' +
+                    getSignalName(controlTi) +
+                    ')'}</span
+                  >
+                </mwc-list-item>`
+            )}
+          </wizard-select>
+        `
+        : isNotStatusOnly && !hasMultipleControlTis ?
+        html`
+          <wizard-textfield
+            label="controlTi"
+            .maybeValue=${controlTis[0]
+              ? controlTis[0] + ' (' + getSignalName(controlTis[0]) + ')'
+              : ''}
+            disabled
+          >
+          </wizard-textfield>
+        `
+        : html``
+      }
+      ${isNotStatusOnly ?
+        html`
+          <label>
+            <oscd-switch
+              id="controlInverted"
+              .disabled="${disableInvertedSwitch(cdcProcessing.control)}"
+            >
+            </oscd-switch>
+            ${get('protocol104.wizard.controlInverted')}
+          </label>
+          <label>
+            <oscd-switch
+              id="controlCheck"
+              .disabled="${disableCheckSwitch(cdcProcessing.control)}"
+            >
+            </oscd-switch>
+            ${get('protocol104.wizard.controlCheck')}
+          </label>
+        ` : html``
+      }
+    `;
   }
 
   protected renderContent(): TemplateResult | typeof nothing {
@@ -219,8 +337,8 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
         readonly
       >
       </wizard-textfield>
-      ${this.renderMonitorTis(monitorTis, cdcProcessing)}
-      ${this.renderControlTis(controlTis)}
+      ${this.renderMonitorTis(monitorTis, cdcProcessing, cdc)}
+      ${this.renderControlTis(controlTis, cdcProcessing, cdc)}
     `;
   }
   
