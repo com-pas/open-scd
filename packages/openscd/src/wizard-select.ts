@@ -121,6 +121,7 @@ export class WizardSelect extends LitElement {
       <div style="display: flex; flex-direction: row;">
         <div style="flex: auto;">
           <mwc-select
+            style="width: 100%;"
             .value=${this.value}
             .disabled=${this.disabled}
             label=${this.label}
