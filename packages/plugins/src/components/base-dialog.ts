@@ -1,5 +1,5 @@
-import { LitElement, TemplateResult, html, nothing } from 'lit';
-import { customElement, query, state } from 'lit-element';
+import { CSSResultGroup, LitElement, TemplateResult, html, nothing } from 'lit';
+import { customElement, query, state, css } from 'lit-element';
 import { get } from 'lit-translate';
 
 import { OscdDialog } from '@omicronenergy/oscd-ui/dialog/OscdDialog.js';
@@ -54,7 +54,7 @@ export class BaseDialog<TParams, TResult> extends LitElement {
       <div slot="headline">
         ${this.headline}
       </div>
-      <div slot="content">
+      <div slot="content" class="content">
         ${this.renderContent()}
       </div>
       <div slot="actions">
@@ -68,4 +68,17 @@ export class BaseDialog<TParams, TResult> extends LitElement {
       </div>
     </oscd-dialog>`;
   }
+
+  static styles = css`
+    oscd-dialog {
+      max-width: 92vw;
+      max-height: 90vh;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  `;
 }
