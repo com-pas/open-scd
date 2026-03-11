@@ -29,6 +29,7 @@ import {
   TiInformation,
 } from '../foundation/cdc.js';
 import { getSignalName } from '../foundation/signalNames.js';
+import { EditV2 } from '@compas-oscd/core';
 
 export interface CreateAddressesDialogParams {
   doElement: Element;
@@ -76,6 +77,15 @@ interface CdcProcessing {
   control: Record<string, TiInformation>;
 }
 
+interface FormValue {
+  selectedMonitorTi: string;
+  monitorInverted: boolean;
+  monitorCheck: boolean;
+  selectedControlTi: string;
+  controlInverted: boolean;
+  controlCheck: boolean;
+}
+
 @customElement('plugin-104-create-addresses-dialog')
 export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParams, void> {
   @state()
@@ -96,6 +106,16 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
 
   private onConfirm(): void {
     // TODO
+    // Gather form value
+    // + all info
+    // use function to create edits
+
+    const formValue = this.getFormValue();
+    console.log(formValue);
+
+
+    const edits = this.createAddressEdits();
+    console.log(edits);
   }
 
   protected renderActions(): TemplateResult | typeof nothing {
@@ -133,6 +153,72 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
       cdcProcessing.monitor,
       selected
     );
+  }
+
+  private getFormValue(): FormValue {
+    // TODO: Only one monitorTi / controlTi
+
+    const monitorTiSelect = this.shadowRoot?.querySelector(
+      `wizard-select[label="monitorTi"]`
+    )as WizardSelect;
+    const selectedMonitorTi = monitorTiSelect?.value ?? '';
+
+    const monitorInvertedSwitch = this.shadowRoot?.querySelector('#monitorInverted') as Switch;
+    const monitorInverted = Boolean(monitorInvertedSwitch?.selected);
+
+    const monitorCheckSwitch = this.shadowRoot?.querySelector('#monitorCheck') as Switch;
+    const monitorCheck = Boolean(monitorCheckSwitch?.selected);
+
+    const controlTiSelect = this.shadowRoot?.querySelector(
+      `wizard-select[label="controlTi"]`
+    )as WizardSelect;
+    const selectedControlTi = controlTiSelect?.value ?? '';
+
+    const controlInvertedSwitch = this.shadowRoot?.querySelector('#controlInverted') as Switch;
+    const controlInverted = Boolean(controlInvertedSwitch?.selected);
+
+    const controlCheckSwitch = this.shadowRoot?.querySelector('#controlCheck') as Switch;
+    const controlCheck = Boolean(controlCheckSwitch?.selected);
+
+    return {
+      selectedMonitorTi,
+      monitorInverted,
+      monitorCheck,
+      selectedControlTi,
+      controlInverted,
+      controlCheck
+    };
+  }
+
+  private createAddressEdits(): EditV2 {
+    if (!this.doElement || !this.lnElement) {
+      return [];
+    }
+
+    const cdc = getCdcValueFromDOElement(this.doElement) ?? '';
+    const cdcProcessing = cdcProcessings[<SupportedCdcType>cdc];
+
+    const edits: EditV2[] = [];
+    const title = get('protocol104.values.addedAddress', {
+        name: getNameAttribute(this.doElement) ?? 'Unknown',
+        lnName: getFullPath(this.lnElement, 'IED'),
+      });
+
+    // Create a Deep Clone of the LN Element, to keep track on which structure is initialized.
+    const lnClonedElement = this.lnElement.cloneNode(true);
+
+    const monitorTiSelect = this.shadowRoot?.querySelector(
+      `wizard-select[label="monitorTi"]`
+    )as WizardSelect;
+    const selectedMonitorTi = monitorTiSelect.value;
+
+    const tiInformation = cdcProcessing.monitor[selectedMonitorTi];
+
+    console.log(tiInformation);
+
+    
+
+    return edits;
   }
 
   private renderMonitorTis(monitorTis: string[], cdcProcessing: CdcProcessing, cdc: string): TemplateResult {

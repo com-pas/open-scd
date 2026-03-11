@@ -80,5 +80,11 @@ export class BaseDialog<TParams, TResult> extends LitElement {
       flex-direction: column;
       gap: 16px;
     }
+
+    label:has(oscd-switch) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   `;
 }
