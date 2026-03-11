@@ -30,6 +30,7 @@ import {
 } from '../foundation/cdc.js';
 import { getSignalName } from '../foundation/signalNames.js';
 import { EditV2 } from '@compas-oscd/core';
+import { cdcProcessingsV2 } from '../foundation/cdc-editv2.js';
 
 export interface CreateAddressesDialogParams {
   doElement: Element;
@@ -62,10 +63,9 @@ function disableInvertedSwitch(
 
 function disableMonitorInvertedSwitch(
   tiInfo: Record<string, TiInformation>,
-  tiNumberInfo: string
+  tiNumber: string
 ): boolean {
   let disableSwitch = true;
-  const tiNumber = tiNumberInfo.split(' (')[0];
 
   if (!isNaN(+tiNumber)) disableSwitch = !tiInfo[tiNumber].inverted;
 
@@ -87,7 +87,7 @@ interface FormValue {
 }
 
 @customElement('plugin-104-create-addresses-dialog')
-export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParams, void> {
+export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParams, EditV2> {
   @state()
   private doElement: Element | null = null;
   @state()
@@ -95,7 +95,7 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
 
   protected headline = get('wizard.title.add', { tagName: 'Address' });
 
-  public show(params: CreateAddressesDialogParams): Promise<void | null> {
+  public show(params: CreateAddressesDialogParams): Promise<EditV2 | null> {
     const promise = super.show(params);
 
     this.doElement = params.doElement;
@@ -105,17 +105,26 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
   }
 
   private onConfirm(): void {
+    console.log('ON CONFIRM')
     // TODO
     // Gather form value
     // + all info
     // use function to create edits
 
+    // TODO
+    const title = get('protocol104.values.addedAddress', {
+      name: getNameAttribute(this.doElement!) ?? 'Unknown',
+      lnName: getFullPath(this.lnElement!, 'IED'),
+    });
+
     const formValue = this.getFormValue();
     console.log(formValue);
 
 
-    const edits = this.createAddressEdits();
+    const edits = this.createAddressEdits(formValue);
     console.log(edits);
+
+    this.confirm(edits);
   }
 
   protected renderActions(): TemplateResult | typeof nothing {
@@ -188,33 +197,30 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
     };
   }
 
-  private createAddressEdits(): EditV2 {
+  private createAddressEdits(formValue: FormValue): EditV2 {
     if (!this.doElement || !this.lnElement) {
       return [];
     }
 
     const cdc = getCdcValueFromDOElement(this.doElement) ?? '';
-    const cdcProcessing = cdcProcessings[<SupportedCdcType>cdc];
-
-    const edits: EditV2[] = [];
-    const title = get('protocol104.values.addedAddress', {
-        name: getNameAttribute(this.doElement) ?? 'Unknown',
-        lnName: getFullPath(this.lnElement, 'IED'),
-      });
+    const cdcProcessing = cdcProcessingsV2[cdc as 'ENS'];
+    const tiInformation = cdcProcessing.monitor[formValue.selectedMonitorTi];
 
     // Create a Deep Clone of the LN Element, to keep track on which structure is initialized.
-    const lnClonedElement = this.lnElement.cloneNode(true);
+    const lnClonedElement = this.lnElement.cloneNode(true) as Element;
 
-    const monitorTiSelect = this.shadowRoot?.querySelector(
-      `wizard-select[label="monitorTi"]`
-    )as WizardSelect;
-    const selectedMonitorTi = monitorTiSelect.value;
+    const inverted = Boolean(formValue.monitorInverted && tiInformation.inverted);
 
-    const tiInformation = cdcProcessing.monitor[selectedMonitorTi];
+    const inserts = tiInformation.create(
+      this.lnElement,
+      lnClonedElement,
+      this.doElement,
+      formValue.selectedMonitorTi,
+      tiInformation.daPaths,
+      inverted
+    );
 
-    console.log(tiInformation);
-
-    
+    const edits: EditV2[] = [...inserts];
 
     return edits;
   }
@@ -236,6 +242,7 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
         fixedMenuPosition
         value=${ hasMultipleMonitorTis ? '' : firstMonitorTi }
         required
+        @closed=${(e) => console.log(e)}
         @selected=${(e: SelectedEvent) => {
           const selectedTi = monitorTis[e.detail.index as number];
 

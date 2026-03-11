@@ -50,7 +50,9 @@ export class BaseDialog<TParams, TResult> extends LitElement {
   }
 
   protected render(): TemplateResult {
-    return html`<oscd-dialog @closed="${() => this.dialogPromise?.resolve(null)}">
+    return html`<oscd-dialog @closed="${(e: Event) => {
+        if (e.target === this.dialog) this.dialogPromise?.resolve(null)
+      }}">
       <div slot="headline">
         ${this.headline}
       </div>

@@ -15,6 +15,8 @@ import {
   newWizardEvent,
 } from '@compas-oscd/open-scd/dist/foundation.js';
 
+import { EditV2 } from '@compas-oscd/core';
+
 import './ied-container.js';
 
 import { selectDoWizard } from './wizards/selectDo.js';
@@ -49,6 +51,7 @@ export class Values104Container extends Base104Container {
     this.dialogManager.showSelectDODialog({ doc: this.doc })
       .then(path => {
         if (!path) {
+          console.log('no path')
           return null;
         }
 
@@ -63,6 +66,10 @@ export class Values104Container extends Base104Container {
         }
 
         return this.dialogManager.showCreateAddressesDialog({ doElement, lnElement });
+      })
+      .then((edits: EditV2 | null) => {
+        console.log('After showCreateAddressesDialog')
+        console.log(edits);
       });
     // this.dispatchEvent(newWizardEvent(selectDoWizard(this.doc)));
   }

@@ -18,6 +18,49 @@ import {
 } from './private.js';
 import { DaSelector, createDaiFilter, createTemplateStructure } from './cdc.js';
 
+// TODO: Add all cdc types
+type CdcProcessingV2 = Record<
+  'ENS',
+  {
+    monitor: Record<string, TiInformation>;
+    control: Record<string, TiInformation>;
+  }
+>
+
+export type InsertFunction = (
+  lnElement: Element,
+  lnClonedElement: Element,
+  doElement: Element,
+  ti: string,
+  daPaths: DaSelector[],
+  inverted: boolean
+) => InsertV2[];
+
+export interface TiInformation {
+  daPaths: DaSelector[];
+  create: InsertFunction;
+  checkDaPaths?: DaSelector[];
+  // checkCreate?: CreateCheckFunction;
+  inverted?: boolean;
+}
+
+export const cdcProcessingsV2: CdcProcessingV2 = {
+  ENS: {
+    monitor: {
+      '30': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '35': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+};
 
 /**
  * Search for existing DAI Elements below the DO Element matching the DA Paths passed or create the DAI Element
