@@ -46,8 +46,6 @@ export type {
 } from './foundation/edit-event.js';
 export { newEditEventV2 } from './foundation/edit-event.js';
 
-export { handleEditV2 } from './foundation/handle-edit.js';
-
 export { cyrb64 } from './foundation/cyrb64.js';
 
 export type { Plugin, PluginSet } from './foundation/plugin.js';
@@ -68,5 +66,3 @@ export function crossProduct<T>(...arrays: T[][]): T[][] {
 }
 
 export { OscdApi } from './api/api.js';
-
-export { XMLEditor } from './api/editor/xml-editor.js';

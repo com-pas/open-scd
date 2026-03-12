@@ -12,7 +12,8 @@ import { get } from 'lit-translate';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { newPendingStateEvent } from '@compas-oscd/core';
 import { newSettingsUIEvent } from '@compas-oscd/core';
-import { XMLEditor, OscdApi } from '@compas-oscd/core';
+import { OscdApi } from '@compas-oscd/core';
+import { XMLEditor } from '@openscd/oscd-editor';
 import {
   MenuItem,
   Validator,
@@ -201,6 +202,8 @@ export class OscdLayout extends LitElement {
     const middleMenu = this.generateMenu(this.middleMenu, 'middle');
     const bottomMenu = this.generateMenu(this.bottomMenu, 'bottom');
     const validators = this.generateValidatorMenus(this.validators);
+    const canUndo = this.editor.past.length > 0;
+    const canRedo = this.editor.future.length > 0;
 
     if (middleMenu.length > 0) middleMenu.push('divider');
     if (bottomMenu.length > 0) bottomMenu.push('divider');
@@ -216,7 +219,7 @@ export class OscdLayout extends LitElement {
         action: (): void => {
           this.editor.undo();
         },
-        disabled: (): boolean => !this.editor.canUndo,
+        disabled: (): boolean => !canUndo,
         kind: 'static',
         content: { tag: '' },
       },
@@ -227,7 +230,7 @@ export class OscdLayout extends LitElement {
         action: (): void => {
           this.editor.redo();
         },
-        disabled: (): boolean => !this.editor.canRedo,
+        disabled: (): boolean => !canRedo,
         kind: 'static',
         content: { tag: '' },
       },

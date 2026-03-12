@@ -3,7 +3,6 @@ import {
   OpenEvent,
   newEditEvent,
   newEditEventV2,
-  XMLEditor
 } from '@compas-oscd/core';
 import {
   property,
@@ -17,6 +16,7 @@ import { get } from 'lit-translate';
 import {
   EditorAction,
   EditorActionEvent,
+  isSimple,
 } from '@compas-oscd/core';
 
 import { newLogEvent } from '@compas-oscd/core';
@@ -35,6 +35,8 @@ import {
 import { convertEditActiontoV1 } from './editor/edit-action-to-v1-converter.js';
 import { convertEditV1toV2 } from './editor/edit-v1-to-v2-converter.js';
 
+import type { XMLEditor } from '@openscd/oscd-editor';
+
 @customElement('oscd-editor')
 export class OscdEditor extends LitElement {
   /** The `XMLDocument` to be edited */
@@ -52,11 +54,28 @@ export class OscdEditor extends LitElement {
   })
   host!: HTMLElement;
 
-  private onAction(event: EditorActionEvent<EditorAction>) {
-    const edit = convertEditActiontoV1(event.detail.action);
-    const editV2 = convertEditV1toV2(edit);
+  private unsubscribers: (() => any)[] = [];
 
-    this.host.dispatchEvent(newEditEventV2(editV2));
+  private onAction(event: EditorActionEvent<EditorAction>) {
+    const action = event.detail.action;
+
+    if (!isSimple(action)) {
+      // For complex editor actions, apply each sub-action individually with squash
+      // so they appear as a single history entry but DOM references are resolved
+      // correctly after each prior edit is already applied.
+      action.actions.forEach((simpleAction, index) => {
+        const edit = convertEditActiontoV1(simpleAction);
+        const editV2 = convertEditV1toV2(edit);
+        this.host.dispatchEvent(newEditEventV2(editV2, {
+          squash: index > 0,
+          title: index === 0 ? action.title : undefined,
+        }));
+      });
+    } else {
+      const edit = convertEditActiontoV1(action);
+      const editV2 = convertEditV1toV2(edit);
+      this.host.dispatchEvent(newEditEventV2(editV2));
+    }
   }
 
   handleEditEvent(event: EditEvent) {
@@ -104,6 +123,13 @@ export class OscdEditor extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
+    this.unsubscribers.push(
+      this.editor.subscribe(async () => {
+        await this.updateComplete;
+        this.dispatchEvent(newValidateEvent());
+      })
+    );
+
     // Deprecated editor action API, use 'oscd-edit' instead.
     this.host.addEventListener('editor-action', this.onAction.bind(this));
     // Deprecated edit event API, use 'oscd-edit-v2' instead.
@@ -114,17 +140,17 @@ export class OscdEditor extends LitElement {
     this.host.addEventListener('oscd-open', this.handleOpenDoc);
   }
 
+  disconnectedCallback(): void {
+    this.unsubscribers.forEach(u => u());
+  }
+
   render(): TemplateResult {
     return html`<slot></slot>`;
   }
 
-  async handleEditEventV2(event: EditEventV2) {
+  handleEditEventV2(event: EditEventV2) {
     const { edit, title, squash } = event.detail;
-
     this.editor.commit(edit, { title, squash });
-
-    await this.updateComplete;
-    this.dispatchEvent(newValidateEvent());
   }
 }
 

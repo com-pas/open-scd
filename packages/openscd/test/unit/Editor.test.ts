@@ -1,5 +1,5 @@
 import { html, fixture, expect } from '@open-wc/testing';
-
+import { XMLEditor } from '@openscd/oscd-editor';
 import '../../src/addons/Editor.js';
 import { OscdEditor } from '../../src/addons/Editor.js';
 import {
@@ -12,7 +12,6 @@ import {
   SetAttributesV2,
   SetTextContentV2,
   RemoveV2,
-  XMLEditor
 } from '@openscd/core';
 import { CommitDetail, LogDetail } from '@openscd/core/foundation/deprecated/history.js';
 

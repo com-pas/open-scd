@@ -36,7 +36,7 @@ import {
 import { getFilterIcon, iconColors } from '../icons/icons.js';
 
 import { Plugin } from '../plugin.js';
-import { XMLEditor } from '@compas-oscd/core';
+import { XMLEditor } from '@openscd/oscd-editor';
 
 import { getLogText } from './history/get-log-text.js';
 
@@ -145,6 +145,14 @@ export class OscdHistory extends LitElement {
   @state()
   history: HistoryItem[] = [];
 
+  get canRedo(): boolean {
+    return this.editor.future.length >= 1;
+  }
+
+  get canUndo(): boolean {
+    return this.editor.past.length >= 1;
+  }
+
   @query('#log') logUI!: Dialog;
   @query('#history') historyUI!: Dialog;
   @query('#diagnostic') diagnosticUI!: Dialog;
@@ -168,15 +176,18 @@ export class OscdHistory extends LitElement {
 
   undo(): void {
     this.editor.undo();
+    this.updateHistory();
   }
   redo(): void {
     this.editor.redo();
+    this.updateHistory();
   }
 
   private onReset() {
     this.log = [];
     this.diagnoses.clear();
-    this.editor.reset();
+    this.editor.past = [];
+    this.editor.future = [];
     this.updateHistory();
   }
 
@@ -280,8 +291,9 @@ export class OscdHistory extends LitElement {
     super.connectedCallback();
 
     this.unsubscribers.push(
-      this.editor.subscribe(e => this.updateHistory()),
-      this.editor.subscribeUndoRedo(e => this.updateHistory())
+      this.editor.subscribe(() =>
+        this.updateHistory()
+      )
     );
 
     this.host.addEventListener('log', this.onLog);
@@ -430,14 +442,14 @@ export class OscdHistory extends LitElement {
       <mwc-button
         icon="undo"
         label="${get('undo')}"
-        ?disabled=${!this.editor.canUndo}
+        ?disabled=${!this.canUndo}
         @click=${this.undo}
         slot="secondaryAction"
       ></mwc-button>
       <mwc-button
         icon="redo"
         label="${get('redo')}"
-        ?disabled=${!this.editor.canRedo}
+        ?disabled=${!this.canRedo}
         @click=${this.redo}
         slot="secondaryAction"
       ></mwc-button>
