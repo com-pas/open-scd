@@ -42,7 +42,7 @@
 <body>
   <open-scd></open-scd>
 
-  <script src="./src/polyfill/scoped-custom-elements-polyfill.js"></script>
+  <script src="open-scd/pr-preview/pr-29/src/polyfill/scoped-custom-elements-polyfill.js"></script>
 
   <script>
     const _customElementsDefine = window.customElements.define;
@@ -56,7 +56,7 @@
           src="open-scd/pr-preview/pr-29/main.js"></script>
   <script>
     if ('serviceWorker' in navigator)
-      navigator.serviceWorker.register('/sw.js');
+      navigator.serviceWorker.register('open-scd/pr-preview/pr-29/sw.js');
   </script>
   <script>
     const openScd = document.querySelector("open-scd");
