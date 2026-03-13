@@ -32,6 +32,7 @@ export default {
   alias: {
     '@openscd/open-scd': '../openscd/',
     '@openscd/plugins': '../plugins/',
+    '@openscd/oscd-api/utils.js': '../../node_modules/@openscd/oscd-api/dist/utils.js',
   },
   buildOptions: {
     baseUrl: process.env.PUBLIC_URL || '/',
