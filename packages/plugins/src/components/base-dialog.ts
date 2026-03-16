@@ -41,6 +41,9 @@ export class BaseDialog<TParams, TResult> extends LitElement {
     this.dialog.close();
   }
 
+  protected onClose(): void {
+  }
+
   protected renderActions(): TemplateResult | typeof nothing {
     return nothing;
   }
@@ -51,7 +54,10 @@ export class BaseDialog<TParams, TResult> extends LitElement {
 
   protected render(): TemplateResult {
     return html`<oscd-dialog @closed="${(e: Event) => {
-        if (e.target === this.dialog) this.dialogPromise?.resolve(null)
+        if (e.target === this.dialog) {
+          this.dialogPromise?.resolve(null);
+          this.onClose();
+        }
       }}">
       <div slot="headline">
         ${this.headline}

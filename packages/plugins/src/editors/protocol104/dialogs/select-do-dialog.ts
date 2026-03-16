@@ -40,6 +40,10 @@ export class SelectDODialog extends BaseDialog<SelectDODialogParams, Path> {
     this.confirm(path);
   }
 
+  protected onClose() {
+    this.doc = null;
+  }
+
   protected renderContent(): TemplateResult | typeof nothing {
     if (!this.doc) {
       return nothing;
