@@ -1,7 +1,8 @@
-import { TemplateResult, html, nothing, LitElement } from 'lit';
-import { customElement, query, state, css } from 'lit-element';
+import { TemplateResult, html, nothing, LitElement, css } from 'lit';
+import { customElement, query, state } from 'lit-element';
 import { get } from 'lit-translate';
 
+/* @ts-ignore */
 import { OscdDialog } from '@omicronenergy/oscd-ui/dialog/OscdDialog.js';
 import '@omicronenergy/oscd-ui/dialog/oscd-dialog.js';
 import '@omicronenergy/oscd-ui/button/oscd-text-button.js';

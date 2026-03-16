@@ -9,8 +9,11 @@ import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
 import '@material/mwc-list/mwc-check-list-item';
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 
+/* @ts-ignore */
 import { Checkbox } from '@omicronenergy/oscd-ui/checkbox/OscdCheckbox.js';
+/* @ts-ignore */
 import { List } from '@omicronenergy/oscd-ui/list/OscdList.js';
+/* @ts-ignore */
 import { ListItem } from '@omicronenergy/oscd-ui/list/OscdListItem.js';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';

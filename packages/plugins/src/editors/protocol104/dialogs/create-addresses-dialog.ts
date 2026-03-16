@@ -6,6 +6,7 @@ import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import '@omicronenergy/oscd-ui/button/oscd-text-button.js';
 import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+/* @ts-ignore */
 import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
@@ -29,7 +30,7 @@ import {
   TiInformation,
 } from '../foundation/cdc.js';
 import { getSignalName } from '../foundation/signalNames.js';
-import { EditEventV2, newEditEventV2 } from '@compas-oscd/core';
+import { EditEventV2, newEditEventV2, EditV2 } from '@compas-oscd/core';
 import { cdcProcessingsV2 } from '../foundation/cdc-editv2.js';
 
 export interface CreateAddressesDialogParams {

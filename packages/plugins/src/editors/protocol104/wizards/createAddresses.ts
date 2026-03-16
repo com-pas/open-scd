@@ -3,6 +3,7 @@ import { html, TemplateResult } from 'lit-element';
 import { Select } from '@material/mwc-select';
 import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
+/* @ts-ignore */
 import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
 // Keep for now, needed for wizard select
@@ -205,7 +206,7 @@ export function createAddressesWizard(
     const fullPath = getFullPath(lnElement, 'IED');
 
     function setMonitorInvertedSwitch(e: SelectedEvent): void {
-      const selectedTi = (<Select>e.target!.select).selected!.value;
+      const selectedTi = (<Select>(e.target! as any).select).selected!.value;
       const selectElement = (<Select>e.target).parentElement!.querySelector(
         'oscd-switch[id="monitorInverted"]'
       );
@@ -222,7 +223,7 @@ export function createAddressesWizard(
       e: SelectedEvent,
       isMonitor: boolean
     ): void {
-      const selectedTi = (<Select>e.target!.select).selected!.value;
+      const selectedTi = (<Select>(e.target! as any).select).selected!.value;
       const counterType = isMonitor ? 'controlTi' : 'monitorTi';
       const availableTis = (<Select>e.target).parentElement!.querySelector(
         `wizard-select[label="${counterType}"]`
