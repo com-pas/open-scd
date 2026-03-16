@@ -1,4 +1,4 @@
-import { CSSResultGroup, LitElement, TemplateResult, html, nothing } from 'lit';
+import { TemplateResult, html, nothing, LitElement } from 'lit';
 import { customElement, query, state, css } from 'lit-element';
 import { get } from 'lit-translate';
 

@@ -35,10 +35,7 @@ export class SelectDODialog extends BaseDialog<SelectDODialogParams, Path> {
 
   onConfirm(): void {
     const finderList: FinderList | null = this.shadowRoot?.querySelector('finder-list') ?? null;
-    console.log(finderList)
     const path = finderList?.path ?? [];
-
-    console.log(path)
 
     this.confirm(path);
   }

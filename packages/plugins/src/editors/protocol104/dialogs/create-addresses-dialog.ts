@@ -29,7 +29,7 @@ import {
   TiInformation,
 } from '../foundation/cdc.js';
 import { getSignalName } from '../foundation/signalNames.js';
-import { EditV2 } from '@compas-oscd/core';
+import { EditEventV2, newEditEventV2 } from '@compas-oscd/core';
 import { cdcProcessingsV2 } from '../foundation/cdc-editv2.js';
 
 export interface CreateAddressesDialogParams {
@@ -87,7 +87,7 @@ interface FormValue {
 }
 
 @customElement('plugin-104-create-addresses-dialog')
-export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParams, EditV2> {
+export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParams, EditEventV2> {
   @state()
   private doElement: Element | null = null;
   @state()
@@ -95,7 +95,7 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
 
   protected headline = get('wizard.title.add', { tagName: 'Address' });
 
-  public show(params: CreateAddressesDialogParams): Promise<EditV2 | null> {
+  public show(params: CreateAddressesDialogParams): Promise<EditEventV2 | null> {
     const promise = super.show(params);
 
     this.doElement = params.doElement;
@@ -105,26 +105,19 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
   }
 
   private onConfirm(): void {
-    console.log('ON CONFIRM')
-    // TODO
-    // Gather form value
-    // + all info
-    // use function to create edits
-
-    // TODO
-    const title = get('protocol104.values.addedAddress', {
-      name: getNameAttribute(this.doElement!) ?? 'Unknown',
-      lnName: getFullPath(this.lnElement!, 'IED'),
-    });
-
     const formValue = this.getFormValue();
-    console.log(formValue);
-
-
     const edits = this.createAddressEdits(formValue);
-    console.log(edits);
+    
+    if (edits.length === 0) {
+      this.close();
+    } else {
+      const title = get('protocol104.values.addedAddress', {
+        name: getNameAttribute(this.doElement!) ?? 'Unknown',
+        lnName: getFullPath(this.lnElement!, 'IED'),
+      });
 
-    this.confirm(edits);
+      this.confirm(newEditEventV2(edits, { title }));
+    }
   }
 
   protected renderActions(): TemplateResult | typeof nothing {
@@ -197,7 +190,7 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
     };
   }
 
-  private createAddressEdits(formValue: FormValue): EditV2 {
+  private createAddressEdits(formValue: FormValue): EditV2[] {
     if (!this.doElement || !this.lnElement) {
       return [];
     }
@@ -208,7 +201,6 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
 
     // Create a Deep Clone of the LN Element, to keep track on which structure is initialized.
     const lnClonedElement = this.lnElement.cloneNode(true) as Element;
-
     const inverted = Boolean(formValue.monitorInverted && tiInformation.inverted);
 
     const inserts = tiInformation.create(
@@ -220,9 +212,7 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
       inverted
     );
 
-    const edits: EditV2[] = [...inserts];
-
-    return edits;
+    return inserts;
   }
 
   private renderMonitorTis(monitorTis: string[], cdcProcessing: CdcProcessing, cdc: string): TemplateResult {
@@ -242,7 +232,6 @@ export class CreateAddressesDialog extends BaseDialog<CreateAddressesDialogParam
         fixedMenuPosition
         value=${ hasMultipleMonitorTis ? '' : firstMonitorTi }
         required
-        @closed=${(e) => console.log(e)}
         @selected=${(e: SelectedEvent) => {
           const selectedTi = monitorTis[e.detail.index as number];
 

@@ -9,6 +9,8 @@ import {
   findElementInOriginalLNStructure,
   getCdcValueFromDOElement,
   getTypeAttribute,
+  isEnumDataAttribute,
+  getEnumOrds,
 } from './foundation.js';
 import {
   addPrefixAndNamespaceToDocument,
@@ -18,9 +20,36 @@ import {
 } from './private.js';
 import { DaSelector, createDaiFilter, createTemplateStructure } from './cdc.js';
 
-// TODO: Add all cdc types
-type CdcProcessingV2 = Record<
+export const supportedCdcTypes = [
+  'ACD',
+  'ACT',
+  'APC',
+  'ASG',
+  'BAC',
+  'BCR',
+  'BSC',
+  'CMV',
+  'DEL',
+  'DPC',
+  'DPS',
+  'ENC',
+  'ENG',
   'ENS',
+  'INC',
+  'ING',
+  'INS',
+  'ISC',
+  'MV',
+  'SEC',
+  'SPC',
+  'SPG',
+  'SPS',
+  'WYE',
+] as const;
+export type SupportedCdcType = (typeof supportedCdcTypes)[number];
+
+type CdcProcessingV2 = Record<
+  SupportedCdcType,
   {
     monitor: Record<string, TiInformation>;
     control: Record<string, TiInformation>;
@@ -35,16 +64,248 @@ export type InsertFunction = (
   daPaths: DaSelector[],
   inverted: boolean
 ) => InsertV2[];
+export type InsertCheckFunction = (
+  lnElement: Element,
+  lnClonedElement: Element,
+  doElement: Element,
+  ti: string,
+  daPaths: DaSelector[]
+) => InsertV2[];
 
 export interface TiInformation {
   daPaths: DaSelector[];
   create: InsertFunction;
   checkDaPaths?: DaSelector[];
-  // checkCreate?: CreateCheckFunction;
+  checkCreate?: InsertCheckFunction;
   inverted?: boolean;
 }
 
 export const cdcProcessingsV2: CdcProcessingV2 = {
+ACD: {
+    monitor: {
+      '30': {
+        daPaths: [
+          { path: ['general'] },
+          { path: ['phsA'] },
+          { path: ['phsB'] },
+          { path: ['phsC'] },
+          { path: ['neut'] },
+        ],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '40': {
+        daPaths: [
+          { path: ['general'] },
+          { path: ['phsA'] },
+          { path: ['phsB'] },
+          { path: ['phsC'] },
+          { path: ['neut'] },
+        ],
+        create: createAddressEdits,
+      },
+    },
+    control: {},
+  },
+  ACT: {
+    monitor: {
+      '30': {
+        daPaths: [
+          { path: ['general'] },
+          { path: ['phsA'] },
+          { path: ['phsB'] },
+          { path: ['phsC'] },
+          { path: ['neut'] },
+        ],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '39': {
+        daPaths: [{ path: ['general'] }],
+        create: createAddressEdits,
+      },
+    },
+    control: {},
+  },
+  APC: {
+    monitor: {
+      '36': {
+        daPaths: [{ path: ['mxVal', 'f'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '63': {
+        daPaths: [{ path: ['Oper', 'ctlVal', 'f'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  ASG: {
+    monitor: {
+      '63': {
+        daPaths: [{ path: ['setMag', 'f'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  BAC: {
+    monitor: {
+      '36': {
+        daPaths: [{ path: ['mxVal', 'f'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '60': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  BCR: {
+    monitor: {
+      '37': {
+        daPaths: [{ path: ['actVal'] }, { path: ['frVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  BSC: {
+    monitor: {
+      '32': {
+        daPaths: [{ path: ['valWTr', 'posVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '60': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  CMV: {
+    monitor: {
+      '35': {
+        daPaths: [{ path: ['mag', 'i'] }, { path: ['ang', 'i'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '36': {
+        daPaths: [{ path: ['mag', 'f'] }, { path: ['ang', 'f'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  DEL: {
+    monitor: {
+      '35': {
+        daPaths: [
+          { path: ['phsAB', 'cVal', 'mag', 'f'] },
+          { path: ['phsBC', 'cVal', 'mag', 'f'] },
+          { path: ['phsCA', 'cVal', 'mag', 'f'] },
+        ],
+        create: createAddressEdits,
+        inverted: false,
+      },
+      '36': {
+        daPaths: [
+          { path: ['phsAB', 'cVal', 'mag', 'f'] },
+          { path: ['phsBC', 'cVal', 'mag', 'f'] },
+          { path: ['phsCA', 'cVal', 'mag', 'f'] },
+        ],
+        create: createAddressEdits,
+        inverted: false,
+      },
+    },
+    control: {},
+  },
+  DPC: {
+    monitor: {
+      '31': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '59': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  DPS: {
+    monitor: {
+      '31': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  ENC: {
+    monitor: {
+      '30': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '35': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: false,
+      },
+    },
+    control: {
+      '58': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressWithExpectValueAction,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+      '62': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressWithExpectValueAction,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  ENG: {
+    monitor: {
+      '58': {
+        daPaths: [{ path: ['setVal'] }],
+        create: createAddressWithExpectValueAction,
+        inverted: true,
+      },
+      '62': {
+        daPaths: [{ path: ['setVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
   ENS: {
     monitor: {
       '30': {
@@ -56,6 +317,155 @@ export const cdcProcessingsV2: CdcProcessingV2 = {
         daPaths: [{ path: ['stVal'] }],
         create: createAddressEdits,
         inverted: true,
+      },
+    },
+    control: {},
+  },
+  INC: {
+    monitor: {
+      '35': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '62': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  ING: {
+    monitor: {
+      '62': {
+        daPaths: [{ path: ['setVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  INS: {
+    monitor: {
+      '30': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '33': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '35': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  ISC: {
+    monitor: {
+      '32': {
+        daPaths: [{ path: ['valWTr', 'posVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '62': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  MV: {
+    monitor: {
+      '35': {
+        daPaths: [{ path: ['mag', 'i'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+      '36': {
+        daPaths: [{ path: ['mag', 'f'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  SEC: {
+    monitor: {
+      '37': {
+        daPaths: [{ path: ['cnt'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  SPC: {
+    monitor: {
+      '30': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {
+      '58': {
+        daPaths: [{ path: ['Oper', 'ctlVal'] }],
+        create: createAddressEdits,
+        checkDaPaths: [{ path: ['Oper', 'Check'] }],
+        checkCreate: createCheckAddressEdits,
+      },
+    },
+  },
+  SPG: {
+    monitor: {
+      '58': {
+        daPaths: [{ path: ['setVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  SPS: {
+    monitor: {
+      '30': {
+        daPaths: [{ path: ['stVal'] }],
+        create: createAddressEdits,
+        inverted: true,
+      },
+    },
+    control: {},
+  },
+  WYE: {
+    monitor: {
+      '35': {
+        daPaths: [
+          { path: ['phsA', 'cVal', 'mag', 'f'] },
+          { path: ['phsB', 'cVal', 'mag', 'f'] },
+          { path: ['phsC', 'cVal', 'mag', 'f'] },
+        ],
+        create: createAddressEdits,
+        inverted: false,
+      },
+      '36': {
+        daPaths: [
+          { path: ['phsA', 'cVal', 'mag', 'f'] },
+          { path: ['phsB', 'cVal', 'mag', 'f'] },
+          { path: ['phsC', 'cVal', 'mag', 'f'] },
+        ],
+        create: createAddressEdits,
+        inverted: false,
       },
     },
     control: {},
@@ -230,6 +640,7 @@ export function createAddressEdits(
 ): InsertV2[] {
   const edits: InsertV2[] = [];
 
+  // TODO: Show errors?
   const [initializeEdits, daiElements, errors] = findOrCreateDaiElements(
     lnElement,
     lnClonedElement,
@@ -256,4 +667,127 @@ export function createAddressEdits(
   // TODO: Do we want to open edit dialog?
   // startEditWizards(wizard, lnElement, lnClonedElement, doElement, edits);
   return edits;
+}
+
+/**
+ * Creates a new SCL Private element and add 104 Address element(s) below this.
+ * Set the attribute value of 'ti' to the passed ti value.
+ *
+ * @param lnElement       - The LN(0) Element.
+ * @param lnClonedElement - The Cloned LN Element, used to create new structure and determine which Create actions are needed.
+ * @param doElement       - The DO Element.
+ * @param wizard          - Wizard Element to dispatch events on.
+ * @param ti              - The value to be set on the attribute 'ti'.
+ * @param daPaths         - The Array of DAI Elements to search or create and add the Private Element on.
+ * @param inverted        - Indicates if extra Address Elements should be created with 'inverted=true'.
+ * @returns An array of Create Action that the wizard action will return.
+ */
+function createAddressWithExpectValueAction(
+  lnElement: Element,
+  lnClonedElement: Element,
+  doElement: Element,
+  ti: string,
+  daPaths: DaSelector[],
+  inverted: boolean
+): InsertV2[] {
+  const actions: InsertV2[] = [];
+
+  const [initializeActions, daiElements, errors] = findOrCreateDaiElements(
+    lnElement,
+    lnClonedElement,
+    doElement,
+    daPaths
+  );
+  if (initializeActions.length > 0) {
+    actions.push(...initializeActions);
+  }
+  if (daiElements.length > 0) {
+    addPrefixAndNamespaceToDocument(lnElement.ownerDocument);
+
+    const addressElements: Element[] = [];
+    daiElements.forEach(daiElement => {
+      if (isEnumDataAttribute(daiElement)) {
+        getEnumOrds(daiElement).forEach(ord =>
+          addressElements.push(
+            ...createAddressElements(
+              daiElement.ownerDocument,
+              ti,
+              inverted,
+              ord
+            )
+          )
+        );
+      } else {
+        addressElements.push(
+          ...createAddressElements(daiElement.ownerDocument, ti, inverted)
+        );
+      }
+
+      actions.push(...createActionsForPrivate(daiElement, addressElements));
+    });
+  }
+
+  // TODO: Do we want to open edit dialog?
+  // startEditWizards(wizard, lnElement, lnClonedElement, doElement, actions);
+  return actions;
+}
+
+/**
+ * Create a new SCL Private element and add 104 Address element(s) below this.
+ * Set the attribute value of 'ti' to the passed ti value.
+ *
+ * @param lnElement       - The LN(0) Element.
+ * @param lnClonedElement - The Cloned LN Element, used to create new structure and determine which Create actions are needed.
+ * @param doElement       - The DO Element.
+ * @param wizard          - Wizard Element to dispatch events on.
+ * @param ti              - The value to be set on the attribute 'ti'.
+ * @param daPaths         - The Array of DAI Elements to search or create and add the Private Element on.
+ * @returns An array of Create Action that the wizard action will return.
+ */
+function createCheckAddressEdits(
+  lnElement: Element,
+  lnClonedElement: Element,
+  doElement: Element,
+  ti: string,
+  daPaths: DaSelector[]
+): InsertV2[] {
+  const actions: InsertV2[] = [];
+
+  const [initializeActions, daiElements] = findOrCreateDaiElements(
+    lnElement,
+    lnClonedElement,
+    doElement,
+    daPaths
+  );
+  if (initializeActions.length > 0) {
+    actions.push(...initializeActions);
+  }
+  if (daiElements.length > 0) {
+    addPrefixAndNamespaceToDocument(lnElement.ownerDocument);
+
+    daiElements.forEach(daiElement => {
+      const address1Element = createPrivateAddress(
+        daiElement.ownerDocument,
+        ti
+      );
+      address1Element.setAttribute('check', 'interlocking');
+
+      const address2Element = createPrivateAddress(
+        daiElement.ownerDocument,
+        ti
+      );
+      address2Element.setAttribute('check', 'synchrocheck');
+
+      actions.push(
+        ...createActionsForPrivate(daiElement, [
+          address1Element,
+          address2Element,
+        ])
+      );
+    });
+  }
+
+  // TODO: Do we want to open edit dialog?
+  // startEditWizards(wizard, lnElement, lnClonedElement, doElement, actions);
+  return actions;
 }

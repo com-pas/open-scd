@@ -1,5 +1,5 @@
 import { LitElement, TemplateResult, html, customElement, query } from 'lit-element';
-import { EditV2 } from '@compas-oscd/core';
+import { EditEventV2 } from '@compas-oscd/core';
 
 import './select-do-dialog.js';
 import { SelectDODialog, SelectDODialogParams } from './select-do-dialog.js';
@@ -15,11 +15,10 @@ export class DialogManager extends LitElement {
   @query('plugin-104-create-addresses-dialog') createAddressesDialog!: CreateAddressesDialog;
 
   public showSelectDODialog(params: SelectDODialogParams): Promise<Path | null> {
-    console.log('showSelectDODialog')
     return this.selectDODialog.show(params);
   }
 
-  public showCreateAddressesDialog(params: CreateAddressesDialogParams): Promise<EditV2 | null> {
+  public showCreateAddressesDialog(params: CreateAddressesDialogParams): Promise<EditEventV2 | null> {
     return this.createAddressesDialog.show(params);
   }
   
