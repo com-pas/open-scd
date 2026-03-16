@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
         with:
           submodules: "true"
 
       - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f #v6.3.0
         with:
           node-version: "20.x"
 
@@ -37,7 +37,7 @@ jobs:
           cp -R packages/plugins/doc packages/distribution/build/plugin-doc
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f #v4.8.0
         with:
           branch: master
           folder: packages/distribution/build
