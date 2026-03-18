@@ -176,11 +176,9 @@ export class OscdHistory extends LitElement {
 
   undo(): void {
     this.editor.undo();
-    this.updateHistory();
   }
   redo(): void {
     this.editor.redo();
-    this.updateHistory();
   }
 
   private onReset() {
