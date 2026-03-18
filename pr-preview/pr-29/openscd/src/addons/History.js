@@ -110,11 +110,9 @@ export let OscdHistory = class extends LitElement {
   }
   undo() {
     this.editor.undo();
-    this.updateHistory();
   }
   redo() {
     this.editor.redo();
-    this.updateHistory();
   }
   onReset() {
     this.log = [];
