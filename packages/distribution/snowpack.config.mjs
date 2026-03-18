@@ -32,6 +32,9 @@ export default {
   alias: {
     '@openscd/open-scd': '../openscd/',
     '@openscd/plugins': '../plugins/',
+    // Snowpack's esinstall doesn't support package.json "exports" subpath maps,
+    // so we manually resolve the subpath export to its actual dist file.
+    '@openscd/oscd-api/utils.js': '../../node_modules/@openscd/oscd-api/dist/utils.js',
   },
   buildOptions: {
     baseUrl: process.env.PUBLIC_URL || '/',

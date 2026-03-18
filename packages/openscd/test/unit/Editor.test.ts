@@ -1,5 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
-
+import{ spy } from 'sinon';
+import { XMLEditor } from '@openscd/oscd-editor';
 import '../../src/addons/Editor.js';
 import { OscdEditor } from '../../src/addons/Editor.js';
 import {
@@ -12,7 +13,10 @@ import {
   SetAttributesV2,
   SetTextContentV2,
   RemoveV2,
-  XMLEditor
+  newActionEvent,
+  ComplexAction,
+  Create,
+  Delete,
 } from '@openscd/core';
 import { CommitDetail, LogDetail } from '@openscd/core/foundation/deprecated/history.js';
 
@@ -118,7 +122,7 @@ describe('OSCD-Editor', () => {
 
       host.dispatchEvent(newEditEventV2(insertMove));
 
-      expect(scd.querySelector('VoltageLevel[name="v2"] > Bay[name="b2"]')).to.be.null; 
+      expect(scd.querySelector('VoltageLevel[name="v2"] > Bay[name="b2"]')).to.be.null;
       expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b2"]')).to.deep.equal(bay2);
     });
 
@@ -302,7 +306,7 @@ describe('OSCD-Editor', () => {
         it('should apply each edit from a complex edit', () => {
           const newNode = scd.createElement('Bay');
           newNode.setAttribute('name', 'b3');
-    
+
           const insert: InsertV2 = {
             parent: voltageLevel1,
             node: newNode,
@@ -343,7 +347,7 @@ describe('OSCD-Editor', () => {
           let hasTriggeredValidate = false;
           beforeEach(() => {
             hasTriggeredValidate = false;
-  
+
             element.addEventListener('validate', () => {
               hasTriggeredValidate = true;
             });
@@ -353,7 +357,7 @@ describe('OSCD-Editor', () => {
             const remove: RemoveV2 = {
               node: bay2,
             };
-  
+
             host.dispatchEvent(newEditEventV2(remove));
 
             await element.updateComplete;
@@ -507,6 +511,97 @@ describe('OSCD-Editor', () => {
       expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b3"]')).to.deep.equal(newNode);
       expect(scd.querySelector('VoltageLevel[name="v2"] > Bay[name="b2"]')).to.be.null;
       expect(bay1.getAttribute('desc')).to.equal('new description');
+    });
+  });
+  describe('EditorAction (deprecated editor-action event)', () => {
+    it('should apply a simple create action', () => {
+      const newNode = scd.createElement('Bay');
+      newNode.setAttribute('name', 'b3');
+
+      const create: Create = {
+        new: {
+          parent: voltageLevel1,
+          element: newNode,
+          reference: null
+        }
+      };
+
+      host.dispatchEvent(newActionEvent(create));
+
+      expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b3"]')).to.deep.equal(newNode);
+    });
+
+    it('should apply a simple delete action', () => {
+      const deleteAction: Delete = {
+        old: {
+          parent: voltageLevel1,
+          element: bay1
+        }
+      };
+
+      host.dispatchEvent(newActionEvent(deleteAction));
+
+      expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b1"]')).to.be.null;
+    });
+
+    it('should apply all sub-actions of a complex action', () => {
+      const newNode = scd.createElement('Bay');
+      newNode.setAttribute('name', 'b3');
+
+      const create: Create = {
+        new: { parent: voltageLevel1, element: newNode, reference: null }
+      };
+
+      const remove: Delete = {
+        old: { parent: voltageLevel2, element: bay2 }
+      };
+
+      const complexAction: ComplexAction = {
+        actions: [create, remove],
+        title: 'complex action'
+      };
+
+      host.dispatchEvent(newActionEvent(complexAction));
+
+      expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b3"]')).to.deep.equal(newNode);
+      expect(scd.querySelector('VoltageLevel[name="v2"] > Bay[name="b2"]')).to.be.null;
+    });
+
+    it('should squash complex action sub-actions into a single undo step', () => {
+      const editSpy = spy();
+      window.addEventListener('oscd-edit-v2', editSpy);
+
+      const newNode = scd.createElement('Bay');
+      newNode.setAttribute('name', 'b3');
+
+      const create: Create = {
+        new: { parent: voltageLevel1, element: newNode, reference: null }
+      };
+
+      const remove: Delete = {
+        old: { parent: voltageLevel2, element: bay2 }
+      };
+
+      const complexAction: ComplexAction = {
+        actions: [create, remove],
+        title: 'complex action'
+      };
+
+      host.dispatchEvent(newActionEvent(complexAction));
+
+      expect(editSpy).to.have.been.calledTwice;
+      const events = editSpy.getCalls().map(call => call.args[0] as CustomEvent);
+      expect(events).to.have.length(2);
+      expect(events[0].detail.squash).to.be.false;
+      expect(events[0].detail.title).to.equal('complex action');
+      expect(events[1].detail.squash).to.be.true;
+      expect(events[1].detail.title).to.be.undefined;
+
+      editor.undo();
+
+
+      expect(scd.querySelector('VoltageLevel[name="v1"] > Bay[name="b3"]')).to.be.null;
+      expect(scd.querySelector('VoltageLevel[name="v2"] > Bay[name="b2"]')).to.deep.equal(bay2);
     });
   });
 });

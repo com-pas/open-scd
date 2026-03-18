@@ -24,6 +24,8 @@ import '@material/mwc-select';
 import '@material/mwc-switch';
 import '@material/mwc-textfield';
 
+import { XMLEditor } from '@openscd/oscd-editor';
+
 import { newOpenDocEvent } from '@compas-oscd/core';
 import { newPendingStateEvent } from '@compas-oscd/core';
 
@@ -43,7 +45,6 @@ import type {
   Plugin as CorePlugin,
   EditCompletedEvent,
 } from '@compas-oscd/core';
-import { OscdApi, XMLEditor } from '@compas-oscd/core';
 
 import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin, ContentContext } from "./plugin.js"
 import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
@@ -183,8 +184,7 @@ export class OpenSCD extends LitElement {
     this.loadPlugins();
 
     this.unsubscribers.push(
-      this.editor.subscribe(e => this.editCount++),
-      this.editor.subscribeUndoRedo(e => this.editCount++)
+      this.editor.subscribe(() => this.editCount++),
     );
 
     // TODO: let Lit handle the event listeners, move to render()

@@ -40,13 +40,11 @@ export type {
   EditDetailV2,
 } from './foundation.js';
 export { newEditEventV2 } from './foundation.js';
-export { handleEditV2 } from './foundation.js';
 export { cyrb64 } from './foundation.js';
 export type { Plugin, PluginSet } from './foundation.js';
 export { newEditCompletedEvent } from './foundation.js';
 export type { EditCompletedEvent, EditCompletedDetail } from './foundation.js';
 export { crossProduct } from './foundation.js';
-export { XMLEditor } from './foundation.js';
 
 // Deprecated open-event
 export {

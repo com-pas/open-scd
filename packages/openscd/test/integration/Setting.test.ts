@@ -5,7 +5,7 @@ import '../../src/addons/History.js';
 import '../../src/addons/Settings.js';
 import { OscdHistory } from '../../src/addons/History.js';
 import { OscdSettings } from '../../src/addons/Settings.js';
-import { XMLEditor } from '@openscd/core';
+import { XMLEditor } from '@openscd/oscd-editor';
 
 describe('Oscd-Settings', () => {
   let logger: OscdHistory;
