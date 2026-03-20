@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.45.0](https://github.com/com-pas/open-scd/compare/v0.44.3...v0.45.0) (2026-03-20)
+
+
+### Features
+
+* add alias for @openscd/oscd-api/utils.js in snowpack config ([48e6157](https://github.com/com-pas/open-scd/commit/48e6157ec09047384f969d130b55ccf8f1fd3592))
+* add comments to clarify alias resolution for @openscd/oscd-api/utils.js ([07138c2](https://github.com/com-pas/open-scd/commit/07138c28553875ae15353555f6cf257089320f52))
+* add tests for EditorAction handling ([bf89aed](https://github.com/com-pas/open-scd/commit/bf89aed810d2ebf0124ad75aa422a19d080e857a))
+* remove redundant history updates in undo and redo methods ([75586e0](https://github.com/com-pas/open-scd/commit/75586e07b6c5186af2aa72ba817c0c8593473c37))
+* replace editor with @openscd/oscd-editor ([ff330a8](https://github.com/com-pas/open-scd/commit/ff330a8d035ab9c09443473fd23e3c74ecb4a225))
+* use official xml editor ([f5b0517](https://github.com/com-pas/open-scd/commit/f5b05176aa97d0db8e688bb509c907c6573aa753))
+
+
+### Bug Fixes
+
+* update script source paths to use %PUBLIC_URL% for consistency ([45cbfc9](https://github.com/com-pas/open-scd/commit/45cbfc977c90666aa6608356c28399799644444f))
+
 ## [0.44.3](https://github.com/com-pas/open-scd/compare/v0.44.2...v0.44.3) (2026-02-02)
 
 
