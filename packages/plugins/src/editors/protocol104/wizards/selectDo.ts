@@ -1,13 +1,13 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
-import '@openscd/open-scd/src/finder-list.js';
+import '@compas-oscd/open-scd/dist/finder-list.js';
 
 import {
   getDisplayString,
   getReader,
 } from '../../../wizards/foundation/finder.js';
-import { FinderList, Path } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList, Path } from '@compas-oscd/open-scd/dist/finder-list.js';
 import {
   compareNames,
   getNameAttribute,
@@ -17,7 +17,7 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { createAddressesWizard } from './createAddresses.js';
 import { SupportedCdcType, supportedCdcTypes } from '../foundation/cdc.js';
 import { PROTOCOL_104_PRIVATE } from '../foundation/private.js';
@@ -150,7 +150,7 @@ function openPrepareAddressWizard(doc: XMLDocument): WizardActor {
  * @param path        - The array of selected element to pop the last element name from.
  * @param expectedTag - The tagname expected to be found when popping the lats element.
  */
-function checkAndGetLastElementFromPath(
+export function checkAndGetLastElementFromPath(
   doc: XMLDocument,
   path: Path,
   expectedTag: string[]

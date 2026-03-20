@@ -7,16 +7,23 @@ import {
 } from 'lit-element';
 import { get } from 'lit-translate';
 
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import '@omicronenergy/oscd-ui/fab/oscd-fab.js';
+
 import {
   compareNames,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+
+import { EditEventV2, EditV2, newEditEventV2 } from '@compas-oscd/core';
 
 import './ied-container.js';
 
 import { selectDoWizard } from './wizards/selectDo.js';
 import { PROTOCOL_104_PRIVATE } from './foundation/private.js';
 import { Base104Container } from './base-container.js';
+import { DialogManager } from './dialogs/dialog-manager.js';
+import { checkAndGetLastElementFromPath } from './wizards/selectDo.js';
 
 /**
  * Container that will render an 'ied-104-container' for every IED which contains DAI Elements related to the
@@ -36,20 +43,44 @@ export class Values104Container extends Base104Container {
       .sort((a, b) => compareNames(a, b));
   }
 
+  @property({ type: Object })
+  dialogManager!: DialogManager;
+
   /** Opens a [[`WizardDialog`]] for creating a new `Substation` element. */
   private openCreateAddressWizard(): void {
-    this.dispatchEvent(newWizardEvent(selectDoWizard(this.doc)));
+    this.dialogManager.showSelectDODialog({ doc: this.doc })
+      .then(path => {
+        if (!path) {
+          return null;
+        }
+
+        const doElement = checkAndGetLastElementFromPath(this.doc, path, ['DO']);
+        const lnElement = checkAndGetLastElementFromPath(this.doc, path, ['LN0', 'LN']);
+
+        if (!doElement || !lnElement) {
+          return null;
+        }
+
+        return this.dialogManager.showCreateAddressesDialog({ doElement, lnElement });
+      })
+      .then((editEvent: EditEventV2 | null) => {
+        if (editEvent === null) {
+          return;
+        }
+
+        this.dispatchEvent(editEvent);
+      });
   }
 
   private renderAddButton(): TemplateResult {
     return html`<h1>
-      <mwc-fab
+      <oscd-fab
         extended
-        icon="add"
         label="${get('protocol104.wizard.title.addAddress')}"
         @click=${() => this.openCreateAddressWizard()}
       >
-      </mwc-fab>
+        <oscd-icon slot="icon">add</oscd-icon>
+      </oscd-fab>
     </h1>`;
   }
 
@@ -76,7 +107,7 @@ export class Values104Container extends Base104Container {
   }
 
   static styles = css`
-    mwc-fab {
+    oscd-fab {
       position: fixed;
       bottom: 32px;
       right: 32px;

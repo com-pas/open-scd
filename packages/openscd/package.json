@@ -40,6 +40,8 @@
     "./dist/action-icon.js": "./dist/action-icon.js",
     "./dist/plain-compare-list.js": "./dist/plain-compare-list.js",
     "./filtered-list.js": "./dist/filtered-list.js",
+    "./dist/finder-list.js": "./dist/finder-list.js",
+    "./dist/foundation/dai.js": "./dist/foundation/dai.js",
     "./dist/wizard-textfield.js": "./dist/wizard-textfield.js",
     "./dist/wizard-checkbox.js": "./dist/wizard-checkbox.js",
     "./dist/wizard-select.js": "./dist/wizard-select.js",

@@ -1,19 +1,19 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
-import '@material/mwc-textarea';
+import '@omicronenergy/oscd-ui/textfield/oscd-filled-text-field.js';
 
 import {
   getNameAttribute,
   newWizardEvent,
   Wizard,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   ComplexAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import '@openscd/open-scd/src/wizard-textfield.js';
+} from '@compas-oscd/core';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 
 import {
   getCdcValueFromDOIElement,
@@ -52,15 +52,16 @@ export function renderDOIWizard(doiElement: Element): TemplateResult[] {
       readonly
     >
     </wizard-textfield>`,
-    html`<mwc-textarea
+    html`<oscd-filled-text-field
       label="DOI"
+      type="textarea"
       value="${fullpath}"
       rows="2"
       cols="40"
       readonly
       disabled
     >
-    </mwc-textarea>`,
+    </oscd-filled-text-field>`,
     html`<wizard-textfield
       label="Common Data Class"
       .maybeValue=${cdc}

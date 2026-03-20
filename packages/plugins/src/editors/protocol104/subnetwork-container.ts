@@ -6,14 +6,14 @@ import {
   TemplateResult,
 } from 'lit-element';
 
-import '@material/mwc-icon-button';
+import '@omicronenergy/oscd-ui/iconbutton/oscd-icon-button.js';
 
 import './connectedap-editor.js';
 
 import {
   compareNames,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { get } from 'lit-translate';
 import { createConnectedApWizard } from './wizards/connectedap.js';
 import { Base104Container } from './base-container.js';
@@ -84,10 +84,10 @@ export class SubNetwork104Container extends Base104Container {
   render(): TemplateResult {
     return html`<action-pane label="${this.header()}">
       <abbr slot="action" title="${get('add')}">
-        <mwc-icon-button
-          icon="playlist_add"
-          @click="${() => this.openConnectedAPwizard()}"
-        ></mwc-icon-button>
+        <oscd-icon-button
+          @click="${() => this.openConnectedAPwizard()}">
+          <oscd-icon>playlist_add</oscd-icon>
+        </oscd-icon-button>
       </abbr>
       <div id="iedContainer">${this.renderIedContainer()}</div>
     </action-pane> `;

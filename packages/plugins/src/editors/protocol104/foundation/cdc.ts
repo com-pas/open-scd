@@ -1,9 +1,8 @@
 import {
   getNameAttribute,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
-import { Create } from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { Create, newLogEvent } from '@compas-oscd/core';
 
 import {
   addPrefixAndNamespaceToDocument,
@@ -22,7 +21,7 @@ import { editAddressWizard } from '../wizards/address.js';
 import {
   determineUninitializedStructure,
   initializeElements,
-} from '@openscd/open-scd/src/foundation/dai.js';
+} from '@compas-oscd/open-scd/dist/foundation/dai.js';
 import { get } from 'lit-translate';
 
 /**
@@ -790,7 +789,7 @@ function startEditWizards(
  * @param daPath    - The (B)DA Elements to find in the template structure.
  * @returns List of Elements starting with the DO Element followed by one or more (B)DA Elements describing the structure.
  */
-function createTemplateStructure(
+export function createTemplateStructure(
   doElement: Element,
   daPath: DaSelector
 ): Element[] | null {
@@ -931,7 +930,7 @@ function findOrCreateDaiElements(
  * @param doElement - The DO Element for which to search a DOI Element.
  * @param daPath    - The DA Selector to create the query to find the SDI/DAI Elements.
  */
-function createDaiFilter(doElement: Element, daPath: DaSelector): string {
+export function createDaiFilter(doElement: Element, daPath: DaSelector): string {
   const doName = getNameAttribute(doElement);
   let filter = `:scope > DOI[name="${doName}"] > `;
   daPath.path.forEach((value, index) => {

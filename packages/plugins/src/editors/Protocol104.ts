@@ -24,6 +24,9 @@ import {
   ViewEvent,
 } from './protocol104/foundation/foundation.js';
 
+import './protocol104/dialogs/dialog-manager.js'
+import { DialogManager } from './protocol104/dialogs/dialog-manager.js';
+
 /** Defining view outside the class, which makes it persistent. */
 let selectedViewProtocol104Plugin: View = View.VALUES;
 
@@ -42,6 +45,9 @@ export default class Communication104Plugin extends LitElement {
   @query('div#containers')
   listDiv!: Element;
 
+  @query('plugin-104-dialog-manager')
+  dialogManager!: DialogManager;
+
   constructor() {
     super();
 
@@ -59,6 +65,7 @@ export default class Communication104Plugin extends LitElement {
 
   render(): TemplateResult {
     return html` <section>
+      <plugin-104-dialog-manager></plugin-104-dialog-manager>
       <div>
         <mwc-formfield label="${get('protocol104.view.valuesView')}">
           <mwc-radio
@@ -83,6 +90,7 @@ export default class Communication104Plugin extends LitElement {
             ? html`<values-104-container
                 .editCount=${this.editCount}
                 .doc=${this.doc}
+                .dialogManager=${this.dialogManager}
               ></values-104-container>`
             : html`<network-104-container
                 .editCount=${this.editCount}

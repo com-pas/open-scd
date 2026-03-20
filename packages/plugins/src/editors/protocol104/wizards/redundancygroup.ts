@@ -1,7 +1,7 @@
 import { html } from 'lit-element';
 import { get } from 'lit-translate';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { pTypesRedundancyGroup104 } from '../foundation/p-types.js';
 import {
   getValue,
@@ -11,20 +11,19 @@ import {
   WizardActor,
   WizardInputElement,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   ComplexAction,
   EditorAction,
   newActionEvent,
   SimpleAction
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
+} from '@compas-oscd/core';
 import { createLogicLinkWizard, editLogicLinkWizard } from './logiclink.js';
 import {
   createNetworkTextField,
@@ -84,30 +83,33 @@ export function editRedundancyGroupWizard(
               'protocol104.network.redundancyGroup.wizard.logicLinkGroupTitle'
             )}
           </h3>
-          <mwc-list
-            @selected=${(e: SingleSelectedEvent) => {
-              e.target!.dispatchEvent(
-                newSubWizardEvent(() =>
-                  editLogicLinkWizard(
-                    parent,
-                    rGNumber,
-                    usedLLNumbers[e.detail.index]
-                  )
-                )
-              );
-            }}
-          >
+          <oscd-list>
             ${usedLLNumbers.length != 0
               ? usedLLNumbers.map(
                   number =>
-                    html`<mwc-list-item>Logic Link ${number}</mwc-list-item>`
+                    html`<oscd-list-item
+                            type="button"
+                            @click=${(e: PointerEvent) => {
+                              e.target!.dispatchEvent(
+                                newSubWizardEvent(() =>
+                                  editLogicLinkWizard(
+                                    parent,
+                                    rGNumber,
+                                    number
+                                  )
+                                )
+                              );
+                            }}
+                        >
+                          Logic Link ${number}
+                        </oscd-list-item>`
                 )
               : html`<p>
                   ${get(
                     'protocol104.network.redundancyGroup.wizard.noLogicLinksAvailable'
                   )}
                 </p>`}
-          </mwc-list>`,
+          </oscd-list>`,
       ],
     },
   ];

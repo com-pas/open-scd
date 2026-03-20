@@ -3,15 +3,16 @@ import { html, TemplateResult } from 'lit-element';
 import { Select } from '@material/mwc-select';
 import { SelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import { Switch } from '@material/mwc-switch';
+/* @ts-ignore */
+import { Switch } from '@omicronenergy/oscd-ui/switch/OscdSwitch.js';
 
-import '@material/mwc-formfield';
+// Keep for now, needed for wizard select
 import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-switch';
+import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/WizardDivider.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/WizardDivider.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 
 import {
   getNameAttribute,
@@ -20,11 +21,11 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   ComplexAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import {
   getCdcValueFromDOElement,
   getCtlModel,
@@ -40,9 +41,9 @@ import { getSignalName } from '../foundation/signalNames.js';
 
 function getSwitchValue(wizard: Element, name: string): boolean {
   const switchElement = wizard.shadowRoot?.querySelector(
-    `mwc-switch[id="${name}"`
+    `oscd-switch[id="${name}"`
   ) as Switch;
-  return switchElement?.checked ?? false;
+  return switchElement?.selected ?? false;
 }
 
 export function createAddressesAction(
@@ -205,9 +206,9 @@ export function createAddressesWizard(
     const fullPath = getFullPath(lnElement, 'IED');
 
     function setMonitorInvertedSwitch(e: SelectedEvent): void {
-      const selectedTi = (<Select>e.target).selected!.value;
+      const selectedTi = (<Select>(e.target! as any).select).selected!.value;
       const selectElement = (<Select>e.target).parentElement!.querySelector(
-        'mwc-switch[id="monitorInverted"]'
+        'oscd-switch[id="monitorInverted"]'
       );
 
       if (!selectElement) return;
@@ -222,7 +223,7 @@ export function createAddressesWizard(
       e: SelectedEvent,
       isMonitor: boolean
     ): void {
-      const selectedTi = (<Select>e.target).selected!.value;
+      const selectedTi = (<Select>(e.target! as any).select).selected!.value;
       const counterType = isMonitor ? 'controlTi' : 'monitorTi';
       const availableTis = (<Select>e.target).parentElement!.querySelector(
         `wizard-select[label="${counterType}"]`
@@ -246,15 +247,16 @@ export function createAddressesWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="LN(0)"
+        type="textarea"
         value="${fullPath}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="DO"
         .maybeValue="${doName}"
@@ -317,24 +319,24 @@ export function createAddressesWizard(
         );
       }
       fields.push(
-        html`<mwc-formfield
-          label="${get('protocol104.wizard.monitorInverted')}"
-        >
-          <mwc-switch
+        html`<label>
+          <oscd-switch
             id="monitorInverted"
             .disabled="${disabledSwitchByDefault}"
           >
-          </mwc-switch>
-        </mwc-formfield>`
+          </oscd-switch>
+          ${get('protocol104.wizard.monitorInverted')}
+        </label>`
       );
       fields.push(
-        html`<mwc-formfield label="${get('protocol104.wizard.monitorCheck')}">
-          <mwc-switch
+        html`<label>
+          <oscd-switch
             id="monitorCheck"
             .disabled="${disableCheckSwitch(cdcProcessing.monitor)}"
           >
-          </mwc-switch>
-        </mwc-formfield>`
+          </oscd-switch>
+          ${get('protocol104.wizard.monitorCheck')}
+        </label>`
       );
     }
 
@@ -390,26 +392,24 @@ export function createAddressesWizard(
           );
         }
         fields.push(
-          html` <mwc-formfield
-            label="${get('protocol104.wizard.controlInverted')}"
-          >
-            <mwc-switch
+          html` <label>
+            <oscd-switch
               id="controlInverted"
               .disabled="${disableInvertedSwitch(cdcProcessing.control)}"
             >
-            </mwc-switch>
-          </mwc-formfield>`
+            </oscd-switch>
+            ${get('protocol104.wizard.controlInverted')}
+          </label>`
         );
         fields.push(
-          html` <mwc-formfield
-            label="${get('protocol104.wizard.controlCheck')}"
-          >
-            <mwc-switch
+          html` <label>
+            <oscd-switch
               id="controlCheck"
               .disabled="${disableCheckSwitch(cdcProcessing.control)}"
             >
-            </mwc-switch>
-          </mwc-formfield>`
+            </oscd-switch>
+            ${get('protocol104.wizard.controlCheck')}
+          </label>`
         );
       }
     }

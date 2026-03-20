@@ -2,20 +2,22 @@ import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import '@material/mwc-checkbox';
-import '@material/mwc-switch';
-import '@material/mwc-formfield';
-import '@material/mwc-list/mwc-list-item';
+import '@omicronenergy/oscd-ui/checkbox/oscd-checkbox.js';
+import '@omicronenergy/oscd-ui/switch/oscd-switch.js';
+import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
+// Migrate together with filtered-list
 import '@material/mwc-list/mwc-check-list-item';
-import '@material/mwc-icon';
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
 
-import { Checkbox } from '@material/mwc-checkbox';
-import { List } from '@material/mwc-list';
-import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
-import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
+/* @ts-ignore */
+import { Checkbox } from '@omicronenergy/oscd-ui/checkbox/OscdCheckbox.js';
+/* @ts-ignore */
+import { List } from '@omicronenergy/oscd-ui/list/OscdList.js';
+/* @ts-ignore */
+import { ListItem } from '@omicronenergy/oscd-ui/list/OscdListItem.js';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/filtered-list.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/filtered-list.js';
 
 import {
   pTypes104,
@@ -34,14 +36,14 @@ import {
   WizardActor,
   WizardInputElement,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { cloneElement, createElement } from '@openscd/xml';
+import { cloneElement, createElement } from '@compas-oscd/xml';
 
 import {
   ComplexAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { getTypeAttribute } from '../foundation/foundation.js';
 import {
   createRedundancyGroupWizard,
@@ -70,7 +72,7 @@ function createConnectedApAction(parent: Element): WizardActor {
   ): EditorAction[] => {
     if (!list) return [];
 
-    const identities = (<ListItemBase[]>list.selected).map(item => item.value);
+    const identities = (<ListItem[]>list.selected).map(item => item.value);
 
     const actions = identities.map(identity => {
       const [iedName, apName] = identity.split('>');
@@ -205,14 +207,10 @@ export function editConnectedApWizard(
         action: editConnectedApAction(parent, redundancy),
       },
       content: [
-        html`<mwc-formfield
-            label="${get(
-              'protocol104.network.connectedAp.wizard.redundancySwitchLabel'
-            )}"
-          >
-            <mwc-switch
+        html`<label>
+            <oscd-switch
               id="redundancy"
-              ?checked=${redundancy}
+              ?selected=${redundancy}
               @change=${(event: Event) => {
                 event.target!.dispatchEvent(newWizardEvent());
                 event.target!.dispatchEvent(
@@ -221,8 +219,9 @@ export function editConnectedApWizard(
                   )
                 );
               }}
-            ></mwc-switch>
-          </mwc-formfield>
+            ></oscd-switch>
+            ${get('protocol104.network.connectedAp.wizard.redundancySwitchLabel')}
+          </label>
           <wizard-divider></wizard-divider>
           ${createTypeRestrictionCheckbox(parent)}
           <wizard-select
@@ -245,23 +244,22 @@ export function editConnectedApWizard(
                     'protocol104.network.connectedAp.wizard.redundancyGroupTitle'
                   )}
                 </h3>
-                <mwc-list
-                  @selected=${(e: SingleSelectedEvent) => {
-                    e.target!.dispatchEvent(
-                      newSubWizardEvent(() =>
-                        editRedundancyGroupWizard(
-                          parent,
-                          redundancyGroupNumbers[e.detail.index]
-                        )
-                      )
-                    );
-                  }}
-                >
+                <oscd-list>
                   ${redundancyGroupNumbers.length != 0
                     ? redundancyGroupNumbers.map(
                         number =>
-                          html`<mwc-list-item
-                            >Redundancy Group ${number}</mwc-list-item
+                          html`<oscd-list-item type="button"
+                              @click=${(e: PointerEvent) => {
+                                e.target!.dispatchEvent(
+                                  newSubWizardEvent(() =>
+                                    editRedundancyGroupWizard(
+                                      parent,
+                                      number
+                                    )
+                                  )
+                                );
+                              }}
+                            >Redundancy Group ${number}</oscd-list-item
                           >`
                       )
                     : html`<p>
@@ -269,7 +267,7 @@ export function editConnectedApWizard(
                           'protocol104.network.connectedAp.wizard.noRedundancyGroupsAvailable'
                         )}
                       </p>`}
-                </mwc-list>`
+                </oscd-list>`
             : html`${pTypes104.map(
                 pType => html`${createEditTextField(parent, pType)}`
               )}`} `,
@@ -390,13 +388,13 @@ function createEditTextField(parent: Element, pType: string): TemplateResult {
 }
 
 function createTypeRestrictionCheckbox(element: Element): TemplateResult {
-  return html`<mwc-formfield
-    label="${get('connectedap.wizard.addschemainsttype')}"
-    ><mwc-checkbox
+  return html`<label>
+    <oscd-checkbox
       id="typeRestriction"
       ?checked=${hasTypeRestriction(element)}
-    ></mwc-checkbox>
-  </mwc-formfield>`;
+    ></oscd-checkbox>
+    ${get('connectedap.wizard.addschemainsttype')}
+  </label>`;
 }
 
 function hasTypeRestriction(element: Element): boolean {

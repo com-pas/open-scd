@@ -2,9 +2,9 @@ import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 import { live } from 'lit-html/directives/live';
 
+// Keep it for now, wizard selects needs mwc-list-item
 import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-select';
-import '@material/mwc-textarea';
+import '@omicronenergy/oscd-ui/textfield/oscd-filled-text-field.js';
 
 import {
   getNameAttribute,
@@ -13,14 +13,14 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { cloneElement } from '@openscd/xml';
+import { cloneElement } from '@compas-oscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/wizard-select.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
 
 import {
   getCdcValueFromDOIElement,
@@ -139,15 +139,16 @@ export function editAddressWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="DOI"
+        type="textarea"
         value="${getFullPath(doiElement, 'IED')}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="cdc"
         .maybeValue="${cdc}"
@@ -159,15 +160,16 @@ export function editAddressWizard(
         readonly
       >
       </wizard-textfield>`,
-      html`<mwc-textarea
+      html`<oscd-filled-text-field
         label="DAI"
+        type="textarea"
         value="${getFullPath(daiElement!, 'DOI')}"
         rows="2"
         cols="40"
         readonly
         disabled
       >
-      </mwc-textarea>`,
+      </oscd-filled-text-field>`,
       html`<wizard-textfield
         label="casdu"
         @change="${(evt: Event) => {

@@ -5,21 +5,20 @@ import {
   property,
   query,
   TemplateResult,
+  state
 } from 'lit-element';
 import { get } from 'lit-translate';
 import { nothing } from 'lit-html';
 
-import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
+import '@omicronenergy/oscd-ui/icon/oscd-icon.js';
+import '@omicronenergy/oscd-ui/iconbutton/oscd-icon-button.js';
 
-import '@material/mwc-icon';
-import '@material/mwc-icon-button';
-import '@material/mwc-icon-button-toggle';
-import '@material/mwc-list';
-import '@material/mwc-list/mwc-list-item';
+import '@omicronenergy/oscd-ui/list/oscd-list-item.js';
+import '@omicronenergy/oscd-ui/list/oscd-list.js';
 
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import '@openscd/open-scd/src/action-pane.js';
+import '@omicronenergy/oscd-ui/action-pane/oscd-action-pane.js';
 
 import {
   get104DetailsLine,
@@ -40,8 +39,8 @@ export class Doi104Container extends Base104Container {
   @property()
   element!: Element;
 
-  @query('#toggleButton')
-  toggleButton!: IconButtonToggle | undefined;
+  @state()
+  isExpanded = true;
 
   @property()
   get daiElements(): Element[] {
@@ -95,29 +94,29 @@ export class Doi104Container extends Base104Container {
   }
 
   @property()
-  get header(): TemplateResult {
+  get header(): string {
     const fullPath = getFullPath(this.element, 'IED');
     const cdc = getCdcValueFromDOIElement(this.element);
 
-    return html`${fullPath}${cdc ? html` (${cdc})` : nothing}`;
+    return `${fullPath}${cdc ? ` (${cdc})` : ''}`;
   }
 
   private renderAddressList(daiElement: Element): TemplateResult {
     const addresses = this.getAddressElements(daiElement);
     return html`${addresses.map(addressElement => {
       return html`
-        <mwc-list-item graphic="icon" hasMeta>
+        <oscd-list-item graphic="icon" hasMeta>
           <span slot="graphic">&nbsp;</span>
           <span>${get104DetailsLine(daiElement, addressElement)}</span>
-          <span slot="meta">
-            <mwc-icon-button
-              icon="edit"
+          <span slot="end">
+            <oscd-icon-button
               @click=${() =>
                 this.openEditAddressWizard(daiElement, addressElement)}
             >
-            </mwc-icon-button>
+              <oscd-icon>edit</oscd-icon>
+            </oscd-icon-button>
           </span>
-        </mwc-list-item>
+        </oscd-list-item>
       `;
     })}`;
   }
@@ -126,9 +125,9 @@ export class Doi104Container extends Base104Container {
     const daiElements = this.daiElements;
     return html`${daiElements.map(daiElement => {
       return html`
-        <mwc-list-item noninteractive>
+        <oscd-list-item noninteractive>
           <span>${getFullPath(daiElement, 'DOI')}</span>
-        </mwc-list-item>
+        </oscd-list-item>
         ${this.renderAddressList(daiElement)}
       `;
     })}`;
@@ -136,27 +135,22 @@ export class Doi104Container extends Base104Container {
 
   render(): TemplateResult {
     return html`
-      <action-pane .label="${this.header}">
+      <oscd-action-pane .label="${this.header}">
         <abbr slot="action" title="${get('edit')}">
-          <mwc-icon-button
-            icon="info"
-            @click=${() => this.openEditTiWizard()}
-          ></mwc-icon-button>
+          <oscd-icon-button @click=${() => this.openEditTiWizard()}>
+            <oscd-icon>info</oscd-icon>
+          </oscd-icon-button>
         </abbr>
         <abbr slot="action" title="${get('protocol104.toggleChildElements')}">
-          <mwc-icon-button-toggle
-            id="toggleButton"
-            on
-            onIcon="keyboard_arrow_up"
-            offIcon="keyboard_arrow_down"
-            @click=${() => this.requestUpdate()}
-          >
-          </mwc-icon-button-toggle>
+          <oscd-icon-button toggle selected @click=${() => this.isExpanded = !this.isExpanded}>
+            <oscd-icon>keyboard_arrow_up</oscd-icon>
+            <oscd-icon slot="selected">keyboard_arrow_down</oscd-icon>
+          </oscd-icon-button>
         </abbr>
-        ${this.toggleButton?.on
-          ? html` <mwc-list id="dailist"> ${this.renderDaiList()} </mwc-list>`
+        ${this.isExpanded
+          ? html` <oscd-list id="dailist"> ${this.renderDaiList()} </oscd-list>`
           : nothing}
-      </action-pane>
+      </oscd-action-pane>
     `;
   }
 
@@ -166,7 +160,7 @@ export class Doi104Container extends Base104Container {
       border-bottom: none;
     }
 
-    mwc-list-item {
+    oscd-list-item {
       --mdc-list-item-meta-size: 48px;
     }
   `;
