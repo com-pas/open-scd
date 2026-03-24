@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.45.1](https://github.com/com-pas/open-scd/compare/v0.45.0...v0.45.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* update GitHub Actions to use latest action versions ([d6634c6](https://github.com/com-pas/open-scd/commit/d6634c629a19b59764c4279be1bf4488bf336011))
+
 ## [0.45.0](https://github.com/com-pas/open-scd/compare/v0.44.3...v0.45.0) (2026-03-20)
 
 
