@@ -24,7 +24,7 @@ import {
   WizardMenuActor,
 } from '@openscd/open-scd/src/foundation.js';
 
-import { cloneElement, createElement } from '@openscd/xml';
+import { cloneElement, createElement } from '@compas-oscd/xml';
 
 import {
   EditorAction,

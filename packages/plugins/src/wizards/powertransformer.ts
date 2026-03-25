@@ -11,7 +11,7 @@ import {
 
 import {
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
 

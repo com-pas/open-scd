@@ -29,7 +29,7 @@ import {
   cloneElement,
   createElement,
   getUniqueElementName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   EditorAction,

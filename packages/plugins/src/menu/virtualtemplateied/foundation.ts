@@ -5,7 +5,7 @@ import {
 import {
   createElement,
   getChildElementsByTagName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 const functionTypeElementTags = [
   'Function',

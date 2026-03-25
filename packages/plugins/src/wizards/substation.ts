@@ -4,7 +4,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-checkbox';
 import '@material/mwc-formfield';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import '@openscd/open-scd/src/wizard-textfield.js';
 import {

@@ -21,7 +21,7 @@ import { Select } from '@material/mwc-select';
 
 import '@openscd/open-scd/src/filtered-list.js';
 import { find, identity } from '@openscd/open-scd/src/foundation.js';
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
 import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';

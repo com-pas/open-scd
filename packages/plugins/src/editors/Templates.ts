@@ -9,7 +9,7 @@ import '@material/mwc-list/mwc-list-item';
 import '@openscd/open-scd/src/filtered-list.js';
 import { identity, newWizardEvent } from '@openscd/open-scd/src/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
 import { styles } from './templates/foundation.js';

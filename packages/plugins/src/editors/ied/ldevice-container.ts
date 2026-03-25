@@ -14,7 +14,7 @@ import { get, translate } from 'lit-translate';
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
 import { newEditEventV2 } from '@openscd/core';
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 import { logicalDeviceIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
 import {
   getDescriptionAttribute,

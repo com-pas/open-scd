@@ -12,7 +12,7 @@ import {
   cloneElement,
   createElement,
   getChildElementsByTagName
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
 

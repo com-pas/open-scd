@@ -6,7 +6,7 @@ import '@material/mwc-list/mwc-list-item';
 import '@openscd/open-scd/src/wizard-checkbox.js';
 import '@openscd/open-scd/src/wizard-select.js';
 
-import { cloneElement } from '@openscd/xml';
+import { cloneElement } from '@compas-oscd/xml';
 
 import {
   getValue,

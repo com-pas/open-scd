@@ -1,7 +1,7 @@
 import { LitElement, property } from 'lit-element';
 import { get } from 'lit-translate';
 
-import { formatXml } from '@openscd/xml';
+import { formatXml } from '@compas-oscd/xml';
 import { newLogEvent } from '@openscd/core/foundation/deprecated/history';
 
 function cloneAttributes(destElement: Element, sourceElement: Element) {

@@ -17,7 +17,7 @@ import {
 
 import {
   cloneElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   ComplexAction,

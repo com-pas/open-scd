@@ -12,7 +12,7 @@ import {
   WizardInputElement,
 } from '@openscd/open-scd/src/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import { contentGseOrSmvWizard, updateAddress } from './address.js';
 import {

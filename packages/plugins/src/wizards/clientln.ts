@@ -19,7 +19,7 @@ import {
 
 import {
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import { clientIcon } from '@openscd/open-scd/src/icons/icons.js';
 import { openCommunicationMappingWizard } from './commmap-wizards.js';

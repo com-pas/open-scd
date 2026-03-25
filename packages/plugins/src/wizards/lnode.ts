@@ -28,7 +28,7 @@ import {
   cloneElement,
   createElement,
   getChildElementsByTagName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import { patterns } from './foundation/limits.js';
 import {

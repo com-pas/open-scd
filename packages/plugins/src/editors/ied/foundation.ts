@@ -5,7 +5,7 @@ import {
   getNameAttribute,
 } from '@openscd/open-scd/src/foundation.js';
 import { Nsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 import { InsertV2 } from '@openscd/core';
 import { insertSelectedLNodeType } from '@openenergytools/scl-lib/dist/tDataTypeTemplates/insertSelectedLNodeType.js';
 

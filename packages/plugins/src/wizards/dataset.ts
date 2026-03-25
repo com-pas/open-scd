@@ -19,7 +19,7 @@ import {
   newSubWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
 
-import { cloneElement } from '@openscd/xml';
+import { cloneElement } from '@compas-oscd/xml';
 
 import { Replace } from '@openscd/core/foundation/deprecated/editor.js';
 import { createFCDAsWizard } from './fcda.js';

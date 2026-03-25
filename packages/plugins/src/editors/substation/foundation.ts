@@ -5,7 +5,7 @@ import './function-editor.js';
 
 import { identity, isPublic } from '@openscd/open-scd/src/foundation.js';
 
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
 import {
