@@ -16,8 +16,8 @@ import { Dialog } from '@material/mwc-dialog';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import '@openscd/open-scd/src/filtered-list.js';
-import { find, identity, isPublic } from '@openscd/open-scd/src/foundation.js';
+import '@compas-oscd/open-scd/filtered-list.js';
+import { find, identity, isPublic } from '@compas-oscd/open-scd/dist/foundation.js';
 
 import { createElement } from '@compas-oscd/xml';
 

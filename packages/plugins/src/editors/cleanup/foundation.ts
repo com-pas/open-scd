@@ -1,6 +1,6 @@
 'use strict';
 
-import { identity } from '@openscd/open-scd/src/foundation.js';
+import { identity } from '@compas-oscd/open-scd/dist/foundation.js';
 import { Delete } from '@compas-oscd/core';
 
 /**

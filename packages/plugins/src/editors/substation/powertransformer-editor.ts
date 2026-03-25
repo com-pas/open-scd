@@ -17,18 +17,18 @@ import { IconButton } from '@material/mwc-icon-button';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Menu } from '@material/mwc-menu';
 
-import '@openscd/open-scd/src/action-icon.js';
-import '@openscd/open-scd/src/action-pane.js';
+import '@compas-oscd/open-scd/dist/action-icon.js';
+import '@compas-oscd/open-scd/dist/action-pane.js';
 import './sub-equipment-editor.js';
 import './eq-function-editor.js';
 import './transformer-winding-editor.js';
-import { powerTransformerTwoWindingIcon } from '@openscd/open-scd/src/icons/icons.js';
+import { powerTransformerTwoWindingIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   getChildElementsByTagName,

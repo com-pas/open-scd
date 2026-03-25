@@ -18,7 +18,7 @@ import { IconButton } from '@material/mwc-icon-button';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Menu } from '@material/mwc-menu';
 
-import '@openscd/open-scd/src/action-pane.js';
+import '@compas-oscd/open-scd/dist/action-pane.js';
 import './eq-function-editor.js';
 import './l-node-editor.js';
 import './sub-equipment-editor.js';
@@ -28,7 +28,7 @@ import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   getChildElementsByTagName,

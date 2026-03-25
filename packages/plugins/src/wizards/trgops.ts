@@ -3,8 +3,8 @@ import { get } from 'lit-translate';
 
 import '@material/mwc-list/mwc-list-item';
 
-import '@openscd/open-scd/src/wizard-checkbox.js';
-import '@openscd/open-scd/src/wizard-select.js';
+import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
 
 import { cloneElement } from '@compas-oscd/xml';
 
@@ -14,7 +14,7 @@ import {
   WizardAction,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 interface ContentOptions {
   dchg: string | null;

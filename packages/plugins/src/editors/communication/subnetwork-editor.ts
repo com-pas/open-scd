@@ -20,7 +20,7 @@ import './smv-editor.js';
 import {
   newWizardEvent,
   compareNames,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { newActionEvent } from '@compas-oscd/core';
 import { createConnectedApWizard } from '../../wizards/connectedap.js';
 import { wizards } from '../../wizards/wizard-library.js';

@@ -7,13 +7,13 @@ import {
   WizardAction,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   createElement,
 } from '@compas-oscd/xml';
 
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import {
   dataAttributePicker,
   getDataModelChildren,

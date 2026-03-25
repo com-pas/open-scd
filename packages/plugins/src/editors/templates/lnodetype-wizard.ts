@@ -10,9 +10,9 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@openscd/open-scd/src/wizard-checkbox.js';
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/wizard-select.js';
+import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
 import {
   find,
   getValue,
@@ -25,7 +25,7 @@ import {
   WizardActor,
   WizardInputElement,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
@@ -39,7 +39,7 @@ import {
   newActionEvent,
   Replace,
 } from '@compas-oscd/core';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import {
   addReferencedDataTypes,
   allDataTypeSelector,

@@ -2,14 +2,14 @@ import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
 import '@material/mwc-list/mwc-list-item';
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/wizard-select.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
 import {
   getValue,
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import { cloneElement } from '@compas-oscd/xml';
 

@@ -17,17 +17,17 @@ import { Menu } from '@material/mwc-menu';
 import { IconButton } from '@material/mwc-icon-button';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 
-import '@openscd/open-scd/src/action-pane.js';
+import '@compas-oscd/open-scd/dist/action-pane.js';
 import './ied-editor.js';
 import './powertransformer-editor.js';
 import './voltage-level-editor.js';
 import './general-equipment-editor.js';
-import { substationIcon } from '@openscd/open-scd/src/icons/icons.js';
+import { substationIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
 import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   getChildElementsByTagName,

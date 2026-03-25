@@ -12,10 +12,10 @@ import '@material/mwc-icon';
 import '@material/mwc-list';
 import '@material/mwc-list/mwc-list-item';
 
-import '@openscd/open-scd/src/filtered-list.js';
+import '@compas-oscd/open-scd/filtered-list.js';
 import {
   identity,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   createElement,
@@ -33,7 +33,7 @@ import {
   GooseSubscriptionEvent,
   newGooseSubscriptionEvent,
 } from './foundation.js';
-import { emptyInputsDeleteActions } from '@openscd/open-scd/src/foundation/ied.js';
+import { emptyInputsDeleteActions } from '@compas-oscd/open-scd/dist/foundation/ied.js';
 import {
   canCreateValidExtRef,
   createExtRefElement,

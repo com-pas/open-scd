@@ -1,5 +1,5 @@
 import { get } from 'lit-translate';
-import { identity } from '@openscd/open-scd/src/foundation.js';
+import { identity } from '@compas-oscd/open-scd/dist/foundation.js';
 import { LogDetailBase } from '@compas-oscd/core';
 import { getTypeChild, isTypeMissing } from './foundation.js';
 
