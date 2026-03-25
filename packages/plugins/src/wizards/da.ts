@@ -21,7 +21,7 @@ import {
   createElement,
 } from '@compas-oscd/xml';
 
-import { EditorAction, newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction, newActionEvent } from '@compas-oscd/core';
 import { getValAction, wizardContent } from './abstractda.js';
 import { functionalConstraintEnum } from './foundation/enums.js';
 

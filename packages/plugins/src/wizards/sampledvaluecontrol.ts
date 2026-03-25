@@ -36,7 +36,7 @@ import {
   Delete,
   ComplexAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { securityEnabledEnum, smpModEnum } from './foundation/enums.js';
 import { maxLength, patterns } from './foundation/limits.js';
 import { editSMvWizard } from './smv.js';

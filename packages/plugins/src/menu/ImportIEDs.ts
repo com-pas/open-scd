@@ -24,8 +24,8 @@ import { createElement } from '@compas-oscd/xml';
 import {
   SimpleAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history';
+} from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core';
 
 function uniqueTemplateIedName(doc: XMLDocument, ied: Element): string {
   const [manufacturer, type] = ['manufacturer', 'type'].map(attr =>

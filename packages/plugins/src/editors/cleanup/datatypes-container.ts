@@ -31,8 +31,8 @@ import {
   isPublic,
   newSubWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+import { newActionEvent } from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core';
 
 import { styles } from '../templates/foundation.js';
 import {

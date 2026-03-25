@@ -12,7 +12,7 @@ import {
   WizardActor,
   WizardInputElement,
 } from '@openscd/open-scd/src/foundation.js';
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor';
+import { EditorAction } from '@compas-oscd/core';
 
 /** Initial attribute values suggested for `SubNetwork` creation */
 const initial = {

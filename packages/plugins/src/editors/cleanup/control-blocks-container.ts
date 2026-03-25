@@ -31,7 +31,7 @@ import {
   isPublic,
   newSubWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
-import { Delete, newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { Delete, newActionEvent } from '@compas-oscd/core';
 import { styles } from '../templates/foundation.js';
 import {
   controlBlockIcons,

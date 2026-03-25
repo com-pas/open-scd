@@ -31,7 +31,7 @@ import {
   EditorAction,
   newActionEvent,
   Replace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { createDaWizard, editDAWizard } from '../../wizards/da.js';
 import { patterns } from '../../wizards/foundation/limits.js';
 import {

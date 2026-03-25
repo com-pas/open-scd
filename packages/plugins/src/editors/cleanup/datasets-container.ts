@@ -31,7 +31,7 @@ import {
   isPublic,
   newSubWizardEvent,
 } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { cleanSCLItems, identitySort } from './foundation.js';
 
 /** An editor component for cleaning SCL datasets. */

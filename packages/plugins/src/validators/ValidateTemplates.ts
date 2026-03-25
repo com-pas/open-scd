@@ -5,7 +5,7 @@ import {
   LogDetailBase,
   newIssueEvent,
   newLogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core';
 import { validateChildren } from './templates/foundation.js';
 
 type ValidationResult = LogDetailBase | LogDetail;
