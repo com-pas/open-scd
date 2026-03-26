@@ -40,6 +40,7 @@ import {
   ComplexAction,
   newActionEvent,
 } from '@compas-oscd/core';
+/* @ts-ignore */
 import { FilteredList } from '@compas-oscd/open-scd/filtered-list.js';
 import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { dataAttributePicker, iEDPicker } from './foundation/finder.js';

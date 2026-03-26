@@ -11,7 +11,7 @@ import {
 } from '@openscd/core/foundation/deprecated/history.js';
 import { OscdHistory } from '../../src/addons/History.js';
 import { InsertV2 } from '@openscd/core';
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 describe('HistoringElement', () => {
   let mock: MockOpenSCD;
