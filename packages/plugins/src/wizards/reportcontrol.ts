@@ -8,10 +8,10 @@ import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@openscd/open-scd/src/wizard-checkbox.js';
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/wizard-select.js';
-import '@openscd/open-scd/src/filtered-list.js';
+import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
+import '@compas-oscd/open-scd/filtered-list.js';
 import {
   find,
   getReference,
@@ -25,13 +25,13 @@ import {
   WizardMenuActor,
   MenuAction,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
   getUniqueElementName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   EditorAction,
@@ -39,16 +39,17 @@ import {
   Delete,
   ComplexAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+} from '@compas-oscd/core';
+/* @ts-ignore */
+import { FilteredList } from '@compas-oscd/open-scd/filtered-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { dataAttributePicker, iEDPicker } from './foundation/finder.js';
 import { maxLength, patterns } from './foundation/limits.js';
 import { editDataSetWizard } from './dataset.js';
 import { newFCDA } from './fcda.js';
 import { contentOptFieldsWizard, editOptFieldsWizard } from './optfields.js';
 import { contentTrgOpsWizard, editTrgOpsWizard } from './trgops.js';
-import { existFcdaReference } from '@openscd/open-scd/src/foundation/scl.js';
+import { existFcdaReference } from '@compas-oscd/open-scd/dist/foundation/scl.js';
 
 interface ContentOptions {
   name: string | null;

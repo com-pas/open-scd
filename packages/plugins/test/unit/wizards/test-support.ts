@@ -3,7 +3,7 @@ import { expect } from '@open-wc/testing';
 import {
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   SimpleAction, 
   Create, 
@@ -14,9 +14,9 @@ import {
   isDelete,
   isReplace,
   isUpdate
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+} from '@compas-oscd/core';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 
 export async function setWizardTextFieldValue(
   field: WizardTextField,

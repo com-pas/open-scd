@@ -1,9 +1,9 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
-import { cloneElement, createElement } from '@openscd/xml';
+import { cloneElement, createElement } from '@compas-oscd/xml';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getMultiplier,
   getValue,
@@ -11,8 +11,8 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { EditorAction } from '@compas-oscd/core';
 
 /** Initial attribute values suggested for `SubNetwork` creation */
 const initial = {

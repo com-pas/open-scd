@@ -9,18 +9,18 @@ import {
   query,
 } from 'lit-element';
 
-import '@openscd/open-scd/src/action-pane.js';
+import '@compas-oscd/open-scd/dist/action-pane.js';
 import './sub-function-editor.js';
 import './general-equipment-editor.js';
 import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { get } from 'lit-translate';
 
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';

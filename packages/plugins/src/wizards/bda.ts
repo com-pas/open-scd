@@ -10,14 +10,14 @@ import {
   WizardActor,
   WizardInputElement,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
-import { EditorAction, newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction, newActionEvent } from '@compas-oscd/core';
 import { getValAction, wizardContent } from './abstractda.js';
 
 function remove(element: Element): WizardMenuActor {

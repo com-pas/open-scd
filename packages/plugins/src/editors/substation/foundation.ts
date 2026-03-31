@@ -3,11 +3,11 @@ import { classMap } from 'lit-html/directives/class-map.js';
 
 import './function-editor.js';
 
-import { identity, isPublic } from '@openscd/open-scd/src/foundation.js';
+import { identity, isPublic } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import {
   circuitBreakerIcon,
   disconnectorIcon,
@@ -15,11 +15,11 @@ import {
   voltageTransformerIcon,
   earthSwitchIcon,
   generalConductingEquipmentIcon,
-} from '@openscd/open-scd/src/icons/icons.js';
+} from '@compas-oscd/open-scd/dist/icons/icons.js';
 import { typeStr } from '../../wizards/conductingequipment.js';
 import { Select } from '@material/mwc-select';
 
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { get } from 'lit-translate';
 
 import { BayEditor } from './bay-editor.js';

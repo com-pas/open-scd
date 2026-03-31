@@ -4,7 +4,7 @@ import { get } from 'lit-translate';
 import {
   newIssueEvent,
   newLogEvent,
-} from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/core';
 
 import {
   getSchema,
@@ -14,7 +14,7 @@ import {
   ValidationResult,
   Validator,
   WorkerMessage,
-} from '@openscd/open-scd/src/schemas.js';
+} from '@compas-oscd/open-scd/dist/schemas.js';
 
 const validators: Partial<Record<string, Validator>> = {};
 

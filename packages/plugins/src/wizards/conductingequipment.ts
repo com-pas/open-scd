@@ -4,7 +4,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-select';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   crossProduct,
   getValue,
@@ -12,13 +12,13 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
-import { EditorAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { EditorAction } from '@compas-oscd/core';
 import { replaceNamingAction } from './foundation/actions.js';
 
 const types: Partial<Record<string, string>> = {

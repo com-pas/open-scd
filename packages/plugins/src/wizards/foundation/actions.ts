@@ -2,15 +2,15 @@ import {
   getValue,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { cloneElement } from '@openscd/xml';
+import { cloneElement } from '@compas-oscd/xml';
 
 import {
   ComplexAction,
   EditorAction,
   createUpdateAction,
-} from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/core';
 import { get } from 'lit-translate';
 import { updateReferences } from './references.js';
 

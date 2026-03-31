@@ -1,7 +1,7 @@
 import { css, html, LitElement, query, TemplateResult } from 'lit-element';
 
-import { newOpenDocEvent } from '@openscd/core/foundation/deprecated/open-event.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+import { newOpenDocEvent } from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core';
 
 export default class OpenProjectPlugin extends LitElement {
   @query('#open-plugin-input') pluginFileUI!: HTMLInputElement;

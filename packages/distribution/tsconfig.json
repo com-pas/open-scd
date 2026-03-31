@@ -24,6 +24,6 @@
       "@openscd/plugins": ["../plugins/src"],
       "@openscd/plugins/*": ["../plugins/*"]
     }  
-      },
+  },
   "include": ["**/*.ts"]
 }

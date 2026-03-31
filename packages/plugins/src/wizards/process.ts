@@ -6,14 +6,14 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
   getChildElementsByTagName,
-} from '@openscd/xml';
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/xml';
+import { SimpleAction } from '@compas-oscd/core';
 
 function createProcessAction(parent: Element): WizardActor {
   return (inputs: WizardInputElement[]) => {

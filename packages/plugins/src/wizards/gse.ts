@@ -3,23 +3,23 @@ import { get } from 'lit-translate';
 
 import { Checkbox } from '@material/mwc-checkbox';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,
   identity,
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import { contentGseOrSmvWizard, updateAddress } from './address.js';
 import {
   ComplexAction,
   SimpleAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 export function getMTimeAction(
   type: 'MinTime' | 'MaxTime',

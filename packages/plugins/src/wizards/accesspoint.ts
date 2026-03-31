@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   newWizardEvent,
   Wizard,
@@ -9,12 +9,12 @@ import {
   WizardActor,
   isPublic,
   identity,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   Delete,
   ComplexAction,
   EditorAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { updateNamingAttributeWithReferencesAction } from './foundation/actions.js';
 import { deleteReferences } from './foundation/references.js';
 import { patterns } from './foundation/limits.js';

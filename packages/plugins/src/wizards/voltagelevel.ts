@@ -1,9 +1,9 @@
 import { html, TemplateResult } from 'lit-html';
 import { get } from 'lit-translate';
 
-import { cloneElement, createElement } from '@openscd/xml';
+import { cloneElement, createElement } from '@compas-oscd/xml';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getMultiplier,
   getValue,
@@ -11,12 +11,12 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   ComplexAction,
   EditorAction,
   SimpleAction,
-} from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/core';
 
 import { updateReferences } from './foundation/references.js';
 

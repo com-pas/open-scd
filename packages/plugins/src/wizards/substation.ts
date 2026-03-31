@@ -4,16 +4,16 @@ import { get } from 'lit-translate';
 import '@material/mwc-checkbox';
 import '@material/mwc-formfield';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,
   Wizard,
   WizardAction,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { guessVoltageLevel } from '../editors/substation/guess-wizard.js';
 import { updateNamingAttributeWithReferencesAction } from './foundation/actions.js';
 

@@ -5,11 +5,11 @@ import { get } from 'lit-translate';
 import '@material/mwc-checkbox';
 import '@material/mwc-formfield';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   createElement,
-} from '@openscd/xml';
-import { Create, Delete } from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/xml';
+import { Create, Delete } from '@compas-oscd/core';
 import { typeNullable, typePattern } from './foundation/p-types.js';
 
 interface ContentOptions {

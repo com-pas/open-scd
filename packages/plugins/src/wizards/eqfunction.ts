@@ -5,15 +5,15 @@ import {
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
   getChildElementsByTagName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor.js';
+import { SimpleAction } from '@compas-oscd/core';
 import { contentFunctionWizard } from './function.js';
 
 function updateEqFunctionAction(element: Element): WizardActor {

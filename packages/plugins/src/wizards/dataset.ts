@@ -5,8 +5,8 @@ import { get } from 'lit-translate';
 import '@material/mwc-button';
 import '@material/mwc-list/mwc-check-list-item';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/filtered-list.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/filtered-list.js';
 import {
   find,
   getValue,
@@ -17,11 +17,11 @@ import {
   WizardInputElement,
   WizardMenuActor,
   newSubWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { cloneElement } from '@openscd/xml';
+import { cloneElement } from '@compas-oscd/xml';
 
-import { Replace } from '@openscd/core/foundation/deprecated/editor.js';
+import { Replace } from '@compas-oscd/core';
 import { createFCDAsWizard } from './fcda.js';
 
 function openFcdaWizard(element: Element): WizardMenuActor {

@@ -16,16 +16,16 @@ import { Dialog } from '@material/mwc-dialog';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import '@openscd/open-scd/src/filtered-list.js';
-import { find, identity, isPublic } from '@openscd/open-scd/src/foundation.js';
+import '@compas-oscd/open-scd/filtered-list.js';
+import { find, identity, isPublic } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import {
   SimpleAction,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history';
+} from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core';
 
 function uniqueTemplateIedName(doc: XMLDocument, ied: Element): string {
   const [manufacturer, type] = ['manufacturer', 'type'].map(attr =>

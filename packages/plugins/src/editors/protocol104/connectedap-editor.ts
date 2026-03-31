@@ -4,7 +4,7 @@ import '@omicronenergy/oscd-ui/fab/oscd-fab.js';
 
 import '@compas-oscd/open-scd/dist/action-icon.js';
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
-import { newActionEvent } from '@compas-oscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { editConnectedApWizard } from './wizards/connectedap.js';
 import { Base104Container } from './base-container.js';
 

@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/open-scd",
-  "version": "0.34.44",
+  "version": "0.34.46",
   "repository": "https://github.com/openscd/open-scd.git",
   "directory": "packages/openscd",
   "description": "A bottom-up substation configuration designer for projects described using SCL `IEC 61850-6` Edition 2 or greater.",
@@ -49,7 +49,15 @@
     "./dist/wizards.js": "./dist/wizards.js",
     "./dist/oscd-filter-button.js": "./dist/oscd-filter-button.js",
     "./dist/translations/de.js": "./dist/translations/de.js",
-    "./dist/translations/en.js": "./dist/translations/en.js"
+    "./dist/translations/en.js": "./dist/translations/en.js",
+    "./dist/foundation/compare.js": "./dist/foundation/compare.js",
+    "./dist/foundation/generators.js": "./dist/foundation/generators.js",
+    "./dist/foundation/ied.js": "./dist/foundation/ied.js",
+    "./dist/foundation/nsd.js": "./dist/foundation/nsd.js",
+    "./dist/foundation/scl.js": "./dist/foundation/scl.js",
+    "./dist/icons/icons.js": "./dist/icons/icons.js",
+    "./dist/icons/ied-icons.js": "./dist/icons/ied-icons.js",
+    "./dist/icons/lnode.js": "./dist/icons/lnode.js"
   },
   "dependencies": {
     "@compas-oscd/core": "^0.1.23",

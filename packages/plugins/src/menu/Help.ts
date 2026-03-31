@@ -4,10 +4,10 @@ import * as marked from 'marked';
 
 import '@material/mwc-icon';
 
-import '@openscd/open-scd/src/finder-list.js';
-import { newWizardEvent, Wizard } from '@openscd/open-scd/src/foundation.js';
-import { openSCDIcon } from '@openscd/open-scd/src/icons/icons.js';
-import { Directory } from '@openscd/open-scd/src/finder-list.js';
+import '@compas-oscd/open-scd/dist/finder-list.js';
+import { newWizardEvent, Wizard } from '@compas-oscd/open-scd/dist/foundation.js';
+import { openSCDIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import { Directory } from '@compas-oscd/open-scd/dist/finder-list.js';
 
 const GITHUB_WIKI_LINK_PATTERN = /https:\/\/github\.com\/openscd\/open-scd\/wiki\/([^)]*)/g;
 const MD_LINK_TITLE_PATTERN ='([^\\]]*)';

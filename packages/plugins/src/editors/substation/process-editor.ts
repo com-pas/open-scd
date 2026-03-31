@@ -27,19 +27,19 @@ import './process-editor.js';
 import './substation-editor.js';
 import './process-editor.js';
 
-import { processIcon } from '@openscd/open-scd/src/icons/icons.js';
+import { processIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
 import { styles } from './foundation.js';
 import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   getChildElementsByTagName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 
 function childTags(element: Element | null | undefined): SCLTag[] {

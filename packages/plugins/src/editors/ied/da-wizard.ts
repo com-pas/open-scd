@@ -10,8 +10,8 @@ import {
   getInstanceAttribute,
   getNameAttribute,
   Wizard,
-} from '@openscd/open-scd/src/foundation.js';
-import { Nsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { Nsdoc } from '@compas-oscd/open-scd/dist/foundation/nsdoc.js';
 import {
   findDOTypeElement,
   findElement,

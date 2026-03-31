@@ -13,17 +13,17 @@ import { get } from 'lit-translate';
 import {
   getDescriptionAttribute,
   identity,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   ComplexAction,
   Delete,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 import {
   getExistingSupervision,

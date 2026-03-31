@@ -1,13 +1,13 @@
 import { LitElement } from 'lit-element';
 import { get } from 'lit-translate';
-import { getVersion } from '@openscd/open-scd/src/foundation.js';
+import { getVersion } from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { createElement } from '@openscd/xml';
+import { createElement } from '@compas-oscd/xml';
 
 import {
   newActionEvent,
   SimpleAction,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 
 function getElementIndexOf(list: (Element | null)[], match: Element): number {
   for (let i = 0; list.length; i++) if (list[i]?.isEqualNode(match)) return i;

@@ -1,8 +1,8 @@
 import {
   getNameAttribute,
   isPublic,
-} from '@openscd/open-scd/src/foundation.js';
-import { Delete, Replace } from '@openscd/core/foundation/deprecated/editor';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { Delete, Replace } from '@compas-oscd/core';
 const referenceInfoTags = [
   'IED',
   'AccessPoint',

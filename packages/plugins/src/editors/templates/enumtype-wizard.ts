@@ -10,7 +10,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 import { Select } from '@material/mwc-select';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   find,
   getValue,
@@ -22,15 +22,15 @@ import {
   WizardActor,
   WizardInputElement,
   WizardMenuActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { cloneElement, createElement } from '@openscd/xml';
+import { cloneElement, createElement } from '@compas-oscd/xml';
 
 import {
   EditorAction,
   newActionEvent,
   Replace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import { CreateOptions, UpdateOptions, WizardOptions } from './foundation.js';
 
 function remove(element: Element): WizardMenuActor {

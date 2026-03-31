@@ -11,11 +11,11 @@ import '@material/mwc-fab';
 import '@material/mwc-icon';
 import { Fab } from '@material/mwc-fab';
 
-import '@openscd/open-scd/src/action-icon.js';
+import '@compas-oscd/open-scd/dist/action-icon.js';
 import { createClientLnWizard } from '../../wizards/clientln.js';
 import { wizards } from '../../wizards/wizard-library.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { selectGseControlWizard } from '../../wizards/gsecontrol.js';
 import { selectSampledValueControlWizard } from '../../wizards/sampledvaluecontrol.js';
 import { selectReportControlWizard } from '../../wizards/reportcontrol.js';

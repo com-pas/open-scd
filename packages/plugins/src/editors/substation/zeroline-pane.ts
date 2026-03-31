@@ -20,12 +20,12 @@ import './line-editor.js';
 import './process-editor.js';
 import './substation-editor.js';
 import './ied-editor.js';
-import { isPublic, newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { isPublic, newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import { getAttachedIeds } from './foundation.js';
 
-import { SCLTag, tags } from '@openscd/open-scd/src/foundation.js';
-import { Settings } from '@openscd/core/foundation/deprecated/settings.js';
+import { SCLTag, tags } from '@compas-oscd/open-scd/dist/foundation.js';
+import { Settings } from '@compas-oscd/core';
 
 function shouldShowIEDs(): boolean {
   return localStorage.getItem('showieds') === 'on';

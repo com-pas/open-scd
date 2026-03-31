@@ -24,22 +24,22 @@ import { Checkbox } from '@material/mwc-checkbox';
 import { List, MWCListIndex } from '@material/mwc-list';
 import { ListItem } from '@material/mwc-list/mwc-list-item.js';
 
-import '@openscd/open-scd/src/filtered-list.js';
+import '@compas-oscd/open-scd/filtered-list.js';
 
 import {
   identity,
   isPublic,
   newSubWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
-import { newLogEvent } from '@openscd/core/foundation/deprecated/history.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { newActionEvent } from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core';
 
 import { styles } from '../templates/foundation.js';
 import {
   dataTypeTemplateIcons,
   getFilterIcon,
   iconType,
-} from '@openscd/open-scd/src/icons/icons.js';
+} from '@compas-oscd/open-scd/dist/icons/icons.js';
 
 import { lNodeTypeWizard } from '../templates/lnodetype-wizard.js';
 import { editDaTypeWizard } from '../templates/datype-wizards.js';

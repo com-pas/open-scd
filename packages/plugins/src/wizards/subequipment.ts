@@ -5,17 +5,17 @@ import {
   cloneElement,
   createElement,
   getChildElementsByTagName,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
 import {
   getValue,
   Wizard,
   WizardActor,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
-import { SimpleAction } from '@openscd/core/foundation/deprecated/editor';
-import '@openscd/open-scd/src/wizard-textfield.js';
-import '@openscd/open-scd/src/wizard-select.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
+import { SimpleAction } from '@compas-oscd/core';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
 
 interface ContentOptions {
   name: string | null;

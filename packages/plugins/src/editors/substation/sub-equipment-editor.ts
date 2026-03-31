@@ -17,19 +17,19 @@ import { IconButton } from '@material/mwc-icon-button';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Menu } from '@material/mwc-menu';
 
-import '@openscd/open-scd/src/action-icon.js';
-import '@openscd/open-scd/src/action-pane.js';
+import '@compas-oscd/open-scd/dist/action-icon.js';
+import '@compas-oscd/open-scd/dist/action-pane.js';
 import './l-node-editor.js';
 import './eq-function-editor.js';
 import {
   newWizardEvent,
   SCLTag,
   tags,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
-import { getChildElementsByTagName } from '@openscd/xml';
+import { getChildElementsByTagName } from '@compas-oscd/xml';
 
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newActionEvent } from '@compas-oscd/core';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 
 function childTags(element: Element | null | undefined): SCLTag[] {

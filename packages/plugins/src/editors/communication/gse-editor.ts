@@ -10,10 +10,10 @@ import {
 
 import '@material/mwc-icon';
 
-import '@openscd/open-scd/src/action-icon.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
-import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
-import { sizableGooseIcon } from '@openscd/open-scd/src/icons/icons.js';
+import '@compas-oscd/open-scd/dist/action-icon.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
+import { newActionEvent } from '@compas-oscd/core';
+import { sizableGooseIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
 import { editGseWizard } from '../../wizards/gse.js';
 import { canMoveCommunicationElementToConnectedAP, getAllConnectedAPsOfSameIED } from './foundation.js';
 

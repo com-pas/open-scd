@@ -16,9 +16,9 @@ import {
   getNameAttribute,
   identity,
   newWizardEvent,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { newSmvSelectEvent } from './foundation.js';
-import { smvIcon } from '@openscd/open-scd/src/icons/icons.js';
+import { smvIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
 import { getOrderedIeds, styles } from '../foundation.js';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { wizards } from '../../../wizards/wizard-library.js';

@@ -5,16 +5,16 @@ import {
   getSclSchemaVersion,
   isPublic,
   minAvailableLogicalNodeInstance,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import {
   cloneElement,
   createElement,
-} from '@openscd/xml';
+} from '@compas-oscd/xml';
 
-import { Create, Delete } from '@openscd/core/foundation/deprecated/editor.js';
-import { getFcdaReferences } from '@openscd/open-scd/src/foundation/ied.js';
-import { SCL_NAMESPACE } from '@openscd/open-scd/src/schemas.js';
+import { Create, Delete } from '@compas-oscd/core';
+import { getFcdaReferences } from '@compas-oscd/open-scd/dist/foundation/ied.js';
+import { SCL_NAMESPACE } from '@compas-oscd/open-scd/dist/schemas.js';
 
 export enum View {
   PUBLISHER,
