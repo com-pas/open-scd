@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.2](https://github.com/com-pas/open-scd/compare/v0.45.1...v0.45.2) (2026-04-01)
+
+
+### Bug Fixes
+
+* Deploy open-scd package v0.34.46 ([39e677a](https://github.com/com-pas/open-scd/commit/39e677a7b76f186ea08b2c0e747c70241eea9b8c))
+* Deploy open-scd package v0.34.46 ([6cc3257](https://github.com/com-pas/open-scd/commit/6cc325745665e1b1d79b1f84c323a90d7218d822))
+
 ## [0.45.1](https://github.com/com-pas/open-scd/compare/v0.45.0...v0.45.1) (2026-03-24)
 
 
