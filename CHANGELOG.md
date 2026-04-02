@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.3](https://github.com/com-pas/open-scd/compare/v0.45.2...v0.45.3) (2026-04-02)
+
+
+### Bug Fixes
+
+* Trigger open-scd publish 2 ([42588c2](https://github.com/com-pas/open-scd/commit/42588c21f74b55fbf67ca7eaa6f62ea65fe1c001))
+* Trigger open-scd publish 2 ([8028bc7](https://github.com/com-pas/open-scd/commit/8028bc77ca2770228181194721430ffebcd3e3ea))
+
 ## [0.45.2](https://github.com/com-pas/open-scd/compare/v0.45.1...v0.45.2) (2026-04-01)
 
 
