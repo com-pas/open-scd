@@ -198,6 +198,23 @@ export class WizardDialog extends LitElement {
   /** Commits `action` if all inputs are valid, reports validity otherwise. */
   async act(action?: WizardActor, primary = true): Promise<boolean> {
     if (action === undefined) return false;
+
+    const allInputs = dialogInputs(this.dialog);
+    for (const input of allInputs) {
+      const root = input.shadowRoot;
+      if (!root) continue;
+      let nativeInput = root.querySelector<HTMLInputElement>('input');
+      if (!nativeInput) {
+        const inner = root.querySelector('mwc-textfield, mwc-select');
+        if (inner?.shadowRoot) {
+          nativeInput = inner.shadowRoot.querySelector<HTMLInputElement>('input');
+        }
+      }
+      if (nativeInput) {
+        (input as Element & { value: string }).value = nativeInput.value;
+      }
+    }
+
     const wizardInputs = Array.from(this.inputs);
     const wizardList = <List | null>(
       this.dialog?.querySelector('filtered-list,mwc-list')
