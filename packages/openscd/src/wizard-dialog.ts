@@ -28,6 +28,7 @@ import 'ace-custom-element';
 import './wizard-checkbox.js';
 import './wizard-textfield.js';
 import './wizard-select.js';
+import { WizardTextField } from './wizard-textfield.js';
 
 import {
   newActionEvent,
@@ -200,8 +201,8 @@ export class WizardDialog extends LitElement {
     if (action === undefined) return false;
 
     for (const input of dialogInputs(this.dialog))
-      if('ensureValueUpdated' in input) {
-        (input as { ensureValueUpdated(): void }).ensureValueUpdated();
+      if(input instanceof WizardTextField) {
+        input.ensureValueUpdated();
       }
 
     const wizardInputs = Array.from(this.inputs);
