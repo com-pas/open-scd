@@ -33,6 +33,7 @@ import "../../../../pkg/ace-custom-element.js";
 import "./wizard-checkbox.js";
 import "./wizard-textfield.js";
 import "./wizard-select.js";
+import {WizardTextField} from "./wizard-textfield.js";
 import {
   newActionEvent
 } from "../../core/dist/index.js";
@@ -167,7 +168,7 @@ export let WizardDialog = class extends LitElement {
     if (action === void 0)
       return false;
     for (const input of dialogInputs(this.dialog))
-      if ("ensureValueUpdated" in input) {
+      if (input instanceof WizardTextField) {
         input.ensureValueUpdated();
       }
     const wizardInputs = Array.from(this.inputs);
