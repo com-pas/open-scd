@@ -166,22 +166,10 @@ export let WizardDialog = class extends LitElement {
   async act(action, primary = true) {
     if (action === void 0)
       return false;
-    const allInputs = dialogInputs(this.dialog);
-    for (const input of allInputs) {
-      const root = input.shadowRoot;
-      if (!root)
-        continue;
-      let nativeInput = root.querySelector("input");
-      if (!nativeInput) {
-        const inner = root.querySelector("mwc-textfield, mwc-select");
-        if (inner?.shadowRoot) {
-          nativeInput = inner.shadowRoot.querySelector("input");
-        }
+    for (const input of dialogInputs(this.dialog))
+      if ("ensureValueUpdated" in input) {
+        input.ensureValueUpdated();
       }
-      if (nativeInput) {
-        input.value = nativeInput.value;
-      }
-    }
     const wizardInputs = Array.from(this.inputs);
     const wizardList = this.dialog?.querySelector("filtered-list,mwc-list");
     if (!this.checkValidity()) {

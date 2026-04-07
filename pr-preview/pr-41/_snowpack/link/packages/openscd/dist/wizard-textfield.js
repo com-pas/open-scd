@@ -72,6 +72,10 @@ let WizardTextField = class WizardTextField extends LitElement {
             this.multiplierMenu.anchor =
                 this.multiplierButton ?? null;
     }
+    ensureValueUpdated() {
+        if (this.textfield)
+            this.value = this.textfield.value;
+    }
     checkValidity() {
         if (this.reservedValues &&
             this.reservedValues.some(array => array === this.value)) {

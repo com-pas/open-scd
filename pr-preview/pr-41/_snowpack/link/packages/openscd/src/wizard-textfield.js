@@ -102,6 +102,10 @@ export let WizardTextField = class extends LitElement {
     if (this.multiplierMenu)
       this.multiplierMenu.anchor = this.multiplierButton ?? null;
   }
+  ensureValueUpdated() {
+    if (this.textfield)
+      this.value = this.textfield.value;
+  }
   checkValidity() {
     if (this.reservedValues && this.reservedValues.some((array) => array === this.value)) {
       this.textfield.setCustomValidity(get("textfield.unique"));
