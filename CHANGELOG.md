@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.5](https://github.com/com-pas/open-scd/compare/v0.45.4...v0.45.5) (2026-04-08)
+
+
+### Bug Fixes
+
+* Trigger release please for plugins deployment ([8581fc4](https://github.com/com-pas/open-scd/commit/8581fc411da41139d6ce1efd2942c9b959117ee9))
+* Trigger release please for plugins deployment ([5847670](https://github.com/com-pas/open-scd/commit/5847670f1fd275342ea6b4b289e93edb16a62b17))
+
 ## [0.45.4](https://github.com/com-pas/open-scd/compare/v0.45.3...v0.45.4) (2026-04-07)
 
 
