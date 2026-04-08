@@ -168,3 +168,4 @@
     "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
   }
 }
+
