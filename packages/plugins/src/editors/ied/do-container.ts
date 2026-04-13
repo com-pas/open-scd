@@ -11,14 +11,14 @@ import { get } from 'lit-translate';
 import '@material/mwc-icon-button-toggle';
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@openscd/open-scd/src/action-pane.js';
 import './da-container.js';
 
 import {
   getDescriptionAttribute,
   getNameAttribute,
   newWizardEvent,
-} from '@compas-oscd/open-scd/dist/foundation.js';
+} from '@openscd/open-scd/src/foundation.js';
 import { createDoInfoWizard } from './do-wizard.js';
 import {
   Container,
@@ -37,14 +37,14 @@ export class DOContainer extends Container {
 
   @query('#toggleButton') toggleButton: IconButtonToggle | undefined;
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
 
     if (this.instanceElement != null) {
-      return html`<b>${name}${desc ? html` &mdash; ${desc}` : nothing}</b>`;
+      return `${name}${desc ? ` — ${desc}` : ''}`;
     } else {
-      return html`${name}${desc ? html` &mdash; ${desc}` : nothing}`;
+      return `${name}${desc ? ` — ${desc}` : ''}`;
     }
   }
 

@@ -14,14 +14,14 @@ import {
   getDescriptionAttribute,
   getNameAttribute,
   newWizardEvent,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { accessPointIcon } from '@compas-oscd/open-scd/dist/icons/ied-icons.js';
-import { newActionEvent } from '@compas-oscd/core';
+} from '@openscd/open-scd/src/foundation.js';
+import { accessPointIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
+import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
 import { wizards } from '../../wizards/wizard-library.js';
 import { editServicesWizard } from '../../wizards/services.js';
 import { removeAccessPointWizard } from '../../wizards/accesspoint.js';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@openscd/open-scd/src/action-pane.js';
 import './server-container.js';
 
 import { Container } from './foundation.js';
@@ -76,11 +76,11 @@ export class AccessPointContainer extends Container {
     if (wizard) this.dispatchEvent(newWizardEvent(wizard));
   }
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
 
-    return html`${name}${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `${name}${desc ? ` — ${desc}` : ''}`;
   }
 
   private removeAccessPoint(): void {

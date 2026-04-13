@@ -7,11 +7,11 @@ import {
   getInstanceAttribute,
   getNameAttribute,
   newWizardEvent,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { newActionEvent } from '@compas-oscd/core';
+} from '@openscd/open-scd/src/foundation.js';
+import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
 import { IconButtonToggle } from '@material/mwc-icon-button-toggle';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@openscd/open-scd/src/action-pane.js';
 import './do-container.js';
 
 import { Container } from './foundation.js';
@@ -23,16 +23,16 @@ export class LNContainer extends Container {
   @query('#toggleButton')
   toggleButton!: IconButtonToggle | undefined;
 
-  private header(): TemplateResult {
+  private header(): string {
     const prefix = this.element.getAttribute('prefix');
     const inst = getInstanceAttribute(this.element);
     const desc = this.element.getAttribute('desc');
 
     const data = this.nsdoc.getDataDescription(this.element);
 
-    return html`${prefix != null ? html`${prefix} &mdash; ` : nothing}
-    ${data.label} ${inst ? html` &mdash; ${inst}` : nothing}
-    ${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `${prefix != null ? `${prefix} — ` : ''}
+    ${data.label} ${inst ? ` — ${inst}` : ''}
+    ${desc ? ` — ${desc}` : ''}`;
   }
 
   /**

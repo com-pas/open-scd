@@ -10,10 +10,10 @@ import {
 import { nothing } from 'lit-html';
 import { translate } from 'lit-translate';
 
-import { serverIcon } from '@compas-oscd/open-scd/dist/icons/ied-icons.js';
-import { getDescriptionAttribute } from '@compas-oscd/open-scd/dist/foundation.js';
-import { createElement } from '@compas-oscd/xml';
-import { newEditEventV2 } from '@compas-oscd/core';
+import { serverIcon } from '@openscd/open-scd/src/icons/ied-icons.js';
+import { getDescriptionAttribute } from '@openscd/open-scd/src/foundation.js';
+import { createElement } from '@openscd/xml';
+import { newEditEventV2 } from '@openscd/core';
 
 import {
   Container,
@@ -22,7 +22,7 @@ import {
 } from './foundation.js';
 import { AddLDeviceDialog, LDeviceData } from './add-ldevice-dialog.js';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@openscd/open-scd/src/action-pane.js';
 import './ldevice-container.js';
 import './add-ldevice-dialog.js';
 
@@ -35,10 +35,10 @@ export class ServerContainer extends Container {
   @query('add-ldevice-dialog')
   addAccessPointDialog!: AddLDeviceDialog;
 
-  private header(): TemplateResult {
+  private header(): string {
     const desc = getDescriptionAttribute(this.element);
 
-    return html`Server${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `Server${desc ? ` — ${desc}` : ''}`;
   }
 
   protected updated(_changedProperties: PropertyValues): void {

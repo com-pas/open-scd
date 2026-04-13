@@ -5,13 +5,14 @@ import { get } from 'lit-translate';
 import '@material/mwc-textarea';
 import '@material/mwc-textfield';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   getDescriptionAttribute,
   getInstanceAttribute,
   getNameAttribute,
   Wizard,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { Nsdoc } from '@compas-oscd/open-scd/dist/foundation/nsdoc.js';
+import { Nsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
 import {
   findDOTypeElement,
   findElement,
@@ -43,7 +44,7 @@ function renderFields(
   const doTypeElement = findDOTypeElement(doElement);
 
   return [
-    html`
+    oscdHtml`
       <mwc-textarea
         label="${get('iededitor.wizard.nsdocDescription')}"
         value="${nsdoc.getDataDescription(element, ancestors).label}"
@@ -55,7 +56,7 @@ function renderFields(
       >
       </mwc-textarea>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.daName')}"
         value="${getNameAttribute(element) ?? '-'}"
@@ -65,7 +66,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.daiDescription')}"
         value="${instanceElement
@@ -77,7 +78,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.daFc')}"
         value="${element.getAttribute('fc') ?? '-'}"
@@ -87,7 +88,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.daBType')}"
         value="${element.getAttribute('bType') ?? '-'}"
@@ -97,7 +98,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.daValue')}"
         value="${instanceElement
@@ -109,8 +110,8 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html` <br /> `,
-    html`
+    oscdHtml` <br /> `,
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.doName')}"
         value="${doElement ? getNameAttribute(doElement) ?? '-' : '-'}"
@@ -120,7 +121,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.doCdc')}"
         value="${doTypeElement?.getAttribute('cdc') ?? '-'}"
@@ -130,8 +131,8 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html` <br /> `,
-    html`
+    oscdHtml` <br /> `,
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.lnPrefix')}"
         value="${logicalNodeElement
@@ -143,7 +144,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('scl.lnClass')}"
         value="${logicalNodeElement
@@ -155,7 +156,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.lnInst')}"
         value="${logicalNodeElement
@@ -167,8 +168,8 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html` <br /> `,
-    html`
+    oscdHtml` <br /> `,
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.lDevice')}"
         value="${lDeviceElement
@@ -182,7 +183,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.accessPoint')}"
         value="${accessPointElement
@@ -194,7 +195,7 @@ function renderFields(
       >
       </mwc-textfield>
     `,
-    html`
+    oscdHtml`
       <mwc-textfield
         label="${get('iededitor.wizard.ied')}"
         value="${iedElement ? getNameAttribute(iedElement) ?? '-' : '-'}"

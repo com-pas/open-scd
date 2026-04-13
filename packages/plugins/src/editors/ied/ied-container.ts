@@ -9,7 +9,7 @@ import {
 import { nothing } from 'lit-html';
 import { translate } from 'lit-translate';
 
-import '@compas-oscd/open-scd/dist/action-pane.js';
+import '@openscd/open-scd/src/action-pane.js';
 import './access-point-container.js';
 import './add-access-point-dialog.js';
 
@@ -19,9 +19,9 @@ import {
   getDescriptionAttribute,
   getNameAttribute,
   newWizardEvent,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { newActionEvent } from '@compas-oscd/core';
-import { newEditEventV2, InsertV2 } from '@compas-oscd/core';
+} from '@openscd/open-scd/src/foundation.js';
+import { newActionEvent } from '@openscd/core/foundation/deprecated/editor.js';
+import { newEditEventV2, InsertV2 } from '@openscd/core';
 import { removeIEDWizard } from '../../wizards/ied.js';
 import { editServicesWizard } from '../../wizards/services.js';
 import {
@@ -103,11 +103,11 @@ export class IedContainer extends Container {
     }
   }
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
 
-    return html`${name}${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `${name}${desc ? ` — ${desc}` : ''}`;
   }
 
   render(): TemplateResult {
