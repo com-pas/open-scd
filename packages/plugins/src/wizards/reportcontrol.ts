@@ -41,7 +41,7 @@ import {
   ComplexAction,
   newActionEvent,
 } from '@compas-oscd/core';
-import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/filtered-list.js';
 import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { dataAttributePicker, iEDPicker } from './foundation/finder.js';
 import { maxLength, patterns } from './foundation/limits.js';
