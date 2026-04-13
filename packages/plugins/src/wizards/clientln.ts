@@ -6,6 +6,7 @@ import '@material/mwc-icon';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/filtered-list.js';
 import {
   find,
@@ -213,7 +214,7 @@ export function createClientLnWizard(
         action: addClientLnAction(sinkIED.ownerDocument),
       },
       content: [
-        html`<div
+        oscdHtml`<div
           class="wrapper"
           style="display: grid; grid-template-columns: 1fr 1fr;"
         >
@@ -225,7 +226,7 @@ export function createClientLnWizard(
               .sort((a, b) => b.numberClientLNs - a.numberClientLNs)
               .map(
                 item =>
-                  html`<mwc-check-list-item
+                  oscdHtml`<mwc-check-list-item
                     left
                     hasMeta
                     twoline
@@ -247,7 +248,7 @@ export function createClientLnWizard(
             searchFieldLabel="${get('scl.LN')}"
             >${clientLns.map(
               ln =>
-                html`<mwc-check-list-item twoline value="${identity(ln)}">
+                oscdHtml`<mwc-check-list-item twoline value="${identity(ln)}">
                   <span>${getElement(identity(ln))}</span>
                   <span slot="secondary">${getPath(identity(ln))}</span>
                 </mwc-check-list-item>`
@@ -255,14 +256,14 @@ export function createClientLnWizard(
             <li divider role="separator"></li>
             ${serverLns.map(
               ln =>
-                html`<mwc-check-list-item twoline value="${identity(ln)}">
+                oscdHtml`<mwc-check-list-item twoline value="${identity(ln)}">
                   <span>${getElement(identity(ln))}</span>
                   <span slot="secondary">${getPath(identity(ln))}</span>
                 </mwc-check-list-item>`
             )}
             ${serverLn0s.map(
               ln0 =>
-                html`<mwc-check-list-item twoline value="${identity(ln0)}">
+                oscdHtml`<mwc-check-list-item twoline value="${identity(ln0)}">
                   <span>LLN0</span>
                   <span slot="secondary">${identity(ln0)}</span>
                 </mwc-check-list-item>`
@@ -320,14 +321,14 @@ export function selectClientLNsWizard(
         action: openCommunicationMappingWizard(root),
       },
       content: [
-        html`<filtered-list multi
+        oscdHtml`<filtered-list multi
           >${clientLns.map(clientLN => {
             const ln =
               (clientLN.getAttribute('prefix') ?? '') +
               clientLN.getAttribute('lnClass') +
               (clientLN.getAttribute('lnInst') ?? '');
 
-            return html`<mwc-check-list-item graphic="icon">
+            return oscdHtml`<mwc-check-list-item graphic="icon">
               <span>${ln}</span>
               <mwc-icon slot="graphic">${clientIcon}</mwc-icon>
             </mwc-check-list-item> `;

@@ -5,15 +5,16 @@ import '@material/mwc-list';
 import '@material/mwc-list/mwc-radio-list-item';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   newWizardEvent,
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { newOpenDocEvent } from '@compas-oscd/core';
+import { newOpenDocEvent } from '@compas-oscd/core/foundation/deprecated/open-event.js';
 import { EditorAction } from '@compas-oscd/core';
-import { newLogEvent } from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
 import {
   newEmptySCD,
   SupportedVersion,
@@ -59,7 +60,7 @@ export default class NewProjectPlugin extends LitElement {
           action: (inputs, wizard) => this.createNewProject(inputs, wizard),
         },
         content: [
-          html`<wizard-textfield
+          oscdHtml`<wizard-textfield
               id="srcName"
               label="name"
               value="project.scd"

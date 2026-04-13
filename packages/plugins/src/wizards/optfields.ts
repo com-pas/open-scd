@@ -3,6 +3,7 @@ import { get } from 'lit-translate';
 
 import '@material/mwc-list/mwc-list-item';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
 import {
@@ -33,7 +34,7 @@ export function contentOptFieldsWizard(
 ): TemplateResult[] {
   return Object.entries(option).map(
     ([key, value]) =>
-      html`<wizard-checkbox
+      oscdHtml`<wizard-checkbox
         label="${key}"
         .maybeValue=${value}
         nullable

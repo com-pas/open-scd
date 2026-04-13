@@ -4,6 +4,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-list';
 import '@material/mwc-list/mwc-list-item';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,
@@ -34,7 +35,7 @@ export function renderLdeviceWizard(
 ): TemplateResult[] {
   return [
     readOnly
-      ? html`<wizard-textfield
+      ? oscdHtml`<wizard-textfield
           label="ldName"
           .maybeValue=${ldName}
           helper="${get('ldevice.wizard.noNameSupportHelper')}"
@@ -42,7 +43,7 @@ export function renderLdeviceWizard(
           readOnly
           disabled
         ></wizard-textfield>`
-      : html`<wizard-textfield
+      : oscdHtml`<wizard-textfield
           label="ldName"
           .maybeValue=${ldName}
           nullable
@@ -51,14 +52,14 @@ export function renderLdeviceWizard(
           dialogInitialFocus
           pattern="${lDeviceNamePattern}"
         ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable
       helper="${get('ldevice.wizard.descHelper')}"
       pattern="${patterns.normalizedString}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="inst"
       .maybeValue=${inst}
       required

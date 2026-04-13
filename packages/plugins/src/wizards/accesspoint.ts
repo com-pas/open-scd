@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   newWizardEvent,
@@ -25,7 +26,7 @@ export function renderAccessPointWizard(
   reservedNames: string[]
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('accesspoint.wizard.nameHelper')}"
@@ -35,7 +36,7 @@ export function renderAccessPointWizard(
       .reservedValues=${reservedNames}
     >
     </wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable
@@ -91,12 +92,12 @@ function renderAccessPointReferencesWizard(
   references: Delete[]
 ): TemplateResult[] {
   return [
-    html` <section>
+    oscdHtml` <section>
       <h3 style="margin: 0;">${get('accesspoint.wizard.title.references')}</h3>
       <mwc-list>
         ${references.map(reference => {
           const oldElement = <Element>reference.old.element;
-          return html` <mwc-list-item noninteractive twoline>
+          return oscdHtml` <mwc-list-item noninteractive twoline>
             <span>${oldElement.tagName}</span>
             <span slot="secondary"
               >${identity(<Element>reference.old.element)}</span

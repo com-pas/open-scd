@@ -10,6 +10,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 import { Select } from '@material/mwc-select';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   find,
@@ -144,21 +145,21 @@ function eNumValWizard(options: WizardOptions): Wizard {
       },
       menuActions,
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="ord"
           helper="${get('scl.ord')}"
           .maybeValue=${ord}
           required
           type="number"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="value"
           helper="${get('scl.value')}"
           .maybeValue=${value}
           pattern="${patterns.normalizedString}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           id="evDesc"
           label="desc"
           helper="${get('scl.desc')}"
@@ -214,7 +215,7 @@ export function createEnumTypeWizard(
         action: createAction(parent, templates),
       },
       content: [
-        html`<mwc-select
+        oscdHtml`<mwc-select
           style="--mdc-menu-max-height: 196px;"
           outlined
           icon="playlist_add_check"
@@ -223,7 +224,7 @@ export function createEnumTypeWizard(
         >
           ${Array.from(templates.querySelectorAll('EnumType')).map(
             e =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 graphic="icon"
                 hasMeta
                 value="${e.getAttribute('id') ?? ''}"
@@ -232,7 +233,7 @@ export function createEnumTypeWizard(
               </mwc-list-item>`
           )}
         </mwc-select>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${''}
@@ -242,7 +243,7 @@ export function createEnumTypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${null}
@@ -321,7 +322,7 @@ export function eNumTypeEditWizard(
         },
       ],
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${enumtype.getAttribute('id')}
@@ -331,14 +332,14 @@ export function eNumTypeEditWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${enumtype.getAttribute('desc')}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<mwc-list
+        oscdHtml`<mwc-list
           style="margin-top: 0px;"
           @selected=${(e: SingleSelectedEvent) => {
             const wizard = eNumValWizard({
@@ -349,7 +350,7 @@ export function eNumTypeEditWizard(
           }}
           >${Array.from(enumtype.querySelectorAll('EnumVal')).map(
             enumval =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 graphic="icon"
                 hasMeta
                 tabindex="0"

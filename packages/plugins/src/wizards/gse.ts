@@ -3,6 +3,7 @@ import { get } from 'lit-translate';
 
 import { Checkbox } from '@material/mwc-checkbox';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,
@@ -151,14 +152,14 @@ export function editGseWizard(element: Element): Wizard {
       },
       content: [
         ...contentGseOrSmvWizard({ hasInstType, attributes }),
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="MinTime"
           .maybeValue=${minTime}
           nullable
           suffix="ms"
           type="number"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="MaxTime"
           .maybeValue=${maxTime}
           nullable

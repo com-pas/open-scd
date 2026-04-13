@@ -11,6 +11,7 @@ import { Checkbox } from '@material/mwc-checkbox';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/filtered-list.js';
 import {
@@ -319,7 +320,7 @@ function existConnectedAp(accesspoint: Element): boolean {
 export function createTypeRestrictionCheckbox(
   element: Element
 ): TemplateResult {
-  return html`<mwc-formfield
+  return oscdHtml`<mwc-formfield
     label="${get('connectedap.wizard.addschemainsttype')}"
     ><mwc-checkbox
       id="typeRestriction"
@@ -332,7 +333,7 @@ export function createPTextField(
   element: Element,
   pType: string
 ): TemplateResult {
-  return html`<wizard-textfield
+  return oscdHtml`<wizard-textfield
     required
     label="${pType}"
     pattern="${ifDefined(typePattern[pType])}"
@@ -369,11 +370,11 @@ export function createConnectedApWizard(element: Element): Wizard {
         action: createConnectedApAction(element),
       },
       content: [
-        html` <filtered-list id="apList" multi
+        oscdHtml` <filtered-list id="apList" multi
           >${accessPoints.map(accesspoint => {
             const id = identity(accesspoint.element);
 
-            return html`<mwc-check-list-item
+            return oscdHtml`<mwc-check-list-item
               value="${id}"
               ?disabled=${accesspoint.connected}
               ><span>${id}</span></mwc-check-list-item
@@ -480,9 +481,9 @@ export function editConnectedApWizard(element: Element): Wizard {
         action: updateConnectedApAction(element),
       },
       content: [
-        html`${createTypeRestrictionCheckbox(element)}
+        oscdHtml`${createTypeRestrictionCheckbox(element)}
         ${getTypes(element).map(
-          pType => html`${createPTextField(element, pType)}`
+          pType => oscdHtml`${createPTextField(element, pType)}`
         )}`,
       ],
     },

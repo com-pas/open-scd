@@ -5,6 +5,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-button';
 import '@material/mwc-list/mwc-check-list-item';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/filtered-list.js';
 import {
@@ -104,7 +105,7 @@ export function editDataSetWizard(element: Element): Wizard {
         },
       ],
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="name"
           .maybeValue=${name}
           helper="${get('scl.name')}"
@@ -112,7 +113,7 @@ export function editDataSetWizard(element: Element): Wizard {
           disabled="true"
         >
         </wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           .maybeValue=${desc}
           helper="${get('scl.desc')}"
@@ -120,10 +121,10 @@ export function editDataSetWizard(element: Element): Wizard {
           required
         >
         </wizard-textfield>`,
-        html`<filtered-list multi
+        oscdHtml`<filtered-list multi
           >${Array.from(element.querySelectorAll('FCDA')).map(
             fcda =>
-              html`<mwc-check-list-item selected value="${identity(fcda)}"
+              oscdHtml`<mwc-check-list-item selected value="${identity(fcda)}"
                 >${(<string>identity(fcda))
                   .split('>')
                   .pop()}</mwc-check-list-item

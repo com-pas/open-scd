@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import { isPublic, Wizard } from '@compas-oscd/open-scd/dist/foundation.js';
 
 function render(
@@ -9,7 +10,7 @@ function render(
   reservedNames: string[]
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('connectivitynode.wizard.nameHelper')}"
@@ -19,7 +20,7 @@ function render(
       .reservedValues=${reservedNames}
       readonly
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="pathName"
       .maybeValue=${pathName}
       helper="${get('connectivitynode.wizard.pathNameHelper')}"

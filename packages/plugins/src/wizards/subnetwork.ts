@@ -3,6 +3,7 @@ import { get } from 'lit-translate';
 
 import { cloneElement, createElement } from '@compas-oscd/xml';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getMultiplier,
@@ -31,7 +32,7 @@ interface ContentOptions {
 
 function contentSubNetwork(options: ContentOptions): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${options.name}
       helper="${get('subnetwork.wizard.nameHelper')}"
@@ -39,20 +40,20 @@ function contentSubNetwork(options: ContentOptions): TemplateResult[] {
       validationMessage="${get('textfield.required')}"
       dialogInitialFocus
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${options.desc}
       nullable
       helper="${get('subnetwork.wizard.descHelper')}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="type"
       .maybeValue=${options.type}
       nullable
       helper="${get('subnetwork.wizard.typeHelper')}"
       pattern="${patterns.normalizedString}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="BitRate"
       .maybeValue=${options.BitRate}
       nullable

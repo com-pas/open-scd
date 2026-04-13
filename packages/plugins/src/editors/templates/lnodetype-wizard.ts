@@ -10,8 +10,9 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
 import {
   find,
@@ -186,7 +187,7 @@ function dOWizard(options: WizardOptions): Wizard | undefined {
       primary: { icon: '', label: get('save'), action },
       menuActions,
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="name"
           .maybeValue=${name}
           helper="${get('scl.name')}"
@@ -196,35 +197,35 @@ function dOWizard(options: WizardOptions): Wizard | undefined {
         >
           ></wizard-textfield
         >`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${desc}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<mwc-select
+        oscdHtml`<mwc-select
           fixedMenuPosition
           label="type"
           required
           helper="${get('scl.type')}"
           >${types.map(
             dataType =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 value=${dataType.id}
                 ?selected=${dataType.id === type}
                 >${dataType.id}</mwc-list-item
               >`
           )}</mwc-select
         >`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="accessControl"
           helper="${get('scl.accessControl')}"
           .maybeValue=${accessControl}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<wizard-checkbox
+        oscdHtml`<wizard-checkbox
           label="transient"
           .maybeValue="${transient}"
           helper="${get('scl.transient')}"
@@ -354,7 +355,7 @@ function createLNodeTypeHelperWizard(
             .querySelectorAll(`DOType[cdc="${DO.getAttribute('type')}"]`)
         ).sort(doComparator(name));
 
-        return html`<wizard-select
+        return oscdHtml`<wizard-select
           fixedMenuPosition
           naturalMenuWidth
           label="${name}"
@@ -363,7 +364,7 @@ function createLNodeTypeHelperWizard(
           .maybeValue=${null}
           >${validDOTypes.map(
             doType =>
-              html`<mwc-list-item value="${doType.getAttribute('id')!}"
+              oscdHtml`<mwc-list-item value="${doType.getAttribute('id')!}"
                 >${doType.getAttribute('id')}</mwc-list-item
               >`
           )}</wizard-select
@@ -471,7 +472,7 @@ export function createLNodeTypeWizard(
         action: startLNodeTypeCreate(parent, templates, nsd74, nsd7420),
       },
       content: [
-        html`<mwc-select
+        oscdHtml`<mwc-select
           id="lnclassnamelist"
           fixedMenuPosition
           outlined
@@ -491,7 +492,7 @@ export function createLNodeTypeWizard(
               const lnClass = lnodetpye.getAttribute('lnClass') ?? '';
               const desc = lnodetpye.getAttribute('desc') ?? '';
 
-              return html`<mwc-list-item
+              return oscdHtml`<mwc-list-item
                 twoline
                 style="min-width:200px"
                 graphic="icon"
@@ -512,7 +513,7 @@ export function createLNodeTypeWizard(
           ${Array.from(nsd74.querySelectorAll('LNClasses > LNClass')).map(
             lnClass => {
               const className = lnClass.getAttribute('name') ?? '';
-              return html`<mwc-list-item
+              return oscdHtml`<mwc-list-item
                 style="min-width:200px"
                 graphic="icon"
                 hasMeta
@@ -531,7 +532,7 @@ export function createLNodeTypeWizard(
           ${Array.from(nsd7420.querySelectorAll('LNClasses > LNClass')).map(
             lnClass => {
               const className = lnClass.getAttribute('name') ?? '';
-              return html`<mwc-list-item
+              return oscdHtml`<mwc-list-item
                 style="min-width:200px"
                 graphic="icon"
                 hasMeta
@@ -544,7 +545,7 @@ export function createLNodeTypeWizard(
             }
           )}
         </mwc-select>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${''}
@@ -553,7 +554,7 @@ export function createLNodeTypeWizard(
           minlength="1"
           pattern="${patterns.nmToken}"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${null}
@@ -630,7 +631,7 @@ export function lNodeTypeWizard(
         },
       ],
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${lnodetype.getAttribute('id')}
@@ -640,21 +641,21 @@ export function lNodeTypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${lnodetype.getAttribute('desc')}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="lnClass"
           helper="${get('scl.lnClass')}"
           .maybeValue=${lnodetype.getAttribute('lnClass')}
           required
           pattern="${patterns.lnClass}"
         ></wizard-textfield>`,
-        html`
+        oscdHtml`
           <mwc-list
             style="margin-top: 0px;"
             @selected=${(e: SingleSelectedEvent) => {
@@ -668,7 +669,7 @@ export function lNodeTypeWizard(
           >
             ${Array.from(lnodetype.querySelectorAll('DO')).map(
               doelement =>
-                html`<mwc-list-item
+                oscdHtml`<mwc-list-item
                   twoline
                   tabindex="0"
                   value="${identity(doelement)}"

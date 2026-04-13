@@ -3,6 +3,7 @@ import { get } from 'lit-translate';
 
 import '@material/mwc-list/mwc-list-item';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
 
@@ -89,7 +90,7 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
       ) => {
         // If numOfSGs is -1, then it is a single value, otherwise it is treated as a group of values
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).map((item, i) => {
-          return html`<wizard-select
+          return oscdHtml`<wizard-select
             id="Val${emptyIfNull(item, `${i + 1}`)}"
             label="Val${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
             .maybeValue=${getInstanceValue(instanceElement)}
@@ -117,14 +118,14 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
       ) => {
         // If numOfSGs is -1, then it is a single value, otherwise it is treated as a group of values
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).map((item, i) => {
-          return html`<wizard-select
+          return oscdHtml`<wizard-select
             id="Val${emptyIfNull(item, `${i + 1}`)}"
             label="Val${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
             .maybeValue=${getInstanceValue(instanceElement)}
             fixedMenuPosition
           >
             ${getEnumValues(element).map(enumValue => {
-              return html`<mwc-list-item value="${enumValue}"
+              return oscdHtml`<mwc-list-item value="${enumValue}"
                 >${enumValue}</mwc-list-item
               >`;
             })}
@@ -148,7 +149,7 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
       ) => {
         // If numOfSGs is -1, then it is a single value, otherwise it is treated as a group of values
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).map((item, i) => {
-          return html`<wizard-textfield
+          return oscdHtml`<wizard-textfield
             id="Val${emptyIfNull(item, `${i + 1}`)}"
             label="Val${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
             .maybeValue=${getInstanceValue(instanceElement)}
@@ -178,7 +179,7 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
       ) => {
         // If numOfSGs is -1, then it is a single value, otherwise it is treated as a group of values
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).map((item, i) => {
-          return html`<wizard-textfield
+          return oscdHtml`<wizard-textfield
             id="Val${emptyIfNull(item, `${i + 1}`)}"
             label="Val${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
             .maybeValue=${getInstanceValue(instanceElement)}
@@ -210,14 +211,14 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).reduce(
           (acc: TemplateResult[], item, i) => {
             return acc.concat([
-              html`<wizard-textfield
+              oscdHtml`<wizard-textfield
                 id="ValDate${emptyIfNull(item, `${i + 1}`)}"
                 label="Val (Date)${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
                 .maybeValue=${getDateValueFromTimestamp(value)}
                 type="date"
               >
               </wizard-textfield>`,
-              html`<wizard-textfield
+              oscdHtml`<wizard-textfield
                 id="ValTime${emptyIfNull(item, `${i + 1}`)}"
                 label="Val (Time)${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
                 .maybeValue=${getTimeValueFromTimestamp(value)}
@@ -252,7 +253,7 @@ export function getCustomField(): Record<DaiFieldTypes, CustomField> {
       ) => {
         // If numOfSGs is -1, then it is a single value, otherwise it is treated as a group of values
         return (numOfSGs ? [...Array(numOfSGs)] : [numOfSGs]).map((item, i) => {
-          return html`<wizard-textfield
+          return oscdHtml`<wizard-textfield
             id="Val${emptyIfNull(item, ` ${i + 1}`)}"
             label="Val${emptyIfNull(item, ` for sGroup ${i + 1}`)}"
             .maybeValue=${getInstanceValue(instanceElement)}

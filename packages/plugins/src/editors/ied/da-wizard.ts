@@ -12,7 +12,7 @@ import {
   getNameAttribute,
   Wizard,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { Nsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
+import { Nsdoc } from '@compas-oscd/open-scd/dist/foundation/nsdoc.js';
 import {
   findDOTypeElement,
   findElement,

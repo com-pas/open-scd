@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit-html';
 import { get } from 'lit-translate';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,
@@ -29,7 +30,7 @@ function render(
   numPhases: string | null
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('line.wizard.nameHelper')}"
@@ -37,19 +38,19 @@ function render(
       validationMessage="${get('textfield.required')}"
       dialogInitialFocus
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable
       helper="${get('line.wizard.descHelper')}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="type"
       .maybeValue=${type}
       nullable
       helper="${get('line.wizard.typeHelper')}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="nomFreq"
       .maybeValue=${nomFreq}
       nullable
@@ -58,7 +59,7 @@ function render(
       validationMessage="${get('textfield.nonempty')}"
       pattern="${patterns.unsigned}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="numPhases"
       .maybeValue=${numPhases}
       nullable

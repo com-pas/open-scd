@@ -6,6 +6,7 @@ import '@material/mwc-list';
 import '@material/mwc-list/mwc-check-list-item';
 import { List } from '@material/mwc-list';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/filtered-list.js';
 import {
   findControlBlocks,
@@ -188,7 +189,7 @@ export function selectExtRefsWizard(
         action: openCommunicationMappingWizard(root),
       },
       content: [
-        html`<filtered-list multi
+        oscdHtml`<filtered-list multi
           >${sinkExtRefs.map(extRef => {
             const reference =
               (extRef.getAttribute('prefix') ?? '') +
@@ -199,7 +200,7 @@ export function selectExtRefsWizard(
               '.' +
               (extRef.getAttribute('daName') ?? '');
 
-            return html`<mwc-check-list-item graphic="icon" twoline>
+            return oscdHtml`<mwc-check-list-item graphic="icon" twoline>
               <span>${reference}</span>
               <span slot="secondary"
                 >${extRef.getAttribute('ldInst') ?? ''}</span

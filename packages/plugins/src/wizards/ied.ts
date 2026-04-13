@@ -4,6 +4,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-list';
 import '@material/mwc-list/mwc-list-item';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   identity,
@@ -47,7 +48,7 @@ export function renderIEDWizard(
   reservedNames: string[]
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('ied.wizard.nameHelper')}"
@@ -57,44 +58,44 @@ export function renderIEDWizard(
       .reservedValues=${reservedNames}
       pattern="${iedNamePattern}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable
       helper="${get('ied.wizard.descHelper')}"
       pattern="${patterns.normalizedString}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="type"
       .maybeValue=${type || '-'}
       readOnly
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="manufacturer"
       .maybeValue=${manufacturer}
       helper="${get('ied.wizard.manufacturerHelper')}"
       pattern="${patterns.normalizedString}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="configVersion"
       .maybeValue=${configVersion || '-'}
       readOnly
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="originalSclVersion"
       .maybeValue=${originalSclVersion || '-'}
       readOnly
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="engRight"
       .maybeValue=${engRight || '-'}
       readOnly
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="owner"
       .maybeValue=${owner || '-'}
       readOnly
@@ -105,12 +106,12 @@ export function renderIEDWizard(
 
 function renderIEDReferencesWizard(references: Delete[]): TemplateResult[] {
   return [
-    html` <section>
+    oscdHtml` <section>
       <h1>${get('ied.wizard.title.references')}</h1>
       <mwc-list>
         ${references.map(reference => {
           const oldElement = <Element>reference.old.element;
-          return html` <mwc-list-item noninteractive twoline>
+          return oscdHtml` <mwc-list-item noninteractive twoline>
             <span>${oldElement.tagName}</span>
             <span slot="secondary"
               >${identity(<Element>reference.old.element)}</span

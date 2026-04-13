@@ -1,5 +1,6 @@
 import { html, TemplateResult } from 'lit-html';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
 import { Wizard, WizardInput } from '@compas-oscd/open-scd/dist/foundation.js';
@@ -29,11 +30,11 @@ export function isEmptyObject<T = any>(
 }
 
 export function createFormElementFromInput(input: WizardInput): TemplateResult {
-  let templateResult: TemplateResult = html``;
+  let templateResult: TemplateResult = oscdHtml``;
   switch (input.kind) {
     case 'TextField':
     default:
-      templateResult = html`<wizard-textfield
+      templateResult = oscdHtml`<wizard-textfield
         label=${input.label}
         .maybeValue=${input.maybeValue}
         .helper=${input.helper || ''}
@@ -47,7 +48,7 @@ export function createFormElementFromInput(input: WizardInput): TemplateResult {
       ></wizard-textfield>`;
       break;
     case 'Checkbox':
-      templateResult = html`<wizard-checkbox
+      templateResult = oscdHtml`<wizard-checkbox
         label=${input.label}
         .maybeValue=${input.maybeValue}
         .helper=${input.helper || ''}
@@ -58,7 +59,7 @@ export function createFormElementFromInput(input: WizardInput): TemplateResult {
       ></wizard-checkbox>`;
       break;
     case 'Select':
-      templateResult = html`<wizard-select
+      templateResult = oscdHtml`<wizard-select
         label=${input.label}
         .maybeValue=${input.maybeValue}
         .validationMessage=${input.valadationMessage || ''}
@@ -68,7 +69,7 @@ export function createFormElementFromInput(input: WizardInput): TemplateResult {
         disabled
       >
         ${input.values.map(value => {
-          return html`<mwc-list-item .value=${value}>
+          return oscdHtml`<mwc-list-item .value=${value}>
             ${value}
           </mwc-list-item>`;
         })}
@@ -86,7 +87,7 @@ export function createFormElementsFromInputs(
 }
 
 export function createFormDivider(header?: string): TemplateResult {
-  return html`<wizard-divider .header=${header}></wizard-divider>`;
+  return oscdHtml`<wizard-divider .header=${header}></wizard-divider>`;
 }
 
 export function editServicesWizard(services: Element): Wizard {
