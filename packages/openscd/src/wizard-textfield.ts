@@ -149,6 +149,10 @@ export class WizardTextField extends LitElement {
         (this.multiplierButton as HTMLElement) ?? null;
   }
 
+  ensureValueUpdated(): void {
+    if (this.textfield) this.value = this.textfield.value;
+  }
+
   checkValidity(): boolean {
     if (
       this.reservedValues &&
