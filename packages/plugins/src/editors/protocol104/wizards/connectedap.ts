@@ -17,7 +17,7 @@ import { List } from '@omicronenergy/oscd-ui/list/OscdList.js';
 import { ListItem } from '@omicronenergy/oscd-ui/list/OscdListItem.js';
 
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 
 import {
   pTypes104,

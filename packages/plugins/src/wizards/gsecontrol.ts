@@ -8,7 +8,7 @@ import { List } from '@material/mwc-list';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';

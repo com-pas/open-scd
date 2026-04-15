@@ -7,7 +7,7 @@ import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   identity,

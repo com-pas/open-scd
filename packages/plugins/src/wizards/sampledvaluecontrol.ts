@@ -11,7 +11,7 @@ import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getValue,

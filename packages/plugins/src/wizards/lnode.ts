@@ -10,7 +10,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { MultiSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getValue,

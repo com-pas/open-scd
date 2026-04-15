@@ -13,7 +13,7 @@ import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   Wizard,
   WizardActor,

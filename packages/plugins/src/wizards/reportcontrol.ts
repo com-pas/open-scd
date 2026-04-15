@@ -12,7 +12,7 @@ import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getReference,
@@ -41,7 +41,7 @@ import {
   ComplexAction,
   newActionEvent,
 } from '@compas-oscd/core';
-import { FilteredList } from '@compas-oscd/open-scd/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { dataAttributePicker, iEDPicker } from './foundation/finder.js';
 import { maxLength, patterns } from './foundation/limits.js';

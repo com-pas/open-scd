@@ -19,7 +19,7 @@ import { Dialog } from '@material/mwc-dialog';
 import { CheckListItem } from '@material/mwc-list/mwc-check-list-item';
 import { Select } from '@material/mwc-select';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import { find, identity } from '@compas-oscd/open-scd/dist/foundation.js';
 import { getChildElementsByTagName } from '@compas-oscd/xml';
 

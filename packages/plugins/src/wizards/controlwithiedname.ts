@@ -7,7 +7,7 @@ import '@material/mwc-list/mwc-check-list-item';
 import { List } from '@material/mwc-list';
 
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   findControlBlocks,
   identity,
