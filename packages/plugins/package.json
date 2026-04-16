@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/plugins",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/plugins",
   "description": "The official plug-ins of open-scd.",
