@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.45.6](https://github.com/com-pas/open-scd/compare/v0.45.5...v0.45.6) (2026-04-16)
+
+
+### Bug Fixes
+
+* **wizard-dialog:** handle deep selection of inputs in act method ([035e617](https://github.com/com-pas/open-scd/commit/035e617694e7d53f56aa3442a49b4d1b6594eadd))
+
 ## [0.45.5](https://github.com/com-pas/open-scd/compare/v0.45.4...v0.45.5) (2026-04-08)
 
 
