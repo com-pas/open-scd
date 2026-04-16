@@ -11,7 +11,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-icon';
 import '@material/mwc-list/mwc-list-item';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import { getNameAttribute } from '@compas-oscd/open-scd/dist/foundation.js';
 import { getOrderedIeds, newIEDSelectEvent, styles } from './foundation.js';
 

@@ -5,7 +5,8 @@ import '@material/mwc-icon';
 import '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   findControlBlocks,
@@ -86,14 +87,14 @@ export function communicationMappingWizard(
     {
       title: get('commmap.title'),
       content: [
-        html`<filtered-list
+        oscdHtml`<filtered-list
           >${Array.from(connections.keys()).map(key => {
             const elements = connections.get(key)!;
             const [cbId, cbTag, sinkIED] = key.split(' | ');
             const cbElement = find(ownerDocument, cbTag, cbId);
             const [_, sourceIED, controlBlock] = cbId.match(/^(.+)>>(.*)$/)!;
 
-            return html`<mwc-list-item
+            return oscdHtml`<mwc-list-item
               twoline
               graphic="icon"
               hasMeta

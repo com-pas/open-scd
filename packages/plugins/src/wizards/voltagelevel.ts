@@ -3,6 +3,7 @@ import { get } from 'lit-translate';
 
 import { cloneElement, createElement } from '@compas-oscd/xml';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getMultiplier,
@@ -36,7 +37,7 @@ function render(
   multiplier: string | null
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('voltagelevel.wizard.nameHelper')}"
@@ -44,13 +45,13 @@ function render(
       validationMessage="${get('textfield.required')}"
       dialogInitialFocus
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable
       helper="${get('voltagelevel.wizard.descHelper')}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="nomFreq"
       .maybeValue=${nomFreq}
       nullable
@@ -60,7 +61,7 @@ function render(
       validationMessage="${get('textfield.nonempty')}"
       pattern="${patterns.unsigned}"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="numPhases"
       .maybeValue=${numPhases}
       nullable
@@ -72,7 +73,7 @@ function render(
       min="1"
       max="255"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="Voltage"
       .maybeValue=${Voltage}
       nullable

@@ -51,15 +51,15 @@ export class LDeviceContainer extends Container {
     if (wizard) this.dispatchEvent(newWizardEvent(wizard));
   }
 
-  private header(): TemplateResult {
+  private header(): string {
     const nameOrInst =
       getNameAttribute(this.element) ?? getInstanceAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
     const ldName = getLdNameAttribute(this.element);
 
-    return html`${nameOrInst}${desc ? html` &mdash; ${desc}` : nothing}${ldName
-      ? html` &mdash; ${ldName}`
-      : nothing}`;
+    return `${nameOrInst}${desc ? ` — ${desc}` : ''}${ldName
+      ? ` — ${ldName}`
+      : ''}`;
   }
 
   protected firstUpdated(): void {

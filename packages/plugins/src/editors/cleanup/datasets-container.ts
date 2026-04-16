@@ -22,7 +22,7 @@ import { Button } from '@material/mwc-button';
 import { List, MWCListIndex } from '@material/mwc-list';
 import { ListItem } from '@material/mwc-list/mwc-list-item.js';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 
 import { editDataSetWizard } from '../../wizards/dataset.js';
 import { styles } from '../templates/foundation.js';

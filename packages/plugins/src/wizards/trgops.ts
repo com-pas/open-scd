@@ -8,6 +8,7 @@ import '@compas-oscd/open-scd/dist/wizard-select.js';
 
 import { cloneElement } from '@compas-oscd/xml';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   getValue,
   Wizard,
@@ -27,7 +28,7 @@ interface ContentOptions {
 export function contentTrgOpsWizard(option: ContentOptions): TemplateResult[] {
   return Object.entries(option).map(
     ([key, value]) =>
-      html`<wizard-checkbox
+      oscdHtml`<wizard-checkbox
         label="${key}"
         .maybeValue=${value}
         nullable

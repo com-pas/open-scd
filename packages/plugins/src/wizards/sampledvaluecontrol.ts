@@ -7,10 +7,11 @@ import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
-import '@compas-oscd/open-scd/dist/wizard-select.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-select.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getValue,
@@ -143,7 +144,7 @@ function contentSampledValueControlWizard(
   options: ContentOptions
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${options.name}
       helper="${get('scl.name')}"
@@ -153,7 +154,7 @@ function contentSampledValueControlWizard(
       maxLength="${maxLength.cbName}"
       dialogInitialFocus
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${options.desc}
       nullable
@@ -161,21 +162,21 @@ function contentSampledValueControlWizard(
       helper="${get('scl.desc')}"
     ></wizard-textfield>`,
     options.multicast === 'true'
-      ? html``
-      : html`<wizard-checkbox
+      ? oscdHtml``
+      : oscdHtml`<wizard-checkbox
           label="multicast"
           .maybeValue=${options.multicast}
           helper="${get('scl.multicast')}"
           disabled
         ></wizard-checkbox>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="smvID"
       .maybeValue=${options.smvID}
       helper="${get('scl.id')}"
       required
       validationMessage="${get('textfield.nonempty')}"
     ></wizard-textfield>`,
-    html`<wizard-select
+    oscdHtml`<wizard-select
       label="smpMod"
       .maybeValue=${options.smpMod}
       nullable
@@ -183,10 +184,10 @@ function contentSampledValueControlWizard(
       helper="${get('scl.smpMod')}"
       >${smpModEnum.map(
         option =>
-          html`<mwc-list-item value="${option}">${option}</mwc-list-item>`
+          oscdHtml`<mwc-list-item value="${option}">${option}</mwc-list-item>`
       )}</wizard-select
     >`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="smpRate"
       .maybeValue=${options.smpRate}
       helper="${get('scl.smpRate')}"
@@ -194,7 +195,7 @@ function contentSampledValueControlWizard(
       type="number"
       min="0"
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="nofASDU"
       .maybeValue=${options.nofASDU}
       helper="${get('scl.nofASDU')}"
@@ -202,7 +203,7 @@ function contentSampledValueControlWizard(
       type="number"
       min="0"
     ></wizard-textfield>`,
-    html`<wizard-select
+    oscdHtml`<wizard-select
       label="securityEnabled"
       .maybeValue=${options.securityEnabled}
       nullable
@@ -210,7 +211,7 @@ function contentSampledValueControlWizard(
       helper="${get('scl.securityEnable')}"
       >${securityEnabledEnum.map(
         option =>
-          html`<mwc-list-item value="${option}">${option}</mwc-list-item>`
+          oscdHtml`<mwc-list-item value="${option}">${option}</mwc-list-item>`
       )}</wizard-select
     >`,
   ];
@@ -400,7 +401,7 @@ export function createSampledValueControlWizard(ln0OrLn: Element): Wizard {
             label: get('save'),
             action: createSampledValueControlAction(ln0OrLn),
           },
-          content: [server ? sampledValueDataPicker(server) : html``],
+          content: [server ? sampledValueDataPicker(server) : oscdHtml``],
         },
       ]
     : [
@@ -430,7 +431,7 @@ export function createSampledValueControlWizard(ln0OrLn: Element): Wizard {
         {
           title: get('wizard.title.add', { tagName: 'SMV' }),
           content: [
-            html`<h3
+            oscdHtml`<h3
               style="color: var(--mdc-theme-on-surface);
                       font-family: 'Roboto', sans-serif;
                       font-weight: 300;"
@@ -446,7 +447,7 @@ export function createSampledValueControlWizard(ln0OrLn: Element): Wizard {
             label: get('save'),
             action: createSampledValueControlAction(ln0OrLn),
           },
-          content: [server ? sampledValueDataPicker(server) : html``],
+          content: [server ? sampledValueDataPicker(server) : oscdHtml``],
         },
       ];
 }
@@ -655,7 +656,7 @@ export function selectSampledValueControlWizard(element: Element): Wizard {
       title: get('wizard.title.select', { tagName: 'SampledValueControl' }),
       primary,
       content: [
-        html`<filtered-list
+        oscdHtml`<filtered-list
           @selected=${(e: SingleSelectedEvent) => {
             const identity = (<ListItemBase>(<List>e.target).selected).value;
             const sampledValueControl = find(
@@ -673,7 +674,7 @@ export function selectSampledValueControlWizard(element: Element): Wizard {
           }}
           >${smvControls.map(
             smvControl =>
-              html`<mwc-list-item twoline value="${identity(smvControl)}"
+              oscdHtml`<mwc-list-item twoline value="${identity(smvControl)}"
                 ><span>${smvControl.getAttribute('name')}</span
                 ><span slot="secondary"
                   >${identity(smvControl)}</span

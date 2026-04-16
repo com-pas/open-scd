@@ -8,9 +8,10 @@ import { List } from '@material/mwc-list';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import '@compas-oscd/open-scd/dist/wizard-select.js';
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   find,
@@ -81,7 +82,7 @@ export function contentGseControlWizard(
   content: ContentOptions
 ): TemplateResult[] {
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${content.name}
       helper="${get('scl.name')}"
@@ -91,43 +92,43 @@ export function contentGseControlWizard(
       maxLength="${maxLength.cbName}"
       dialogInitialFocus
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${content.desc}
       nullable
       helper="${get('scl.desc')}"
     ></wizard-textfield>`,
-    html`<wizard-select
+    oscdHtml`<wizard-select
       label="type"
       .maybeValue=${content.type}
       helper="${get('scl.type')}"
       nullable
       required
       >${['GOOSE', 'GSSE'].map(
-        type => html`<mwc-list-item value="${type}">${type}</mwc-list-item>`
+        type => oscdHtml`<mwc-list-item value="${type}">${type}</mwc-list-item>`
       )}</wizard-select
     >`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="appID"
       .maybeValue=${content.appID}
       helper="${get('scl.id')}"
       required
       validationMessage="${get('textfield.nonempty')}"
     ></wizard-textfield>`,
-    html`<wizard-checkbox
+    oscdHtml`<wizard-checkbox
       label="fixedOffs"
       .maybeValue=${content.fixedOffs}
       nullable
       helper="${get('scl.fixedOffs')}"
     ></wizard-checkbox>`,
-    html`<wizard-select
+    oscdHtml`<wizard-select
       label="securityEnabled"
       .maybeValue=${content.securityEnabled}
       nullable
       required
       helper="${get('scl.securityEnable')}"
       >${securityEnabledEnum.map(
-        type => html`<mwc-list-item value="${type}">${type}</mwc-list-item>`
+        type => oscdHtml`<mwc-list-item value="${type}">${type}</mwc-list-item>`
       )}</wizard-select
     >`,
   ];
@@ -269,14 +270,14 @@ export function createGseControlWizard(ln0OrLn: Element): Wizard {
           title: get('wizard.title.add', { tagName: 'GSE' }),
           content: [
             ...contentGseOrSmvWizard({ hasInstType, attributes }),
-            html`<wizard-textfield
+            oscdHtml`<wizard-textfield
               label="MinTime"
               .maybeValue=${minTime}
               nullable
               suffix="ms"
               type="number"
             ></wizard-textfield>`,
-            html`<wizard-textfield
+            oscdHtml`<wizard-textfield
               label="MaxTime"
               .maybeValue=${maxTime}
               nullable
@@ -292,7 +293,7 @@ export function createGseControlWizard(ln0OrLn: Element): Wizard {
             label: get('save'),
             action: createGseControlAction(ln0OrLn),
           },
-          content: [server ? dataAttributePicker(server) : html``],
+          content: [server ? dataAttributePicker(server) : oscdHtml``],
         },
       ]
     : [
@@ -310,7 +311,7 @@ export function createGseControlWizard(ln0OrLn: Element): Wizard {
         {
           title: get('wizard.title.add', { tagName: 'GSE' }),
           content: [
-            html`<h3
+            oscdHtml`<h3
               style="color: var(--mdc-theme-on-surface);
                       font-family: 'Roboto', sans-serif;
                       font-weight: 300;"
@@ -326,7 +327,7 @@ export function createGseControlWizard(ln0OrLn: Element): Wizard {
             label: get('save'),
             action: createGseControlAction(ln0OrLn),
           },
-          content: [server ? dataAttributePicker(server) : html``],
+          content: [server ? dataAttributePicker(server) : oscdHtml``],
         },
       ];
 }
@@ -564,7 +565,7 @@ export function selectGseControlWizard(element: Element): Wizard {
       title: get('wizard.title.select', { tagName: 'GSEcontrol' }),
       primary,
       content: [
-        html`<filtered-list
+        oscdHtml`<filtered-list
           @selected=${(e: SingleSelectedEvent) => {
             const gseControlIndentity = (<ListItem>(<List>e.target).selected)
               .value;
@@ -577,7 +578,7 @@ export function selectGseControlWizard(element: Element): Wizard {
           }}
           >${gseControls.map(
             gseControl =>
-              html`<mwc-list-item twoline value="${identity(gseControl)}"
+              oscdHtml`<mwc-list-item twoline value="${identity(gseControl)}"
                 ><span>${gseControl.getAttribute('name')}</span
                 ><span slot="secondary"
                   >${identity(gseControl)}</span

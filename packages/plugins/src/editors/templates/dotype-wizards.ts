@@ -10,6 +10,7 @@ import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { List } from '@material/mwc-list';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   find,
@@ -133,7 +134,7 @@ function sDOWizard(options: WizardOptions): Wizard | undefined {
       primary: { icon: '', label: get('save'), action },
       menuActions,
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="name"
           .maybeValue=${name}
           helper="${get('scl.name')}"
@@ -143,21 +144,21 @@ function sDOWizard(options: WizardOptions): Wizard | undefined {
         >
           ></wizard-textfield
         >`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${desc}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<mwc-select
+        oscdHtml`<mwc-select
           fixedMenuPosition
           label="type"
           required
           helper="${get('scl.type')}"
           >${types.map(
             dataType =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 value=${dataType.id}
                 ?selected=${dataType.id === type}
                 >${dataType.id}</mwc-list-item
@@ -246,7 +247,7 @@ export function createDOTypeWizard(
         action: addPredefinedDOType(parent, templates),
       },
       content: [
-        html`<mwc-select
+        oscdHtml`<mwc-select
           fixedMenuPosition
           outlined
           icon="playlist_add_check"
@@ -256,7 +257,7 @@ export function createDOTypeWizard(
         >
           ${Array.from(templates.querySelectorAll('DOType')).map(
             datype =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 graphic="icon"
                 hasMeta
                 value="${datype.getAttribute('id') ?? ''}"
@@ -269,7 +270,7 @@ export function createDOTypeWizard(
               </mwc-list-item>`
           )}
         </mwc-select>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${''}
@@ -279,14 +280,14 @@ export function createDOTypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${null}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="cdc"
           helper="${get('scl.CDC')}"
           required
@@ -379,7 +380,7 @@ export function dOTypeWizard(
         },
       ],
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${dotype.getAttribute('id')}
@@ -389,20 +390,20 @@ export function dOTypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${dotype.getAttribute('desc')}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="CDC"
           helper="${get('scl.CDC')}"
           .maybeValue=${dotype.getAttribute('cdc')}
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`
+        oscdHtml`
           <mwc-list
             style="margin-top: 0px;"
             @selected=${(e: SingleSelectedEvent) => {
@@ -425,7 +426,7 @@ export function dOTypeWizard(
           >
             ${Array.from(dotype.querySelectorAll('SDO, DA')).map(
               daorsdo =>
-                html`<mwc-list-item
+                oscdHtml`<mwc-list-item
                   twoline
                   tabindex="0"
                   class="${daorsdo.tagName === 'DA' ? 'DA' : 'SDO'}"

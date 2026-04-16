@@ -76,11 +76,11 @@ export class AccessPointContainer extends Container {
     if (wizard) this.dispatchEvent(newWizardEvent(wizard));
   }
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
 
-    return html`${name}${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `${name}${desc ? ` — ${desc}` : ''}`;
   }
 
   private removeAccessPoint(): void {

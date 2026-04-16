@@ -9,7 +9,8 @@ import { ListBase } from '@material/mwc-list/mwc-list-base';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { MultiSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getValue,
@@ -35,7 +36,7 @@ import {
   Create,
   EditorAction,
 } from '@compas-oscd/core';
-import { newLogEvent } from '@compas-oscd/core';
+import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
 
 function createLNodeAction(parent: Element): WizardActor {
   return (
@@ -144,7 +145,7 @@ function lNodeInstanceWizard(parent: Element): Wizard {
         action: createLNodeAction(parent),
       },
       content: [
-        html`<filtered-list multi
+        oscdHtml`<filtered-list multi
           >${lNodeTypes.map(lNodeType => {
             const isDisabled =
               (lNodeType.getAttribute('lnClass') === 'LLN0' &&
@@ -156,7 +157,7 @@ function lNodeInstanceWizard(parent: Element): Wizard {
                   lnode => lnode.getAttribute('lnClass') === 'LPHD'
                 ));
 
-            return html`<mwc-check-list-item
+            return oscdHtml`<mwc-check-list-item
               twoline
               value="${identity(lNodeType)}"
               ?disabled=${isDisabled}
@@ -351,7 +352,7 @@ function onIEDSelect(evt: MultiSelectedEvent, parent: Element): void {
     .sort(compare);
 
   const lnTemplates = lnItems.map(item => {
-    return html`<mwc-check-list-item
+    return oscdHtml`<mwc-check-list-item
       ?selected=${item.selected}
       ?disabled=${item.disabled}
       value="${identity(item.element)}"
@@ -362,7 +363,7 @@ function onIEDSelect(evt: MultiSelectedEvent, parent: Element): void {
           'inst'
         ) ?? ''}
         ${item.disabled
-          ? html` <mwc-icon style="--mdc-icon-size: 1em;"
+          ? oscdHtml` <mwc-icon style="--mdc-icon-size: 1em;"
                 >account_tree</mwc-icon
               >
               ${referencePath(getLNode(doc, item.element)!)}`
@@ -376,13 +377,13 @@ function onIEDSelect(evt: MultiSelectedEvent, parent: Element): void {
     >`;
   });
 
-  render(html`${lnTemplates}`, lnList);
+  render(oscdHtml`${lnTemplates}`, lnList);
 }
 
 function renderIEDPage(element: Element): TemplateResult {
   const doc = element.ownerDocument;
   if (doc.querySelectorAll(':root > IED').length > 0)
-    return html`<filtered-list
+    return oscdHtml`<filtered-list
       disableCheckAll
       multi
       id="iedList"
@@ -405,7 +406,7 @@ function renderIEDPage(element: Element): TemplateResult {
         .sort(compare)
         .map(
           item =>
-            html`<mwc-check-list-item
+            oscdHtml`<mwc-check-list-item
               value="${item.iedName ?? ''}"
               ?selected=${item.selected}
               >${item.iedName}</mwc-check-list-item
@@ -413,7 +414,7 @@ function renderIEDPage(element: Element): TemplateResult {
         )}</filtered-list
     >`;
   else
-    return html`<mwc-list-item noninteractive graphic="icon">
+    return oscdHtml`<mwc-list-item noninteractive graphic="icon">
       <span>${get('lnode.wizard.placeholder')}</span>
       <mwc-icon slot="graphic">info</mwc-icon>
     </mwc-list-item>`;
@@ -449,7 +450,7 @@ function lNodeReferenceWizard(parent: Element): Wizard {
         label: get('save'),
         action: lNodeWizardAction(parent),
       },
-      content: [html`<filtered-list multi id="lnList"></filtered-list>`],
+      content: [oscdHtml`<filtered-list multi id="lnList"></filtered-list>`],
     },
   ];
 }
@@ -480,14 +481,14 @@ function contentLNodeWizard(options: ContentOptions): TemplateResult[] {
   const isIedRef = options.iedName !== 'None';
 
   return [
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="iedName"
       .maybeValue=${options.iedName}
       helper="${get('scl.iedName')}"
       helperPersistent
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="ldInst"
       .maybeValue=${options.ldInst}
       helper="${get('scl.ldInst')}"
@@ -495,7 +496,7 @@ function contentLNodeWizard(options: ContentOptions): TemplateResult[] {
       nullable
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="prefix"
       .maybeValue=${options.prefix}
       helper="${get('scl.prefix')}"
@@ -505,14 +506,14 @@ function contentLNodeWizard(options: ContentOptions): TemplateResult[] {
       nullable
       ?disabled=${isIedRef}
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="lnClass"
       .maybeValue=${options.lnClass}
       helper="${get('scl.lnClass')}"
       helperPersistent
       disabled
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="lnInst"
       .maybeValue=${options.lnInst}
       helper="${get('scl.lnInst')}"

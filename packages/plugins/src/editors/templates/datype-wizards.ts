@@ -10,6 +10,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   find,
@@ -120,7 +121,7 @@ export function editDaTypeWizard(
         },
       ],
       content: [
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${id}
@@ -130,14 +131,14 @@ export function editDaTypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${desc}
           nullable
           pattern="${patterns.normalizedString}"
         ></wizard-textfield>`,
-        html`<mwc-list
+        oscdHtml`<mwc-list
           style="margin-top: 0px;"
           @selected=${(e: SingleSelectedEvent) => {
             const bdaIdentity = (<ListItem>(<List>e.target).selected).value;
@@ -149,7 +150,7 @@ export function editDaTypeWizard(
         >
           ${Array.from(datype.querySelectorAll('BDA')).map(
             bda =>
-              html`<mwc-list-item twoline tabindex="0" value="${identity(bda)}"
+              oscdHtml`<mwc-list-item twoline tabindex="0" value="${identity(bda)}"
                 ><span>${bda.getAttribute('name')}</span
                 ><span slot="secondary"
                   >${bda.getAttribute('bType') === 'Enum' ||
@@ -223,7 +224,7 @@ export function createDATypeWizard(
         action: addPredefinedDAType(parent, templates),
       },
       content: [
-        html`<mwc-select
+        oscdHtml`<mwc-select
           fixedMenuPosition
           outlined
           icon="playlist_add_check"
@@ -232,7 +233,7 @@ export function createDATypeWizard(
         >
           ${Array.from(templates.querySelectorAll('DAType')).map(
             datype =>
-              html`<mwc-list-item
+              oscdHtml`<mwc-list-item
                 graphic="icon"
                 hasMeta
                 value="${datype.getAttribute('id') ?? ''}"
@@ -245,7 +246,7 @@ export function createDATypeWizard(
               </mwc-list-item>`
           )}
         </mwc-select>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="id"
           helper="${get('scl.id')}"
           .maybeValue=${''}
@@ -255,7 +256,7 @@ export function createDATypeWizard(
           pattern="${patterns.nmToken}"
           dialogInitialFocus
         ></wizard-textfield>`,
-        html`<wizard-textfield
+        oscdHtml`<wizard-textfield
           label="desc"
           helper="${get('scl.desc')}"
           .maybeValue=${null}

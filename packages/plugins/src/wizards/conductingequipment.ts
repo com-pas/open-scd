@@ -4,6 +4,7 @@ import { get } from 'lit-translate';
 import '@material/mwc-list/mwc-list-item';
 import '@material/mwc-select';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   crossProduct,
@@ -191,7 +192,7 @@ function renderTypeSelector(
   type: string
 ): TemplateResult {
   return option === 'create'
-    ? html`<mwc-select
+    ? oscdHtml`<mwc-select
         style="--mdc-menu-max-height: 196px;"
         required
         label="type"
@@ -199,10 +200,10 @@ function renderTypeSelector(
         validationMessage="${get('textfield.required')}"
       >
         ${Object.keys(types).map(
-          v => html`<mwc-list-item value="${v}">${types[v]}</mwc-list-item>`
+          v => oscdHtml`<mwc-list-item value="${v}">${types[v]}</mwc-list-item>`
         )}
       </mwc-select>`
-    : html`<mwc-select
+    : oscdHtml`<mwc-select
         label="type"
         helper="${get('conductingequipment.wizard.typeHelper')}"
         validationMessage="${get('textfield.required')}"
@@ -221,7 +222,7 @@ export function renderConductingEquipmentWizard(
 ): TemplateResult[] {
   return [
     renderTypeSelector(option, type),
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="name"
       .maybeValue=${name}
       helper="${get('conductingequipment.wizard.nameHelper')}"
@@ -230,7 +231,7 @@ export function renderConductingEquipmentWizard(
       dialogInitialFocus
       .reservedValues=${reservedNames}
     ></wizard-textfield>`,
-    html`<wizard-textfield
+    oscdHtml`<wizard-textfield
       label="desc"
       .maybeValue=${desc}
       nullable

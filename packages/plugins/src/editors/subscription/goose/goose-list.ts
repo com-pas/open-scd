@@ -12,7 +12,7 @@ import { classMap } from 'lit-html/directives/class-map';
 import '@material/mwc-icon';
 import '@material/mwc-list/mwc-list-item';
 
-import '@compas-oscd/open-scd/filtered-list.js';
+import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   getNameAttribute,
   identity,

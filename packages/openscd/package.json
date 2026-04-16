@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/open-scd",
-  "version": "0.34.46",
+  "version": "0.34.47",
   "repository": "https://github.com/openscd/open-scd.git",
   "directory": "packages/openscd",
   "description": "A bottom-up substation configuration designer for projects described using SCL `IEC 61850-6` Edition 2 or greater.",
@@ -39,7 +39,7 @@
     "./dist/action-pane.js": "./dist/action-pane.js",
     "./dist/action-icon.js": "./dist/action-icon.js",
     "./dist/plain-compare-list.js": "./dist/plain-compare-list.js",
-    "./filtered-list.js": "./dist/filtered-list.js",
+    "./dist/filtered-list.js": "./dist/filtered-list.js",
     "./dist/finder-list.js": "./dist/finder-list.js",
     "./dist/foundation/dai.js": "./dist/foundation/dai.js",
     "./dist/wizard-textfield.js": "./dist/wizard-textfield.js",

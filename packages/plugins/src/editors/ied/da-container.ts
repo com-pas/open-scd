@@ -46,15 +46,15 @@ export class DAContainer extends Container {
   @query('#toggleButton')
   toggleButton: IconButtonToggle | undefined;
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const bType = this.element.getAttribute('bType') ?? nothing;
     const fc = this.element.getAttribute('fc');
 
     if (this.instanceElement) {
-      return html`<b>${name}</b> &mdash; ${bType}${fc ? html` [${fc}]` : ``}`;
+      return `${name} — ${bType}${fc ? ` [${fc}]` : ``}`;
     } else {
-      return html`${name} &mdash; ${bType}${fc ? html` [${fc}]` : ``}`;
+      return `${name} — ${bType}${fc ? ` [${fc}]` : ``}`;
     }
   }
 

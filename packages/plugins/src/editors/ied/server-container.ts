@@ -35,10 +35,10 @@ export class ServerContainer extends Container {
   @query('add-ldevice-dialog')
   addAccessPointDialog!: AddLDeviceDialog;
 
-  private header(): TemplateResult {
+  private header(): string {
     const desc = getDescriptionAttribute(this.element);
 
-    return html`Server${desc ? html` &mdash; ${desc}` : nothing}`;
+    return `Server${desc ? ` — ${desc}` : ''}`;
   }
 
   protected updated(_changedProperties: PropertyValues): void {

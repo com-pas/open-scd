@@ -37,14 +37,14 @@ export class DOContainer extends Container {
 
   @query('#toggleButton') toggleButton: IconButtonToggle | undefined;
 
-  private header(): TemplateResult {
+  private header(): string {
     const name = getNameAttribute(this.element);
     const desc = getDescriptionAttribute(this.element);
 
     if (this.instanceElement != null) {
-      return html`<b>${name}${desc ? html` &mdash; ${desc}` : nothing}</b>`;
+      return `${name}${desc ? ` — ${desc}` : ''}`;
     } else {
-      return html`${name}${desc ? html` &mdash; ${desc}` : nothing}`;
+      return `${name}${desc ? ` — ${desc}` : ''}`;
     }
   }
 
