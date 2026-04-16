@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.8](https://github.com/com-pas/open-scd/compare/v0.45.7...v0.45.8) (2026-04-16)
+
+
+### Bug Fixes
+
+* Raise plugins package version ([b140236](https://github.com/com-pas/open-scd/commit/b140236283982d3735dfd5c786615215ac9ce6aa))
+* Raise plugins package version to 0.0.4 ([eb36364](https://github.com/com-pas/open-scd/commit/eb36364f6c4c2ff0aa426fb6d2e0bc2422606d87))
+
 ## [0.45.7](https://github.com/com-pas/open-scd/compare/v0.45.6...v0.45.7) (2026-04-16)
 
 
