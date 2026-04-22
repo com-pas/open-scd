@@ -57,6 +57,7 @@
     "./dist/foundation/scl.js": "./dist/foundation/scl.js",
     "./dist/icons/icons.js": "./dist/icons/icons.js",
     "./dist/icons/ied-icons.js": "./dist/icons/ied-icons.js",
+    "./dist/icons/icons.components.js": "./dist/icons/icons.components.js",
     "./dist/icons/lnode.js": "./dist/icons/lnode.js"
   },
   "dependencies": {

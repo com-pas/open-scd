@@ -45,6 +45,17 @@ function childTags(element: Element | null | undefined): SCLTag[] {
   );
 }
 
+@customElement('custom-get-icon')
+export class CustomIcon extends LitElement {
+  @property({ attribute: false })
+  element!: Element;
+
+  render() {
+    return html`${getIcon(this.element)}`;
+  }
+}
+
+
 /** [[`SubstationEditor`]] subeditor for a `ConductingEquipment` element. */
 @customElement('conducting-equipment-editor')
 export class ConductingEquipmentEditor extends LitElement {
@@ -215,7 +226,9 @@ export class ConductingEquipmentEditor extends LitElement {
   }
 
   renderContentIcon(): TemplateResult {
-    return html`<mwc-icon slot="icon">${getIcon(this.element)}</mwc-icon>
+    return html`<mwc-icon slot="icon">
+        <custom-get-icon .element=${this.element}></custom-get-icon>
+      </mwc-icon>
       <mwc-fab
         slot="action"
         mini

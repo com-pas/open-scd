@@ -22,7 +22,7 @@ import './ied-editor.js';
 import './powertransformer-editor.js';
 import './voltage-level-editor.js';
 import './general-equipment-editor.js';
-import { substationIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import {
   newWizardEvent,
   SCLTag,
@@ -219,7 +219,7 @@ export class SubstationEditor extends LitElement {
   render(): TemplateResult {
     return html`${this.renderRedirectUI()}<action-pane label="${this.header}">
         <mwc-icon class="substation-editor-icon" slot="icon"
-          >${substationIcon}</mwc-icon
+          > <custom-icon-substation></custom-icon-substation> </mwc-icon
         >
         <abbr slot="action" title="${get('lnode.tooltip')}">
           <mwc-icon-button

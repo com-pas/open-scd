@@ -40,7 +40,7 @@ import {
 } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@compas-oscd/core';
-import { voltageLevelIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { SubstationEditor } from './substation-editor.js';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import { Dialog } from '@material/mwc-dialog';
@@ -227,7 +227,7 @@ export class VoltageLevelEditor extends LitElement {
   render(): TemplateResult {
     return html`${this.renderRedirectUI()}<action-pane label="${this.header}">
         <mwc-icon class="substation-editor-icon" slot="icon"
-          >${voltageLevelIcon}</mwc-icon
+          > <custom-icon-voltagelevel></custom-icon-voltagelevel> </mwc-icon
         >
         <abbr slot="action" title="${get('lnode.tooltip')}">
           <mwc-icon-button

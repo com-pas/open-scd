@@ -35,10 +35,8 @@ import {
 } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@compas-oscd/core';
-import {
-  bayIcon,
-  voltageLevelIcon,
-} from '@compas-oscd/open-scd/dist/icons/icons.js';
+
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { emptyWizard, wizards } from '../../wizards/wizard-library.js';
 import {
   cloneSubstationElement,
@@ -194,7 +192,7 @@ export class BayEditor extends LitElement {
   render(): TemplateResult {
     return html`${this.renderRedirectUI()}<action-pane label="${this.header}">
         <mwc-icon class="substation-editor-icon" slot="icon"
-          >${bayIcon}</mwc-icon
+          > <custom-icon-bay></custom-icon-bay> </mwc-icon
         >
         <abbr slot="action" title="${get('lnode.tooltip')}">
           <mwc-icon-button
