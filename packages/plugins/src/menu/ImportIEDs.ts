@@ -16,7 +16,6 @@ import { Dialog } from '@material/mwc-dialog';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/filtered-list.js';
 import { find, identity, isPublic } from '@compas-oscd/open-scd/dist/foundation.js';
 
@@ -389,6 +388,10 @@ export default class ImportingIedPlugin extends LitElement {
     await this.updateComplete;
   }
 
+  protected componentHtml(strings: TemplateStringsArray, ...values: unknown[]): TemplateResult {
+    return html(strings, ...values);
+  }
+
   private importIED(ied: Element): void {
     if (ied.getAttribute('name') === 'TEMPLATE') {
       const newIedName = uniqueTemplateIedName(this.doc, ied);
@@ -544,18 +547,18 @@ export default class ImportingIedPlugin extends LitElement {
   }
 
   protected renderInput(): TemplateResult {
-    return oscdHtml`<input multiple @change=${(event: Event) => {
+    return html`<input multiple @change=${(event: Event) => {
       this.onLoadFiles(event);
       (<HTMLInputElement>event.target).value = '';
     }} id="importied-plugin-input" accept=".sed,.scd,.ssd,.isd,.iid,.cid,.icd" type="file"></input>`;
   }
 
   protected buildIedSelection(importDoc: XMLDocument, fileName: string): void {
-    this.iedSelection.push(oscdHtml`<mwc-dialog data-file="${fileName}">
+    this.iedSelection.push(html`<mwc-dialog data-file="${fileName}">
       <filtered-list hasSlot multi>
         ${Array.from(importDoc?.querySelectorAll(':root > IED') ?? []).map(
           ied =>
-            oscdHtml`<mwc-check-list-item value="${identity(ied)}"
+            html`<mwc-check-list-item value="${identity(ied)}"
               >${ied.getAttribute('name')}</mwc-check-list-item
             >`
         )}
@@ -577,7 +580,7 @@ export default class ImportingIedPlugin extends LitElement {
   }
 
   render(): TemplateResult {
-    return oscdHtml`${this.iedSelection}${this.renderInput()}`;
+    return html`${this.iedSelection}${this.renderInput()}`;
   }
 
   static styles = css`

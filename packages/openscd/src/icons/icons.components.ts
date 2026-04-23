@@ -4,7 +4,7 @@ import {
   LitElement,
 } from 'lit-element';
 
-import { bayIcon, substationIcon, voltageLevelIcon } from './icons.js';
+import { bayIcon, circuitBreakerIcon, currentTransformerIcon, disconnectorIcon, earthSwitchIcon, generalConductingEquipmentIcon, gooseIcon, smvIcon, substationIcon, voltageLevelIcon, voltageTransformerIcon } from './icons.js';
 
 @customElement('custom-icon-bay')
 export class CustomIconBay extends LitElement {
@@ -24,5 +24,61 @@ export class CustomIconSubstation extends LitElement {
 export class CustomIconVoltageLevel extends LitElement {
   render() {
     return html`${voltageLevelIcon}`;
+  }
+}
+
+@customElement('custom-icon-circuitbreaker')
+export class CustomIconCircuitBreaker extends LitElement {
+  render() {
+    return html`${circuitBreakerIcon}`;
+  }
+}
+
+@customElement('custom-icon-disconnector')
+export class CustomIconDisconnector extends LitElement {
+  render() {
+    return html`${disconnectorIcon}`;
+  }
+}
+
+@customElement('custom-icon-currenttransformer')
+export class CustomIconCurrentTransformer extends LitElement {
+  render() {
+    return html`${currentTransformerIcon}`;
+  }
+}
+
+@customElement('custom-icon-voltagetransformer')
+export class CustomIconVoltageTransformer extends LitElement {
+  render() {
+    return html`${voltageTransformerIcon}`;
+  }
+}
+
+@customElement('custom-icon-earthswitch')
+export class CustomIconEarthSwitch extends LitElement {
+  render() {
+    return html`${earthSwitchIcon}`;
+  }
+}
+
+@customElement('custom-icon-generalconductingequipment')
+export class CustomIconGeneralConductingEquipment extends LitElement {
+  render() {
+    return html`${generalConductingEquipmentIcon}`;
+  }
+}
+
+@customElement('custom-icon-goose')
+export class CustomIconGoose extends LitElement {
+  render() {
+    return html`${gooseIcon}`;
+  }
+}
+
+@customElement('custom-icon-smv')
+export class CustomIconSmv extends LitElement {
+  render() {
+    return html`${smvIcon}`;
   }
 }
