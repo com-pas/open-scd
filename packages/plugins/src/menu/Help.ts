@@ -1,9 +1,9 @@
-import { html, LitElement } from 'lit-element';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html';
+import { LitElement } from 'lit-element';
 import * as marked from 'marked';
 
 import '@material/mwc-icon';
 
+import { oscdHtml, oscdUnsafeHTML } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/finder-list.js';
 import { newWizardEvent, Wizard } from '@compas-oscd/open-scd/dist/foundation.js';
 import { openSCDIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
@@ -14,7 +14,7 @@ const MD_LINK_TITLE_PATTERN ='([^\\]]*)';
 const HYPHEN_PATTERN = /-/g;
 
 function aboutBox(version: string) {
-  return html`<div>
+  return oscdHtml`<div>
       <div style="display:flex">
         <mwc-icon slot="graphic" style="--mdc-icon-size:25px"
           >${openSCDIcon}</mwc-icon
@@ -55,9 +55,9 @@ async function getLinkedPages(path: string[]): Promise<Directory> {
     MD_LINK_REPLACEMENT
   );
 
-  const header = html`<div style="padding: 8px;">
-    ${page === 'Home' ? aboutBox(edition.version) : html``}
-    ${unsafeHTML(marked.parse(unlinkedMd))}
+  const header = oscdHtml`<div style="padding: 8px;">
+    ${page === 'Home' ? aboutBox(edition.version) : oscdHtml``}
+    ${oscdUnsafeHTML(marked.parse(unlinkedMd))}
   </div>`;
   const entries = Array.from(
     md.matchAll( new RegExp(`\\(${GITHUB_WIKI_LINK_PATTERN.source}\\)`, 'g'))
@@ -72,7 +72,7 @@ export function aboutBoxWizard(): Wizard {
     {
       title: 'Help',
       content: [
-        html`<finder-list
+        oscdHtml`<finder-list
           .path=${['Home']}
           .read=${getLinkedPages}
         ></finder-list>`,

@@ -1,5 +1,6 @@
 import { LitElement, TemplateResult, html } from 'lit-element';
 import { directive, Part } from 'lit-html';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
 import { List } from '@material/mwc-list';
 import { Select } from '@material/mwc-select';
@@ -15,6 +16,7 @@ import { WizardCheckbox } from './wizard-checkbox.js';
 import { EditorAction } from '@compas-oscd/core';
 
 export const oscdHtml = html;
+export const oscdUnsafeHTML = unsafeHTML;
 
 export const wizardInputSelector =
   'wizard-textfield, mwc-textfield, ace-editor, mwc-select, wizard-select, wizard-checkbox';
