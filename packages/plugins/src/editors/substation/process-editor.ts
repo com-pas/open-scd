@@ -27,7 +27,7 @@ import './process-editor.js';
 import './substation-editor.js';
 import './process-editor.js';
 
-import { processIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { styles } from './foundation.js';
 import {
   newWizardEvent,
@@ -219,7 +219,7 @@ export class ProcessEditor extends LitElement {
   render(): TemplateResult {
     return html`<action-pane label=${this.header}>
       <mwc-icon class="substation-editor-icon" slot="icon"
-        >${processIcon}</mwc-icon
+        ><custom-icon-process></custom-icon-process></mwc-icon
       >
       <abbr slot="action" title="${get('edit')}">
         <mwc-icon-button

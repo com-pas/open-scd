@@ -4,7 +4,7 @@ import {
   LitElement,
 } from 'lit-element';
 
-import { bayIcon, circuitBreakerIcon, currentTransformerIcon, disconnectorIcon, earthSwitchIcon, generalConductingEquipmentIcon, gooseIcon, smvIcon, substationIcon, voltageLevelIcon, voltageTransformerIcon } from './icons.js';
+import { bayIcon, circuitBreakerIcon, currentTransformerIcon, disconnectorIcon, earthSwitchIcon, generalConductingEquipmentIcon, gooseIcon, lineIcon, processIcon, smvIcon, substationIcon, voltageLevelIcon, voltageTransformerIcon } from './icons.js';
 
 @customElement('custom-icon-bay')
 export class CustomIconBay extends LitElement {
@@ -80,5 +80,19 @@ export class CustomIconGoose extends LitElement {
 export class CustomIconSmv extends LitElement {
   render() {
     return html`${smvIcon}`;
+  }
+}
+
+@customElement('custom-icon-line')
+export class CustomIconLine extends LitElement {
+  render() {
+    return html`${lineIcon}`;
+  }
+}
+
+@customElement('custom-icon-process')
+export class CustomIconProcess extends LitElement {
+  render() {
+    return html`${processIcon}`;
   }
 }

@@ -23,7 +23,7 @@ import './function-editor.js';
 import './general-equipment-editor.js';
 import './l-node-editor.js';
 
-import { lineIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { styles } from './foundation.js';
 import {
   newWizardEvent,
@@ -175,7 +175,7 @@ export class LineEditor extends LitElement {
   render(): TemplateResult {
     return html`<action-pane label=${this.header}>
       <mwc-icon class="substation-editor-icon" slot="icon"
-        >${lineIcon}</mwc-icon
+        ><custom-icon-line></custom-icon-line></mwc-icon
       >
       <abbr slot="action" title="${get('edit')}">
         <mwc-icon-button

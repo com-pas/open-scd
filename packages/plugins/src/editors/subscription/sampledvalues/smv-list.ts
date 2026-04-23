@@ -18,7 +18,7 @@ import {
   newWizardEvent,
 } from '@compas-oscd/open-scd/dist/foundation.js';
 import { newSmvSelectEvent } from './foundation.js';
-import { smvIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { getOrderedIeds, styles } from '../foundation.js';
 import { classMap } from 'lit-html/directives/class-map.js';
 import { wizards } from '../../../wizards/wizard-library.js';
@@ -77,7 +77,7 @@ export class SmvPublisherList extends LitElement {
       hasMeta
       value="${identity(smvControl)}"
     >
-      <mwc-icon slot="graphic">${smvIcon}</mwc-icon>
+      <mwc-icon slot="graphic"><custom-icon-smv></custom-icon-smv></mwc-icon>
       <span>${smvControl.getAttribute('name')}</span>
       <mwc-icon-button
         class="${classMap({

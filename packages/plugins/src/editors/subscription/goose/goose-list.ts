@@ -19,7 +19,7 @@ import {
   newWizardEvent,
 } from '@compas-oscd/open-scd/dist/foundation.js';
 import { newGOOSESelectEvent } from './foundation.js';
-import { gooseIcon } from '@compas-oscd/open-scd/dist/icons/icons.js';
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { wizards } from '../../../wizards/wizard-library.js';
 import { getOrderedIeds, styles } from '../foundation.js';
 
@@ -65,7 +65,7 @@ export class GooseList extends LitElement {
       hasMeta
       value="${identity(gseControl)}"
     >
-      <mwc-icon slot="graphic">${gooseIcon}</mwc-icon>
+      <mwc-icon slot="graphic"><custom-icon-goose></custom-icon-goose></mwc-icon>
       <span>${gseControl.getAttribute('name')}</span>
       <mwc-icon-button
         class="${classMap({
