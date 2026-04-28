@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.10](https://github.com/com-pas/open-scd/compare/v0.45.9...v0.45.10) (2026-04-28)
+
+
+### Bug Fixes
+
+* **plugins:** Fix core imports ([2f4f945](https://github.com/com-pas/open-scd/commit/2f4f945888f6034ce426928c22f02aefafbf4933))
+* **plugins:** Fix core imports ([4c1a26a](https://github.com/com-pas/open-scd/commit/4c1a26a390f5824941a47905270e37de771a7f5f))
+
 ## [0.45.9](https://github.com/com-pas/open-scd/compare/v0.45.8...v0.45.9) (2026-04-28)
 
 
