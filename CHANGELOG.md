@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.11](https://github.com/com-pas/open-scd/compare/v0.45.10...v0.45.11) (2026-04-28)
+
+
+### Bug Fixes
+
+* Fix package lock ([51e2ba0](https://github.com/com-pas/open-scd/commit/51e2ba0af2b37d673465032a9e9499dfd7aa772e))
+* Fix package lock ([909c1e7](https://github.com/com-pas/open-scd/commit/909c1e78b10c637585771bb18459f177eb8cdb79))
+
 ## [0.45.10](https://github.com/com-pas/open-scd/compare/v0.45.9...v0.45.10) (2026-04-28)
 
 
