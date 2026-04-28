@@ -45,6 +45,7 @@ function childTags(element: Element | null | undefined): SCLTag[] {
   );
 }
 
+
 /** [[`SubstationEditor`]] subeditor for a `ConductingEquipment` element. */
 @customElement('conducting-equipment-editor')
 export class ConductingEquipmentEditor extends LitElement {
@@ -215,7 +216,9 @@ export class ConductingEquipmentEditor extends LitElement {
   }
 
   renderContentIcon(): TemplateResult {
-    return html`<mwc-icon slot="icon">${getIcon(this.element)}</mwc-icon>
+    return html`<mwc-icon slot="icon">
+        ${getIcon(this.element)}
+      </mwc-icon>
       <mwc-fab
         slot="action"
         mini

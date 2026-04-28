@@ -388,6 +388,10 @@ export default class ImportingIedPlugin extends LitElement {
     await this.updateComplete;
   }
 
+  protected componentHtml(strings: TemplateStringsArray, ...values: unknown[]): TemplateResult {
+    return html(strings, ...values);
+  }
+
   private importIED(ied: Element): void {
     if (ied.getAttribute('name') === 'TEMPLATE') {
       const newIedName = uniqueTemplateIedName(this.doc, ied);

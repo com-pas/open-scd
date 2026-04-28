@@ -8,14 +8,8 @@ import { identity, isPublic } from '@compas-oscd/open-scd/dist/foundation.js';
 import { getChildElementsByTagName } from '@compas-oscd/xml';
 
 import { newActionEvent } from '@compas-oscd/core';
-import {
-  circuitBreakerIcon,
-  disconnectorIcon,
-  currentTransformerIcon,
-  voltageTransformerIcon,
-  earthSwitchIcon,
-  generalConductingEquipmentIcon,
-} from '@compas-oscd/open-scd/dist/icons/icons.js';
+
+import '@compas-oscd/open-scd/dist/icons/icons.components.js';
 import { typeStr } from '../../wizards/conductingequipment.js';
 import { Select } from '@material/mwc-select';
 
@@ -553,7 +547,7 @@ function checkInstanceOfParentClass<E extends ElementEditor>(
  * @returns The icon.
  */
 export function getIcon(condEq: Element): TemplateResult {
-  return typeIcons[typeStr(condEq)] ?? generalConductingEquipmentIcon;
+  return typeIcons[typeStr(condEq)] ?? html`<custom-icon-generalconductingequipment></custom-icon-generalconductingequipment>`;
 }
 /**
  * Creates a general-equipment template literal.
@@ -593,11 +587,11 @@ export function renderGeneralEquipment(
 }
 
 const typeIcons: Partial<Record<string, TemplateResult>> = {
-  CBR: circuitBreakerIcon,
-  DIS: disconnectorIcon,
-  CTR: currentTransformerIcon,
-  VTR: voltageTransformerIcon,
-  ERS: earthSwitchIcon,
+  CBR: html`<custom-icon-circuitbreaker></custom-icon-circuitbreaker>`,
+  DIS: html`<custom-icon-disconnector></custom-icon-disconnector>`,
+  CTR: html`<custom-icon-currenttransformer></custom-icon-currenttransformer>`,
+  VTR: html`<custom-icon-voltagetransformer></custom-icon-voltagetransformer>`,
+  ERS: html`<custom-icon-earthswitch></custom-icon-earthswitch>`,
 };
 
 // Substation element hierarchy
