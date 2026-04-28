@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.45.9](https://github.com/com-pas/open-scd/compare/v0.45.8...v0.45.9) (2026-04-28)
+
+
+### Bug Fixes
+
+* Rendering issues with icons ([d648035](https://github.com/com-pas/open-scd/commit/d648035c149494021ca63205f8928d57ace5e98c))
+
 ## [0.45.8](https://github.com/com-pas/open-scd/compare/v0.45.7...v0.45.8) (2026-04-16)
 
 
