@@ -36,7 +36,7 @@ import {
   Create,
   EditorAction,
 } from '@compas-oscd/core';
-import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
+import { newLogEvent } from '@compas-oscd/core';
 
 function createLNodeAction(parent: Element): WizardActor {
   return (
