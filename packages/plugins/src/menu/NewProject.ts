@@ -12,9 +12,9 @@ import {
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { newOpenDocEvent } from '@compas-oscd/core/foundation/deprecated/open-event.js';
+import { newOpenDocEvent } from '@compas-oscd/core';
 import { EditorAction } from '@compas-oscd/core';
-import { newLogEvent } from '@compas-oscd/core/foundation/deprecated/history.js';
+import { newLogEvent } from '@compas-oscd/core';
 import {
   newEmptySCD,
   SupportedVersion,
