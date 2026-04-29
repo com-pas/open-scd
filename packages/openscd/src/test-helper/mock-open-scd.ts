@@ -6,14 +6,14 @@ import {
   query,
   property
 } from 'lit-element';
-import { OscdWizards } from '../src/addons/Wizards.js';
-import { WizardFactory } from '../src/foundation.js';
-import { OpenSCD } from '../src/open-scd.js';
-import { WizardDialog } from '../src/wizard-dialog.js';
-import { OscdHistory } from '../src/addons/History.js';
-import { OscdLayout } from '../src/addons/Layout.js';
+import { OscdWizards } from '../addons/Wizards.js';
+import { WizardFactory } from '../foundation.js';
+import { OpenSCD } from '../open-scd.js';
+import { WizardDialog } from '../wizard-dialog.js';
+import { OscdHistory } from '../addons/History.js';
+import { OscdLayout } from '../addons/Layout.js';
 // import type { Plugin } from '@openscd/core';
-import { Plugin } from '../src/plugin';
+import { Plugin } from '../plugin.js';
 
 @customElement('mock-open-scd')
 export class MockOpenSCD extends OpenSCD {
