@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.45.12](https://github.com/com-pas/open-scd/compare/v0.45.11...v0.45.12) (2026-04-29)
+
+
+### Bug Fixes
+
+* **open-scd:** Export test helpers ([e41610b](https://github.com/com-pas/open-scd/commit/e41610b31ac948c939b291f8bdc8a11fc4ba002a))
+
 ## [0.45.11](https://github.com/com-pas/open-scd/compare/v0.45.10...v0.45.11) (2026-04-28)
 
 
