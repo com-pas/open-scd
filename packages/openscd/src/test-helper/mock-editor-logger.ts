@@ -8,10 +8,10 @@ import {
   TemplateResult,
 } from 'lit-element';
 
-import '../src/addons/Editor.js';
-import '../src/addons/History.js';
-import { OscdEditor } from '../src/addons/Editor.js';
-import { OscdHistory } from '../src/addons/History.js';
+import '../addons/Editor.js';
+import '../addons/History.js';
+import { OscdEditor } from '../addons/Editor.js';
+import { OscdHistory } from '../addons/History.js';
 import { XMLEditor } from '@openscd/oscd-editor';
 
 @customElement('mock-editor-logger')

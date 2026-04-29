@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '../mock-open-scd.js';
-import { MockOpenSCD } from '../mock-open-scd.js';
+import '../../src/test-helper/mock-open-scd.js';
+import { MockOpenSCD } from '../../src/test-helper/mock-open-scd.js';
 import { TextField } from '@material/mwc-textfield';
 import { Plugin, PluginConfig, PluginConfigMenu, PluginConfigNotMenu } from '../../src/plugin';
 import { ConfigurePluginDetail, newConfigurePluginEvent } from '../../src/plugin.events';

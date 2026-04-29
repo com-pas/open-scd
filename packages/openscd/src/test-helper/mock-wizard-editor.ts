@@ -7,11 +7,11 @@ import {
   property
 } from 'lit-element';
 
-import '../src/addons/Wizards.js';
+import '../addons/Wizards.js';
 
-import '../src/addons/Editor.js';
+import '../addons/Editor.js';
 
-import { OscdWizards } from '../src/addons/Wizards.js';
+import { OscdWizards } from '../addons/Wizards.js';
 import { XMLEditor } from '@openscd/oscd-editor';
 
 @customElement('mock-wizard-editor')

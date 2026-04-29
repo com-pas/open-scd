@@ -1,8 +1,8 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '../mock-open-scd.js';
+import '../../src/test-helper/mock-open-scd.js';
 import { mockEdits } from '../mock-edits.js';
-import { MockOpenSCD } from '../mock-open-scd.js';
+import { MockOpenSCD } from '../../src/test-helper/mock-open-scd.js';
 
 import {
   CommitEntry,

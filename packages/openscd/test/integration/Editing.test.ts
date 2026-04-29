@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '../mock-editor-logger.js';
-import { MockEditorLogger } from '../mock-editor-logger.js';
+import '../../src/test-helper/mock-editor-logger.js';
+import { MockEditorLogger } from '../../src/test-helper/mock-editor-logger.js';
 
 import {
   newActionEvent,
