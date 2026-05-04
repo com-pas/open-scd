@@ -4,7 +4,7 @@ import '@compas-oscd/open-scd/dist/test-helper';
 
 import Communication from '../../../../src/editors/Communication.js';
 import { Dialog } from '@material/mwc-dialog';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 describe('Communication Plugin', () => {

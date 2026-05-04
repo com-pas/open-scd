@@ -1,6 +1,6 @@
 import { fixture, html, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   WizardInputElement,
   WizardActor,

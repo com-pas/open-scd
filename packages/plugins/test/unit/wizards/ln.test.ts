@@ -5,7 +5,7 @@ import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards';
 import { editLNWizard } from '../../../src/wizards/ln.js';
 import { WizardInputElement } from '@openscd/open-scd/src/foundation.js';
 import { fetchDoc, setWizardTextFieldValue } from './test-support.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 
 describe('ln wizards', () => {
   let doc: XMLDocument;

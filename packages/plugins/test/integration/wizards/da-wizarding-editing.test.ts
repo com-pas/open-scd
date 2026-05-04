@@ -9,7 +9,7 @@ import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import TemplatesPlugin from '../../../src/editors/Templates.js';
 import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
 
 describe('DA wizarding editing integration', () => {

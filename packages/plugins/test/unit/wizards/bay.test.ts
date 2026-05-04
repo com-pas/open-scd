@@ -10,7 +10,7 @@ import {
   isSimple,
   ComplexAction 
 } from '@openscd/core/foundation/deprecated/editor.js';
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { createAction } from '../../../src/wizards/bay.js';
 import { replaceNamingAttributeWithReferencesAction } from '../../../src/wizards/foundation/actions.js';
 

@@ -5,7 +5,7 @@ import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
 
 import { wizardContent } from '../../../src/wizards/abstractda.js';
 import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   Wizard,
   WizardInputElement,

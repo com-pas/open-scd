@@ -8,7 +8,7 @@ import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
 import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import TemplatesPlugin from '../../../src/editors/Templates.js';
 import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
 

@@ -14,7 +14,7 @@ import {
   regExp,
   regexString,
 } from '../../foundation.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { editConnectedApWizard } from '../../../src/wizards/connectedap.js';
 
 describe('Edit wizard for SCL element ConnectedAP', () => {
