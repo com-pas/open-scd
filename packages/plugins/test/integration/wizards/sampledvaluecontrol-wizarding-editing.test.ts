@@ -5,7 +5,7 @@ import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   createSampledValueControlWizard,
@@ -13,7 +13,7 @@ import {
 } from '../../../src/wizards/sampledvaluecontrol.js';
 import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
 import { FinderList } from '@openscd/open-scd/src/finder-list.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element SampledValueControl', () => {
   let doc: XMLDocument;

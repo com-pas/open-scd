@@ -2,10 +2,10 @@ import { expect, fixture, html } from '@open-wc/testing';
 import { SinonSpy, spy } from 'sinon';
 import fc, { integer } from 'fast-check';
 
-import '@openscd/open-scd/src/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
-import { WizardInputElement } from '@openscd/open-scd/src/foundation.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   isCreate,
   isDelete,
@@ -26,7 +26,7 @@ import {
 } from '../../../src/wizards/reportcontrol.js';
 import { inverseRegExp, regExp, regexString } from '../../foundation.js';
 import { FinderList } from '@openscd/open-scd/src/finder-list.js';
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 describe('Wizards for SCL ReportControl element', () => {

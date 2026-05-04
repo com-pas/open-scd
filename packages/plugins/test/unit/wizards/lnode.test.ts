@@ -11,7 +11,7 @@ import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js'
 import {
   newWizardEvent,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   isCreate, 
   Create, 

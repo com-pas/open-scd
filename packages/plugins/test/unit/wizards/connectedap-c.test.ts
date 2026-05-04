@@ -6,7 +6,7 @@ import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base.js';
 
 import { createConnectedApWizard } from '../../../src/wizards/connectedap.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 function isAllMacUnique(parent: Element, serviceType: 'GSE' | 'SMV'): boolean {
   const allMacs = Array.from(

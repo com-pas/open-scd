@@ -4,7 +4,7 @@ import '@compas-oscd/open-scd/dist/test-helper';
 import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { editConnectedApWizard } from '../../../src/wizards/connectedap.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('connectedap wizarding editing integration', () => {
   let doc: XMLDocument;

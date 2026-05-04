@@ -4,7 +4,7 @@ import '@compas-oscd/open-scd/dist/test-helper';
 import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 import { editGseWizard } from '../../../src/wizards/gse.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('address wizarding editing integration', () => {
   let doc: XMLDocument;

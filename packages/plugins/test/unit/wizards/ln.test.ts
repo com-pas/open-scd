@@ -1,9 +1,9 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards';
 
 import { editLNWizard } from '../../../src/wizards/ln.js';
-import { WizardInputElement } from '@openscd/open-scd/src/foundation.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
 import { fetchDoc, setWizardTextFieldValue } from './test-support.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 

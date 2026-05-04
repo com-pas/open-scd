@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import { newWizardEvent, Wizard } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent, Wizard } from '@compas-oscd/open-scd/dist/foundation.js';
 import { editServicesWizard } from '../../../src/wizards/services.js';
 
 import '@compas-oscd/open-scd/dist/test-helper';

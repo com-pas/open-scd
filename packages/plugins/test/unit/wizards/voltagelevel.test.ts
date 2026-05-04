@@ -4,7 +4,7 @@ import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   WizardInputElement,
   WizardActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   ComplexAction,
   isCreate,

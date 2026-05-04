@@ -3,7 +3,7 @@ import { fixture, html, expect } from '@open-wc/testing';
 import {
   WizardInputElement,
   WizardActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   isCreate,
   isReplace,

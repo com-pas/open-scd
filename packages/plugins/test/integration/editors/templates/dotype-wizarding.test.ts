@@ -6,7 +6,7 @@ import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
 
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';

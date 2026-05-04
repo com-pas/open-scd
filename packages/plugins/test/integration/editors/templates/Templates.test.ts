@@ -5,7 +5,7 @@ import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Templates Plugin', () => {
   customElements.define('templates-plugin', TemplatesPlugin);
