@@ -34,7 +34,6 @@ snapshots["Wizards for SCL element Conducting Equipment (X/Y) looks like the lat
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[conductingequipment.wizard.descHelper]"
       label="desc"
       nullable=""

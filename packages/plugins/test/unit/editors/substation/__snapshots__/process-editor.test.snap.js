@@ -10,6 +10,8 @@ snapshots["web component rendering Process element rendering LNode, GeneralEquip
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-process>
+    </custom-icon-process>
   </mwc-icon>
   <abbr
     slot="action"
@@ -138,6 +140,8 @@ snapshots["web component rendering Process element hides LNode and Function chil
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-process>
+    </custom-icon-process>
   </mwc-icon>
   <abbr
     slot="action"
@@ -260,6 +264,8 @@ snapshots["web component rendering Process element rendering Substation and Proc
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-process>
+    </custom-icon-process>
   </mwc-icon>
   <abbr
     slot="action"
@@ -382,6 +388,8 @@ snapshots["web component rendering Process element rendering a Line child looks 
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-process>
+    </custom-icon-process>
   </mwc-icon>
   <abbr
     slot="action"

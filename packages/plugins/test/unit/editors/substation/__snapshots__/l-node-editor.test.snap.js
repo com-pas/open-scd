@@ -7,6 +7,8 @@ snapshots["web component rendering LNode element as reference to a LN/LN0 within
   tabindex="0"
 >
   <mwc-icon slot="icon">
+    <custom-icon-lnode-switchgear>
+    </custom-icon-lnode-switchgear>
   </mwc-icon>
   <mwc-fab
     icon="edit"
@@ -32,6 +34,8 @@ snapshots["web component rendering LNode element as instance of a LNodeType only
   tabindex="0"
 >
   <mwc-icon slot="icon">
+    <custom-icon-lnode-switchgear>
+    </custom-icon-lnode-switchgear>
   </mwc-icon>
   <mwc-fab
     icon="edit"

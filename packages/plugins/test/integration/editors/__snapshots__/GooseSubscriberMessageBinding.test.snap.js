@@ -1248,6 +1248,8 @@ snapshots["in Publisher view per default the right hand side GSEControl list loo
       value="IED1>>CircuitBreaker_CB1>GCB"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
       <span>
         GCB
@@ -1287,6 +1289,8 @@ snapshots["in Publisher view per default the right hand side GSEControl list loo
       value="IED2>>CBSW>GCB"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
       <span>
         GCB
@@ -1345,6 +1349,8 @@ snapshots["in Publisher view per default the right hand side GSEControl list loo
       value="IED4>>CircuitBreaker_CB1>GCB"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
       <span>
         GCB

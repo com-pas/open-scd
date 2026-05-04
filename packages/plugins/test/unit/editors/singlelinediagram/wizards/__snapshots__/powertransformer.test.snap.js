@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element Power Transformer (X/Y) looks like the latest
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[powertransformer.wizard.descHelper]"
       label="desc"
       nullable=""

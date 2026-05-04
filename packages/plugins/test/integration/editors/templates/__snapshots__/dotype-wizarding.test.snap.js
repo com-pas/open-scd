@@ -683,7 +683,6 @@ snapshots["DOType wizards defines a createDOTypeWizard looks like the latest sna
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -784,7 +783,6 @@ snapshots["DOType wizards defines a dOTypeWizard looks like the latest snapshot"
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -1067,7 +1065,6 @@ snapshots["DOType wizards defines a sDOWizard to edit an existing SDO looks like
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -1253,7 +1250,6 @@ snapshots["DOType wizards defines a sDOWizard to create a new SDO element looks 
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""

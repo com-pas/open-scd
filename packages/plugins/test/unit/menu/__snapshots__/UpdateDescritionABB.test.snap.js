@@ -44,7 +44,7 @@ snapshots["Update method for desc attributes in ABB IEDs working on SCL files co
         graphic="control"
         mwc-list-item=""
         selected=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="ExtRef | IED1>>Disconnectors>DC CSWI 1>01-0C-CD-01-00-01,0001,5,GOOSERCV_BIN.3.I1,400,0,GOOSERCV_BIN,Dynamic[0]"
       >

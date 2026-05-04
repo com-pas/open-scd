@@ -51,7 +51,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LPHD1"
       >
@@ -69,7 +69,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XCBR1"
       >
@@ -87,7 +87,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.CSWI"
       >
@@ -105,7 +105,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.CILO"
       >
@@ -123,7 +123,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.CSWIwithoutCtlModel"
       >
@@ -141,7 +141,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XSWI1"
       >
@@ -159,7 +159,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.GGIO1"
       >
@@ -208,7 +208,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LLN0.Beh"
       >
@@ -226,7 +226,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LLN0.Health"
       >
@@ -244,7 +244,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LLN0.NamPlt"
       >
@@ -262,7 +262,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LPHD1.PhyNam"
       >
@@ -280,7 +280,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.LPHD1.Sim"
       >
@@ -298,7 +298,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XCBR1.Pos"
       >
@@ -316,7 +316,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.CSWI.Pos1"
       >
@@ -334,7 +334,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.CSWI.Pos2"
       >
@@ -352,7 +352,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XCBR1.OpCnt"
       >
@@ -370,7 +370,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XCBR1.NamPlt"
       >
@@ -388,7 +388,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.XCBR1.BlkOpn"
       >
@@ -406,7 +406,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         twoline=""
         value="#Dummy.SPS"
       >
@@ -451,7 +451,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy.LLN0.Mod.SBOw"
       >
         <span>
@@ -465,7 +465,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy.LLN0.Mod.Cancel"
       >
         <span>
@@ -479,7 +479,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy.LPHD1.Sim.SBOw"
       >
         <span>
@@ -493,7 +493,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy.LPHD1.Sim.Cancel"
       >
         <span>
@@ -534,7 +534,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy_Beh"
       >
         <span>
@@ -548,7 +548,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy_Health"
       >
         <span>
@@ -562,7 +562,7 @@ snapshots["Templates Plugin with a doc loaded looks like the latest snapshot"] =
         aria-disabled="false"
         hasmeta=""
         mwc-list-item=""
-        tabindex="-1"
+        tabindex="0"
         value="#Dummy_orCategory"
       >
         <span>

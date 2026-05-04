@@ -864,7 +864,6 @@ snapshots["DA wizarding editing integration defines a createDaWizard to create a
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -1357,7 +1356,6 @@ snapshots["DA wizarding editing integration defines a createDaWizard to create a
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Short address"
       label="sAddr"
       nullable=""
@@ -1365,7 +1363,6 @@ snapshots["DA wizarding editing integration defines a createDaWizard to create a
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="Value kind"
       label="valKind"
@@ -1417,14 +1414,12 @@ snapshots["DA wizarding editing integration defines a createDaWizard to create a
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""
     >
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""

@@ -24,11 +24,13 @@ snapshots["add-ln-dialog looks like the latest snapshot"] =
             mwc-list-item=""
             style="cursor: pointer;"
             tabindex="0"
-            title="PlaceholderLLN0"
             type="button"
             value="PlaceholderLLN0"
           >
-            <span class="ln-list-id">
+            <span
+              class="ln-list-id"
+              data-ln-id=""
+            >
               PlaceholderLLN0
             </span>
             <span class="ln-list-desc">
@@ -70,6 +72,8 @@ snapshots["add-ln-dialog looks like the latest snapshot"] =
   >
     [add]
   </mwc-button>
+  <oscd-tooltip-4c6027dd role="tooltip">
+  </oscd-tooltip-4c6027dd>
 </mwc-dialog>
 `;
 /* end snapshot add-ln-dialog looks like the latest snapshot */

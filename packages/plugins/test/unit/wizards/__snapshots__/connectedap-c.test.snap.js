@@ -17,7 +17,7 @@ snapshots["create wizard for ConnectedAP element looks like the latest snapshot"
         aria-disabled="false"
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="GOOSE_Publisher>AP2"
       >
         <span>

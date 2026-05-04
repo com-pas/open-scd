@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element Power Transformer edit existing Power Transfo
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[powertransformer.wizard.descHelper]"
       label="desc"
       nullable=""
@@ -66,7 +65,6 @@ snapshots["Wizards for SCL element Power Transformer add new Power Transformer l
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[powertransformer.wizard.descHelper]"
       label="desc"
       nullable=""

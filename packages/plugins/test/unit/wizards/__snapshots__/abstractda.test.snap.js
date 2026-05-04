@@ -20,7 +20,6 @@ snapshots["abstractda wizards renderWizard looks like the latest snapshot"] =
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -444,7 +443,6 @@ snapshots["abstractda wizards renderWizard looks like the latest snapshot"] =
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="[scl.sAddr]"
       label="sAddr"
       nullable=""
@@ -452,7 +450,6 @@ snapshots["abstractda wizards renderWizard looks like the latest snapshot"] =
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="[scl.valKind]"
       label="valKind"

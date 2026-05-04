@@ -18,14 +18,12 @@ snapshots["Wizards for SCL EqSubFunction element define an create wizard that lo
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.type]"
       label="type"
       nullable=""

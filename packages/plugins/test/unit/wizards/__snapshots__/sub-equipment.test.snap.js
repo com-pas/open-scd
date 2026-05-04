@@ -18,14 +18,12 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="[scl.phase]"
       label="phase"
@@ -34,7 +32,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="A"
       >
@@ -43,7 +40,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="B"
       >
@@ -52,7 +48,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="C"
       >
@@ -61,7 +56,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="N"
       >
@@ -70,7 +64,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="all"
       >
@@ -79,7 +72,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="none"
       >
@@ -88,7 +80,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="AB"
       >
@@ -97,7 +88,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="BC"
       >
@@ -106,7 +96,6 @@ snapshots["Wizards for SCL SubEquipment element define an create wizard that loo
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="CA"
       >
@@ -169,7 +158,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="A"
       >
@@ -178,7 +166,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="B"
       >
@@ -187,7 +174,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="C"
       >
@@ -196,7 +182,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="N"
       >
@@ -205,7 +190,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="all"
       >
@@ -214,7 +198,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="none"
       >
@@ -223,7 +206,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="AB"
       >
@@ -232,7 +214,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="BC"
       >
@@ -241,7 +222,6 @@ snapshots["Wizards for SCL SubEquipment element define an edit wizard that looks
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="CA"
       >

@@ -1226,6 +1226,8 @@ snapshots["in Publisher view initially the Sampled Values list looks like the la
       value="IED3>>MU01>MSVCB01"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
       <span>
         MSVCB01
@@ -1265,6 +1267,8 @@ snapshots["in Publisher view initially the Sampled Values list looks like the la
       value="IED4>>CircuitBreaker_CB1>MSVCB02"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
       <span>
         MSVCB02
@@ -1328,7 +1332,7 @@ snapshots["in Publisher view when selecting a Sampled Values message the list on
         graphic="avatar"
         hasmeta=""
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
       >
         <span>
           IED1
@@ -1917,7 +1921,7 @@ snapshots["in Subscriber view when selecting an IED the subscriber list will ini
         aria-disabled="false"
         graphic="avatar"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
       >
         <span>
           MSVCB02 (IED4)

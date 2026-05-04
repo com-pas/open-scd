@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element LDevice Allowing/Disallowing ldName editing l
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[ldevice.wizard.descHelper]"
       label="desc"
       nullable=""

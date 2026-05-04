@@ -18,14 +18,12 @@ snapshots["Wizards for SCL Function element define an create wizard that looks l
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.type]"
       label="type"
       nullable=""

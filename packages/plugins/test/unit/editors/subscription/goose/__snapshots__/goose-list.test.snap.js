@@ -35,6 +35,8 @@ snapshots["goose-list looks like the latest snapshot with a document loaded"] =
       value="IED1>>CircuitBreaker_CB1>GCB"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
       <span>
         GCB
@@ -74,6 +76,8 @@ snapshots["goose-list looks like the latest snapshot with a document loaded"] =
       value="IED2>>CBSW>GCB"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
       <span>
         GCB

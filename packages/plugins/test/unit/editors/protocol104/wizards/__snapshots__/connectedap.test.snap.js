@@ -17,7 +17,7 @@ snapshots["Wizards for SCL element ConnectedAP include a create wizard that look
         aria-disabled="false"
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="B3>AP1"
       >
         <span>

@@ -10,6 +10,8 @@ snapshots["web component rendering Line element rendering LNode and Function chi
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-line>
+    </custom-icon-line>
   </mwc-icon>
   <abbr
     slot="action"
@@ -103,6 +105,8 @@ snapshots["web component rendering Line element rendering ConductingEquipment lo
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-line>
+    </custom-icon-line>
   </mwc-icon>
   <abbr
     slot="action"
@@ -196,6 +200,8 @@ snapshots["web component rendering Line element rendering GeneralEquipment looks
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-line>
+    </custom-icon-line>
   </mwc-icon>
   <abbr
     slot="action"

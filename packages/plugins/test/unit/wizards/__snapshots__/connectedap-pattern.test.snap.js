@@ -64,7 +64,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AP-Invoke"
       maxlength="5"
       nullable=""
@@ -81,7 +80,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AE-Invoke"
       maxlength="5"
       nullable=""
@@ -90,7 +88,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-NSAP"
       maxlength="40"
       nullable=""
@@ -99,7 +96,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-ID"
       nullable=""
       pattern="[0-9A-F]{3}"
@@ -107,7 +103,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-PRIORITY"
       nullable=""
       pattern="[0-7]"
@@ -196,7 +191,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AP-Invoke"
       maxlength="5"
       nullable=""
@@ -213,7 +207,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AE-Invoke"
       maxlength="5"
       nullable=""
@@ -222,7 +215,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-NSAP"
       maxlength="40"
       nullable=""
@@ -231,7 +223,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-ID"
       nullable=""
       pattern="[0-9A-F]{3}"
@@ -239,7 +230,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-PRIORITY"
       nullable=""
       pattern="[0-7]"
@@ -247,7 +237,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="SNTP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -255,7 +244,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="MMS-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -263,7 +251,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="DNSName"
       nullable=""
       pattern="[^ ]*"
@@ -271,7 +258,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="UDP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -279,7 +265,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="TCP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -287,7 +272,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="C37-118-IP-Port"
       nullable=""
       pattern="102[5-9]|10[3-9][0-9]|1[1-9][0-9][0-9]|[2-9][0-9]{3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]"
@@ -376,7 +360,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AP-Invoke"
       maxlength="5"
       nullable=""
@@ -393,7 +376,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-AE-Invoke"
       maxlength="5"
       nullable=""
@@ -402,7 +384,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="OSI-NSAP"
       maxlength="40"
       nullable=""
@@ -411,7 +392,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-ID"
       nullable=""
       pattern="[0-9A-F]{3}"
@@ -419,7 +399,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-PRIORITY"
       nullable=""
       pattern="[0-7]"
@@ -427,7 +406,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="SNTP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -435,7 +413,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="MMS-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -443,7 +420,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="DNSName"
       nullable=""
       pattern="[^ ]*"
@@ -451,7 +427,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="UDP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -459,7 +434,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="TCP-Port"
       nullable=""
       pattern="0|([1-9][0-9]{0,3})|([1-5][0-9]{4,4})|(6[0-4][0-9]{3,3})|(65[0-4][0-9]{2,2})|(655[0-2][0-9])|(6553[0-5])"
@@ -467,7 +441,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="C37-118-IP-Port"
       nullable=""
       pattern="102[5-9]|10[3-9][0-9]|1[1-9][0-9][0-9]|[2-9][0-9]{3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]"
@@ -475,7 +448,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6"
       nullable=""
       pattern="([0-9a-f]{1,4}:){7}[0-9a-f]{1,4}"
@@ -483,7 +455,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6-SUBNET"
       nullable=""
       pattern="/[1-9]|/[1-9][0-9]|/1[0-1][0-9]|/12[0-7]"
@@ -491,7 +462,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6-GATEWAY"
       nullable=""
       pattern="([0-9a-f]{1,4}:){7}[0-9a-f]{1,4}"
@@ -499,7 +469,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6FlowLabel"
       nullable=""
       pattern="[0-9a-fA-F]{1,5}"
@@ -507,7 +476,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6ClassOfTraffic"
       nullable=""
       pattern="[0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]"
@@ -515,7 +483,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IPv6-IGMPv3Src"
       nullable=""
       pattern="([0-9a-f]{1,4}:){7}[0-9a-f]{1,4}"
@@ -523,7 +490,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IP-IGMPv3Sr"
       nullable=""
       pattern="([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])[.]([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])[.]([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])[.]([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"
@@ -531,7 +497,6 @@ snapshots["Edit wizard for SCL element ConnectedAP include an edit wizard that f
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="IP-ClassOfTraffic"
       maxlength="2"
       nullable=""

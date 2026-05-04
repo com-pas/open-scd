@@ -73,6 +73,8 @@ snapshots["smv-list looks like the latest snapshot with a document loaded"] =
       value="IED3>>MU01>MSVCB01"
     >
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
       <span>
         MSVCB01

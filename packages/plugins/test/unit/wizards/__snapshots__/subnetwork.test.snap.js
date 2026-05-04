@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element SubNetwork include an edit wizard that with e
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[subnetwork.wizard.descHelper]"
       label="desc"
       nullable=""
@@ -75,7 +74,6 @@ snapshots["Wizards for SCL element SubNetwork include an edit wizard that with m
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[subnetwork.wizard.descHelper]"
       label="desc"
       nullable=""
@@ -88,7 +86,6 @@ snapshots["Wizards for SCL element SubNetwork include an edit wizard that with m
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[subnetwork.wizard.bitrateHelper]"
       label="BitRate"
       nullable=""

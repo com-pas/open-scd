@@ -1339,7 +1339,6 @@ snapshots["EnumType wizards defines a createEnumTypeWizard looks like the latest
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -1420,7 +1419,6 @@ snapshots["EnumType wizards defines an eNumTypeEditWizard looks like the latest 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -1569,7 +1567,6 @@ snapshots["EnumType wizards defines a eNumValWizard to edit an existing EnumVal 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       id="evDesc"
       label="desc"
@@ -1619,7 +1616,6 @@ snapshots["EnumType wizards defines a eNumValWizard to create a new EnumVal elem
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       id="evDesc"
       label="desc"

@@ -71,7 +71,6 @@ snapshots["Wizards for SCL TapChanger element define a create wizard that looks 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
