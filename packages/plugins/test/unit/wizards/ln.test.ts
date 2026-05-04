@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import '@compas-oscd/open-scd/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { editLNWizard } from '../../../src/wizards/ln.js';
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';

@@ -2,7 +2,7 @@ import { expect, fixture, html } from '@open-wc/testing';
 
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
-import type { Plugin } from '@openscd/open-scd/src/plugin.js';
+import type { Plugin } from '@compas-oscd/open-scd/dist/plugin.js';
 
 import ValidateSchema from '../../../src/validators/ValidateSchema.js';
 import { IssueDetail, LogEntry } from '@openscd/core/foundation/deprecated/history.js';

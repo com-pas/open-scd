@@ -11,8 +11,8 @@ import {
   createSampledValueControlWizard,
   selectSampledValueControlWizard,
 } from '../../../src/wizards/sampledvaluecontrol.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element SampledValueControl', () => {

@@ -9,7 +9,7 @@ import { Select } from '@material/mwc-select';
 import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import { patterns } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('LNodeType wizards', () => {

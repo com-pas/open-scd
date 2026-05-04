@@ -13,7 +13,7 @@ import {
   createTransformerWindingWizard,
   editTransformerWindingWizard,
 } from '../../../src/wizards/transformerWinding';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 
 describe('Wizards for SCL TransformerWinding element', () => {
   let doc: XMLDocument;

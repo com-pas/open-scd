@@ -24,8 +24,8 @@ import {
 import fc, { integer } from 'fast-check';
 import { inverseRegExp, regExp, regexString } from '../../foundation.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 
 describe('Wizards for SCL element SampledValueControl', () => {
   let doc: XMLDocument;

@@ -8,9 +8,9 @@ import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import TemplatesPlugin from '../../../src/editors/Templates.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 
 describe('DA wizarding editing integration', () => {
   if (customElements.get('templates-editor') === undefined)

@@ -4,7 +4,7 @@ import { editServicesWizard } from '../../../src/wizards/services.js';
 
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
-import { WizardDialog } from '@openscd/open-scd/src/wizard-dialog.js';
+import { WizardDialog } from '@compas-oscd/open-scd/dist/wizard-dialog.js';
 
 describe('Wizards for SCL element Services', () => {
   let doc: XMLDocument;

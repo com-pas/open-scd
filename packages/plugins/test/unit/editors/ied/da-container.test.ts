@@ -10,6 +10,7 @@ describe('da-container', async () => {
   let element: DAContainer;
   let validSCL: XMLDocument;
   localStorage.clear();
+  // TODO: Relevant?
   const nsdoc81 = await fetch(
     '@openscd/open-scd/test/testfiles/foundation/testFile81.nsdoc'
   ).then(response => response.text());

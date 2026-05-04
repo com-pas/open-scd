@@ -13,7 +13,7 @@ import {
   reportControlParentSelector,
   selectReportControlWizard,
 } from '../../../src/wizards/reportcontrol.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { CheckListItem } from '@material/mwc-list/mwc-check-list-item';
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 

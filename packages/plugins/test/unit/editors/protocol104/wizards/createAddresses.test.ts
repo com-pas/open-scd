@@ -13,7 +13,7 @@ import {
   ComplexAction 
 } from '@openscd/core/foundation/deprecated/editor.js';
 
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 
 import {

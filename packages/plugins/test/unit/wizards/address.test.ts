@@ -3,7 +3,7 @@ import { expect, fixture, html } from '@open-wc/testing';
 import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   getValue,

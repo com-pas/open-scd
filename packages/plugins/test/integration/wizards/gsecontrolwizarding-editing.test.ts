@@ -11,7 +11,7 @@ import {
 } from '../../../src/wizards/gsecontrol.js';
 import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element GSEControl', () => {

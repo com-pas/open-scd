@@ -11,6 +11,7 @@ describe('do-wizard', async () => {
   let element: OscdWizards;
   let validSCL: XMLDocument;
   localStorage.clear();
+  // TODO: Relevant?
   const nsdoc74 = await fetch(
     '@openscd/open-scd/test/testfiles/foundation/testFile74.nsdoc'
   ).then(response => response.text());

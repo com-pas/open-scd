@@ -25,7 +25,7 @@ import {
   reportControlCopyToIedSelector,
 } from '../../../src/wizards/reportcontrol.js';
 import { inverseRegExp, regExp, regexString } from '../../foundation.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 

@@ -14,7 +14,7 @@ import {
   Replace 
 } from '@openscd/core/foundation/deprecated/editor.js';
 import { createLineWizard, editLineWizard } from '../../../src/wizards/line.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 
 describe('Wizards for SCL Line element', () => {
   let doc: XMLDocument;

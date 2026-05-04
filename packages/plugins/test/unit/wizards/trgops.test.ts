@@ -8,7 +8,7 @@ import {
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
 import { Replace, isReplace} from '@openscd/core/foundation/deprecated/editor.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { editTrgOpsWizard } from '../../../src/wizards/trgops.js';
 
 describe('Wizards for SCL TrgOps element', () => {

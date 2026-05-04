@@ -7,10 +7,10 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import TemplatesPlugin from '../../../src/editors/Templates.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 
 describe('BDA wizarding editing integration', () => {
   if (customElements.get('templates-editor') === undefined)

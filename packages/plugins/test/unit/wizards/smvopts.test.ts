@@ -4,7 +4,7 @@ import { SinonSpy, spy } from 'sinon';
 import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import { Replace, isReplace } from '@openscd/core/foundation/deprecated/editor.js';
 import { editSmvOptsWizard } from '../../../src/wizards/smvopts.js';
 

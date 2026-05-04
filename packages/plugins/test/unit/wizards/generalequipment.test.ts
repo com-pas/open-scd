@@ -16,7 +16,7 @@ import {
   createGeneralEquipmentWizard,
   editGeneralEquipmentWizard,
 } from '../../../src/wizards/generalEquipment.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 
 describe('Wizards for SCL GeneralEquipment element', () => {
   let doc: XMLDocument;

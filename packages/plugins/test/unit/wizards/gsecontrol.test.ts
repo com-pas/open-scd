@@ -30,7 +30,7 @@ import {
   updateGseControlAction,
 } from '../../../src/wizards/gsecontrol.js';
 import { regExp, regexString } from '../../foundation.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 
 describe('gsecontrol wizards', () => {
   let doc: XMLDocument;
