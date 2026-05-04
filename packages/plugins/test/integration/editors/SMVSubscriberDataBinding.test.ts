@@ -10,8 +10,8 @@ import {
   selectFCDAItem,
 } from './test-support.js';
 
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
-import '@openscd/open-scd/test/mock-open-scd.js';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
+import '@compas-oscd/open-scd/dist/test-helper';
 
 import { customElement, query, TemplateResult, html } from 'lit-element';
 

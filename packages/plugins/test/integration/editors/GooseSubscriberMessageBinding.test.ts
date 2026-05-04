@@ -5,8 +5,8 @@ import { ListItem } from '@material/mwc-list/mwc-list-item.js';
 
 import GooseSubscriberMessageBindingPlugin from '../../../src/editors/GooseSubscriberMessageBinding.js';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { customElement, query, TemplateResult, html } from 'lit-element';
 import { SubscriberList } from '../../../src/editors/subscription/goose/subscriber-list.js';

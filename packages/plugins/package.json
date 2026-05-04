@@ -50,7 +50,7 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
     "TODO": "ignore tests for now, imports have to be adjusted when plugins package is migrated",
-    "test": "web-test-runner --coverage || exit 0",
+    "test": "web-test-runner --coverage",
     "test:snapshot": "web-test-runner --update-snapshots --coverage",
     "test:manual": "web-test-runner --manual",
     "test:watch": "web-test-runner --watch",

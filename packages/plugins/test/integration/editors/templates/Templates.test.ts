@@ -1,7 +1,7 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 

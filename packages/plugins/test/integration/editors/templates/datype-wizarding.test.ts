@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
@@ -9,7 +9,7 @@ import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
 import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 import { patterns } from '@openscd/open-scd/src/foundation.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 describe('DAType wizards', () => {
   if (customElements.get('templates-editor') === undefined)
