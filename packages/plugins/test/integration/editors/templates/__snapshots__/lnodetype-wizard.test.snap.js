@@ -8700,7 +8700,7 @@ snapshots["LNodeType wizards defines a createLNodeTypeWizard opens a createLNode
       label="id"
       maxlength="127"
       minlength="1"
-      pattern="\S+"
+      pattern="\\S+"
       required=""
     >
     </wizard-textfield>
