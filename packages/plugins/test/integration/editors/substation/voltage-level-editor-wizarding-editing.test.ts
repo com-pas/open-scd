@@ -9,6 +9,8 @@ import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js'
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base.js';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 
+const timeout = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 const openAndCancelMenu: (
   parent: MockWizardEditor,
   element: VoltageLevelEditor
@@ -119,16 +121,19 @@ describe('voltage-level-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newName';
-      primaryAction.click();
       await parent.updateComplete;
+
+      primaryAction.click();
       expect(doc.querySelector('VoltageLevel')?.getAttribute('name')).to.equal(
         'newName'
       );
     });
+
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
-      primaryAction.click();
       await parent.updateComplete;
+
+      primaryAction.click();
       expect(doc.querySelector('VoltageLevel')?.getAttribute('desc')).to.equal(
         'newDesc'
       );
@@ -144,8 +149,9 @@ describe('voltage-level-editor wizarding editing integration', () => {
     });
     it('changes nomFreq attribute on primary action', async () => {
       nomFreqField.value = '30';
-      primaryAction.click();
       await parent.updateComplete;
+
+      primaryAction.click();
       expect(
         doc.querySelector('VoltageLevel')?.getAttribute('nomFreq')
       ).to.equal('30');
@@ -161,6 +167,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
     });
     it('changes numPhases attribute on primary action', async () => {
       numPhasesField.value = '3';
+
       await parent.updateComplete;
       primaryAction.click();
       expect(
@@ -178,14 +185,16 @@ describe('voltage-level-editor wizarding editing integration', () => {
     });
     it('changes Voltage value on primary action', async () => {
       voltageField.value = '20.0';
-      primaryAction.click();
       await parent.updateComplete;
+
+      primaryAction.click();
       expect(doc.querySelector('Voltage')?.innerHTML).to.equal('20.0');
     });
     it('changes Voltage multiplier on primary action', async () => {
       voltageField.multiplier = 'M';
-      primaryAction.click();
       await parent.updateComplete;
+
+      primaryAction.click();
       expect(doc.querySelector('Voltage')?.getAttribute('multiplier')).to.equal(
         'M'
       );
@@ -213,7 +222,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             ><voltage-level-editor
               .element=${doc.querySelector('VoltageLevel[name="E1"]')}
             ></voltage-level-editor
@@ -292,7 +301,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             ><voltage-level-editor
               .element=${doc.querySelector('VoltageLevel[name="E1"]')}
             ></voltage-level-editor
@@ -328,7 +337,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             >${Array.from(doc?.querySelectorAll('VoltageLevel') ?? []).map(
               vLevel =>
                 html`<voltage-level-editor
@@ -368,7 +377,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             ><voltage-level-editor
               .element=${doc.querySelector('VoltageLevel[name="E1"]')}
             ></voltage-level-editor
@@ -398,7 +407,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             ><voltage-level-editor
               .element=${doc.querySelector('VoltageLevel[name="E1"]')}
             ></voltage-level-editor
@@ -510,7 +519,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       parent = <MockWizardEditor>(
         await fixture(
-          html`<mock-wizard-editor
+          html`<mock-wizard-editor .doc=${doc}
             ><voltage-level-editor
               .element=${doc.querySelector('VoltageLevel')}
             ></voltage-level-editor
@@ -563,7 +572,7 @@ describe('voltage-level-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await timeout(0);
 
       primaryAction.click();
 
