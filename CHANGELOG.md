@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.45.13](https://github.com/com-pas/open-scd/compare/v0.45.12...v0.45.13) (2026-05-07)
+
+
+### Bug Fixes
+
+* set scl schema version back to minimal of 2007B4 ([2832053](https://github.com/com-pas/open-scd/commit/2832053d9dd4e6f37d68576950c7bcbcb91e12a1))
+* set scl schema version back to minimum of 2007B4 ([9d56926](https://github.com/com-pas/open-scd/commit/9d569262375fb7c109add431592a10b0264894fd))
+
 ## [0.45.12](https://github.com/com-pas/open-scd/compare/v0.45.11...v0.45.12) (2026-04-29)
 
 
