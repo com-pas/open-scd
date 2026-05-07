@@ -125,6 +125,10 @@ export class FilteredList extends LitElement {
     );
   }
 
+  layout(updateItems?: boolean): void {
+    this.list.layout(updateItems);
+  }
+
   protected update(
     changedProperties: Map<string | number | symbol, unknown>
   ): void {
