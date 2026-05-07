@@ -62,6 +62,8 @@ describe('Update method for desc attributes in ABB IEDs', () => {
       await expect(parent.wizardUI.dialog).to.equalSnapshot();
     });
     it('creates wizard that on save triggers a complex action containing selected desc updates', async () => {
+      await new Promise(r => setTimeout(r, 0));
+
       parent.wizardUI?.dialog
         ?.querySelector<HTMLElement>('mwc-button[slot="primaryAction"]')!
         .click();
