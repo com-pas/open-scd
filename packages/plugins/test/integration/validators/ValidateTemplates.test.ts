@@ -70,7 +70,7 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
       await expect(parent.historyAddon.diagnosticUI).to.equalSnapshot();
     });
   });
-  describe('with schema version smaller "2007B5"', () => {
+  describe('with schema version smaller "2007B4"', () => {
     beforeEach(async () => {
       doc = await fetch('/test/testfiles/valid2007B.scd')
         .then(response => response.text())

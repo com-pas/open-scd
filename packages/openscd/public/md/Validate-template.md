@@ -1,6 +1,6 @@
 The templates validator can find issues that the schema validator cannot, because the issues are not connected to the schema defined in IEC 61850-6 but with other parts of the standard: IEC 61850-7-3/IEC 61850-7-4/IEC 61850-8-1.
 
-> NOTE: OpenSCD is using name space description (NSD) files as a reference (how it should be). These files are provided by the standard but not for all Editions. That is why we only validate the `DataTypeTemplate` section for projects 2007B5 and higher (Edition 2.1).
+> NOTE: OpenSCD is using name space description (NSD) files as a reference (how it should be). These files are provided by the standard but not for all Editions. That is why we only validate the `DataTypeTemplate` section for projects 2007B4 and higher (Edition 2.1).
 
 The validator is triggered on every change in the project basis and the results are displayed in the **diagnostics** pane like so:
 
