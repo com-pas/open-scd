@@ -39,6 +39,7 @@ async function clickListItem(
   element: MockWizardEditor,
   values: string[]
 ): Promise<void> {
+  await new Promise(resolve => setTimeout(resolve, 0));
   Array.from(values).forEach(value => {
     element.wizardUI
       .dialog!.querySelector<ListItemBase>(
@@ -112,10 +113,6 @@ describe('create wizard for ConnectedAP element', () => {
     const wizard = createConnectedApWizard(parent);
     element.dispatchEvent(newWizardEvent(wizard));
     await element.requestUpdate();
-
-    /*
-    inputs = Array.from(element.wizardUI.inputs);
-    */
   });
 
   it('looks like the latest snapshot', async () =>
