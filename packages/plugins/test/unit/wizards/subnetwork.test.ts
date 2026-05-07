@@ -264,6 +264,7 @@ describe('Wizards for SCL element SubNetwork', () => {
         (<WizardTextField>input).value = '100.0';
         (<WizardTextField>input).multiplier = 'M';
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
         await element.requestUpdate();
 
@@ -303,6 +304,8 @@ describe('Wizards for SCL element SubNetwork', () => {
 
         (<WizardTextField>input).nullSwitch?.click();
         (<WizardTextField>input).value = '100.0';
+
+        await new Promise(resolve => setTimeout(resolve, 0));
 
         primaryAction.click();
         await element.requestUpdate();
