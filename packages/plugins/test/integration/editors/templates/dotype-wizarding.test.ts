@@ -27,7 +27,7 @@ describe('DOType wizards', () => {
       .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
     parent = await fixture(
-      html`<mock-open-scd
+      html`<mock-open-scd .doc=${doc}
         ><templates-editor .doc=${doc}></templates-editor
       ></mock-open-scd>`
     );

@@ -19,10 +19,9 @@ import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js'
 import { maxLength, patterns } from './foundation/limits.js';
 import { predefinedBasicTypeEnum, valKindEnum } from './foundation/enums.js';
 
-function selectType(e: SelectedEvent, data: Element, Val: string | null): void {
+function selectType(e: SelectedEvent, typeSelected: string, data: Element, Val: string | null): void {
   if (!e.target || !(e.target as Select).parentElement) return;
 
-  const typeSelected = (<Select>e.target).selected?.value;
   const selectedBType = (<WizardSelect>(
     (<Select>e.target).parentElement!.querySelector(
       'wizard-select[label="bType"]'
@@ -53,11 +52,10 @@ function selectType(e: SelectedEvent, data: Element, Val: string | null): void {
 
 function selectBType(
   e: SelectedEvent,
+  bTypeSelected: string,
   bType: string | null,
   type: string | null
 ): void {
-  const bTypeSelected = (<Select>e.target).selected!.value;
-
   const typeUI = <Select>(
     (<Select>e.target).parentElement!.querySelector(
       'wizard-select[label="type"]'
@@ -136,7 +134,7 @@ export function wizardContent(
       .value=${bType}
       helper="${get('scl.bType')}"
       required
-      @selected=${(e: SelectedEvent) => selectBType(e, bType, type)}
+      @selected=${(e: SelectedEvent) => selectBType(e, predefinedBasicTypeEnum[e.detail.index as number], bType, type)}
       >${predefinedBasicTypeEnum.map(
         redefinedBType =>
           html`<mwc-list-item value="${redefinedBType}"
@@ -149,7 +147,7 @@ export function wizardContent(
       .maybeValue=${type}
       helper="${get('scl.type')}"
       fixedMenuPosition
-      @selected=${(e: SelectedEvent) => selectType(e, data, Val)}
+      @selected=${(e: SelectedEvent) => selectType(e, types[e.detail.index as number].id, data, Val)}
       >${types.map(
         dataType =>
           oscdHtml`<mwc-list-item
