@@ -96,6 +96,8 @@ describe('Update method for desc attributes in SEL IEDs', () => {
       });
 
       it('allows to update selected desc attributes updates', async () => {
+        await new Promise(resolve => setTimeout(resolve, 0));
+
         parent.wizardUI?.dialog
           ?.querySelector<HTMLElement>('mwc-button[slot="primaryAction"]')!
           .click();
@@ -127,6 +129,8 @@ describe('Update method for desc attributes in SEL IEDs', () => {
       });
 
       it('allows to update selected desc attributes updates', async () => {
+        await new Promise(resolve => setTimeout(resolve, 0));
+
         parent.wizardUI?.dialog
           ?.querySelector<HTMLElement>('mwc-button[slot="primaryAction"]')!
           .click();
