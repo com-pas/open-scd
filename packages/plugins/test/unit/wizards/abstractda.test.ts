@@ -148,7 +148,7 @@ describe('abstractda wizards', () => {
 
     it('disables the type field in case bType is not Enum nor Struct', async () => {
       bTypeSelect.value = 'BOOLEAN';
-      await typeSelect.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(typeSelect.disabled).to.be.true;
     });
 
@@ -159,7 +159,7 @@ describe('abstractda wizards', () => {
 
     it('pre-selects the type in the type field bType has re-selected to the initial bType', async () => {
       bTypeSelect.value = 'BOOLEAN';
-      await typeSelect.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(typeSelect.value).to.not.be.equal('Dummy_ctlModel');
       bTypeSelect.value = 'Enum';
       await typeSelect.requestUpdate();
@@ -168,8 +168,8 @@ describe('abstractda wizards', () => {
 
     it('filters EnumType in the type field if bType is Enum ', async () => {
       bTypeSelect.value = 'Enum';
-      await typeSelect.requestUpdate();
-      const typeList = typeSelect.items
+      await new Promise(resolve => setTimeout(resolve, 0));
+      const typeList = typeSelect.select.items
         .filter(item => !item.noninteractive)
         .map(item => item.value);
       expect(typeList.length).to.equal(enumTypes.length);
@@ -177,8 +177,8 @@ describe('abstractda wizards', () => {
 
     it('filters DAType in the type field if bType is Struct ', async () => {
       bTypeSelect.value = 'Struct';
-      await typeSelect.requestUpdate();
-      const typeList = typeSelect.items
+      await new Promise(resolve => setTimeout(resolve, 0));
+      const typeList = typeSelect.select.items
         .filter(item => !item.noninteractive)
         .map(item => item.value);
       expect(typeList.length).to.equal(daTypes.length);
@@ -222,8 +222,8 @@ describe('abstractda wizards', () => {
     });
 
     it('filters Val selection for the initially loaded Enum', async () => {
-      await valSelect.requestUpdate();
-      expect(valSelect.items.length).to.equal(
+      await new Promise(resolve => setTimeout(resolve, 0));
+      expect(valSelect.select.items.length).to.equal(
         data.querySelectorAll(`EnumType[id="${typeSelect.value}"] > EnumVal`)
           .length
       );
@@ -231,8 +231,8 @@ describe('abstractda wizards', () => {
 
     it('filters Val selection for bType Enum and ctlModelKind', async () => {
       bTypeSelect.value = 'Enum';
-      await valSelect.requestUpdate();
-      expect(valSelect.items.length).to.equal(
+      await new Promise(resolve => setTimeout(resolve, 0));
+      expect(valSelect.select.items.length).to.equal(
         data.querySelectorAll(`EnumType[id="${typeSelect.value}"] > EnumVal`)
           .length
       );
@@ -241,8 +241,8 @@ describe('abstractda wizards', () => {
     it('filters Val selection for bType Enum and HealthKind', async () => {
       bTypeSelect.value = 'Enum';
       typeSelect.value = 'Dummy_Health';
-      await valSelect.requestUpdate();
-      expect(valSelect.items.length).to.equal(
+      await new Promise(resolve => setTimeout(resolve, 0));
+      expect(valSelect.select.items.length).to.equal(
         data.querySelectorAll(`EnumType[id="${typeSelect.value}"] > EnumVal`)
           .length
       );
@@ -252,7 +252,7 @@ describe('abstractda wizards', () => {
       bTypeSelect.value = 'Struct';
       typeSelect.value = 'Dummy_origin';
       await valSelect.requestUpdate();
-      expect(valSelect.items.length).to.equal(0);
+      expect(valSelect.select.items.length).to.equal(0);
     });
   });
 });

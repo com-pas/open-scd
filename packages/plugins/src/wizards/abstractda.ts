@@ -19,8 +19,8 @@ import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js'
 import { maxLength, patterns } from './foundation/limits.js';
 import { predefinedBasicTypeEnum, valKindEnum } from './foundation/enums.js';
 
-function selectType(e: SelectedEvent, typeSelected: string, data: Element, Val: string | null): void {
-  if (!e.target || !(e.target as Select).parentElement) return;
+function selectType(e: SelectedEvent, typeSelected: string | null, data: Element, Val: string | null): void {
+  if (!e.target || !(e.target as Select).parentElement || !typeSelected) return;
 
   const selectedBType = (<WizardSelect>(
     (<Select>e.target).parentElement!.querySelector(
@@ -147,7 +147,7 @@ export function wizardContent(
       .maybeValue=${type}
       helper="${get('scl.type')}"
       fixedMenuPosition
-      @selected=${(e: SelectedEvent) => selectType(e, types[e.detail.index as number].id, data, Val)}
+      @selected=${(e: SelectedEvent) => selectType(e, types[e.detail.index as number]?.id, data, Val)}
       >${types.map(
         dataType =>
           oscdHtml`<mwc-list-item
