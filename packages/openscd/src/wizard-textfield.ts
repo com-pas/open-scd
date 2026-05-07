@@ -45,6 +45,8 @@ export class WizardTextField extends LitElement {
   disabled = false;
   @property({ type: Boolean })
   required = false;
+  @property({ type: Boolean })
+  readOnly = false;
   @property({ type: String })
   label = '';
   @property({ type: Boolean })
@@ -228,6 +230,7 @@ export class WizardTextField extends LitElement {
           .helperPersistent=${this.helperPersistent}
           .disabled=${this.disabled}
           .required=${this.required}
+          .readOnly=${this.readOnly}
           label=${this.label}
           helper="${ifDefined(this.helper)}"
           validationMessage="${ifDefined(this.helper)}"
