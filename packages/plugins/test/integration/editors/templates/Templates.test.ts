@@ -261,6 +261,7 @@ describe('Templates Plugin', () => {
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
       parent.wizardUI.inputs[1].value = 'myID';
       await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       (<HTMLElement>(
         parent.wizardUI.dialog?.querySelector(
           'mwc-button[slot="primaryAction"]'

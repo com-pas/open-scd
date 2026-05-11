@@ -98,13 +98,13 @@ describe('voltage-level-editor wizarding integration', () => {
     });
     it('requires a nonnegative value', async () => {
       parent.wizardUI.inputs[2].value = '';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(parent.wizardUI.inputs[2].checkValidity()).to.be.false;
       parent.wizardUI.inputs[2].value = '-50.';
       await parent.updateComplete;
       expect(parent.wizardUI.inputs[2].checkValidity()).to.be.false;
       parent.wizardUI.inputs[2].value = '+50.';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(parent.wizardUI.inputs[2].checkValidity()).to.be.true;
     });
     it('rejects action for invalid inputs', async () => {
@@ -113,7 +113,7 @@ describe('voltage-level-editor wizarding integration', () => {
           regexString(inverseRegExp.unsigned, 1),
           async nomFreq => {
             parent.wizardUI.inputs[2].value = nomFreq;
-            await parent.updateComplete;
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(parent.wizardUI.inputs[2].checkValidity()).to.be.false;
           }
         )
@@ -135,7 +135,7 @@ describe('voltage-level-editor wizarding integration', () => {
     });
     it('is of the type unsingedByte', async () => {
       parent.wizardUI.inputs[3].value = '0';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(parent.wizardUI.inputs[3].checkValidity()).to.be.false;
       parent.wizardUI.inputs[3].value = '256';
       await parent.updateComplete;
@@ -150,7 +150,7 @@ describe('voltage-level-editor wizarding integration', () => {
           regexString(inverseRegExp.integer, 1),
           async nomFreq => {
             parent.wizardUI.inputs[3].value = nomFreq;
-            await parent.updateComplete;
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(parent.wizardUI.inputs[3].checkValidity()).to.be.false;
           }
         )
@@ -176,7 +176,7 @@ describe('voltage-level-editor wizarding integration', () => {
           regexString(inverseRegExp.decimal, 1),
           async voltage => {
             parent.wizardUI.inputs[4].value = voltage;
-            await parent.updateComplete;
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(parent.wizardUI.inputs[4].checkValidity()).to.be.false;
           }
         )

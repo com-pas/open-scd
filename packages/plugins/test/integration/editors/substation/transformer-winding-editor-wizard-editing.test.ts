@@ -107,10 +107,10 @@ describe('transformer-winding-editor wizarding editing integration', () => {
     it('changes desc attribute on primary action', async () => {
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
       descField.nullSwitch!.click();
-      await parent.updateComplete;
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(
         doc
           .querySelector(
@@ -127,8 +127,8 @@ describe('transformer-winding-editor wizarding editing integration', () => {
       );
       virtualCheckbox.nullSwitch!.click();
       virtualCheckbox.maybeValue = 'true';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector(
