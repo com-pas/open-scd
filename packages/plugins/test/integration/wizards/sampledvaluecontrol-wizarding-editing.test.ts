@@ -224,6 +224,7 @@ describe('Wizards for SCL element SampledValueControl', () => {
 
       it('dynamically updates wizards after attribute change', async () => {
         nameField.value = 'myNewName';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         await new Promise(resolve => setTimeout(resolve, 20)); // await animation
@@ -409,11 +410,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       );
     });
 
-    it('creates a new instance of a SampledValueControl element', () => {
+    it('creates a new instance of a SampledValueControl element', async () => {
       expect(
         doc.querySelectorAll('IED[name="IED3"] LN0 > SampledValueControl')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -421,11 +423,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a DataSet element referenced from SampledValueControl', () => {
+    it('creates a new instance of a DataSet element referenced from SampledValueControl', async () => {
       expect(
         doc.querySelectorAll('IED[name="IED3"] LN0 > DataSet')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -433,11 +436,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a SMV element', () => {
+    it('creates a new instance of a SMV element', async () => {
       expect(
         doc.querySelectorAll('ConnectedAP[iedName="IED3"][apName="P1"] SMV')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

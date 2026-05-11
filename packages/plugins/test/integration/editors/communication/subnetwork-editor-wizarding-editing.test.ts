@@ -72,8 +72,8 @@ describe('subnetwork-editor wizarding editing integration', () => {
 
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newSubNetwork';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('SubNetwork')?.getAttribute('name')).to.equal(
         'newSubNetwork'
       );
@@ -81,8 +81,8 @@ describe('subnetwork-editor wizarding editing integration', () => {
 
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('SubNetwork')?.getAttribute('desc')).to.equal(
         'newDesc'
       );
@@ -99,8 +99,8 @@ describe('subnetwork-editor wizarding editing integration', () => {
 
     it('changes type attribute on primary action', async () => {
       typeField.value = 'newType';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('SubNetwork')?.getAttribute('type')).to.equal(
         'newType'
       );
@@ -117,15 +117,15 @@ describe('subnetwork-editor wizarding editing integration', () => {
 
     it('changes BitRate value on primary action', async () => {
       bitRateField.value = '20.0';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('BitRate')?.innerHTML).to.equal('20.0');
     });
 
     it('changes BitRate multiplier on primary action', async () => {
       bitRateField.multiplier = 'M';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('BitRate')?.getAttribute('multiplier')).to.equal(
         'M'
       );

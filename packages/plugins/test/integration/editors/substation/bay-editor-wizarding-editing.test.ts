@@ -100,16 +100,16 @@ describe('bay-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       parent.wizardUI.inputs[0].value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('Bay')?.getAttribute('name')).to.equal(
         'newName'
       );
     });
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('Bay')?.getAttribute('desc')).to.equal(
         'newDesc'
       );
@@ -183,7 +183,7 @@ describe('bay-editor wizarding editing integration', () => {
     it('does add conducting equipment if name attribute is unique', async () => {
       typeSelect.value = 'CBR';
       nameField.value = 'QA2';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
       expect(
         doc.querySelector(
@@ -439,7 +439,7 @@ describe('bay-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

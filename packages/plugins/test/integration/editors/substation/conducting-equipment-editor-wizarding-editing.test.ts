@@ -99,16 +99,16 @@ describe('conducting-equipment-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('ConductingEquipment')?.getAttribute('name')
       ).to.equal('newName');
     });
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('ConductingEquipment')?.getAttribute('desc')
       ).to.equal('newDesc');
@@ -304,7 +304,7 @@ describe('conducting-equipment-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

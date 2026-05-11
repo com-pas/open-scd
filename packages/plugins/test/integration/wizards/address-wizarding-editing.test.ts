@@ -56,8 +56,8 @@ describe('address wizarding editing integration', () => {
 
       vlanIdField.nullSwitch?.click();
       vlanIdField.value = '007';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await element.updateComplete;
 
       expect(vlanIdField.nullSwitch?.checked).to.be.true;
 

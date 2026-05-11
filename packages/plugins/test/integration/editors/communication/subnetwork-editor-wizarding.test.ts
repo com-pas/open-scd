@@ -103,7 +103,7 @@ describe('subnetwork-editor wizarding integration', () => {
             regexString(inverseRegExp.decimal, 1),
             async BitRate => {
               parent.wizardUI.inputs[3].value = BitRate;
-              await parent.updateComplete;
+              await new Promise(resolve => setTimeout(resolve, 0));
               expect(parent.wizardUI.inputs[3].checkValidity()).to.be.false;
             }
           )

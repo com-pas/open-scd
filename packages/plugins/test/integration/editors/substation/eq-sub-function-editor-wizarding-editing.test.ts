@@ -121,7 +121,7 @@ describe('eq-sub-function-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewEqSubFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

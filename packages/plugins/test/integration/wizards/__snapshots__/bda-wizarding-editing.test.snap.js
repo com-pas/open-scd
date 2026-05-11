@@ -44,7 +44,6 @@ snapshots["BDA wizarding editing integration defines a editBDaWizard to edit an 
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -513,7 +512,6 @@ snapshots["BDA wizarding editing integration defines a editBDaWizard to edit an 
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Short address"
       label="sAddr"
       nullable=""
@@ -521,7 +519,6 @@ snapshots["BDA wizarding editing integration defines a editBDaWizard to edit an 
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="Value kind"
       label="valKind"
@@ -573,7 +570,6 @@ snapshots["BDA wizarding editing integration defines a editBDaWizard to edit an 
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""
@@ -630,7 +626,6 @@ snapshots["BDA wizarding editing integration defines a editBDaWizard to edit an 
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""

@@ -44,7 +44,6 @@ snapshots["DA wizarding editing integration defines a editDaWizard to edit an ex
       >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -557,7 +556,6 @@ snapshots["DA wizarding editing integration defines a editDaWizard to edit an ex
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Short address"
       label="sAddr"
       nullable=""
@@ -565,7 +563,6 @@ snapshots["DA wizarding editing integration defines a editDaWizard to edit an ex
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="Value kind"
       label="valKind"
@@ -617,7 +614,6 @@ snapshots["DA wizarding editing integration defines a editDaWizard to edit an ex
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""
@@ -674,7 +670,6 @@ snapshots["DA wizarding editing integration defines a editDaWizard to edit an ex
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="Default value"
       label="Val"
       nullable=""

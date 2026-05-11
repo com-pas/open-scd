@@ -207,6 +207,7 @@ describe('Wizards for SCL element GSEControl', () => {
 
       it('dynamically updates wizards after attribute change', async () => {
         nameField.value = 'myNewName';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         await new Promise(resolve => setTimeout(resolve, 100)); // await animation

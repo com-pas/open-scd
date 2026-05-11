@@ -48,8 +48,8 @@ describe('gse wizarding editing integration', () => {
           ?.textContent?.trim()
       ).to.equal('10');
       minTimeField.value = '56';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await element.updateComplete;
       expect(
         doc
           .querySelector(

@@ -37,10 +37,10 @@ describe('Update method for desc attributes in ABB IEDs', () => {
         'IED[name="IED1"] LN[lnClass="CSWI"][inst="1"] ExtRef:not([desc])'
       )
     ).to.exist;
+    await new Promise(resolve => setTimeout(resolve, 0));
     parent.wizardUI?.dialog
       ?.querySelector<HTMLElement>('mwc-button[slot="primaryAction"]')!
       .click();
-    await parent.updateComplete;
     expect(
       doc.querySelector(
         'IED[name="IED1"] LN[lnClass="CSWI"][inst="1"] ExtRef[desc="GOOSERCV_BIN.3.I1"]'

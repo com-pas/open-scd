@@ -214,6 +214,7 @@ describe('Wizards for SCL element ReportControl', () => {
 
     it('dynamically updates wizards after attribute change', async () => {
       nameField.value = 'myNewName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
@@ -558,13 +559,14 @@ describe('Wizards for SCL element ReportControl', () => {
       );
     });
 
-    it('creates a new instance of a ReportControl element', () => {
+    it('creates a new instance of a ReportControl element', async () => {
       expect(
         doc
           .querySelector<Element>('IED[name="IED2"]')
           ?.querySelectorAll('LN0 > ReportControl')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -574,13 +576,14 @@ describe('Wizards for SCL element ReportControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a DataSet element referenced from ReportControl', () => {
+    it('creates a new instance of a DataSet element referenced from ReportControl', async () => {
       expect(
         doc
           .querySelector<Element>('IED[name="IED2"]')
           ?.querySelectorAll('LN0 > DataSet')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
