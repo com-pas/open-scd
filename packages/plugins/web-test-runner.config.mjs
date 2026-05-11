@@ -2,10 +2,15 @@
 import { esbuildPlugin } from '@web/dev-server-esbuild';
 import { playwrightLauncher } from '@web/test-runner-playwright';
 
+import { polyfill } from '@web/dev-server-polyfill';
+
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   /** we run test directly on TypeScript files */
-  plugins: [esbuildPlugin({ ts: true })],
+  plugins: [
+    esbuildPlugin({ ts: true }),
+    polyfill({ scopedCustomElementRegistry: true, })
+  ],
 
   /** Resolve bare module imports */
   nodeResolve: true,
