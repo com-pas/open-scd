@@ -104,8 +104,8 @@ describe('tapchanger-editor wizarding editing integration', () => {
 
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector(
@@ -122,8 +122,8 @@ describe('tapchanger-editor wizarding editing integration', () => {
       );
       virtualCheckbox.nullSwitch!.click();
       virtualCheckbox.maybeValue = 'false';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector(

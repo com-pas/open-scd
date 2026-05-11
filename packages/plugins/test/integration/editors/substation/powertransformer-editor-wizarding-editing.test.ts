@@ -115,7 +115,7 @@ describe('powertransformer-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -181,7 +181,7 @@ describe('powertransformer-editor wizarding editing integration', () => {
 
       nameTextField.value = subEquipmentName;
 
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
 
       const primaryAction: HTMLElement = <HTMLElement>(
         parent.wizardUI.dialog?.querySelector(

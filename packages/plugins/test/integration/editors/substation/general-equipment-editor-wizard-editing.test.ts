@@ -107,24 +107,24 @@ describe('general-equipment-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       parent.wizardUI.inputs[0].value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('GeneralEquipment')?.getAttribute('name')
       ).to.equal('newName');
     });
     it('changes type attribute on primary action', async () => {
-      parent.wizardUI.inputs[2].value = 'newAXN';
+      parent.wizardUI.inputs[2].value = 'ENEW';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('GeneralEquipment')?.getAttribute('type')
-      ).to.equal('newAXN');
+      ).to.equal('ENEW');
     });
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('GeneralEquipment')?.getAttribute('desc')
       ).to.equal('newDesc');
@@ -132,7 +132,7 @@ describe('general-equipment-editor wizarding editing integration', () => {
     it('deletes desc attribute if wizard-textfield is deactivated', async () => {
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
       descField.nullSwitch!.click();
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       await primaryAction.click();
       await parent.updateComplete;
       expect(doc.querySelector('GeneralEquipment')?.getAttribute('desc')).to.be

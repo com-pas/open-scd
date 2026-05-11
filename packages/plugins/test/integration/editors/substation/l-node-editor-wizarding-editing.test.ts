@@ -91,8 +91,8 @@ describe('l-node-editor wizarding editing integration', () => {
     it('changes prefix attribute on primary action', async () => {
       prefixField.value = 'newPref';
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
 
       expect(
         doc.querySelector(
@@ -104,8 +104,8 @@ describe('l-node-editor wizarding editing integration', () => {
     it('changes lnInst attribute on primary action', async () => {
       lnInstField.value = '31';
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
 
       expect(
         doc.querySelector(

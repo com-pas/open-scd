@@ -96,16 +96,16 @@ describe('substation-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('Substation')?.getAttribute('name')).to.equal(
         'newName'
       );
     });
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('Substation')?.getAttribute('desc')).to.equal(
         'newDesc'
       );
@@ -337,7 +337,7 @@ describe('substation-editor wizarding editing integration', () => {
         .to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(doc.querySelector('Substation > Function[name="someNewFunction"]'))
@@ -415,7 +415,7 @@ describe('substation-editor wizarding editing integration', () => {
         .exist;
       nameField.value = 'newgenSub';
       typeField.value = 'AXN';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
       expect(doc.querySelector('GeneralEquipment[name = "newgenSub"]')).to
         .exist;
