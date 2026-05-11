@@ -90,8 +90,9 @@ describe('wizards for LNodeType element', () => {
 
       it('as wizard input', () => expect(input).to.exist);
 
-      it('triggers a complex action', () => {
+      it('triggers a complex action', async () => {
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
         expect(actionEvent).to.be.calledOnce;
 
@@ -99,8 +100,9 @@ describe('wizards for LNodeType element', () => {
         expect(action).to.not.satisfy(isSimple);
       });
 
-      it('that edits the id attribute of LNodeType', () => {
+      it('that edits the id attribute of LNodeType', async () => {
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         const complexAction = <ComplexAction>(
@@ -110,13 +112,14 @@ describe('wizards for LNodeType element', () => {
         expect(actions[0].new.element).to.have.attribute('id', 'someTestId');
       });
 
-      it('that edits all referenced lnType attribute as well', () => {
+      it('that edits all referenced lnType attribute as well', async () => {
         const oldId = input?.value;
         const numReferences = doc.querySelectorAll(
           `LN0[lnType="${oldId}"], LN[lnType="${oldId}"]`
         ).length;
 
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         const complexAction = <ComplexAction>(

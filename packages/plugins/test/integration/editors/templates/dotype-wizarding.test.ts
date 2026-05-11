@@ -152,6 +152,7 @@ describe('DOType wizards', () => {
       selector.value = 'OpenSCD_ENS_Health';
       idField.maybeValue = 'myENSHealth';
       await parent.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       primayAction.click();
       await parent.updateComplete;
       expect(doc.querySelector('DOType[id="myENSHealth"]')).to.exist;
@@ -167,6 +168,7 @@ describe('DOType wizards', () => {
       selector.value = 'OpenSCD_MV_int';
       idField.maybeValue = 'myMV';
       await parent.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       primayAction.click();
       await parent.updateComplete;
       expect(doc.querySelector('DAType[id="OpenSCD_AnalogueValue_INT32"]')).to
