@@ -108,6 +108,10 @@ export class FilteredList extends LitElement {
     return this.list.selected;
   }
 
+  get index() {
+    return this.list.index;
+  }
+
   private onCheckAll(): void {
     const select = !this.isAllSelected;
     this.items

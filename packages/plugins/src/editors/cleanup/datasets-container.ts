@@ -48,7 +48,7 @@ export class CleanupDatasets extends LitElement {
   unreferencedDataSets: Element[] = [];
 
   @property({ attribute: false })
-  selectedDatasetItems: MWCListIndex | [] = [];
+  selectedDatasetItems: MWCListIndex = new Set<number>();
 
   @query('.deleteButton')
   cleanupButton!: Button;
