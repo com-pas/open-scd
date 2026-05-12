@@ -33,8 +33,8 @@ describe('network-104-container', () => {
     expect(subNetworks[1].getAttribute('name')).to.be.equal('W1');
   });
 
-  it('has a mwc-fab which calls a create SubNetwork wizard dialog', () => {
-    (<HTMLElement>element.shadowRoot?.querySelector('mwc-fab')).click();
+  it('has a oscd-fab which calls a create SubNetwork wizard dialog', () => {
+    (<HTMLElement>element.shadowRoot?.querySelector('oscd-fab')).click();
     expect(wizardEvent).to.have.be.calledOnce;
     expect(wizardEvent.args[0][0].detail.wizard()[0].title).to.contain('add');
   });
