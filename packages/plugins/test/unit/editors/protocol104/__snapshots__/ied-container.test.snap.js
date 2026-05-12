@@ -2,48 +2,70 @@
 export const snapshots = {};
 
 snapshots["ied-104-container - IED with DAI Elements looks like the latest snapshot"] = 
-`<action-pane tabindex="0">
-  <mwc-icon slot="icon">
+`<oscd-action-pane tabindex="0">
+  <oscd-icon
+    aria-hidden="true"
+    slot="icon"
+  >
     developer_board
-  </mwc-icon>
+  </oscd-icon>
   <abbr
     slot="action"
     title="[protocol104.toggleChildElements]"
   >
-    <mwc-icon-button-toggle
-      id="toggleButton"
-      officon="keyboard_arrow_down"
-      on=""
-      onicon="keyboard_arrow_up"
+    <oscd-icon-button
+      selected=""
+      toggle=""
+      value=""
     >
-    </mwc-icon-button-toggle>
+      <oscd-icon aria-hidden="true">
+        keyboard_arrow_up
+      </oscd-icon>
+      <oscd-icon
+        aria-hidden="true"
+        slot="selected"
+      >
+        keyboard_arrow_down
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
   <doi-104-container>
   </doi-104-container>
   <doi-104-container>
   </doi-104-container>
-</action-pane>
+</oscd-action-pane>
 `;
 /* end snapshot ied-104-container - IED with DAI Elements looks like the latest snapshot */
 
 snapshots["ied-104-container - IED without DAI Elements looks like the latest snapshot"] = 
-`<action-pane tabindex="0">
-  <mwc-icon slot="icon">
+`<oscd-action-pane tabindex="0">
+  <oscd-icon
+    aria-hidden="true"
+    slot="icon"
+  >
     developer_board
-  </mwc-icon>
+  </oscd-icon>
   <abbr
     slot="action"
     title="[protocol104.toggleChildElements]"
   >
-    <mwc-icon-button-toggle
-      id="toggleButton"
-      officon="keyboard_arrow_down"
-      on=""
-      onicon="keyboard_arrow_up"
+    <oscd-icon-button
+      selected=""
+      toggle=""
+      value=""
     >
-    </mwc-icon-button-toggle>
+      <oscd-icon aria-hidden="true">
+        keyboard_arrow_up
+      </oscd-icon>
+      <oscd-icon
+        aria-hidden="true"
+        slot="selected"
+      >
+        keyboard_arrow_down
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
-</action-pane>
+</oscd-action-pane>
 `;
 /* end snapshot ied-104-container - IED without DAI Elements looks like the latest snapshot */
 
