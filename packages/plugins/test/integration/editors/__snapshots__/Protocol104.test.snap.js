@@ -3,6 +3,8 @@ export const snapshots = {};
 
 snapshots["Protocol 104 Plugin in Values view the plugin looks like the latest snapshot"] = 
 `<section>
+  <plugin-104-dialog-manager>
+  </plugin-104-dialog-manager>
   <div>
     <mwc-formfield label="Values">
       <mwc-radio
@@ -32,6 +34,8 @@ snapshots["Protocol 104 Plugin in Values view the plugin looks like the latest s
 
 snapshots["Protocol 104 Plugin in Network view the plugin looks like the latest snapshot"] = 
 `<section>
+  <plugin-104-dialog-manager>
+  </plugin-104-dialog-manager>
   <div>
     <mwc-formfield label="Values">
       <mwc-radio

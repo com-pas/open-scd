@@ -2,12 +2,18 @@
 export const snapshots = {};
 
 snapshots["network-104-container looks like the latest snapshot"] = 
-`<mwc-fab
+`<oscd-fab
   extended=""
-  icon="add"
   label="[subnetwork.wizard.title.add]"
+  size="medium"
 >
-</mwc-fab>
+  <oscd-icon
+    aria-hidden="true"
+    slot="icon"
+  >
+    add
+  </oscd-icon>
+</oscd-fab>
 <section>
   <subnetwork-104-container>
   </subnetwork-104-container>

@@ -15,15 +15,18 @@ snapshots["Wizards for preparing 104 Address Creation show prepare 104 Address c
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="LN(0)"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / LLN0"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="DO"
@@ -43,14 +46,19 @@ snapshots["Wizards for preparing 104 Address Creation show prepare 104 Address c
       label="monitorTi"
     >
     </wizard-textfield>
-    <mwc-formfield label="[protocol104.wizard.monitorInverted]">
-      <mwc-switch id="monitorInverted">
-      </mwc-switch>
-    </mwc-formfield>
-    <mwc-formfield label="[protocol104.wizard.monitorCheck]">
-      <mwc-switch id="monitorCheck">
-      </mwc-switch>
-    </mwc-formfield>
+    <label>
+      <oscd-switch id="monitorInverted">
+      </oscd-switch>
+      [protocol104.wizard.monitorInverted]
+    </label>
+    <label>
+      <oscd-switch
+        disabled=""
+        id="monitorCheck"
+      >
+      </oscd-switch>
+      [protocol104.wizard.monitorCheck]
+    </label>
   </div>
   <mwc-button
     dialogaction="close"

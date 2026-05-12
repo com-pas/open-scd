@@ -7,12 +7,18 @@ snapshots["values-104-container SCL with IED Elements looks like the latest snap
 <ied-104-container>
 </ied-104-container>
 <h1>
-  <mwc-fab
+  <oscd-fab
     extended=""
-    icon="add"
     label="[protocol104.wizard.title.addAddress]"
+    size="medium"
   >
-  </mwc-fab>
+    <oscd-icon
+      aria-hidden="true"
+      slot="icon"
+    >
+      add
+    </oscd-icon>
+  </oscd-fab>
 </h1>
 `;
 /* end snapshot values-104-container SCL with IED Elements looks like the latest snapshot */
@@ -24,12 +30,18 @@ snapshots["values-104-container SCL without IED Elements looks like the latest s
   </span>
 </h1>
 <h1>
-  <mwc-fab
+  <oscd-fab
     extended=""
-    icon="add"
     label="[protocol104.wizard.title.addAddress]"
+    size="medium"
   >
-  </mwc-fab>
+    <oscd-icon
+      aria-hidden="true"
+      slot="icon"
+    >
+      add
+    </oscd-icon>
+  </oscd-fab>
 </h1>
 `;
 /* end snapshot values-104-container SCL without IED Elements looks like the latest snapshot */

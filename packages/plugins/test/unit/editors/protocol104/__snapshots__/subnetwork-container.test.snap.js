@@ -8,8 +8,11 @@ snapshots["subnetwork-104-container looks like the latest snapshot"] =
     slot="action"
     title="[add]"
   >
-    <mwc-icon-button icon="playlist_add">
-    </mwc-icon-button>
+    <oscd-icon-button value="">
+      <oscd-icon aria-hidden="true">
+        playlist_add
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
   <div id="iedContainer">
     <action-pane
