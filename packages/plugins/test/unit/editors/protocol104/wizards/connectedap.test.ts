@@ -213,6 +213,8 @@ describe('Wizards for SCL element ConnectedAP', () => {
     });
 
     it('triggers a create editor action on primary action', async () => {
+      await new Promise(resolve => setTimeout(resolve, 0));
+
       Array.from(
         element.wizardUI.dialog!.querySelectorAll<ListItemBase>(
           'mwc-check-list-item'
@@ -220,10 +222,8 @@ describe('Wizards for SCL element ConnectedAP', () => {
       )
         .filter(item => !item.disabled)[0]
         .click();
-      await element.requestUpdate();
 
       primaryAction.click();
-      await element.requestUpdate();
 
       expect(actionEvent).to.be.calledOnce;
       expect(actionEvent.args[0][0].detail.action).to.satisfy(isCreate);
