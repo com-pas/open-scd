@@ -42,7 +42,6 @@ snapshots["Wizards for SCL element IED edit IED looks like the latest snapshot"]
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[ied.wizard.descHelper]"
       label="desc"
       nullable=""

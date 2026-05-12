@@ -18,7 +18,6 @@ snapshots["Wizards for SCL TransformerWinding element define an edit wizard that
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -72,7 +71,6 @@ snapshots["Wizards for SCL TransformerWinding element define a create wizard tha
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""

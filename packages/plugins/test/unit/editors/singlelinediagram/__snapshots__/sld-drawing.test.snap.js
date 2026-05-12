@@ -70,18 +70,6 @@ snapshots["Single Line Diagram drawing creates a group element for every given C
   sxy:y="2"
   type="ConductingEquipment"
 >
-  <path
-    class="cls-1"
-    d="M12.71,15.29l-6.79-6.79c-.39-.39-1.02-.39-1.41,0-.39.39-.39,1.02,0,1.41l6.5,6.5v4.59c0,.55.45,1,1,1s1-.45,1-1v-5c0-.13-.03-.26-.08-.38-.05-.12-.12-.23-.22-.33Z"
-    transform="translate(391,1287) scale(2)"
-  >
-  </path>
-  <path
-    class="cls-1"
-    d="M14,6h-1v-3c0-.55-.45-1-1-1s-1,.45-1,1v3h-1c-.55,0-1,.45-1,1s.45,1,1,1h4c.55,0,1-.45,1-1s-.45-1-1-1Z"
-    transform="translate(391,1287) scale(2)"
-  >
-  </path>
   <text
     style="font-family: Roboto, sans-serif; font-weight: 300; font-size: x-small"
     x="376"

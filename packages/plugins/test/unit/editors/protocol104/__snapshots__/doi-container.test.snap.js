@@ -2,108 +2,138 @@
 export const snapshots = {};
 
 snapshots["doi-104-container - DOI with simple Address Element looks like the latest snapshot"] = 
-`<action-pane tabindex="0">
+`<oscd-action-pane tabindex="0">
   <abbr
     slot="action"
     title="[edit]"
   >
-    <mwc-icon-button icon="info">
-    </mwc-icon-button>
+    <oscd-icon-button value="">
+      <oscd-icon aria-hidden="true">
+        info
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
   <abbr
     slot="action"
     title="[protocol104.toggleChildElements]"
   >
-    <mwc-icon-button-toggle
-      id="toggleButton"
-      officon="keyboard_arrow_down"
-      on=""
-      onicon="keyboard_arrow_up"
+    <oscd-icon-button
+      selected=""
+      toggle=""
+      value=""
     >
-    </mwc-icon-button-toggle>
+      <oscd-icon aria-hidden="true">
+        keyboard_arrow_up
+      </oscd-icon>
+      <oscd-icon
+        aria-hidden="true"
+        slot="selected"
+      >
+        keyboard_arrow_down
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
-  <mwc-list id="dailist">
-    <mwc-list-item
-      aria-disabled="false"
+  <oscd-list id="dailist">
+    <oscd-list-item
+      md-list-item=""
       noninteractive=""
       tabindex="-1"
+      type="text"
     >
       <span>
         Oper / ctlVal
       </span>
-    </mwc-list-item>
-    <mwc-list-item
-      aria-disabled="false"
+    </oscd-list-item>
+    <oscd-list-item
       graphic="icon"
       hasmeta=""
-      mwc-list-item=""
-      tabindex="0"
+      md-list-item=""
+      tabindex="-1"
+      type="text"
     >
       <span slot="graphic">
       </span>
       <span>
         casdu: 201, ioa: 2, ti: 58
       </span>
-      <span slot="meta">
-        <mwc-icon-button icon="edit">
-        </mwc-icon-button>
+      <span slot="end">
+        <oscd-icon-button value="">
+          <oscd-icon aria-hidden="true">
+            edit
+          </oscd-icon>
+        </oscd-icon-button>
       </span>
-    </mwc-list-item>
-    <mwc-list-item
-      aria-disabled="false"
+    </oscd-list-item>
+    <oscd-list-item
+      md-list-item=""
       noninteractive=""
       tabindex="-1"
+      type="text"
     >
       <span>
         stVal
       </span>
-    </mwc-list-item>
-    <mwc-list-item
-      aria-disabled="false"
+    </oscd-list-item>
+    <oscd-list-item
       graphic="icon"
       hasmeta=""
-      mwc-list-item=""
+      md-list-item=""
       tabindex="-1"
+      type="text"
     >
       <span slot="graphic">
       </span>
       <span>
         casdu: 201, ioa: 1, ti: 30
       </span>
-      <span slot="meta">
-        <mwc-icon-button icon="edit">
-        </mwc-icon-button>
+      <span slot="end">
+        <oscd-icon-button value="">
+          <oscd-icon aria-hidden="true">
+            edit
+          </oscd-icon>
+        </oscd-icon-button>
       </span>
-    </mwc-list-item>
-  </mwc-list>
-</action-pane>
+    </oscd-list-item>
+  </oscd-list>
+</oscd-action-pane>
 `;
 /* end snapshot doi-104-container - DOI with simple Address Element looks like the latest snapshot */
 
 snapshots["doi-104-container - DOI without Address Elements looks like the latest snapshot"] = 
-`<action-pane tabindex="0">
+`<oscd-action-pane tabindex="0">
   <abbr
     slot="action"
     title="[edit]"
   >
-    <mwc-icon-button icon="info">
-    </mwc-icon-button>
+    <oscd-icon-button value="">
+      <oscd-icon aria-hidden="true">
+        info
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
   <abbr
     slot="action"
     title="[protocol104.toggleChildElements]"
   >
-    <mwc-icon-button-toggle
-      id="toggleButton"
-      officon="keyboard_arrow_down"
-      on=""
-      onicon="keyboard_arrow_up"
+    <oscd-icon-button
+      selected=""
+      toggle=""
+      value=""
     >
-    </mwc-icon-button-toggle>
+      <oscd-icon aria-hidden="true">
+        keyboard_arrow_up
+      </oscd-icon>
+      <oscd-icon
+        aria-hidden="true"
+        slot="selected"
+      >
+        keyboard_arrow_down
+      </oscd-icon>
+    </oscd-icon-button>
   </abbr>
-  <mwc-list id="dailist">
-  </mwc-list>
-</action-pane>
+  <oscd-list id="dailist">
+  </oscd-list>
+</oscd-action-pane>
 `;
 /* end snapshot doi-104-container - DOI without Address Elements looks like the latest snapshot */
 

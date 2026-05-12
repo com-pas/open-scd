@@ -1,7 +1,7 @@
 /* @web/test-runner snapshot v1 */
 export const snapshots = {};
 
-snapshots["Plugin that creates with some user input a virtual template IED - SPECIFICATION looks like the latest snapshot"] =
+snapshots["Plugin that creates with some user input a virtual template IED - SPECIFICATION looks like the latest snapshot"] = 
 `<mwc-dialog
   heading="Create SPECIFICATION type IED"
   open=""
@@ -13,7 +13,6 @@ snapshots["Plugin that creates with some user input a virtual template IED - SPE
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="desc"
       nullable=""
     >

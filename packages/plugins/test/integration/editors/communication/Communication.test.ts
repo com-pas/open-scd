@@ -1,11 +1,11 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
 
 import Communication from '../../../../src/editors/Communication.js';
 import { Dialog } from '@material/mwc-dialog';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 describe('Communication Plugin', () => {
   customElements.define('communication-plugin', Communication);

@@ -15,7 +15,7 @@ snapshots["Update method for desc attributes in SEL IEDs working on SCL files co
         graphic="control"
         mwc-list-item=""
         selected=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="DAI | IED2>>CBSW>IN1 GGIO 14>Ind01>stVal"
       >
@@ -156,7 +156,7 @@ snapshots["Update method for desc attributes in SEL IEDs working on SCL files co
         graphic="control"
         mwc-list-item=""
         selected=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="DAI | IED2>>CBSW>IN1 GGIO 14>Ind01>stVal"
       >

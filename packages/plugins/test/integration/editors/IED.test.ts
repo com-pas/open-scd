@@ -2,21 +2,21 @@ import { expect, fixture, html } from '@open-wc/testing';
 
 import { LitElement } from 'lit-element';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
 import '../../../src/editors/IED.js';
 
 import {
   initializeNsdoc,
   Nsdoc,
-} from '@openscd/open-scd/src/foundation/nsdoc.js';
-import { FilterButton } from '@openscd/open-scd/src/oscd-filter-button.js';
+} from '@compas-oscd/open-scd/dist/foundation/nsdoc.js';
+import { FilterButton } from '@compas-oscd/open-scd/dist/oscd-filter-button.js';
 
 import IED from '../../../src/editors/IED.js';
 import { LDeviceContainer } from '../../../src/editors/ied/ldevice-container.js';
 import { LNContainer } from '../../../src/editors/ied/ln-container.js';
 import { DOContainer } from '../../../src/editors/ied/do-container.js';
 import { DAContainer } from '../../../src/editors/ied/da-container.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 import { OscdApi } from '@openscd/core';
 import { PluginStateApi } from '../../../../core/dist/api/plugin-state-api.js';
 

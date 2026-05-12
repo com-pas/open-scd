@@ -587,7 +587,6 @@ snapshots["DAType wizards defines a createDATypeWizard looks like the latest sna
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""
@@ -668,7 +667,6 @@ snapshots["DAType wizards defines a dATypeWizard looks like the latest snapshot"
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="Description"
       label="desc"
       nullable=""

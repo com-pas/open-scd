@@ -3,13 +3,14 @@ import { expect, fixture, html } from '@open-wc/testing';
 import '../../../../src/editors/ied/da-container.js';
 
 import { DAContainer } from '../../../../src/editors/ied/da-container.js';
-import { initializeNsdoc } from '@openscd/open-scd/src/foundation/nsdoc.js';
+import { initializeNsdoc } from '@compas-oscd/open-scd/dist/foundation/nsdoc.js';
 import { TemplateResult } from 'lit-element';
 
 describe('da-container', async () => {
   let element: DAContainer;
   let validSCL: XMLDocument;
   localStorage.clear();
+  // TODO: Relevant?
   const nsdoc81 = await fetch(
     '@openscd/open-scd/test/testfiles/foundation/testFile81.nsdoc'
   ).then(response => response.text());

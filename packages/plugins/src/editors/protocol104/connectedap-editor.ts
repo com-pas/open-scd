@@ -15,7 +15,7 @@ export class ConnectedAP104Editor extends Base104Container {
   @property({ attribute: false })
   element!: Element;
 
-  private openEditWizard(): void {
+  openEditWizard(): void {
     this.dispatchEvent(
       newWizardEvent(() =>
         editConnectedApWizard(

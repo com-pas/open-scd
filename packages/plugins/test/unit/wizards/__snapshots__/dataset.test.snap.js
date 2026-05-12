@@ -33,14 +33,13 @@ snapshots["dataset wizards include a dataset edit wizard looks like the latest s
   </nav>
   <div id="wizard-content">
     <wizard-textfield
-      disabled=""
+      disabled="true"
       helper="[scl.name]"
       label="name"
       required=""
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -53,7 +52,7 @@ snapshots["dataset wizards include a dataset edit wizard looks like the latest s
         graphic="control"
         mwc-list-item=""
         selected=""
-        tabindex="0"
+        tabindex="-1"
         value="IED2>>CBSW>GooseDataSet1>CBSW/ XSWI 2.Pos stVal (ST)"
       >
         CBSW/ XSWI 2.Pos stVal (ST)

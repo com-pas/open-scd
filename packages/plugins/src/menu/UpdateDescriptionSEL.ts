@@ -1,10 +1,11 @@
-import { css, html, LitElement, query, TemplateResult } from 'lit-element';
+import { css, LitElement, query, html, TemplateResult } from 'lit-element';
 import { get } from 'lit-translate';
 
 import '@material/mwc-list/mwc-check-list-item';
 import { List } from '@material/mwc-list';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
+import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
@@ -66,7 +67,7 @@ function addDescriptionAction(doc: XMLDocument): WizardActor {
     wizard: Element,
     list: List | null | undefined
   ): WizardAction[] => {
-    const selectedItems = <ListItemBase[]>list!.selected;
+    const selectedItems = <ListItemBase[]>list?.selected ?? [];
 
     const actions = selectedItems.map(item => {
       const desc = (<Element>item.querySelector('span')).textContent;
@@ -96,11 +97,11 @@ function createLogWizard(doc: XMLDocument, items: SignalDescription[]): Wizard {
         action: addDescriptionAction(doc),
       },
       content: [
-        html`<filtered-list multi
+        oscdHtml`<filtered-list multi
           >${Array.from(
             items.map(
               item =>
-                html`<mwc-check-list-item
+                oscdHtml`<mwc-check-list-item
                   twoline
                   selected
                   value="${item.tag + ' | ' + item.identity}"

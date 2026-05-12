@@ -15,30 +15,36 @@ snapshots["Wizards for 104 Address Element edit basic 104 Address looks like the
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / LLN0 / Beh"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="stVal"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"
@@ -90,30 +96,36 @@ snapshots["Wizards for 104 Address Element edit 104 Address with expected value 
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GGIO-1 / Mod"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="Oper / ctlVal"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"
@@ -177,30 +189,36 @@ snapshots["Wizards for 104 Address Element edit 104 Address with unit multiplier
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GGIO-1 / IntIn1"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="stVal"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"
@@ -220,7 +238,6 @@ snapshots["Wizards for 104 Address Element edit 104 Address with unit multiplier
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="[protocol104.wizard.unitMultiplierHelper]"
       label="unitMultiplier"
@@ -460,30 +477,36 @@ snapshots["Wizards for 104 Address Element edit 104 Address with scale fields lo
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / MMXU-1 / Hz"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="mag / f"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"
@@ -503,7 +526,6 @@ snapshots["Wizards for 104 Address Element edit 104 Address with scale fields lo
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       fixedmenuposition=""
       helper="[protocol104.wizard.unitMultiplierHelper]"
       label="unitMultiplier"
@@ -711,14 +733,12 @@ snapshots["Wizards for 104 Address Element edit 104 Address with scale fields lo
       </mwc-list-item>
     </wizard-select>
     <wizard-textfield
-      disabled=""
       helper="[protocol104.wizard.scaleMultiplierHelper]"
       label="scaleMultiplier"
       nullable=""
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[protocol104.wizard.scaleOffsetHelper]"
       label="scaleOffset"
       nullable=""
@@ -757,30 +777,36 @@ snapshots["Wizards for 104 Address Element edit 104 Address with inverted value 
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GGIO-1 / Ind2"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="stVal"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"
@@ -838,30 +864,36 @@ snapshots["Wizards for 104 Address Element edit 104 Address with check value loo
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GGIO-1 / DPCSO1"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="cdc"
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DAI"
       readonly=""
       rows="2"
+      type="textarea"
       value="Oper / Check"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       helper="[protocol104.wizard.casduHelper]"
       label="casdu"

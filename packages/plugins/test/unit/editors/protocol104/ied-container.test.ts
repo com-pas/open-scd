@@ -36,7 +36,7 @@ describe('ied-104-container -', () => {
     });
 
     it('looks like the latest snapshot', async () => {
-      element.shadowRoot!.querySelector('mwc-icon-button-toggle')!.on = true;
+      element.isExpanded = true;
       await element.requestUpdate();
 
       await expect(element).shadowDom.to.equalSnapshot();
@@ -54,7 +54,7 @@ describe('ied-104-container -', () => {
     });
 
     it('looks like the latest snapshot', async () => {
-      element.shadowRoot!.querySelector('mwc-icon-button-toggle')!.on = true;
+      element.isExpanded = true;;
       await element.requestUpdate();
 
       await expect(element).shadowDom.to.equalSnapshot();

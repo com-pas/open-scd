@@ -1,11 +1,11 @@
 import { fixture, html, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import '../../../../src/editors/substation/l-node-editor.js';
 import { LNodeEditor } from '../../../../src/editors/substation/l-node-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 
 describe('l-node-editor wizarding editing integration', () => {
   let doc: XMLDocument;
@@ -91,8 +91,8 @@ describe('l-node-editor wizarding editing integration', () => {
     it('changes prefix attribute on primary action', async () => {
       prefixField.value = 'newPref';
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
 
       expect(
         doc.querySelector(
@@ -104,8 +104,8 @@ describe('l-node-editor wizarding editing integration', () => {
     it('changes lnInst attribute on primary action', async () => {
       lnInstField.value = '31';
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
 
       expect(
         doc.querySelector(

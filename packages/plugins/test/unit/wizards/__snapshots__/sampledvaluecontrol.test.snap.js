@@ -86,7 +86,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -107,7 +106,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       helper="[scl.smpMod]"
       label="smpMod"
       nullable=""
@@ -116,7 +114,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerPeriod"
       >
@@ -125,7 +122,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerSec"
       >
@@ -134,7 +130,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SecPerSmp"
       >
@@ -158,7 +153,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -167,7 +161,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="None"
       >
@@ -176,7 +169,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="Signature"
       >
@@ -185,7 +177,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SignatureAndEncryption"
       >
@@ -282,7 +273,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -297,7 +287,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       helper="[scl.smpMod]"
       label="smpMod"
       nullable=""
@@ -306,7 +295,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerPeriod"
       >
@@ -315,7 +303,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerSec"
       >
@@ -324,7 +311,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SecPerSmp"
       >
@@ -348,7 +334,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -357,7 +342,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="None"
       >
@@ -366,7 +350,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="Signature"
       >
@@ -375,7 +358,6 @@ snapshots["Wizards for SCL element SampledValueControl define an edit wizard tha
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SignatureAndEncryption"
       >
@@ -420,7 +402,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -443,7 +424,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerPeriod"
       >
@@ -452,7 +432,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SmpPerSec"
       >
@@ -461,7 +440,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SecPerSmp"
       >
@@ -485,7 +463,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
     >
     </wizard-textfield>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -494,7 +471,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="None"
       >
@@ -503,7 +479,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="Signature"
       >
@@ -512,7 +487,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SignatureAndEncryption"
       >
@@ -630,7 +604,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-ID"
       nullable=""
       pattern="[0-9A-F]{3}"
@@ -638,7 +611,6 @@ snapshots["Wizards for SCL element SampledValueControl define an create wizard t
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-PRIORITY"
       nullable=""
       pattern="[0-7]"

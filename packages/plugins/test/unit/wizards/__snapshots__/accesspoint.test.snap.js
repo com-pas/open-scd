@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element AccessPoint edit AccessPoint looks like the l
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[accesspoint.wizard.descHelper]"
       label="desc"
       nullable=""

@@ -104,7 +104,7 @@ snapshots["subnetwork-editor with child SMV elements looks like the latest snaps
 
 snapshots["subnetwork-editor move GSE/SMV dialog behavior opens the move dialog on request-gse-move event"] = 
 `<mwc-dialog
-  heading="Select New ConnectedAP"
+  heading="[wizard.title.selectAp]"
   id="moveDialog"
 >
   <mwc-list>

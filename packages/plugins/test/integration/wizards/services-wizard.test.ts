@@ -1,10 +1,10 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import { newWizardEvent, Wizard } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent, Wizard } from '@compas-oscd/open-scd/dist/foundation.js';
 import { editServicesWizard } from '../../../src/wizards/services.js';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
-import { WizardDialog } from '@openscd/open-scd/src/wizard-dialog.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
+import { WizardDialog } from '@compas-oscd/open-scd/dist/wizard-dialog.js';
 
 describe('Wizards for SCL element Services', () => {
   let doc: XMLDocument;

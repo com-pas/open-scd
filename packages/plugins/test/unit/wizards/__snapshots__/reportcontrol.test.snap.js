@@ -100,7 +100,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -143,7 +142,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.intgPd]"
       label="intgPd"
       min="0"
@@ -227,7 +225,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -239,7 +236,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-checkbox>
     <wizard-textfield
-      disabled=""
       helper="[report.rptID]"
       label="rptID"
       nullable=""
@@ -253,7 +249,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-checkbox>
     <wizard-textfield
-      disabled=""
       helper="[scl.maxReport]"
       label="max Clients"
       nullable=""
@@ -262,7 +257,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.bufTime]"
       label="bufTime"
       min="0"
@@ -273,7 +267,6 @@ snapshots["Wizards for SCL ReportControl element define an edit wizard that for 
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.intgPd]"
       label="intgPd"
       min="0"
@@ -456,7 +449,6 @@ snapshots["Wizards for SCL ReportControl element define an create wizard that th
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -468,7 +460,6 @@ snapshots["Wizards for SCL ReportControl element define an create wizard that th
     >
     </wizard-checkbox>
     <wizard-textfield
-      disabled=""
       helper="[report.rptID]"
       label="rptID"
       nullable=""
@@ -753,7 +744,7 @@ snapshots["Wizards for SCL ReportControl element define copy to other IED select
         disabled=""
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="IED2"
       >

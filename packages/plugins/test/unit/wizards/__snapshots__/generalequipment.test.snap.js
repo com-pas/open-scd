@@ -18,7 +18,6 @@ snapshots["Wizards for SCL GeneralEquipment element define an create wizard that
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""

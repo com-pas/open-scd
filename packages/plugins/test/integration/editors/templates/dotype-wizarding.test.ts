@@ -1,14 +1,14 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { Select } from '@material/mwc-select';
 
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import { patterns } from '../../../../src/wizards/foundation/limits.js';
@@ -27,7 +27,7 @@ describe('DOType wizards', () => {
       .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
     parent = await fixture(
-      html`<mock-open-scd
+      html`<mock-open-scd .doc=${doc}
         ><templates-editor .doc=${doc}></templates-editor
       ></mock-open-scd>`
     );
@@ -152,6 +152,7 @@ describe('DOType wizards', () => {
       selector.value = 'OpenSCD_ENS_Health';
       idField.maybeValue = 'myENSHealth';
       await parent.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       primayAction.click();
       await parent.updateComplete;
       expect(doc.querySelector('DOType[id="myENSHealth"]')).to.exist;
@@ -167,6 +168,7 @@ describe('DOType wizards', () => {
       selector.value = 'OpenSCD_MV_int';
       idField.maybeValue = 'myMV';
       await parent.requestUpdate();
+      await new Promise(resolve => setTimeout(resolve, 0));
       primayAction.click();
       await parent.updateComplete;
       expect(doc.querySelector('DAType[id="OpenSCD_AnalogueValue_INT32"]')).to

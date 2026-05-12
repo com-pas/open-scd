@@ -163,6 +163,8 @@ snapshots["fcda-binding-list with a SampledValueControl doc loaded looks like th
         SMV_Publisher>>CurrentTransformer>fullSmv
       </span>
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
     </mwc-list-item>
     <li
@@ -451,6 +453,8 @@ snapshots["fcda-binding-list with a SampledValueControl doc loaded looks like th
         SMV_Publisher>>CurrentTransformer>voltageOnly
       </span>
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
     </mwc-list-item>
     <li
@@ -623,6 +627,8 @@ snapshots["fcda-binding-list with a SampledValueControl doc loaded looks like th
         SMV_Publisher>>CurrentTransformer>currentOnly
       </span>
       <mwc-icon slot="graphic">
+        <custom-icon-smv>
+        </custom-icon-smv>
       </mwc-icon>
     </mwc-list-item>
     <li
@@ -850,6 +856,8 @@ snapshots["fcda-binding-list with a GSEControl doc loaded looks like the latest 
         GOOSE_Publisher>>QB2_Disconnector>GOOSE2
       </span>
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
     </mwc-list-item>
     <li
@@ -1006,6 +1014,8 @@ snapshots["fcda-binding-list with a GSEControl doc loaded looks like the latest 
         GOOSE_Publisher>>QB2_Disconnector>GOOSE1
       </span>
       <mwc-icon slot="graphic">
+        <custom-icon-goose>
+        </custom-icon-goose>
       </mwc-icon>
     </mwc-list-item>
     <li

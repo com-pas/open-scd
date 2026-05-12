@@ -7,6 +7,8 @@ snapshots["conducting-equipment-editor rendered as action icon looks like the la
   tabindex="0"
 >
   <mwc-icon slot="icon">
+    <custom-icon-circuitbreaker>
+    </custom-icon-circuitbreaker>
   </mwc-icon>
   <mwc-fab
     icon="account_tree"
@@ -45,6 +47,8 @@ snapshots["conducting-equipment-editor rendered as action pane looks like the la
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-circuitbreaker>
+    </custom-icon-circuitbreaker>
   </mwc-icon>
   <abbr
     slot="action"
@@ -149,6 +153,8 @@ snapshots["conducting-equipment-editor rendered as action pane with EqFunction c
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-generalconductingequipment>
+    </custom-icon-generalconductingequipment>
   </mwc-icon>
   <abbr
     slot="action"
@@ -255,6 +261,8 @@ snapshots["conducting-equipment-editor rendered as action pane with LNode childr
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-disconnector>
+    </custom-icon-disconnector>
   </mwc-icon>
   <abbr
     slot="action"
@@ -367,6 +375,8 @@ snapshots["conducting-equipment-editor rendered as action pane with SubEquipment
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-circuitbreaker>
+    </custom-icon-circuitbreaker>
   </mwc-icon>
   <abbr
     slot="action"

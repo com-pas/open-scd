@@ -1,21 +1,21 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   createReportControlWizard,
   reportControlCopyToIedSelector,
   reportControlParentSelector,
   selectReportControlWizard,
 } from '../../../src/wizards/reportcontrol.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 import { CheckListItem } from '@material/mwc-list/mwc-check-list-item';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element ReportControl', () => {
   let doc: XMLDocument;
@@ -214,6 +214,7 @@ describe('Wizards for SCL element ReportControl', () => {
 
     it('dynamically updates wizards after attribute change', async () => {
       nameField.value = 'myNewName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
@@ -558,13 +559,14 @@ describe('Wizards for SCL element ReportControl', () => {
       );
     });
 
-    it('creates a new instance of a ReportControl element', () => {
+    it('creates a new instance of a ReportControl element', async () => {
       expect(
         doc
           .querySelector<Element>('IED[name="IED2"]')
           ?.querySelectorAll('LN0 > ReportControl')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -574,13 +576,14 @@ describe('Wizards for SCL element ReportControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a DataSet element referenced from ReportControl', () => {
+    it('creates a new instance of a DataSet element referenced from ReportControl', async () => {
       expect(
         doc
           .querySelector<Element>('IED[name="IED2"]')
           ?.querySelectorAll('LN0 > DataSet')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

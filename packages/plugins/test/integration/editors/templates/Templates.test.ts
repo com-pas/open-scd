@@ -1,11 +1,11 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-open-scd.js';
-import { MockOpenSCD } from '@openscd/open-scd/test/mock-open-scd.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
 import TemplatesPlugin from '../../../../src/editors/Templates.js';
 
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Templates Plugin', () => {
   customElements.define('templates-plugin', TemplatesPlugin);
@@ -261,6 +261,7 @@ describe('Templates Plugin', () => {
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
       parent.wizardUI.inputs[1].value = 'myID';
       await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       (<HTMLElement>(
         parent.wizardUI.dialog?.querySelector(
           'mwc-button[slot="primaryAction"]'

@@ -2,16 +2,16 @@ import { expect, fixture, html } from '@open-wc/testing';
 import fc from 'fast-check';
 import { SinonSpy, spy } from 'sinon';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   newWizardEvent,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   isCreate, 
   Create, 
@@ -183,6 +183,7 @@ describe('Wizards for LNode element', () => {
         listItems[2].selected = true;
         listItems[3].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledThrice;
@@ -194,6 +195,7 @@ describe('Wizards for LNode element', () => {
       it('does set iedName, lnCalss, lnInst and lnType', async () => {
         listItems[2].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledOnce;
@@ -207,6 +209,7 @@ describe('Wizards for LNode element', () => {
       it('does not set ldInst and prefix', async () => {
         listItems[4].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledOnce;
@@ -218,6 +221,7 @@ describe('Wizards for LNode element', () => {
       it('makes sure that lnInst is unique in case lnClass is existing already', async () => {
         listItems[4].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledOnce;
@@ -229,6 +233,7 @@ describe('Wizards for LNode element', () => {
         listItems[3].selected = true;
         listItems[5].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledTwice;
@@ -241,6 +246,7 @@ describe('Wizards for LNode element', () => {
       it('does add empty string to LNode with lnClass LLN0', async () => {
         listItems[0].selected = true;
 
+        await new Promise(resolve => setTimeout(resolve, 0));
         await primaryAction.click();
 
         expect(actionEvent).to.have.be.calledOnce;
@@ -356,6 +362,8 @@ describe('Wizards for LNode element', () => {
 
         input.nullSwitch?.click();
         input.value = 'somepref';
+
+        await new Promise(resolve => setTimeout(resolve, 0));
 
         primaryAction.click();
         await element.requestUpdate();

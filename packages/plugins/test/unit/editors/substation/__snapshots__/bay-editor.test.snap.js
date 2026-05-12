@@ -10,6 +10,8 @@ snapshots["bay-editor looks like the latest snapshot"] =
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"
@@ -139,6 +141,8 @@ snapshots["bay-editor with readonly property looks like the latest snapshot"] =
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"
@@ -268,6 +272,8 @@ snapshots["bay-editor with function filter deactivated looks like the latest sna
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"
@@ -401,6 +407,8 @@ snapshots["bay-editor with existing LNode children looks like the latest snapsho
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"
@@ -528,6 +536,8 @@ snapshots["bay-editor with general-equipment children with showfunctions false l
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"
@@ -653,6 +663,8 @@ snapshots["bay-editor with general-equipment children with showfunctions true lo
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-bay>
+    </custom-icon-bay>
   </mwc-icon>
   <abbr
     slot="action"

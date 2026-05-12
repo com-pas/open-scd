@@ -34,7 +34,7 @@ snapshots["Wizards for LNode element contain a LNode instantiate wizard that wit
         disabled=""
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="#Dummy.LLN0"
       >
@@ -204,7 +204,7 @@ snapshots["Wizards for LNode element contain a LNode instantiate wizard that wit
         disabled=""
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="#Dummy.LLN0"
       >
@@ -372,7 +372,7 @@ snapshots["Wizards for LNode element contain a LNode instantiate wizard that wit
         aria-disabled="false"
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="#Dummy.LLN0"
       >
@@ -520,152 +520,6 @@ snapshots["Wizards for LNode element contain a LNode reference create wizard tha
       id="lnList"
       multi=""
     >
-      <mwc-check-list-item
-        mwc-list-item=""
-        selected=""
-        twoline=""
-        value="IED2>>CBSW> XSWI 2"
-      >
-        <span>
-          XSWI2
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW> XCBR 1"
-      >
-        <span>
-          XCBR1
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW> XSWI 1"
-      >
-        <span>
-          XSWI1
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW> GGIO 1"
-      >
-        <span>
-          GGIO1
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CircuitBreaker_CB1"
-      >
-        <span>
-          LLN0
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CircuitBreaker_CB1
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CircuitBreaker_CB1> XCBR 1"
-      >
-        <span>
-          XCBR1
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CircuitBreaker_CB1
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CircuitBreaker_CB1> CSWI 1"
-      >
-        <span>
-          CSWI1
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CircuitBreaker_CB1
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        disabled=""
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW"
-      >
-        <span>
-          LLN0
-          <mwc-icon style="--mdc-icon-size: 1em;">
-            account_tree
-          </mwc-icon>
-          /AA1/E1/COUPLING_BAY
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        disabled=""
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW> LPHD 1"
-      >
-        <span>
-          LPHD1
-          <mwc-icon style="--mdc-icon-size: 1em;">
-            account_tree
-          </mwc-icon>
-          /AA1/E1/COUPLING_BAY
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
-      <mwc-check-list-item
-        disabled=""
-        mwc-list-item=""
-        twoline=""
-        value="IED2>>CBSW> XSWI 3"
-      >
-        <span>
-          XSWI3
-          <mwc-icon style="--mdc-icon-size: 1em;">
-            account_tree
-          </mwc-icon>
-          /AA1/E1/COUPLING_BAY
-        </span>
-        <span slot="secondary">
-          IED2 |
-        CBSW
-        </span>
-      </mwc-check-list-item>
     </filtered-list>
   </div>
   <mwc-button
@@ -729,7 +583,7 @@ snapshots["Wizards for LNode element contain a LNode reference create wizard tha
         aria-disabled="false"
         graphic="control"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         value="IED1"
       >
         IED1
@@ -797,7 +651,6 @@ snapshots["Wizards for LNode element contain a edit wizard that for a type refer
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.prefix]"
       helperpersistent=""
       label="prefix"

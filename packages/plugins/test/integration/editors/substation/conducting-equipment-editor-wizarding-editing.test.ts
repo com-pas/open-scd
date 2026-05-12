@@ -1,11 +1,11 @@
 import { fixture, html, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import '../../../../src/editors/substation/conducting-equipment-editor.js';
 import { ConductingEquipmentEditor } from '../../../../src/editors/substation/conducting-equipment-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base.js';
 
@@ -99,16 +99,16 @@ describe('conducting-equipment-editor wizarding editing integration', () => {
     });
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('ConductingEquipment')?.getAttribute('name')
       ).to.equal('newName');
     });
     it('changes desc attribute on primary action', async () => {
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('ConductingEquipment')?.getAttribute('desc')
       ).to.equal('newDesc');
@@ -304,7 +304,7 @@ describe('conducting-equipment-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

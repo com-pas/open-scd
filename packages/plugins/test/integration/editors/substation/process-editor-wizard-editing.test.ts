@@ -1,12 +1,12 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import '../../../../src/editors/substation/process-editor.js';
 import { ProcessEditor } from '../../../../src/editors/substation/process-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 
 const openAndCancelMenu: (
@@ -105,8 +105,8 @@ describe('process-editor wizarding editing integration', () => {
 
     it('changes name attribute on primary action', async () => {
       nameField.value = 'newName';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(doc.querySelector('Process')?.getAttribute('name')).to.equal(
         'newName'
       );
@@ -120,9 +120,8 @@ describe('process-editor wizarding editing integration', () => {
       descField.nullSwitch!.click();
       await parent.updateComplete;
       descField.value = 'newDesc';
-      console.log(descField.value);
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector('Process[name="ProcessGenConduct"]')
@@ -148,8 +147,8 @@ describe('process-editor wizarding editing integration', () => {
       typeField.nullSwitch!.click();
       await parent.updateComplete;
       typeField.value = 'newType';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector('Process[name="ProcessGenConduct"]')

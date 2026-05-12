@@ -1,12 +1,12 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import '../../../../src/editors/substation/line-editor.js';
 import { LineEditor } from '../../../../src/editors/substation/line-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 
 const openAndCancelMenu: (
@@ -98,8 +98,8 @@ describe('line-editor wizarding editing integration', () => {
 
     it('changes desc attribute on primary action', async () => {
       parent.wizardUI.inputs[1].value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('Line[name="Berlin"]')?.getAttribute('desc')
       ).to.equal('newDesc');
@@ -107,8 +107,8 @@ describe('line-editor wizarding editing integration', () => {
 
     it('changes type attribute on primary action', async () => {
       parent.wizardUI.inputs[2].value = 'newType';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('Line[name="Berlin"]')?.getAttribute('type')
       ).to.equal('newType');
@@ -116,8 +116,8 @@ describe('line-editor wizarding editing integration', () => {
 
     it('changes nomFreq attribute on primary action', async () => {
       parent.wizardUI.inputs[3].value = '50';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('Line[name="Berlin"]')?.getAttribute('nomFreq')
       ).to.equal('50');
@@ -125,8 +125,8 @@ describe('line-editor wizarding editing integration', () => {
 
     it('changes numPhases attribute on primary action', async () => {
       parent.wizardUI.inputs[4].value = '3';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc.querySelector('Line[name="Berlin"]')?.getAttribute('numPhases')
       ).to.equal('3');

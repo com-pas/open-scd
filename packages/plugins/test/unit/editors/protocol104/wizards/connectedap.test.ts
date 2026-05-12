@@ -1,15 +1,15 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { SinonSpy, spy } from 'sinon';
 
-import '@openscd/open-scd/src/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { Checkbox } from '@material/mwc-checkbox';
 import {
   createConnectedApWizard,
   editConnectedApWizard,
 } from '../../../../../src/editors/protocol104/wizards/connectedap.js';
-import { WizardInputElement } from '@openscd/open-scd/src/foundation.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   isCreate,
   isDelete,
@@ -17,7 +17,7 @@ import {
   Create,
   Delete,
 } from '@openscd/core/foundation/deprecated/editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 describe('Wizards for SCL element ConnectedAP', () => {
@@ -213,6 +213,8 @@ describe('Wizards for SCL element ConnectedAP', () => {
     });
 
     it('triggers a create editor action on primary action', async () => {
+      await new Promise(resolve => setTimeout(resolve, 0));
+
       Array.from(
         element.wizardUI.dialog!.querySelectorAll<ListItemBase>(
           'mwc-check-list-item'
@@ -220,10 +222,8 @@ describe('Wizards for SCL element ConnectedAP', () => {
       )
         .filter(item => !item.disabled)[0]
         .click();
-      await element.requestUpdate();
 
       primaryAction.click();
-      await element.requestUpdate();
 
       expect(actionEvent).to.be.calledOnce;
       expect(actionEvent.args[0][0].detail.action).to.satisfy(isCreate);

@@ -18,7 +18,6 @@ snapshots["Wizards for SCL element Bay (X/Y) looks like the latest snapshot"] =
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[bay.wizard.descHelper]"
       label="desc"
       nullable=""

@@ -1,8 +1,8 @@
 import { fixture, html, expect } from '@open-wc/testing';
 import fc from 'fast-check';
 
-import '@openscd/open-scd/src/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import '../../../../src/editors/communication/subnetwork-editor.js';
 import { regexString, regExp, inverseRegExp } from '../../../foundation.js';
@@ -103,7 +103,7 @@ describe('subnetwork-editor wizarding integration', () => {
             regexString(inverseRegExp.decimal, 1),
             async BitRate => {
               parent.wizardUI.inputs[3].value = BitRate;
-              await parent.updateComplete;
+              await new Promise(resolve => setTimeout(resolve, 0));
               expect(parent.wizardUI.inputs[3].checkValidity()).to.be.false;
             }
           )

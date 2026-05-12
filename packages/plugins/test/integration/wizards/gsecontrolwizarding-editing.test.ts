@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
@@ -9,10 +9,10 @@ import {
   editGseControlWizard,
   selectGseControlWizard,
 } from '../../../src/wizards/gsecontrol.js';
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element GSEControl', () => {
   let doc: XMLDocument;
@@ -207,6 +207,7 @@ describe('Wizards for SCL element GSEControl', () => {
 
       it('dynamically updates wizards after attribute change', async () => {
         nameField.value = 'myNewName';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         await new Promise(resolve => setTimeout(resolve, 100)); // await animation

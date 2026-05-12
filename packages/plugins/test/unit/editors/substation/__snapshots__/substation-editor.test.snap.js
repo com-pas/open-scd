@@ -10,6 +10,8 @@ snapshots["substation-editor looks like the latest snapshot"] =
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-substation>
+    </custom-icon-substation>
   </mwc-icon>
   <abbr
     slot="action"
@@ -131,6 +133,8 @@ snapshots["substation-editor with readonly property looks like the latest snapsh
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-substation>
+    </custom-icon-substation>
   </mwc-icon>
   <abbr
     slot="action"
@@ -252,6 +256,8 @@ snapshots["substation-editor with function filter deactivated looks like the lat
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-substation>
+    </custom-icon-substation>
   </mwc-icon>
   <abbr
     slot="action"
@@ -387,6 +393,8 @@ snapshots["substation-editor with general-equipment children with showfunctions 
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-substation>
+    </custom-icon-substation>
   </mwc-icon>
   <abbr
     slot="action"
@@ -512,6 +520,8 @@ snapshots["substation-editor with general-equipment children with showfunctions 
     class="substation-editor-icon"
     slot="icon"
   >
+    <custom-icon-substation>
+    </custom-icon-substation>
   </mwc-icon>
   <abbr
     slot="action"

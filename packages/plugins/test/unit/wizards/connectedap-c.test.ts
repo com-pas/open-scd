@@ -1,12 +1,12 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base.js';
 
 import { createConnectedApWizard } from '../../../src/wizards/connectedap.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 function isAllMacUnique(parent: Element, serviceType: 'GSE' | 'SMV'): boolean {
   const allMacs = Array.from(
@@ -39,6 +39,7 @@ async function clickListItem(
   element: MockWizardEditor,
   values: string[]
 ): Promise<void> {
+  await new Promise(resolve => setTimeout(resolve, 0));
   Array.from(values).forEach(value => {
     element.wizardUI
       .dialog!.querySelector<ListItemBase>(
@@ -112,10 +113,6 @@ describe('create wizard for ConnectedAP element', () => {
     const wizard = createConnectedApWizard(parent);
     element.dispatchEvent(newWizardEvent(wizard));
     await element.requestUpdate();
-
-    /*
-    inputs = Array.from(element.wizardUI.inputs);
-    */
   });
 
   it('looks like the latest snapshot', async () =>

@@ -108,6 +108,10 @@ export class FilteredList extends LitElement {
     return this.list.selected;
   }
 
+  get index() {
+    return this.list.index;
+  }
+
   private onCheckAll(): void {
     const select = !this.isAllSelected;
     this.items
@@ -123,6 +127,10 @@ export class FilteredList extends LitElement {
     ).forEach(item =>
       hideFiltered(item as ListItemBase, this.searchField.value)
     );
+  }
+
+  layout(updateItems?: boolean): void {
+    this.list.layout(updateItems);
   }
 
   protected update(

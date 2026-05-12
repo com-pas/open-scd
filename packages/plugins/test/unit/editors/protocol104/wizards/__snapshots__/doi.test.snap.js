@@ -38,15 +38,18 @@ snapshots["Wizards for 104 DOI Element show 104 DOI Basic Info (Known CDC Monito
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GAPC-1 / Op"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="Common Data Class"
@@ -120,15 +123,18 @@ snapshots["Wizards for 104 DOI Element show 104 DOI Basic Info with ctlModel (Kn
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GGIO-1 / CmdBlk"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="Common Data Class"
@@ -220,15 +226,18 @@ snapshots["Wizards for 104 DOI Element show 104 DOI Basic Info for CDC=ACD looks
       readonly=""
     >
     </wizard-textfield>
-    <mwc-textarea
+    <oscd-filled-text-field
+      autocomplete=""
       cols="40"
       disabled=""
+      inputmode=""
       label="DOI"
       readonly=""
       rows="2"
+      type="textarea"
       value="AP1 / LD0 / GAPC-1 / Str"
     >
-    </mwc-textarea>
+    </oscd-filled-text-field>
     <wizard-textfield
       disabled=""
       label="Common Data Class"

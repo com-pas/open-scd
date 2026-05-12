@@ -7,18 +7,30 @@ snapshots["connectedap-104-editor looks like the latest snapshot"] =
   label="AP1"
   tabindex="0"
 >
-  <mwc-fab
-    icon="edit"
+  <oscd-fab
     mini=""
+    size="medium"
     slot="action"
   >
-  </mwc-fab>
-  <mwc-fab
-    icon="delete"
+    <oscd-icon
+      aria-hidden="true"
+      slot="icon"
+    >
+      edit
+    </oscd-icon>
+  </oscd-fab>
+  <oscd-fab
     mini=""
+    size="medium"
     slot="action"
   >
-  </mwc-fab>
+    <oscd-icon
+      aria-hidden="true"
+      slot="icon"
+    >
+      delete
+    </oscd-icon>
+  </oscd-fab>
 </action-icon>
 `;
 /* end snapshot connectedap-104-editor looks like the latest snapshot */

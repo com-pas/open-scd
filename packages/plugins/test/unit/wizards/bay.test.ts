@@ -3,14 +3,14 @@ import { fixture, html, expect } from '@open-wc/testing';
 import {
   WizardInputElement,
   WizardActor,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import { 
   isCreate,
   isReplace,
   isSimple,
   ComplexAction 
 } from '@openscd/core/foundation/deprecated/editor.js';
-import '@openscd/open-scd/src/wizard-textfield.js';
+import '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { createAction } from '../../../src/wizards/bay.js';
 import { replaceNamingAttributeWithReferencesAction } from '../../../src/wizards/foundation/actions.js';
 

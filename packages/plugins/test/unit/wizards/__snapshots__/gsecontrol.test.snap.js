@@ -13,7 +13,7 @@ snapshots["gsecontrol wizards selectGseControlWizard looks like the latest snaps
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        tabindex="0"
+        tabindex="-1"
         twoline=""
         value="IED1>>CircuitBreaker_CB1>GCB"
       >
@@ -91,7 +91,6 @@ snapshots["gsecontrol wizards renderGseAttribute looks like the latest snapshot"
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -134,7 +133,6 @@ snapshots["gsecontrol wizards renderGseAttribute looks like the latest snapshot"
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -245,7 +243,6 @@ snapshots["gsecontrol wizards editGseControlWizard looks like the latest snapsho
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -288,7 +285,6 @@ snapshots["gsecontrol wizards editGseControlWizard looks like the latest snapsho
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -357,7 +353,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       helper="[scl.desc]"
       label="desc"
       nullable=""
@@ -372,7 +367,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="GOOSE"
       >
@@ -381,7 +375,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="GSSE"
       >
@@ -402,7 +395,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
     >
     </wizard-checkbox>
     <wizard-select
-      disabled=""
       helper="[scl.securityEnable]"
       label="securityEnabled"
       nullable=""
@@ -411,7 +403,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="None"
       >
@@ -420,7 +411,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="Signature"
       >
@@ -429,7 +419,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
       <mwc-list-item
         aria-disabled="false"
         mwc-list-item=""
-        role="option"
         tabindex="-1"
         value="SignatureAndEncryption"
       >
@@ -483,7 +472,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-ID"
       nullable=""
       pattern="[0-9A-F]{3}"
@@ -491,7 +479,6 @@ snapshots["gsecontrol wizards define an create wizard that with existing Connect
     >
     </wizard-textfield>
     <wizard-textfield
-      disabled=""
       label="VLAN-PRIORITY"
       nullable=""
       pattern="[0-7]"

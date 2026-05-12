@@ -1,19 +1,19 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
-import { FilteredList } from '@openscd/open-scd/src/filtered-list.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   createSampledValueControlWizard,
   selectSampledValueControlWizard,
 } from '../../../src/wizards/sampledvaluecontrol.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
-import { FinderList } from '@openscd/open-scd/src/finder-list.js';
-import { newWizardEvent } from '@openscd/open-scd/src/foundation.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
+import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
+import { newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
 
 describe('Wizards for SCL element SampledValueControl', () => {
   let doc: XMLDocument;
@@ -224,6 +224,7 @@ describe('Wizards for SCL element SampledValueControl', () => {
 
       it('dynamically updates wizards after attribute change', async () => {
         nameField.value = 'myNewName';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         await new Promise(resolve => setTimeout(resolve, 20)); // await animation
@@ -409,11 +410,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       );
     });
 
-    it('creates a new instance of a SampledValueControl element', () => {
+    it('creates a new instance of a SampledValueControl element', async () => {
       expect(
         doc.querySelectorAll('IED[name="IED3"] LN0 > SampledValueControl')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -421,11 +423,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a DataSet element referenced from SampledValueControl', () => {
+    it('creates a new instance of a DataSet element referenced from SampledValueControl', async () => {
       expect(
         doc.querySelectorAll('IED[name="IED3"] LN0 > DataSet')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(
@@ -433,11 +436,12 @@ describe('Wizards for SCL element SampledValueControl', () => {
       ).to.have.lengthOf(2);
     });
 
-    it('creates a new instance of a SMV element', () => {
+    it('creates a new instance of a SMV element', async () => {
       expect(
         doc.querySelectorAll('ConnectedAP[iedName="IED3"][apName="P1"] SMV')
       ).to.have.lengthOf(1);
 
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

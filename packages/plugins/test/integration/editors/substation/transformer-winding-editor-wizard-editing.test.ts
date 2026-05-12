@@ -1,13 +1,13 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 
 import '../../../../src/editors/substation/transformer-winding-editor.js';
 import { TransformerWindingEditor } from '../../../../src/editors/substation/transformer-winding-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
-import { WizardCheckbox } from '@openscd/open-scd/src/wizard-checkbox.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 
 const openAndCancelMenu: (
@@ -107,10 +107,10 @@ describe('transformer-winding-editor wizarding editing integration', () => {
     it('changes desc attribute on primary action', async () => {
       await new Promise(resolve => setTimeout(resolve, 100)); // await animation
       descField.nullSwitch!.click();
-      await parent.updateComplete;
       descField.value = 'newDesc';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       expect(
         doc
           .querySelector(
@@ -127,8 +127,8 @@ describe('transformer-winding-editor wizarding editing integration', () => {
       );
       virtualCheckbox.nullSwitch!.click();
       virtualCheckbox.maybeValue = 'true';
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
-      await parent.updateComplete;
       expect(
         doc
           .querySelector(

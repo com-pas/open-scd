@@ -1,11 +1,11 @@
 import { fixture, html, expect } from '@open-wc/testing';
 
-import '@openscd/open-scd/test/mock-wizard-editor.js';
-import { MockWizardEditor } from '@openscd/open-scd/test/mock-wizard-editor.js';
+import '@compas-oscd/open-scd/dist/test-helper';
+import { MockWizardEditor } from '@compas-oscd/open-scd/dist/test-helper';
 
 import '../../../../src/editors/substation/sub-function-editor.js';
 import { SubFunctionEditor } from '../../../../src/editors/substation/sub-function-editor.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { ListItemBase } from '@material/mwc-list/mwc-list-item-base';
 import { MenuBase } from '@material/mwc-menu/mwc-menu-base.js';
 
@@ -118,7 +118,7 @@ describe('sub-function-editor wizarding editing integration', () => {
       ).to.not.exist;
 
       nameField.value = 'someNewSubFunction';
-      await parent.updateComplete;
+      await new Promise(resolve => setTimeout(resolve, 0));
       primaryAction.click();
 
       expect(

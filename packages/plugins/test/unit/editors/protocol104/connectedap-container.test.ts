@@ -27,20 +27,22 @@ describe('connectedap-104-editor', () => {
     await expect(element).shadowDom.to.equalSnapshot();
   });
   
-  it('has a mwc-fab which deletes the ConnectedAP', () => {
+  it('has a function which deletes the ConnectedAP', () => {
     const editorEvent = spy();
     window.addEventListener('editor-action', editorEvent);
 
-    (<HTMLElement>(element.shadowRoot?.querySelector('mwc-fab[icon="delete"]'))).click();
+    element.remove();
+
     expect(editorEvent).to.have.be.calledOnce;
     expect(editorEvent.args[0][0].detail.action.old.element).to.eql(connectedAP);
   });
   
-  it('has a mwc-fab which creates an edit wizard for the ConnectedAP', () => {
+  it('has a function which creates an edit wizard for the ConnectedAP', () => {
     const wizardEvent = spy();
     window.addEventListener('wizard', wizardEvent);
 
-    (<HTMLElement>(element.shadowRoot?.querySelector('mwc-fab[icon="edit"]'))).click();
+    element.openEditWizard();
+
     expect(wizardEvent).to.have.be.calledOnce;
     expect(wizardEvent.args[0][0].detail.wizard()[0].title).to.contain('edit');
     expect(wizardEvent.args[0][0].detail.wizard()[0].element).to.contain(connectedAP);

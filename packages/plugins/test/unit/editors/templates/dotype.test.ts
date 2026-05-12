@@ -1,13 +1,13 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { SinonSpy, spy } from 'sinon';
 
-import '@openscd/open-scd/src/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import {
   identity,
   WizardInputElement,
-} from '@openscd/open-scd/src/foundation.js';
+} from '@compas-oscd/open-scd/dist/foundation.js';
 import {
   ComplexAction,
   Replace,
@@ -63,8 +63,9 @@ describe('wizards for DOType element', () => {
 
       it('as wizard input', () => expect(input).to.exist);
 
-      it('triggers a complex action', () => {
+      it('triggers a complex action', async () => {
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
         expect(actionEvent).to.be.calledOnce;
 
@@ -72,8 +73,9 @@ describe('wizards for DOType element', () => {
         expect(action).to.not.satisfy(isSimple);
       });
 
-      it('that edits the id attribute of DOType', () => {
+      it('that edits the id attribute of DOType', async () => {
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         const complexAction = <ComplexAction>(
@@ -83,13 +85,14 @@ describe('wizards for DOType element', () => {
         expect(actions[0].new.element).to.have.attribute('id', 'someTestId');
       });
 
-      it('that edits all referenced lnType attribute as well', () => {
+      it('that edits all referenced lnType attribute as well', async () => {
         const oldId = input?.value;
         const numReferences = doc.querySelectorAll(
           `LNodeType > DO[type="${oldId}"], DOType > SDO[type="${oldId}"]`
         ).length;
 
         input!.value = 'someTestId';
+        await new Promise(resolve => setTimeout(resolve, 0));
         primaryAction.click();
 
         const complexAction = <ComplexAction>(

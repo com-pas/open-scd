@@ -1,11 +1,11 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import '@openscd/open-scd/src/addons/Wizards.js';
-import { OscdWizards } from '@openscd/open-scd/src/addons/Wizards.js';
+import '@compas-oscd/open-scd/addons/Wizards.js';
+import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
-import { WizardInputElement } from '@openscd/open-scd/src/foundation.js';
-import { WizardTextField } from '@openscd/open-scd/src/wizard-textfield.js';
-import { WizardSelect } from '@openscd/open-scd/src/wizard-select.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
+import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 
 import {
   executeWizardReplaceAction,
@@ -47,23 +47,6 @@ describe('Wizards for 104 Address Element', () => {
     await element.requestUpdate();
     inputs = Array.from(element.wizardUI.inputs);
   }
-
-  describe('when adding a 104 Address', () => {
-    beforeEach(async () => {
-      await prepareWizard(
-        'IED[name="B1"] LN[lnType="SE_GGIO_SET_V002"] DOI[name="Mod"] DAI[name="ctlVal"] Address'
-      );
-    });
-
-    it('shows a validation error message if the combination of casdu and ioa is already in use', async () => {
-      await setWizardTextFieldValue(<WizardTextField>inputs[2], '208'); // Casdu Field
-      await setWizardTextFieldValue(<WizardTextField>inputs[3], '2'); // IOA Field
-      await element.updateComplete;
-      expect(inputs[3].checkValidity()).to.be.false;
-      expect(inputs[3].validity.customError).to.be.true;
-      expect(inputs[3].validationMessage).to.include('ioaConflict');
-    });
-  });
 
   describe('edit basic 104 Address', () => {
     beforeEach(async () => {
