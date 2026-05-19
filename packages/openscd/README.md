@@ -7,6 +7,8 @@
 
 Open Substation Communication Designer is an editor for SCL files as described in `IEC 61850-6`.
 
+This package is published to npm as `@compas-oscd/open-scd`.
+
 > Try it out at [openscd.github.io](https://openscd.github.io)!
 
 Make sure your web browser has enough free memory! If needed, disable plug-ins and close unused browser tabs.
