@@ -21,61 +21,61 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
         with:
           submodules: "true"
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.releases_created }}
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f #v6.3.0
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.releases_created }}
       - run: npm ci --include=optional
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.releases_created }}
       - run: npm run build
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.releases_created }}
 
       - name: Publish core to npm
         run: cd packages/core && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/core--release_created'] }}
         continue-on-error: true
 
       - name: Publish forms to npm
         run: cd packages/forms && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/forms--release_created'] }}
         continue-on-error: true
 
       - name: Publish xml to npm
         run: cd packages/xml && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/xml--release_created'] }}
         continue-on-error: true
 
       - name: Publish plugins to npm
         run: cd packages/plugins && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/plugins--release_created'] }}
         continue-on-error: true
 
       - name: Publish open-scd to npm
         run: cd packages/openscd && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/openscd--release_created'] }}
         continue-on-error: true
 
 
       - name: Create and Zip Build Assets
-        if: ${{ steps.release.outputs.release_created }}
-        run: |
+        if: ${{ steps.release.outputs.releases_created }}
+        run: | 
           zip -r open-scd.zip ./packages/distribution/build/
           tar -czvf open-scd.tar.gz ./packages/distribution/build/
 
       - name: Upload Build Assets
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.releases_created }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:  gh release upload ${{ steps.release.outputs.tag_name }} open-scd.zip open-scd.tar.gz
