@@ -1,11 +1,11 @@
 # Changelog
 
-## [0.0.2](https://github.com/com-pas/open-scd/compare/xml@v0.0.1...xml@v0.0.2) (2026-05-19)
+## [0.1.0](https://github.com/com-pas/open-scd/compare/forms@v0.0.1...forms@v0.1.0) (2026-05-19)
 
 
 ### ✨ Features
 
-* Added XML Package for OpenSCD ([#1536](https://github.com/com-pas/open-scd/issues/1536)) ([ca60c2a](https://github.com/com-pas/open-scd/commit/ca60c2a63c304a5e1c88095ea2f24b597fc5a2ad))
+* Form library ([#1718](https://github.com/com-pas/open-scd/issues/1718)) ([396bb13](https://github.com/com-pas/open-scd/commit/396bb13d0d5ecf6c3994072f00958587bb9e5fcd))
 
 
 ### 🐞 Bug Fixes
@@ -18,5 +18,3 @@
 ### 📦 Miscellaneous Chores
 
 * update release please version to 0.37.2 ([#1627](https://github.com/com-pas/open-scd/issues/1627)) ([1e50fd9](https://github.com/com-pas/open-scd/commit/1e50fd935512172d97d923b62e25bd064d850ca0))
-
-## Changelog
