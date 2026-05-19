@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://github.com/com-pas/open-scd/compare/core@v0.1.23...core@v0.2.0) (2026-05-19)
+
+
+### ✨ Features
+
+* replace editor with @openscd/oscd-editor ([ff330a8](https://github.com/com-pas/open-scd/commit/ff330a8d035ab9c09443473fd23e3c74ecb4a225))
+* use official xml editor ([f5b0517](https://github.com/com-pas/open-scd/commit/f5b05176aa97d0db8e688bb509c907c6573aa753))
+
+
+### 🐞 Bug Fixes
+
+* Allow SetAttributes without namespace object ([58b67bf](https://github.com/com-pas/open-scd/commit/58b67bfb762c5aae4f98c5ca1dabff53eb93f623))
+* Allow setattributes without ns object ([01c0420](https://github.com/com-pas/open-scd/commit/01c04208bd41287b54cbca7703bbd2025fb11250))
+* update core package version and restructure exports ([1cd643d](https://github.com/com-pas/open-scd/commit/1cd643d651f9e34ccfa91be013f94dfccc26bf80))
+
 ## [0.1.1](https://github.com/openscd/open-scd/compare/core-v0.1.0...core@v0.1.1) (2024-01-11)
 
 

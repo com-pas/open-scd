@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.34.50](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.49...open-scd@v0.34.50) (2026-05-19)
+
+
+### 🐞 Bug Fixes
+
+* change release please config ([16d553c](https://github.com/com-pas/open-scd/commit/16d553ccc4dd4154d1c643d444951822724d990e))
+* set scl schema version back to minimal of 2007B4 ([2832053](https://github.com/com-pas/open-scd/commit/2832053d9dd4e6f37d68576950c7bcbcb91e12a1))
+* set scl schema version back to minimum of 2007B4 ([9d56926](https://github.com/com-pas/open-scd/commit/9d569262375fb7c109add431592a10b0264894fd))
+* trigger release plugins and openscd ([cab8ff2](https://github.com/com-pas/open-scd/commit/cab8ff24eb0535f7e4e9f7241e2efe9033c99ee5))
+
+
+### 📦 Miscellaneous Chores
+
+* Add missing readOnly property ([bfef5d1](https://github.com/com-pas/open-scd/commit/bfef5d1516dd36264f50638e2ba8d925631c9784))
+* Fix control-blocks-container test ([1043943](https://github.com/com-pas/open-scd/commit/10439439b306e9e9d1b4ae4f543cc89cb157f664))
+* Fix datasets-container ([6d87a6d](https://github.com/com-pas/open-scd/commit/6d87a6d245edd9d95d9dba1672e3f8dd935623aa))
+* Fix plugins tests ([7558102](https://github.com/com-pas/open-scd/commit/75581022ea47c8f6ee71dad1a3ccfc4b015582df))
+
 ## [0.34.0](https://github.com/openscd/open-scd/compare/open-scd-v0.33.1...open-scd@v0.34.0) (2024-01-10)
 
 
