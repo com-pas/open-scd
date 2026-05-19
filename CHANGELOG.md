@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.45.14](https://github.com/com-pas/open-scd/compare/v0.45.13...v0.45.14) (2026-05-19)
+
+
+### Bug Fixes
+
+* change release please config ([16d553c](https://github.com/com-pas/open-scd/commit/16d553ccc4dd4154d1c643d444951822724d990e))
+* trigger release plugins and openscd ([cab8ff2](https://github.com/com-pas/open-scd/commit/cab8ff24eb0535f7e4e9f7241e2efe9033c99ee5))
+* update release-please config ([628d949](https://github.com/com-pas/open-scd/commit/628d9491c6e7831508f8cf030211052417605881))
+
 ## [0.45.13](https://github.com/com-pas/open-scd/compare/v0.45.12...v0.45.13) (2026-05-07)
 
 
