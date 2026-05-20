@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.8](https://github.com/com-pas/open-scd/compare/plugins@v0.0.7...plugins@v0.0.8) (2026-05-20)
+
+
+### 🐞 Bug Fixes
+
+* update package-lock.json ([76602d7](https://github.com/com-pas/open-scd/commit/76602d7ec5ddf312f6caf116f3a99e81fa2abd53))
+
+
+### 📦 Miscellaneous Chores
+
+* update open-scd version in plugins ([5c5c6c4](https://github.com/com-pas/open-scd/commit/5c5c6c4a940230ae020e2221454d8446b7ca3978))
+
 ## [0.0.7](https://github.com/com-pas/open-scd/compare/plugins@v0.0.6...plugins@v0.0.7) (2026-05-19)
 
 
