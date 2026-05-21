@@ -1,16 +1,16 @@
-import { html, render, TemplateResult } from 'lit-html';
+import { render, TemplateResult } from 'lit-html';
 import { get } from 'lit-translate';
 
 import '@material/mwc-icon';
 import '@material/mwc-list/mwc-check-list-item';
 import '@material/mwc-list/mwc-list-item';
 import { List } from '@material/mwc-list';
-import { ListBase } from '@material/mwc-list/mwc-list-base';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { MultiSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
 import { oscdHtml } from '@compas-oscd/open-scd/dist/foundation.js';
 import '@compas-oscd/open-scd/dist/filtered-list.js';
+import { FilteredList } from '@compas-oscd/open-scd/dist/filtered-list.js';
 import {
   find,
   getValue,
@@ -312,13 +312,13 @@ function getListContainer(target: Element, selector: string): Element | null {
 }
 
 function onIEDSelect(evt: MultiSelectedEvent, parent: Element): void {
-  if (!(evt.target instanceof ListBase)) return;
-  const lnList = getListContainer(evt.target, '#lnList');
+  const filteredList = evt.target as FilteredList;
+  const lnList = getListContainer(filteredList, '#lnList');
   if (lnList === null) return;
 
   const doc = parent.ownerDocument;
 
-  const selectedIEDItems = <ListItem[]>evt.target.selected;
+  const selectedIEDItems = <ListItem[]>filteredList.selected;
 
   const lnItems = selectedIEDItems
     .flatMap(item =>
