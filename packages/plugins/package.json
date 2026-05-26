@@ -18,6 +18,9 @@
   "files": [
     "./dist/**"
   ],
+  "exports": {
+    "./dist/editors/Substation.js": "./dist/editors/Substation.js"
+  },
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-fab": "0.22.1",
