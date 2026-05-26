@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.34.51](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.50...open-scd@v0.34.51) (2026-05-26)
+
+
+### 📦 Miscellaneous Chores
+
+* trigger workflow ([8af8d1b](https://github.com/com-pas/open-scd/commit/8af8d1bef5dde354b57fd3e726fa60ff0f80704f))
+
 ## [0.34.50](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.49...open-scd@v0.34.50) (2026-05-19)
 
 
