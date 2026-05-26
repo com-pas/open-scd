@@ -280,6 +280,60 @@ describe('Wizards for LNode element', () => {
       it('looks like the latest snapshot', async () =>
         await expect(element.wizardUI.dialog).to.equalSnapshot());
     });
+
+    describe('when selecting IEDs through filtered-list', () => {
+      let iedList: HTMLElement;
+      let nextButton: HTMLElement;
+
+      beforeEach(async () => {
+        const wizard = lNodeWizard(
+          doc.querySelector('ConductingEquipment[name="QA1"]')!
+        );
+        element.dispatchEvent(newWizardEvent(wizard));
+        await element.requestUpdate();
+
+        iedList = <HTMLElement>(
+          element.wizardUI.dialog?.querySelector('filtered-list#iedList')
+        );
+
+        nextButton = <HTMLElement>(
+          element.wizardUI.dialog?.querySelector(
+            'mwc-button[dialogAction="next"]'
+          )
+        );
+      });
+
+      it('populates logical nodes list when IEDs are selected', async () => {
+        const iedItem = <ListItemBase>(
+          iedList.querySelector('mwc-check-list-item[value="IED2"]')
+        );
+        expect(iedItem).to.exist;
+        
+        iedItem.selected = true;
+        await iedItem.requestUpdate();
+        
+        iedList.dispatchEvent(
+          new CustomEvent('selected', {
+            bubbles: true,
+            composed: true,
+          })
+        );
+        await element.requestUpdate();
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        nextButton.click();
+        await element.requestUpdate();
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        const lnList = element.wizardUI.dialogs[1]?.querySelector(
+          'filtered-list#lnList'
+        );
+        expect(lnList).to.exist;
+
+        const lnItems = lnList?.querySelectorAll('mwc-check-list-item');
+        expect(lnItems?.length).to.be.greaterThan(0);
+      });
+    });
   });
 
   describe('contain a edit wizard that', () => {
