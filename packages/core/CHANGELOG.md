@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/com-pas/open-scd/compare/core@v0.2.0...core@v0.2.1) (2026-05-26)
+
+
+### 📦 Miscellaneous Chores
+
+* trigger workflow ([8af8d1b](https://github.com/com-pas/open-scd/commit/8af8d1bef5dde354b57fd3e726fa60ff0f80704f))
+
 ## [0.2.0](https://github.com/com-pas/open-scd/compare/core@v0.1.23...core@v0.2.0) (2026-05-19)
 
 

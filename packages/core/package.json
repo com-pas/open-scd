@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The core editor component of open-scd, without any extensions pre-installed.",
   "author": "Open-SCD",
   "license": "Apache-2.0",
