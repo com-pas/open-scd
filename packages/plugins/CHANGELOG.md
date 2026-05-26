@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.10](https://github.com/com-pas/open-scd/compare/plugins@v0.0.9...plugins@v0.0.10) (2026-05-26)
+
+
+### 🐞 Bug Fixes
+
+* Add export for substation plugin ([75ea35f](https://github.com/com-pas/open-scd/commit/75ea35f3df927211f5fbf6c90d09d43c4aebb5c9))
+
+
+### 📦 Miscellaneous Chores
+
+* Export substation plugin ([af8f6b7](https://github.com/com-pas/open-scd/commit/af8f6b75a1fb2425cb9f4ebe214cb6c94f74ade4))
+* Raise plugins version to 0.0.10 ([1a7ba1f](https://github.com/com-pas/open-scd/commit/1a7ba1fcad6b93d06906e36a08f00254dffd0106))
+* Revert plugins version ([cf8dff8](https://github.com/com-pas/open-scd/commit/cf8dff825f34c4a61564d42959d3180f262890b4))
+
 ## [0.0.9](https://github.com/com-pas/open-scd/compare/plugins@v0.0.8...plugins@v0.0.9) (2026-05-26)
 
 

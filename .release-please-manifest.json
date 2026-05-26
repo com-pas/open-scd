@@ -3,6 +3,6 @@
   "packages/core": "0.2.1",
   "packages/forms": "0.0.3",
   "packages/xml": "0.0.3",
-  "packages/plugins": "0.0.9",
+  "packages/plugins": "0.0.10",
   ".": "0.45.13"
 }
