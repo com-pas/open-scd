@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.9](https://github.com/com-pas/open-scd/compare/plugins@v0.0.8...plugins@v0.0.9) (2026-05-26)
+
+
+### 🐞 Bug Fixes
+
+* **plugins:** logical nodes not populating when selecting IEDs ([2e147d8](https://github.com/com-pas/open-scd/commit/2e147d8147ef6fd6fc29d445c815e5b87d7a7f59))
+* **plugins:** logical nodes not populating when selecting IEDs ([3327ffa](https://github.com/com-pas/open-scd/commit/3327ffadef77ed8db227a3f861fe5615c2f91e05))
+
 ## [0.0.8](https://github.com/com-pas/open-scd/compare/plugins@v0.0.7...plugins@v0.0.8) (2026-05-20)
 
 
