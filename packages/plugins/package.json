@@ -35,7 +35,7 @@
     "./dist/menu/SaveProject.js": "./dist/menu/SaveProject.js",
     "./dist/menu/CompareIED.js": "./dist/menu/CompareIED.js",
     "./dist/menu/Merge.js": "./dist/menu/Merge.js",
-    "./dist/menu/ImportIED.js": "./dist/menu/ImportIED.js",
+    "./dist/menu/ImportIEDs.js": "./dist/menu/ImportIEDs.js",
     "./dist/menu/UpdateSubstation.js": "./dist/menu/UpdateSubstation.js",
     "./dist/menu/NewProject.js": "./dist/menu/NewProject.js",
     "./dist/menu/VirtualTemplateIED.js": "./dist/menu/VirtualTemplateIED.js",
