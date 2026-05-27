@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.12](https://github.com/com-pas/open-scd/compare/plugins@v0.0.11...plugins@v0.0.12) (2026-05-27)
+
+
+### 🐞 Bug Fixes
+
+* Fix typo in export ([066ab0f](https://github.com/com-pas/open-scd/commit/066ab0fb2f6d8a4e09e6e4a46a27aeadc44ba269))
+
+
+### 📦 Miscellaneous Chores
+
+* Fix typo in export ([b581fea](https://github.com/com-pas/open-scd/commit/b581feacf98e5fa2807dffedaf2dee5f11c3f1e8))
+
 ## [0.0.11](https://github.com/com-pas/open-scd/compare/plugins@v0.0.10...plugins@v0.0.11) (2026-05-27)
 
 
