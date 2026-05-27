@@ -1,4 +1,4 @@
-import { render, TemplateResult } from 'lit-html';
+import { html, render, TemplateResult } from 'lit-html';
 import { get } from 'lit-translate';
 
 import '@material/mwc-icon';
@@ -351,33 +351,34 @@ function onIEDSelect(evt: MultiSelectedEvent, parent: Element): void {
     })
     .sort(compare);
 
-  const lnTemplates = lnItems.map(item => {
-    return oscdHtml`<mwc-check-list-item
-      ?selected=${item.selected}
-      ?disabled=${item.disabled}
-      value="${identity(item.element)}"
-      twoline
-      ><span
-        >${item.element.getAttribute('prefix') ??
-        ''}${item.element.getAttribute('lnClass')}${item.element.getAttribute(
-          'inst'
-        ) ?? ''}
-        ${item.disabled
-          ? oscdHtml` <mwc-icon style="--mdc-icon-size: 1em;"
-                >account_tree</mwc-icon
-              >
-              ${referencePath(getLNode(doc, item.element)!)}`
-          : ''}</span
-      ><span slot="secondary"
-        >${item.element.closest('IED')?.getAttribute('name') ?? ''} |
-        ${item.element.closest('LDevice')
-          ? item.element.closest('LDevice')?.getAttribute('inst')
-          : APldInst}</span
-      ></mwc-check-list-item
-    >`;
-  });
-
-  render(oscdHtml`${lnTemplates}`, lnList);
+  render(
+    html`${lnItems.map(
+      item => html`<mwc-check-list-item
+        ?selected=${item.selected}
+        ?disabled=${item.disabled}
+        value="${identity(item.element)}"
+        twoline
+        ><span
+          >${item.element.getAttribute('prefix') ??
+          ''}${item.element.getAttribute('lnClass')}${item.element.getAttribute(
+            'inst'
+          ) ?? ''}
+          ${item.disabled
+            ? html` <mwc-icon style="--mdc-icon-size: 1em;"
+                  >account_tree</mwc-icon
+                >
+                ${referencePath(getLNode(doc, item.element)!)}`
+            : ''}</span
+        ><span slot="secondary"
+          >${item.element.closest('IED')?.getAttribute('name') ?? ''} |
+          ${item.element.closest('LDevice')
+            ? item.element.closest('LDevice')?.getAttribute('inst')
+            : APldInst}</span
+        ></mwc-check-list-item
+      >`
+    )}`,
+    lnList
+  );
 }
 
 function renderIEDPage(element: Element): TemplateResult {
