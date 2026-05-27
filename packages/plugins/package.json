@@ -19,7 +19,32 @@
     "./dist/**"
   ],
   "exports": {
-    "./dist/editors/Substation.js": "./dist/editors/Substation.js"
+    "./dist/editors/Substation.js": "./dist/editors/Substation.js",
+    "./dist/editors/SingleLineDiagram.js": "./dist/editors/SingleLineDiagram.js",
+    "./dist/editors/GooseSubscriberMessageBinding.js": "./dist/editors/GooseSubscriberMessageBinding.js",
+    "./dist/editors/GooseSubscriberDataBinding.js": "./dist/editors/GooseSubscriberDataBinding.js",
+    "./dist/editors/SMVSubscriberMessageBinding.js": "./dist/editors/SMVSubscriberMessageBinding.js",
+    "./dist/editors/SMVSubscriberDataBinding.js": "./dist/editors/SMVSubscriberDataBinding.js",
+    "./dist/editors/Communication.js": "./dist/editors/Communication.js",
+    "./dist/editors/Protocol104.js": "./dist/editors/Protocol104.js",
+    "./dist/editors/Templates.js": "./dist/editors/Templates.js",
+    "./dist/editors/Cleanup.js": "./dist/editors/Cleanup.js",
+    "./dist/validators/ValidateSchema.js": "./dist/validators/ValidateSchema.js",
+    "./dist/validators/ValidateTemplates.js": "./dist/validators/ValidateTemplates.js",
+    "./dist/menu/OpenProject.js": "./dist/menu/OpenProject.js",
+    "./dist/menu/SaveProject.js": "./dist/menu/SaveProject.js",
+    "./dist/menu/CompareIED.js": "./dist/menu/CompareIED.js",
+    "./dist/menu/Merge.js": "./dist/menu/Merge.js",
+    "./dist/menu/ImportIED.js": "./dist/menu/ImportIED.js",
+    "./dist/menu/UpdateSubstation.js": "./dist/menu/UpdateSubstation.js",
+    "./dist/menu/NewProject.js": "./dist/menu/NewProject.js",
+    "./dist/menu/VirtualTemplateIED.js": "./dist/menu/VirtualTemplateIED.js",
+    "./dist/menu/SubscriberInfo.js": "./dist/menu/SubscriberInfo.js",
+    "./dist/menu/UpdateDescriptionABB.js": "./dist/menu/UpdateDescriptionABB.js",
+    "./dist/menu/UpdateDescriptionSEL.js": "./dist/menu/UpdateDescriptionSEL.js",
+    "./dist/menu/SclHistory.js": "./dist/menu/SclHistory.js",
+    "./dist/menu/Help.js": "./dist/menu/Help.js",
+    "./dist/menu/ExportCommunication.js": "./dist/menu/ExportCommunication.js"
   },
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",
