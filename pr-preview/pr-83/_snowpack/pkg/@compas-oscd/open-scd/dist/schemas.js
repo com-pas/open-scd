@@ -1,1 +1,0 @@
-export { S as SCL_NAMESPACE, g as getSchema, i as isLoadSchemaResult, c as isSCLNamespace, a as isValidationError, b as isValidationResult, n as newEmptySCD } from '../../../common/schemas-178935cf.js';
