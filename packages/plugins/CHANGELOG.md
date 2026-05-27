@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.11](https://github.com/com-pas/open-scd/compare/plugins@v0.0.10...plugins@v0.0.11) (2026-05-27)
+
+
+### 🐞 Bug Fixes
+
+* Export all plugins ([4ea401e](https://github.com/com-pas/open-scd/commit/4ea401e04184623d32386ae2dc618c633747fd4b))
+
+
+### 📦 Miscellaneous Chores
+
+* Export all plugins ([3a6ba2c](https://github.com/com-pas/open-scd/commit/3a6ba2ce8dcd544c333001f9e589cbe8e6c7bebf))
+
 ## [0.0.10](https://github.com/com-pas/open-scd/compare/plugins@v0.0.9...plugins@v0.0.10) (2026-05-26)
 
 
