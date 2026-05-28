@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-      - chore/update-package-lock-release-workflow  
+      - chore/update-package-lock-release-workflow
 permissions:
   contents: write
   pull-requests: write
@@ -17,6 +17,7 @@ jobs:
         with:
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
       
       # Update package-lock.json in release PR
