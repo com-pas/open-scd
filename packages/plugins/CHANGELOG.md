@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.13](https://github.com/com-pas/open-scd/compare/plugins@v0.0.12...plugins@v0.0.13) (2026-05-28)
+
+
+### 🐞 Bug Fixes
+
+* change lnode rendering ([dc93cab](https://github.com/com-pas/open-scd/commit/dc93cab47353b847f64c8697719def3aec4d2218))
+* change lnode rendering ([68d74f1](https://github.com/com-pas/open-scd/commit/68d74f1778820cb22b95435c1b4b8cbe627cce8f))
+
 ## [0.0.12](https://github.com/com-pas/open-scd/compare/plugins@v0.0.11...plugins@v0.0.12) (2026-05-27)
 
 
