@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/com-pas/open-scd/compare/core@v0.2.1...core@v0.2.2) (2026-05-28)
+
+
+### 🐞 Bug Fixes
+
+* trigger release-please ([720680d](https://github.com/com-pas/open-scd/commit/720680df2d3fdf0add7f4ba87be1a6320de4d449))
+
 ## [0.2.1](https://github.com/com-pas/open-scd/compare/core@v0.2.0...core@v0.2.1) (2026-05-26)
 
 

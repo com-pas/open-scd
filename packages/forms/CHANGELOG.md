@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/com-pas/open-scd/compare/forms@v0.0.3...forms@v0.0.4) (2026-05-28)
+
+
+### 🐞 Bug Fixes
+
+* trigger release-please ([720680d](https://github.com/com-pas/open-scd/commit/720680df2d3fdf0add7f4ba87be1a6320de4d449))
+
 ## [0.0.3](https://github.com/com-pas/open-scd/compare/forms@v0.0.2...forms@v0.0.3) (2026-05-26)
 
 

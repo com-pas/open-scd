@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.34.52](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.51...open-scd@v0.34.52) (2026-05-28)
+
+
+### 🐞 Bug Fixes
+
+* trigger release-please ([720680d](https://github.com/com-pas/open-scd/commit/720680df2d3fdf0add7f4ba87be1a6320de4d449))
+
 ## [0.34.51](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.50...open-scd@v0.34.51) (2026-05-26)
 
 
