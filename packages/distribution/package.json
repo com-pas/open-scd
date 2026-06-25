@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@compas-oscd/open-scd": "0.34.51",
-    "@compas-oscd/plugins": "0.0.12"
+    "@compas-oscd/plugins": "0.0.13"
   },
   "scripts": {
     "clean": "rimraf build",
