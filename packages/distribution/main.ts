@@ -1,1 +1,1 @@
-import '@openscd/open-scd/src/open-scd.component.js';
+import '@compas-oscd/open-scd/open-scd.component.js';
