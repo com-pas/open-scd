@@ -44,7 +44,8 @@
     "./dist/menu/UpdateDescriptionSEL.js": "./dist/menu/UpdateDescriptionSEL.js",
     "./dist/menu/SclHistory.js": "./dist/menu/SclHistory.js",
     "./dist/menu/Help.js": "./dist/menu/Help.js",
-    "./dist/menu/ExportCommunication.js": "./dist/menu/ExportCommunication.js"
+    "./dist/menu/ExportCommunication.js": "./dist/menu/ExportCommunication.js",
+    "./dist/oscd-plugins.js": "./dist/oscd-plugins.js"
   },
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",

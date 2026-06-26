@@ -50,6 +50,7 @@ import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin, ContentConte
 import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
 import { newLogEvent } from '@compas-oscd/core';
 import { pluginTag } from './plugin-tag.js';
+import { OscdPluginSrc } from './oscd-plugins.js';
 
 
 
@@ -413,6 +414,17 @@ export class OpenSCD extends LitElement {
 
   private addContent(plugin: Omit<Plugin, 'content'>): Plugin {
     const tag = this.pluginTag(plugin.src);
+
+    const isOscdPlugin = Object.values(OscdPluginSrc).includes(plugin.src as any);
+    if (isOscdPlugin) {
+      const tag = pluginTag(plugin.src);
+      return {
+        ...plugin,
+        content: {
+          tag,
+        },
+      };
+    }
 
     if (!this.loadedPlugins.has(tag)) {
       this.loadedPlugins.add(tag);
