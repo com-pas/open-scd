@@ -5,7 +5,10 @@ export default defineConfig({
   plugins: [
     viteStaticCopy({
       targets: [
-        { src: '../external-plugins/**/*', dest: 'external-plugins', rename: { stripBase: 2 } }
+        // Copy external plugins one by one, because otherwise vite creates copies of all files
+        // in the external-plugins folder on base level
+        { src: '../external-plugins/oscd-publisher/*', dest: 'external-plugins/oscd-publisher' },
+        { src: '../external-plugins/oscd-subscriber-later-binding/*', dest: 'external-plugins/oscd-subscriber-later-binding' }
       ]
     })
   ],

@@ -7,7 +7,7 @@ export function generatePluginPath(plugin: string): string {
 export const officialPlugins: PluginConfig[] = [
   {
     name: 'IED',
-    src: generatePluginPath('plugins/src/editors/IED.js'),
+    src: '/oscd-plugins/editors/IED.js',
     icon: 'developer_board',
     activeByDefault: true,
     kind: 'editor',
@@ -15,7 +15,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Substation',
-    src: generatePluginPath('plugins/src/editors/Substation.js'),
+    src: '/oscd-plugins/editors/Substation.js',
     icon: 'margin',
     activeByDefault: true,
     kind: 'editor',
@@ -23,7 +23,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Single Line Diagram',
-    src: generatePluginPath('plugins/src/editors/SingleLineDiagram.js'),
+    src: '/oscd-plugins/editors/SingleLineDiagram.js',
     icon: 'edit',
     activeByDefault: false,
     kind: 'editor',
@@ -31,7 +31,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Subscriber Message Binding (GOOSE)',
-    src: generatePluginPath('plugins/src/editors/GooseSubscriberMessageBinding.js'),
+    src: '/oscd-plugins/editors/GooseSubscriberMessageBinding.js',
     icon: 'link',
     activeByDefault: false,
     kind: 'editor',
@@ -39,7 +39,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Subscriber Data Binding (GOOSE)',
-    src: generatePluginPath('plugins/src/editors/GooseSubscriberDataBinding.js'),
+    src: '/oscd-plugins/editors/GooseSubscriberDataBinding.js',
     icon: 'link',
     activeByDefault: false,
     kind: 'editor',
@@ -47,7 +47,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Subscriber Message Binding (SMV)',
-    src: generatePluginPath('plugins/src/editors/SMVSubscriberMessageBinding.js'),
+    src: '/oscd-plugins/editors/SMVSubscriberMessageBinding.js',
     icon: 'link',
     activeByDefault: false,
     kind: 'editor',
@@ -55,7 +55,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Subscriber Data Binding (SMV)',
-    src: generatePluginPath('plugins/src/editors/SMVSubscriberDataBinding.js'),
+    src: '/oscd-plugins/editors/SMVSubscriberDataBinding.js',
     icon: 'link',
     activeByDefault: false,
     kind: 'editor',
@@ -71,7 +71,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Communication',
-    src: generatePluginPath('plugins/src/editors/Communication.js'),
+    src: '/oscd-plugins/editors/Communication.js',
     icon: 'settings_ethernet',
     activeByDefault: true,
     kind: 'editor',
@@ -79,7 +79,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: '104',
-    src: generatePluginPath('plugins/src/editors/Protocol104.js'),
+    src: '/oscd-plugins/editors/Protocol104.js',
     icon: 'settings_ethernet',
     activeByDefault: false,
     kind: 'editor',
@@ -87,7 +87,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Templates',
-    src: generatePluginPath('plugins/src/editors/Templates.js'),
+    src: '/oscd-plugins/editors/Templates.js',
     icon: 'copy_all',
     activeByDefault: true,
     kind: 'editor',
@@ -103,7 +103,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Cleanup',
-    src: generatePluginPath('plugins/src/editors/Cleanup.js'),
+    src: '/oscd-plugins/editors/Cleanup.js',
     icon: 'cleaning_services',
     activeByDefault: false,
     kind: 'editor',
@@ -111,7 +111,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Open project',
-    src: generatePluginPath('plugins/src/menu/OpenProject.js'),
+    src: '/oscd-plugins/menu/OpenProject.js',
     icon: 'folder_open',
     activeByDefault: true,
     kind: 'menu',
@@ -120,7 +120,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'New project',
-    src: generatePluginPath('plugins/src/menu/NewProject.js'),
+    src: '/oscd-plugins/menu/NewProject.js',
     icon: 'create_new_folder',
     activeByDefault: true,
     kind: 'menu',
@@ -138,7 +138,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Save project',
-    src: generatePluginPath('plugins/src/menu/SaveProject.js'),
+    src: '/oscd-plugins/menu/SaveProject.js',
     icon: 'save',
     activeByDefault: true,
     kind: 'menu',
@@ -147,21 +147,21 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Validate Schema',
-    src: generatePluginPath('plugins/src/validators/ValidateSchema.js'),
+    src: '/oscd-plugins/validators/ValidateSchema.js',
     icon: 'rule_folder',
     activeByDefault: true,
     kind: 'validator',
   },
   {
     name: 'Validate Templates',
-    src: generatePluginPath('plugins/src/validators/ValidateTemplates.js'),
+    src: '/oscd-plugins/validators/ValidateTemplates.js',
     icon: 'rule_folder',
     activeByDefault: true,
     kind: 'validator',
   },
   {
     name: 'Import IEDs',
-    src: generatePluginPath('plugins/src/menu/ImportIEDs.js'),
+    src: '/oscd-plugins/menu/ImportIEDs.js',
     icon: 'snippet_folder',
     activeByDefault: true,
     kind: 'menu',
@@ -170,7 +170,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Create Virtual IED',
-    src: generatePluginPath('plugins/src/menu/VirtualTemplateIED.js'),
+    src: '/oscd-plugins/menu/VirtualTemplateIED.js',
     icon: 'developer_board',
     activeByDefault: false,
     kind: 'menu',
@@ -179,7 +179,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Subscriber Update',
-    src: generatePluginPath('plugins/src/menu/SubscriberInfo.js'),
+    src: '/oscd-plugins/menu/SubscriberInfo.js',
     activeByDefault: true,
     kind: 'menu',
     requireDoc: true,
@@ -187,7 +187,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Update desc (ABB)',
-    src: generatePluginPath('plugins/src/menu/UpdateDescriptionABB.js'),
+    src: '/oscd-plugins/menu/UpdateDescriptionABB.js',
     activeByDefault: false,
     kind: 'menu',
     requireDoc: true,
@@ -195,7 +195,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Update desc (SEL)',
-    src: generatePluginPath('plugins/src/menu/UpdateDescriptionSEL.js'),
+    src: '/oscd-plugins/menu/UpdateDescriptionSEL.js',
     activeByDefault: false,
     kind: 'menu',
     requireDoc: true,
@@ -203,7 +203,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Merge Project',
-    src: generatePluginPath('plugins/src/menu/Merge.js'),
+    src: '/oscd-plugins/menu/Merge.js',
     icon: 'merge_type',
     activeByDefault: true,
     kind: 'menu',
@@ -212,7 +212,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Update Substation',
-    src: generatePluginPath('plugins/src/menu/UpdateSubstation.js'),
+    src: '/oscd-plugins/menu/UpdateSubstation.js',
     icon: 'merge_type',
     activeByDefault: true,
     kind: 'menu',
@@ -221,7 +221,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Compare IED',
-    src: generatePluginPath('plugins/src/menu/CompareIED.js'),
+    src: '/oscd-plugins/menu/CompareIED.js',
     icon: 'compare_arrows',
     activeByDefault: true,
     kind: 'menu',
@@ -230,7 +230,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Show SCL History',
-    src: generatePluginPath('plugins/src/menu/SclHistory.js'),
+    src: '/oscd-plugins/menu/SclHistory.js',
     icon: 'history_toggle_off',
     activeByDefault: true,
     kind: 'menu',
@@ -239,7 +239,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Help',
-    src: generatePluginPath('plugins/src/menu/Help.js'),
+    src: '/oscd-plugins/menu/Help.js',
     icon: 'help',
     activeByDefault: true,
     kind: 'menu',
@@ -248,7 +248,7 @@ export const officialPlugins: PluginConfig[] = [
   },
   {
     name: 'Export Communication Section',
-    src: generatePluginPath('plugins/src/menu/ExportCommunication.js'),
+    src: '/oscd-plugins/menu/ExportCommunication.js',
     icon: 'sim_card_download',
     activeByDefault: false,
     kind: 'menu',
