@@ -1,0 +1,14 @@
+packages:
+  - "packages/*"
+saveExact: true
+minimumReleaseAge: 4320 # 3 days
+blockExoticSubdeps: false
+allowBuilds:
+  '@parcel/watcher': true
+  bufferutil: true
+  core-js-bundle: true
+  core-js-pure: true
+  esbuild: true
+  husky: true
+  nx: true
+  utf-8-validate: true

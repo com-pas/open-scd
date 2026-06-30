@@ -14,13 +14,14 @@
   ],
   "author": "OpenSCD",
   "license": "Apache-2.0",
+  "packageManager": "pnpm@11.5.0",
   "type": "module",
   "files": [
     "./dist/**"
   ],
   "dependencies": {
     "@material/mwc-dialog": "0.22.1",
-    "@openscd/core": "npm:@compas-oscd/core@*"
+    "@openscd/core": "workspace:@compas-oscd/core@*"
   },
   "//": {
     "clean": "rimraf build",
@@ -28,8 +29,8 @@
     "format:eslint": "eslint --ext .ts . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" \"**/*.ts\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" \"**/*.ts\" --write --ignore-path .gitignore",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
+    "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
+    "format": "pnpm run format:eslint && pnpm run format:prettier",
     "test:manual": "web-test-runner --manual",
     "test:watch": "web-test-runner --watch",
     "test:unit": "web-test-runner --watch --group unit",

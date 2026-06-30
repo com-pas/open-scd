@@ -4,7 +4,7 @@
   "description": "The core editor component of open-scd, without any extensions pre-installed.",
   "author": "Open-SCD",
   "license": "Apache-2.0",
-  "packageManager": "npm@8.12.2",
+  "packageManager": "pnpm@11.5.0",
   "type": "module",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -37,7 +37,7 @@
     "build": "tsc -b",
     "doc": "typedoc --out doc foundation.ts",
     "test": "web-test-runner --coverage",
-    "prepublish": "npm run lint && npm run build && npm run doc",
+    "prepublish": "pnpm run lint && pnpm run build && pnpm run doc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore"
   },
@@ -72,7 +72,6 @@
     "husky": "^4.3.8",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "tsdoc": "^0.0.4",
     "tslib": "^2.4.0",
     "typedoc": "^0.23.8",
     "typescript": "^4.7.4"

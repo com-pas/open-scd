@@ -4,7 +4,7 @@
   "description": "The XML manipulation package for OpenSCD",
   "author": "Open-SCD",
   "license": "Apache-2.0",
-  "packageManager": "npm@8.12.2",
+  "packageManager": "pnpm@11.5.0",
   "type": "module",
   "browser": "./dist/index.js",
   "main": "./dist/index.js",
@@ -19,7 +19,7 @@
     "clean": "rimraf .tsbuildinfo dist",
     "build": "tsc -b",
     "doc": "typedoc --out doc src/index.ts",
-    "prepublish": "npm run lint && npm run build && npm run doc",
+    "prepublish": "pnpm run lint && pnpm run build && pnpm run doc",
     "lint": "eslint --ext .ts . --ignore-path .gitignore && prettier \"src/**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts . --fix --ignore-path .gitignore && prettier \"src/**/*.ts\" --write --ignore-path .gitignore",
     "test": "web-test-runner --coverage"
@@ -45,7 +45,6 @@
     "prettier": "^2.3.2",
     "sinon": "^17.0.1",
     "sinon-chai": "^3.7.0",
-    "tsdoc": "^0.0.4",
     "tslib": "^2.3.1",
     "typedoc": "^0.23.8",
     "typescript": "^4.7.4"

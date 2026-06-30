@@ -48,6 +48,7 @@
     "./dist/oscd-plugins.js": "./dist/oscd-plugins.js"
   },
   "dependencies": {
+    "@material/dialog": "^14.0.0",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-fab": "0.22.1",
     "@material/mwc-formfield": "0.22.1",
@@ -60,12 +61,18 @@
     "@material/mwc-switch": "0.22.1",
     "@material/mwc-textarea": "0.22.1",
     "@material/mwc-textfield": "0.22.1",
+    "@material/mwc-button": "0.22.1",
+    "@material/mwc-checkbox": "0.22.1",
+    "@material/mwc-radio": "0.22.1",
     "@compas-oscd/core": "^0.1.23",
     "@compas-oscd/xml": "^0.0.1",
     "@compas-oscd/open-scd": "^0.34.50",
+    "@openscd/core": "workspace:@compas-oscd/core@*",
     "@omicronenergy/oscd-ui": "0.0.11",
     "@openenergytools/scl-lib": "^1.8.0",
     "lit": "^2.2.7",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
     "lit-translate": "^1.2.1",
     "marked": "^4.0.10",
     "panzoom": "^9.4.2"

@@ -15,13 +15,14 @@
   ],
   "author": "OpenSCD",
   "license": "Apache-2.0",
+  "packageManager": "pnpm@11.5.0",
   "type": "module",
   "files": [
     "./dist/**"
   ],
   "dependencies": {
-    "@compas-oscd/open-scd": "0.34.51",
-    "@compas-oscd/plugins": "0.0.13"
+    "@compas-oscd/open-scd": "workspace:*",
+    "@compas-oscd/plugins": "workspace:*"
   },
   "scripts": {
     "clean": "rimraf build",
