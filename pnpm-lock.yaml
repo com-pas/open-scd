@@ -417,6 +417,9 @@ importers:
       '@material/mwc-top-app-bar-fixed':
         specifier: 0.22.1
         version: 0.22.1
+      '@openscd/core':
+        specifier: workspace:@compas-oscd/core@*
+        version: link:../core
       '@openscd/oscd-api':
         specifier: ^0.1.5
         version: 0.1.6
