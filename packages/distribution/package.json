@@ -38,7 +38,6 @@
     "doc:wca": "wca src --outDir doc/components",
     "doc": "pnpm run doc:clean && pnpm run doc:typedoc && pnpm run doc:wca",
     "build": "vite build",
-    "__build": "snowpack build && workbox generateSW workbox-config.cjs && cp .nojekyll build/",
     "start": "vite",
     "preview": "pnpm run build && vite"
   },
