@@ -62,5 +62,10 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     // playwrightLauncher({ product: 'webkit' }),
   ],
 
+  coverageConfig: {
+    include: ['src/**/*.ts'],
+    exclude: ['**/node_modules/**', '**/__wds-outside-root__/**'],
+  },
+
   // See documentation for all available options
 });

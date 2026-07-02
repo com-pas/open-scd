@@ -43,6 +43,10 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     // },
   ],
 
+  coverageConfig: {
+    include: ['src/**/*.ts'],
+    exclude: ['**/node_modules/**', '**/__wds-outside-root__/**'],
+  },
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */
   // esbuildTarget: 'auto',
 

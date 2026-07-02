@@ -30,17 +30,17 @@
     "format:eslint": "eslint --ext .ts . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" \"**/*.ts\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" \"**/*.ts\" --write --ignore-path .gitignore",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
+    "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
+    "format": "pnpm run format:eslint && pnpm run format:prettier",
     "test:integration": "web-test-runner --watch --group integration",
     "doc:clean": "npx rimraf doc",
     "doc:typedoc": "typedoc --plugin none --out doc src",
     "doc:wca": "wca src --outDir doc/components",
-    "doc": "npm run doc:clean && npm run doc:typedoc && npm run doc:wca",
+    "doc": "pnpm run doc:clean && pnpm run doc:typedoc && pnpm run doc:wca",
     "build": "vite build",
     "__build": "snowpack build && workbox generateSW workbox-config.cjs && cp .nojekyll build/",
     "start": "vite",
-    "preview": "npm run build && vite"
+    "preview": "pnpm run build && vite"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
