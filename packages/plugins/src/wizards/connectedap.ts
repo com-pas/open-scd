@@ -333,15 +333,59 @@ export function createPTextField(
   element: Element,
   pType: string
 ): TemplateResult {
+  const currentValue =
+    element
+      .querySelector(`:scope > Address > P[type="${pType}"]`)
+      ?.textContent?.trim() ?? null;
+
+  if (pType !== 'IP') {
+    return oscdHtml`<wizard-textfield
+      required
+      label="${pType}"
+      pattern="${ifDefined(typePattern[pType])}"
+      ?nullable=${typeNullable[pType]}
+      .maybeValue=${currentValue}
+      maxLength="${ifDefined(typeMaxLength[pType])}"
+    ></wizard-textfield>`;
+  }
+
+  const duplicateIps = getDuplicateIpsInSubNetwork(element);
+
   return oscdHtml`<wizard-textfield
     required
     label="${pType}"
     pattern="${ifDefined(typePattern[pType])}"
     ?nullable=${typeNullable[pType]}
-    .maybeValue=${element.querySelector(`:scope > Address > P[type="${pType}"]`)
-      ?.innerHTML ?? null}
+    .maybeValue=${currentValue}
     maxLength="${ifDefined(typeMaxLength[pType])}"
+    .reservedValues=${duplicateIps}
+    .reservedValueMessage=${
+      duplicateIps.length
+        ? 'IP address is already in use in the subnetwork, a unique IP address is required'
+        : undefined
+    }
   ></wizard-textfield>`;
+}
+
+function getDuplicateIpsInSubNetwork(connectedAp: Element): string[] {
+  const subNetwork = connectedAp.closest('SubNetwork');
+  if (!subNetwork) return [];
+
+  const duplicateIps: string[] = [];
+
+  Array.from(subNetwork.querySelectorAll(':scope > ConnectedAP'))
+    .filter(otherConnectedAp => otherConnectedAp !== connectedAp)
+    .forEach(otherConnectedAp => {
+      const ip = otherConnectedAp
+        .querySelector(':scope > Address > P[type="IP"]')
+        ?.textContent?.trim();
+
+      if (!ip || duplicateIps.includes(ip)) return;
+
+      duplicateIps.push(ip);
+    });
+
+  return duplicateIps;
 }
 
 /** @returns single page  [[`Wizard`]] for creating SCL element ConnectedAP. */
