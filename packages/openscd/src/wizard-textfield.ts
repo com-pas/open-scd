@@ -113,6 +113,9 @@ export class WizardTextField extends LitElement {
   /** Additional values that cause validation to fail. */
   @property({ type: Array })
   reservedValues: string[] = [];
+  /** Optional custom error message for reserved values. */
+  @property({ type: String })
+  reservedValueMessage: string | undefined;
 
   // FIXME: workaround to allow disable of the whole component - need basic refactor
   private disabledSwitch = false;
@@ -160,7 +163,11 @@ export class WizardTextField extends LitElement {
       this.reservedValues &&
       this.reservedValues.some(array => array === this.value)
     ) {
-      this.textfield.setCustomValidity(get('textfield.unique'));
+      this.textfield.setCustomValidity(
+        this.reservedValueMessage ??
+          this.validationMessage ??
+          get('textfield.unique')
+      );
       return false;
     }
     this.textfield.setCustomValidity(''); //Reset. Otherwise super.checkValidity always falseM
@@ -233,7 +240,7 @@ export class WizardTextField extends LitElement {
           .readOnly=${this.readOnly}
           label=${this.label}
           helper="${ifDefined(this.helper)}"
-          validationMessage="${ifDefined(this.helper)}"
+          validationMessage="${ifDefined(this.validationMessage ?? this.helper)}"
           pattern="${ifDefined(this.pattern)}"
           minLength="${ifDefined(this.minLength)}"
           maxLength="${ifDefined(this.maxLength)}"
