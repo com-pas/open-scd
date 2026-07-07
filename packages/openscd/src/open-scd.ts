@@ -1,10 +1,4 @@
-import {
-  html,
-  LitElement,
-  property,
-  state,
-  TemplateResult,
-} from 'lit-element';
+import { html, LitElement, property, state, TemplateResult } from 'lit-element';
 
 import '@material/mwc-icon';
 import '@material/mwc-icon-button';
@@ -40,30 +34,29 @@ import { ActionDetail } from '@material/mwc-list';
 
 import { officialPlugins as builtinPlugins } from './plugins.js';
 import { initializeNsdoc, Nsdoc } from './foundation/nsdoc.js';
-import type {
-  PluginSet,
-  Plugin as CorePlugin,
-  EditCompletedEvent,
-} from '@compas-oscd/core';
+import type { PluginSet, Plugin as CorePlugin } from '@compas-oscd/core';
 
-import { InstalledOfficialPlugin, MenuPosition, PluginKind, Plugin, ContentContext } from "./plugin.js"
-import { ConfigurePluginEvent, ConfigurePluginDetail, newConfigurePluginEvent } from './plugin.events.js';
+import {
+  InstalledOfficialPlugin,
+  MenuPosition,
+  PluginKind,
+  Plugin,
+  ContentContext,
+} from './plugin.js';
+import {
+  ConfigurePluginEvent,
+  newConfigurePluginEvent,
+} from './plugin.events.js';
 import { newLogEvent } from '@compas-oscd/core';
 import { pluginTag } from './plugin-tag.js';
 import { OscdPluginSrc } from './oscd-plugins.js';
 
-
-
 export class OpenSCD extends LitElement {
-
   render(): TemplateResult {
     return html`<oscd-waiter>
       <oscd-settings .host=${this}>
         <oscd-wizards .host=${this}>
-          <oscd-history
-            .host=${this}
-            .editor=${this.editor}
-          >
+          <oscd-history .host=${this} .editor=${this.editor}>
             <oscd-editor
               .doc=${this.doc}
               .docName=${this.docName}
@@ -75,7 +68,8 @@ export class OpenSCD extends LitElement {
               <oscd-layout
                 @add-external-plugin=${this.handleAddExternalPlugin}
                 @oscd-configure-plugin=${this.handleConfigurationPluginEvent}
-                @set-plugins=${ (e: SetPluginsEvent) => this.setPlugins(e.detail.selectedPlugins) }
+                @set-plugins=${(e: SetPluginsEvent) =>
+                  this.setPlugins(e.detail.selectedPlugins)}
                 .host=${this}
                 .doc=${this.doc}
                 .docName=${this.docName}
@@ -90,7 +84,6 @@ export class OpenSCD extends LitElement {
       </oscd-settings>
     </oscd-waiter>`;
   }
-
 
   @property({ attribute: false })
   doc: XMLDocument | null = null;
@@ -140,17 +133,16 @@ export class OpenSCD extends LitElement {
    *
    * @deprecated Use `handleConfigurationPluginEvent` instead
    */
-  public handleAddExternalPlugin(e: AddExternalPluginEvent){
+  public handleAddExternalPlugin(e: AddExternalPluginEvent) {
     this.addExternalPlugin(e.detail.plugin);
-    const {name, kind} = e.detail.plugin
+    const { name, kind } = e.detail.plugin;
 
-    const event = newConfigurePluginEvent(name,kind, e.detail.plugin)
+    const event = newConfigurePluginEvent(name, kind, e.detail.plugin);
 
-    this.handleConfigurationPluginEvent(event)
+    this.handleConfigurationPluginEvent(event);
   }
 
-
-  public handleConfigurationPluginEvent(e: ConfigurePluginEvent){
+  public handleConfigurationPluginEvent(e: ConfigurePluginEvent) {
     const { name, kind, config } = e.detail;
 
     const hasPlugin = this.hasPlugin(name, kind);
@@ -161,20 +153,17 @@ export class OpenSCD extends LitElement {
 
     // the `&& config`is only because typescript
     // cannot infer that `isChangeEvent` and `isAddEvent` implies `config !== null`
-    if(isChangeEvent && config){
+    if (isChangeEvent && config) {
       this.changePlugin(config);
-
-    }else if(isRemoveEvent){
+    } else if (isRemoveEvent) {
       this.removePlugin(name, kind);
-
-    }else if(isAddEvent && config){
+    } else if (isAddEvent && config) {
       this.addPlugin(config);
-
-    }else{
+    } else {
       const event = newLogEvent({
-        kind: "error",
-        title: "Invalid plugin configuration event",
-        message: JSON.stringify({name, kind, config}),
+        kind: 'error',
+        title: 'Invalid plugin configuration event',
+        message: JSON.stringify({ name, kind, config }),
       });
       this.dispatchEvent(event);
     }
@@ -184,9 +173,7 @@ export class OpenSCD extends LitElement {
     super.connectedCallback();
     this.loadPlugins();
 
-    this.unsubscribers.push(
-      this.editor.subscribe(() => this.editCount++),
-    );
+    this.unsubscribers.push(this.editor.subscribe(() => this.editCount++));
 
     // TODO: let Lit handle the event listeners, move to render()
     this.addEventListener('reset-plugins', this.resetPlugins);
@@ -196,7 +183,6 @@ export class OpenSCD extends LitElement {
     this.unsubscribers.forEach(u => u());
   }
 
-
   /**
    *
    * @param name
@@ -204,7 +190,9 @@ export class OpenSCD extends LitElement {
    * @returns the index of the plugin in the stored plugin list
    */
   private findPluginIndex(name: string, kind: PluginKind): number {
-    return this.storedPlugins.findIndex(p => p.name === name && p.kind === kind);
+    return this.storedPlugins.findIndex(
+      p => p.name === name && p.kind === kind
+    );
   }
 
   private hasPlugin(name: string, kind: PluginKind): boolean {
@@ -230,40 +218,40 @@ export class OpenSCD extends LitElement {
    */
   private changePlugin(plugin: Plugin) {
     const storedPlugins = this.storedPlugins;
-    const {name, kind} = plugin;
+    const { name, kind } = plugin;
     const pluginIndex = this.findPluginIndex(name, kind);
 
-    if(pluginIndex < 0) {
+    if (pluginIndex < 0) {
       const event = newLogEvent({
-        kind: "error",
-        title: "Plugin not found, stopping change process",
-        message: JSON.stringify({name, kind}),
-      })
+        kind: 'error',
+        title: 'Plugin not found, stopping change process',
+        message: JSON.stringify({ name, kind }),
+      });
       this.dispatchEvent(event);
       return;
     }
 
-    const pluginToChange = storedPlugins[pluginIndex]
-    const changedPlugin = {...pluginToChange, ...plugin}
-    const newPlugins = [...storedPlugins]
-    newPlugins.splice(pluginIndex, 1, changedPlugin)
+    const pluginToChange = storedPlugins[pluginIndex];
+    const changedPlugin = { ...pluginToChange, ...plugin };
+    const newPlugins = [...storedPlugins];
+    newPlugins.splice(pluginIndex, 1, changedPlugin);
 
     // this.storePlugins(newPlugins);
     this.updateStoredPlugins(newPlugins);
   }
 
   private resetPlugins(): void {
-    const builtInPlugins = this.getBuiltInPlugins()
-    const allPlugins = [...builtInPlugins, ...this.parsedPlugins]
+    const builtInPlugins = this.getBuiltInPlugins();
+    const allPlugins = [...builtInPlugins, ...this.parsedPlugins];
 
     const newPluginConfigs = allPlugins.map(plugin => {
       return {
         ...plugin,
         active: plugin.activeByDefault ?? false,
-      }
-    })
+      };
+    });
 
-    this.storePlugins(newPluginConfigs)
+    this.storePlugins(newPluginConfigs);
   }
 
   /**
@@ -271,75 +259,79 @@ export class OpenSCD extends LitElement {
    */
   @property({ type: Object }) plugins: PluginSet = { menu: [], editor: [] };
   get parsedPlugins(): Plugin[] {
-    const menuPlugins: Plugin[] = this.plugins.menu.map((plugin) => {
-      let newPosition: MenuPosition | undefined = plugin.position as MenuPosition;
-      if(typeof plugin.position === 'number') {
-        newPosition = undefined
+    const menuPlugins: Plugin[] = this.plugins.menu.map(plugin => {
+      let newPosition: MenuPosition | undefined =
+        plugin.position as MenuPosition;
+      if (typeof plugin.position === 'number') {
+        newPosition = undefined;
       }
 
       return {
-          ...plugin,
-          position: newPosition,
-          kind: 'menu' as PluginKind,
-          active: plugin.active ?? false,
-        }
-      })
+        ...plugin,
+        position: newPosition,
+        kind: 'menu' as PluginKind,
+        active: plugin.active ?? false,
+      };
+    });
 
-    const editorPlugins: Plugin[] = this.plugins.editor.map((plugin) => {
+    const editorPlugins: Plugin[] = this.plugins.editor.map(plugin => {
       const editorPlugin: Plugin = {
         ...plugin,
         position: undefined,
         kind: 'editor' as PluginKind,
         active: plugin.active ?? false,
-      }
-      return editorPlugin
-    })
+      };
+      return editorPlugin;
+    });
 
-    const allPlugnis = [...menuPlugins, ...editorPlugins]
-    return allPlugnis
+    const allPlugnis = [...menuPlugins, ...editorPlugins];
+    return allPlugnis;
   }
-
-
 
   private updateStoredPlugins(newPlugins: Plugin[]) {
     //
     // Generate content of each plugin
     //
     const plugins = newPlugins.map(plugin => {
-      const isInstalled = plugin.src && plugin.active
-      if(!isInstalled) { return plugin }
+      const isInstalled = plugin.src && plugin.active;
+      if (!isInstalled) {
+        return plugin;
+      }
 
-      return this.addContent(plugin)
-    })
+      return this.addContent(plugin);
+    });
 
     //
     // Merge built-in plugins
     //
     const mergedPlugins = plugins.map(plugin => {
-      const isBuiltIn = !plugin?.official
-      if (!isBuiltIn){ return plugin };
+      const isBuiltIn = !plugin?.official;
+      if (!isBuiltIn) {
+        return plugin;
+      }
 
-      const builtInPlugin = [...this.getBuiltInPlugins(), ...this.parsedPlugins]
-        .find(p => p.src === plugin.src);
+      const builtInPlugin = [
+        ...this.getBuiltInPlugins(),
+        ...this.parsedPlugins,
+      ].find(p => p.src === plugin.src);
 
-        return <Plugin>{
-          ...builtInPlugin,
-          ...plugin,
-        };
-    })
+      return <Plugin>{
+        ...builtInPlugin,
+        ...plugin,
+      };
+    });
     this.storePlugins(mergedPlugins);
   }
 
   private storePlugins(plugins: Plugin[]) {
-    this.storedPlugins = plugins
-    const pluginConfigs = JSON.stringify(plugins.map(withoutContent))
+    this.storedPlugins = plugins;
+    const pluginConfigs = JSON.stringify(plugins.map(withoutContent));
     localStorage.setItem('plugins', pluginConfigs);
   }
   private getPluginConfigsFromLocalStorage(): Plugin[] {
-    const pluginsConfigStr = localStorage.getItem('plugins') ?? '[]'
-    return JSON.parse(pluginsConfigStr) as Plugin[]
+    const pluginsConfigStr = localStorage.getItem('plugins') ?? '[]';
+    return JSON.parse(pluginsConfigStr) as Plugin[];
   }
-
 
   public get locale(): string {
     return navigator.language || 'en-US';
@@ -356,46 +348,49 @@ export class OpenSCD extends LitElement {
   }
 
   private setPlugins(selectedPlugins: Plugin[]) {
-
-    const newPlugins: Plugin[] = this.storedPlugins.map((storedPlugin) => {
-      const isSelected = selectedPlugins.some( (selectedPlugin) => {
-        return selectedPlugin.name === storedPlugin.name
-            && selectedPlugin.src === storedPlugin.src
-      })
+    const newPlugins: Plugin[] = this.storedPlugins.map(storedPlugin => {
+      const isSelected = selectedPlugins.some(selectedPlugin => {
+        return (
+          selectedPlugin.name === storedPlugin.name &&
+          selectedPlugin.src === storedPlugin.src
+        );
+      });
       return {
         ...storedPlugin,
-        active: isSelected
-      }
-    })
+        active: isSelected,
+      };
+    });
 
     this.updateStoredPlugins(newPlugins);
   }
 
-  private loadPlugins(){
-    const localPluginConfigs = this.getPluginConfigsFromLocalStorage()
+  private loadPlugins() {
+    const localPluginConfigs = this.getPluginConfigsFromLocalStorage();
 
-    const overwritesOfBultInPlugins = localPluginConfigs.filter((p) => {
-      return this.getBuiltInPlugins().some(b => b.src === p.src)
-    })
+    const overwritesOfBultInPlugins = localPluginConfigs.filter(p => {
+      return this.getBuiltInPlugins().some(b => b.src === p.src);
+    });
 
-    const userInstalledPlugins = localPluginConfigs.filter((p) => {
-      return !this.getBuiltInPlugins().some(b => b.src === p.src)
-    })
-    const mergedBuiltInPlugins = this.getBuiltInPlugins().map((builtInPlugin) => {
-      let overwrite = overwritesOfBultInPlugins.find(p => p.src === builtInPlugin.src)
+    const userInstalledPlugins = localPluginConfigs.filter(p => {
+      return !this.getBuiltInPlugins().some(b => b.src === p.src);
+    });
+    const mergedBuiltInPlugins = this.getBuiltInPlugins().map(builtInPlugin => {
+      let overwrite = overwritesOfBultInPlugins.find(
+        p => p.src === builtInPlugin.src
+      );
 
       const mergedPlugin: Plugin = {
         ...builtInPlugin,
         ...overwrite,
         active: overwrite?.active ?? builtInPlugin.activeByDefault,
-      }
+      };
 
-      return mergedPlugin
-    })
+      return mergedPlugin;
+    });
 
-    const mergedPlugins = [...mergedBuiltInPlugins, ...userInstalledPlugins]
+    const mergedPlugins = [...mergedBuiltInPlugins, ...userInstalledPlugins];
 
-    this.updateStoredPlugins(mergedPlugins)
+    this.updateStoredPlugins(mergedPlugins);
   }
 
   private async addExternalPlugin(
@@ -409,13 +404,15 @@ export class OpenSCD extends LitElement {
   }
 
   protected getBuiltInPlugins(): CorePlugin[] {
-    return builtinPlugins
+    return builtinPlugins;
   }
 
   private addContent(plugin: Omit<Plugin, 'content'>): Plugin {
     const tag = this.pluginTag(plugin.src);
 
-    const isOscdPlugin = Object.values(OscdPluginSrc).includes(plugin.src as any);
+    const isOscdPlugin = Object.values(OscdPluginSrc).includes(
+      plugin.src as any
+    );
     if (isOscdPlugin) {
       const tag = pluginTag(plugin.src);
       return {
@@ -428,14 +425,14 @@ export class OpenSCD extends LitElement {
 
     if (!this.loadedPlugins.has(tag)) {
       this.loadedPlugins.add(tag);
-      import(plugin.src).then((mod) => {
-        customElements.define(tag, mod.default)
-      })
+      import(plugin.src).then(mod => {
+        customElements.define(tag, mod.default);
+      });
     }
     return {
       ...plugin,
       content: {
-        tag
+        tag,
       },
     };
   }
@@ -453,8 +450,6 @@ export class OpenSCD extends LitElement {
 
     return this.pluginTags.get(uri)!;
   }
-
-
 }
 
 declare global {
@@ -464,7 +459,6 @@ declare global {
     'set-plugins': CustomEvent<SetPluginsDetail>;
   }
 }
-
 
 // HOSTING INTERFACES
 
@@ -522,8 +516,6 @@ export function newSetPluginsEvent(selectedPlugins: Plugin[]): SetPluginsEvent {
   });
 }
 
-
-
 function withoutContent<P extends Plugin | InstalledOfficialPlugin>(
   plugin: P
 ): P {
@@ -559,4 +551,3 @@ function compareNeedsDoc(a: Plugin, b: Plugin): -1 | 0 | 1 {
   if (a.requireDoc === b.requireDoc) return 0;
   return a.requireDoc ? 1 : -1;
 }
-
