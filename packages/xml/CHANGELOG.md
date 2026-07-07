@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/com-pas/open-scd/compare/xml@v0.0.3...xml@v0.0.4) (2026-07-07)
+
+
+### 📦 Miscellaneous Chores
+
+* migrate to pnpm ([#100](https://github.com/com-pas/open-scd/issues/100)) ([99da4ec](https://github.com/com-pas/open-scd/commit/99da4ec8128a745fd9821e3e6d87e64abdd70ef5))
+
 ## [0.0.3](https://github.com/com-pas/open-scd/compare/xml@v0.0.2...xml@v0.0.3) (2026-05-26)
 
 
