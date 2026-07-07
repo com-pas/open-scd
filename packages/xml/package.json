@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/xml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The XML manipulation package for OpenSCD",
   "author": "Open-SCD",
   "license": "Apache-2.0",
