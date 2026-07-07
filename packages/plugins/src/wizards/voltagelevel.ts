@@ -1,4 +1,4 @@
-import { html, TemplateResult } from 'lit-html';
+import { TemplateResult } from 'lit-html';
 import { get } from 'lit-translate';
 
 import { cloneElement, createElement } from '@compas-oscd/xml';
@@ -13,11 +13,7 @@ import {
   WizardActor,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import {
-  ComplexAction,
-  EditorAction,
-  SimpleAction,
-} from '@compas-oscd/core';
+import { ComplexAction, EditorAction, SimpleAction } from '@compas-oscd/core';
 
 import { updateReferences } from './foundation/references.js';
 
