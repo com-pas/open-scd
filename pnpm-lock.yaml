@@ -592,9 +592,6 @@ importers:
       '@openenergytools/scl-lib':
         specifier: 1.8.0
         version: 1.8.0
-      '@openscd/core':
-        specifier: workspace:@compas-oscd/core@*
-        version: link:../core
       lit:
         specifier: 2.8.0
         version: 2.8.0

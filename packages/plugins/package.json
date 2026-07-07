@@ -68,7 +68,6 @@
     "@compas-oscd/xml": "workspace:*",
     "@compas-oscd/open-scd": "workspace:*",
     "@omicronenergy/oscd-ui": "0.0.11",
-    "@openscd/core": "workspace:@compas-oscd/core@*",
     "@openenergytools/scl-lib": "1.8.0",
     "lit": "2.8.0",
     "lit-element": "2.5.1",
