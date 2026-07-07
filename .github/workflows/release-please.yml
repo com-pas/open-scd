@@ -4,6 +4,7 @@ on:
       - main
 
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
 
@@ -17,6 +18,45 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Update pnpm-lock.yaml in release PR
+      - name: Get PR branch
+        if: ${{ steps.release.outputs.prs }}
+        id: pr-branch
+        run: |
+          echo "name=$(echo '${{ steps.release.outputs.prs }}' | jq -r '.[0].headBranchName')" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
+        with:
+          ref: ${{ steps.pr-branch.outputs.name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.release.outputs.prs }}
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e #v6.4.0
+        with:
+          node-version: "20"
+        if: ${{ steps.release.outputs.prs }}
+
+      - name: Update pnpm-lock.yaml
+        if: ${{ steps.release.outputs.prs }}
+        run: pnpm install --lockfile-only
+
+      - name: Check for changes
+        if: ${{ steps.release.outputs.prs }}
+        id: git-check
+        run: |
+          git diff --exit-code pnpm-lock.yaml || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: ${{ steps.release.outputs.prs && steps.git-check.outputs.changed == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pnpm-lock.yaml
+          git commit -m "chore: update pnpm-lock.yaml"
+          git push
+
+      # The logic below handles the npm publication:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 #v7.0.0
         with:
           submodules: "true"
@@ -27,13 +67,13 @@ jobs:
         with:
           cache: true
 
-      - name: Setup Node.js 
+      - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e #v6.4.0
         with:
           node-version: "24.x"
           registry-url: "https://registry.npmjs.org"
         if: ${{ steps.release.outputs.releases_created }}
-        
+
       - run: pnpm ci --include=optional
         if: ${{ steps.release.outputs.releases_created }}
       - run: pnpm run build
@@ -41,43 +81,32 @@ jobs:
 
       - name: Publish core to npm
         run: cd packages/core && pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs['packages/core--release_created'] }}
         continue-on-error: true
 
       - name: Publish forms to npm
         run: cd packages/forms && pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs['packages/forms--release_created'] }}
         continue-on-error: true
 
       - name: Publish xml to npm
         run: cd packages/xml && pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs['packages/xml--release_created'] }}
         continue-on-error: true
 
       - name: Publish plugins to npm
         run: cd packages/plugins && pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs['packages/plugins--release_created'] }}
         continue-on-error: true
 
       - name: Publish open-scd to npm
         run: cd packages/openscd && pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs['packages/openscd--release_created'] }}
         continue-on-error: true
 
-
       - name: Create and Zip Build Assets
         if: ${{ steps.release.outputs.releases_created && hashFiles('packages/distribution/dist/**') != '' }}
-        run: | 
+        run: |
           zip -r open-scd.zip ./packages/distribution/dist/
           tar -czvf open-scd.tar.gz ./packages/distribution/dist/
 
