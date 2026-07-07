@@ -27,7 +27,7 @@
   "devDependencies": {
     "@commitlint/cli": "21.1.0",
     "@commitlint/config-conventional": "21.1.0",
-    "@open-wc/eslint-config": "7.0.0",
+    "@open-wc/eslint-config": "13.1.0",
     "@open-wc/semantic-dom-diff": "0.19.9",
     "@open-wc/testing": "4.0.0",
     "@types/node": "18.19.130",
