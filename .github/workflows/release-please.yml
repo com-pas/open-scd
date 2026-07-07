@@ -19,6 +19,7 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: ${{ github.ref_name }}
 
       # Update pnpm-lock.yaml in release PR
       - name: Get PR branch
