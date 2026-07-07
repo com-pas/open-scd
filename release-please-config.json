@@ -1,5 +1,4 @@
 {
-  "pull-request-title-pattern": "chore(${branch}): release packages",
   "changelog-sections": [
     {
       "type": "feat",
