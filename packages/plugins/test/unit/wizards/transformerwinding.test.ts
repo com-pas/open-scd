@@ -5,10 +5,8 @@ import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import {
-  WizardInputElement,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { Create, Replace, isCreate, isReplace } from '@openscd/core/foundation/deprecated/editor.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
+import { Create, Replace, isCreate, isReplace } from '@compas-oscd/core';
 import {
   createTransformerWindingWizard,
   editTransformerWindingWizard,

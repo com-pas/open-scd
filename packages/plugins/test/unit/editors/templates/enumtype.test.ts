@@ -8,11 +8,7 @@ import {
   identity,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import {
-  ComplexAction,
-  Replace,
-  isSimple
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, Replace, isSimple } from '@compas-oscd/core';
 import { eNumTypeEditWizard } from '../../../../src/editors/templates/enumtype-wizard.js';
 
 describe('wizards for EnumType element', () => {

@@ -7,12 +7,7 @@ import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js'
 import { SinonSpy, spy } from 'sinon';
 
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isCreate,
-  isReplace,
-  Create, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, isReplace, Create, Replace } from '@compas-oscd/core';
 import {
   createProcessWizard,
   editProcessWizard,

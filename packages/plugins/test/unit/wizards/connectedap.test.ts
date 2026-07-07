@@ -7,17 +7,15 @@ import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 import { Checkbox } from '@material/mwc-checkbox';
 
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
 import {
-  WizardInputElement,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
   isCreate,
   isDelete,
   isSimple,
-  ComplexAction, 
-  Delete, 
-  Create
-} from '@openscd/core/foundation/deprecated/editor.js';
+  ComplexAction,
+  Delete,
+  Create,
+} from '@compas-oscd/core';
 import { editConnectedApWizard } from '../../../src/wizards/connectedap.js';
 
 describe('Wizards for SCL element ConnectedAP', () => {

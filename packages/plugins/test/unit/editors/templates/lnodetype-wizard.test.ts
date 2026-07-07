@@ -9,11 +9,7 @@ import {
   identity,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import {
-  ComplexAction,
-  Replace,
-  isSimple
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, Replace, isSimple } from '@compas-oscd/core';
 import { lNodeTypeWizard } from '../../../../src/editors/templates/lnodetype-wizard.js';
 import { regExp, regexString } from '../../../foundation.js';
 

@@ -10,16 +10,16 @@ import {
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
+import {
   isCreate,
   isDelete,
   isReplace,
   isSimple,
-  ComplexAction, 
-  Create, 
-  Delete, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+  ComplexAction,
+  Create,
+  Delete,
+  Replace,
+} from '@compas-oscd/core';
 import {
   contentGseControlWizard,
   createGseControlWizard,

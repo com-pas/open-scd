@@ -6,12 +6,7 @@ import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isCreate,
-  isReplace,
-  Create, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, isReplace, Create, Replace } from '@compas-oscd/core';
 import {
   createGeneralEquipmentWizard,
   editGeneralEquipmentWizard,

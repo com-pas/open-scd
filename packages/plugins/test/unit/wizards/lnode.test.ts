@@ -12,11 +12,7 @@ import {
   newWizardEvent,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isCreate, 
-  Create, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, Create, Replace } from '@compas-oscd/core';
 import { regExp, regexString } from '../../foundation.js';
 import { editLNodeWizard, lNodeWizard } from '../../../src/wizards/lnode.js';
 
@@ -308,10 +304,10 @@ describe('Wizards for LNode element', () => {
           iedList.querySelector('mwc-check-list-item[value="IED2"]')
         );
         expect(iedItem).to.exist;
-        
+
         iedItem.selected = true;
         await iedItem.requestUpdate();
-        
+
         iedList.dispatchEvent(
           new CustomEvent('selected', {
             bubbles: true,

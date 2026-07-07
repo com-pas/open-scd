@@ -5,7 +5,7 @@ import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardCheckbox } from '@compas-oscd/open-scd/dist/wizard-checkbox.js';
-import { Replace, isReplace } from '@openscd/core/foundation/deprecated/editor.js';
+import { Replace, isReplace } from '@compas-oscd/core';
 import { editSmvOptsWizard } from '../../../src/wizards/smvopts.js';
 
 describe('Wizards for SCL SmvOpts element', () => {

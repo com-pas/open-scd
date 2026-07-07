@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import { newLoadNsdocEvent } from '@openscd/core/foundation/deprecated/settings.js';
+import { newLoadNsdocEvent } from '@compas-oscd/core';
 import '../../src/addons/History.js';
 import '../../src/addons/Settings.js';
 import { OscdHistory } from '../../src/addons/History.js';

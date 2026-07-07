@@ -28,8 +28,8 @@ import {
   isReplace,
   isSimple,
   newActionEvent,
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { newPendingStateEvent } from '@openscd/core/foundation/deprecated/waiter.js';
+  newPendingStateEvent,
+} from '@compas-oscd/core';
 
 import { MockAction } from './mock-actions.js';
 
@@ -172,22 +172,19 @@ describe('foundation', () => {
     });
   });
 
-// skipped becase of flakiness
+  // skipped becase of flakiness
   describe.skip('ifImplemented', () => {
-
-
     it('renders non-empty objects into its template', async () => {
       const nonEmpty = await fixture(html`<p>${ifImplemented('test')}</p>`);
-      console.log("nonEmpty", nonEmpty.outerHTML);
-      expect(nonEmpty).dom.to.have.text('test')
+      console.log('nonEmpty', nonEmpty.outerHTML);
+      expect(nonEmpty).dom.to.have.text('test');
     });
 
     it('does not render empty objects into its template', async () => {
       const empty = await fixture(html`<p>${ifImplemented({})}</p>`);
-      console.log("empty", empty.outerHTML);
-      expect(empty).dom.to.be.empty
+      console.log('empty', empty.outerHTML);
+      expect(empty).dom.to.be.empty;
     });
-
   });
 
   describe('isSame', () => {

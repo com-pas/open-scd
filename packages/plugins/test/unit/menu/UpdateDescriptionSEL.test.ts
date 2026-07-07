@@ -4,11 +4,7 @@ import { SinonSpy, spy } from 'sinon';
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
-import {
-  ComplexAction,
-  isSimple,
-  isReplace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, isSimple, isReplace } from '@compas-oscd/core';
 import UpdateDescriptionSel from '../../../src/menu/UpdateDescriptionSEL.js';
 
 describe('Update method for desc attributes in SEL IEDs', () => {

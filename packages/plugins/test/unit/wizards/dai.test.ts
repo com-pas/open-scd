@@ -8,12 +8,7 @@ import {
   WizardAction,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isSimple,
-  Create, 
-  Replace,
-  ComplexAction
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isSimple, Create, Replace, ComplexAction } from '@compas-oscd/core';
 
 import { fetchDoc, setWizardTextFieldValue } from './test-support.js';
 import {

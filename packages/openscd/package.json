@@ -86,7 +86,6 @@
     "@material/mwc-button": "0.22.1",
     "@material/mwc-checkbox": "0.22.1",
     "@material/mwc-top-app-bar-fixed": "0.22.1",
-    "@openscd/core": "workspace:@compas-oscd/core@*",
     "@openscd/oscd-api": "^0.1.5",
     "@openscd/oscd-editor": "^1.8.0",
     "ace-custom-element": "^1.6.5",

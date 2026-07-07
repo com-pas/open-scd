@@ -6,13 +6,13 @@ import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
-import { 
+import {
   isCreate,
   isDelete,
   isReplace,
-  Create, 
-  Replace
- } from '@openscd/core/foundation/deprecated/editor.js';
+  Create,
+  Replace,
+} from '@compas-oscd/core';
 import {
   getValAction,
   wizardContent,

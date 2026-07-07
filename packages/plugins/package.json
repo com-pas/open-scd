@@ -64,11 +64,10 @@
     "@material/mwc-button": "0.22.1",
     "@material/mwc-checkbox": "0.22.1",
     "@material/mwc-radio": "0.22.1",
-    "@compas-oscd/core": "^0.1.23",
-    "@compas-oscd/xml": "^0.0.1",
-    "@compas-oscd/open-scd": "^0.34.50",
+    "@compas-oscd/core": "workspace:*",
+    "@compas-oscd/xml": "workspace:*",
+    "@compas-oscd/open-scd": "workspace:*",
     "@omicronenergy/oscd-ui": "0.0.11",
-    "@openscd/core": "workspace:@compas-oscd/core@*",
     "@openenergytools/scl-lib": "^1.8.0",
     "lit": "^2.2.7",
     "lit-element": "^2.5.1",
@@ -202,4 +201,3 @@
     "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
   }
 }
-
