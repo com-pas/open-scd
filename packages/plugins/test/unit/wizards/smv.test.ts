@@ -6,11 +6,7 @@ import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
-import {
-  ComplexAction,
-  Create,
-  Delete,
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, Create, Delete } from '@compas-oscd/core';
 import { editSMvWizard } from '../../../src/wizards/smv.js';
 import { invertedRegex, MAC, regExp } from '../../foundation.js';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';

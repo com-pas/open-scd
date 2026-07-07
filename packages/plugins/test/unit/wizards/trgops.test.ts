@@ -4,10 +4,8 @@ import { SinonSpy, spy } from 'sinon';
 import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
-import {
-  WizardInputElement,
-} from '@compas-oscd/open-scd/dist/foundation.js';
-import { Replace, isReplace} from '@openscd/core/foundation/deprecated/editor.js';
+import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
+import { Replace, isReplace } from '@compas-oscd/core';
 import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { editTrgOpsWizard } from '../../../src/wizards/trgops.js';
 

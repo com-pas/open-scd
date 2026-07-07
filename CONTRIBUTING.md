@@ -25,7 +25,7 @@ Apart from contributions in the form of code we are also very thankful for
 
 ### Repo Setup
 
-To develop locally, fork the OpenSCD repository and clone it in your local machine. The OpenSCD repo is a [↗ monorepo](https://en.wikipedia.org/wiki/Monorepo) using pnpm workspaces. The package manager used to install and link dependencies must be [↗ npm](https://docs.npmjs.com/cli/using-npm/workspaces).
+To develop locally, fork the OpenSCD repository and clone it in your local machine. The OpenSCD repo is a [↗ monorepo](https://en.wikipedia.org/wiki/Monorepo) using pnpm workspaces. The package manager used to install and link dependencies must be [↗ pnpm](https://pnpm.io/installation).
 
 To find out more about the development of each packages, such as the base distribution or the plugins, please refer to their respective READMEs:
 - [open-scd](packages/openscd/README.md): provides the base distribution available on [openscd.github.io](https://openscd.github.io)
@@ -37,18 +37,18 @@ To develop, follow these steps :
 1. Install [↗ Node.js](https://nodejs.org/en/download/package-manager)
 
 > [!IMPORTANT]  
-> `Node.js` version should be set to `18.x.x` as there are incompatibilities with higher version
+> `Node.js` version should be set to `24.x.x`.
 
-2. Run `npm ci` in OpenSCD's root folder.
+2. Run `pnpm ci` in OpenSCD's root folder.
 
-3. Run `npm run build` in OpenSCD's root folder.
+3. Run `pnpm run build` in OpenSCD's root folder.
 
-4. Run `npm start` in OpenSCD's root folder.
+4. Run `pnpm start` in OpenSCD's root folder.
 
 > [!NOTE]
 > If you run in the following error :
 > `Lerna (powered by Nx)   Daemon process terminated and closed the connection`
-> Rerun `npm start` and it should work as expected
+> Rerun `pnpm start` and it should work as expected
 
 To test, follow these steps :
 

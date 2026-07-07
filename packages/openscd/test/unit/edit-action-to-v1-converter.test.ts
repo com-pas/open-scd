@@ -1,25 +1,18 @@
-import { html, fixture, expect } from '@open-wc/testing';
+import { expect } from '@open-wc/testing';
 
 import {
   Create,
   Delete,
-  EditorAction,
-  isCreate,
-  isDelete,
-  isMove,
-  isReplace,
-  isSimple,
-  isUpdate,
   Move,
   Replace,
-  SimpleAction,
-  Update,
-  createUpdateAction
-} from '@openscd/core/foundation/deprecated/editor.js';
-import { Edit, Insert, Remove, Update as UpdateV2 } from '@openscd/core';
+  createUpdateAction,
+  Edit,
+  Insert,
+  Remove,
+  Update as UpdateV2,
+} from '@compas-oscd/core';
 
 import { convertEditActiontoV1 } from '../../src/addons/editor/edit-action-to-v1-converter.js';
-
 
 describe('edit-action-to-v1-converter', () => {
   const doc = new DOMParser().parseFromString(
@@ -40,14 +33,14 @@ describe('edit-action-to-v1-converter', () => {
     const deleteAction: Delete = {
       old: {
         parent: substation,
-        element: bay
-      }
+        element: bay,
+      },
     };
 
     const remove = convertEditActiontoV1(deleteAction);
 
     const expectedRemove: Remove = {
-      node: bay
+      node: bay,
     };
 
     expect(remove).to.deep.equal(expectedRemove);
@@ -60,8 +53,8 @@ describe('edit-action-to-v1-converter', () => {
     const createAction: Create = {
       new: {
         parent: substation,
-        element: newBay
-      }
+        element: newBay,
+      },
     };
 
     const insert = convertEditActiontoV1(createAction);
@@ -69,7 +62,7 @@ describe('edit-action-to-v1-converter', () => {
     const expectedInsert: Insert = {
       parent: substation,
       node: newBay,
-      reference: null
+      reference: null,
     };
 
     expect(insert).to.deep.equal(expectedInsert);
@@ -87,8 +80,8 @@ describe('edit-action-to-v1-converter', () => {
       element: bay,
       attributes: {
         ...newAttributes,
-        desc: null
-      }
+        desc: null,
+      },
     };
 
     expect(updateV2).to.deep.equal(expectedUpdateV2);
@@ -99,12 +92,12 @@ describe('edit-action-to-v1-converter', () => {
       old: {
         parent: substation,
         element: bay,
-        reference: null
+        reference: null,
       },
       new: {
         parent: substation2,
-        reference: null
-      }
+        reference: null,
+      },
     };
 
     const insert = convertEditActiontoV1(moveAction);
@@ -112,7 +105,7 @@ describe('edit-action-to-v1-converter', () => {
     const expectedInsert: Insert = {
       parent: substation2,
       node: bay,
-      reference: null
+      reference: null,
     };
 
     expect(insert).to.deep.equal(expectedInsert);
@@ -124,22 +117,22 @@ describe('edit-action-to-v1-converter', () => {
 
     const replace: Replace = {
       old: {
-        element: bay
+        element: bay,
       },
       new: {
-        element: ied
-      }
+        element: ied,
+      },
     };
 
-    const [ remove, insert ] = convertEditActiontoV1(replace) as Edit[];
+    const [remove, insert] = convertEditActiontoV1(replace) as Edit[];
 
     const expectedRemove: Remove = {
-      node: bay
+      node: bay,
     };
     const expectedInsert: Insert = {
       parent: substation,
       node: ied,
-      reference: bay.nextSibling
+      reference: bay.nextSibling,
     };
 
     expect(remove).to.deep.equal(expectedRemove);

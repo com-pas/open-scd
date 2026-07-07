@@ -30,9 +30,9 @@ Once Node.js is installed on your system, you may get started by entering the fo
 ```
 git clone https://github.com/openscd/open-scd.git
 cd open-scd
-npm install
-npm run build
-npm start
+pnpm install
+pnpm run build
+pnpm start
 ```
 
 This will start a local development server and open a browser window which will automatically be reloaded as soon as you save any changes to your local source code files.
@@ -47,14 +47,14 @@ If you use VSCode to develop, we recommend you install and use the [ESLint](http
 
 ### Scripts
 
-We provide the following `npm` scripts for your convenience:
+We provide the following `pnpm` scripts for your convenience:
 
-- `npm start` runs `OpenSCD` for development, reloading on file changes
-- `npm test` runs the test suite with Karma
-- `npm run lint` runs the linter (fixes problems in your code)
-- `npm run format` runs the formatter (formats your code in a unified way)
-- `npm run doc` builds HTML documentation into the `doc` directory
-- `npm run build` builds a deployable version of the project into the `dist` directory
+- `pnpm start` runs `OpenSCD` for development, reloading on file changes
+- `pnpm test` runs the test suite with Karma
+- `pnpm run lint` runs the linter (fixes problems in your code)
+- `pnpm run format` runs the formatter (formats your code in a unified way)
+- `pnpm run doc` builds HTML documentation into the `doc` directory
+- `pnpm run build` builds a deployable version of the project into the `dist` directory
 
 ## License
 

@@ -12,12 +12,7 @@ import {
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isDelete,
-  isReplace,
-  Delete, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isDelete, isReplace, Delete, Replace } from '@compas-oscd/core';
 
 describe('dataset wizards', () => {
   let doc: XMLDocument;

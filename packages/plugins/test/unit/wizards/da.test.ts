@@ -10,12 +10,7 @@ import {
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isCreate,
-  isReplace,
-  Create, 
-  Replace 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, isReplace, Create, Replace } from '@compas-oscd/core';
 import {
   createDaAction,
   renderDa,

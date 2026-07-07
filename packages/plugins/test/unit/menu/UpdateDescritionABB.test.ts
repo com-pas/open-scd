@@ -4,11 +4,7 @@ import sinon, { SinonSpy } from 'sinon';
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 
-import {
-  ComplexAction,
-  isSimple,
-  isReplace,
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, isSimple, isReplace } from '@compas-oscd/core';
 import UpdateDescriptionAbb from '../../../src/menu/UpdateDescriptionABB.js';
 
 describe('Update method for desc attributes in ABB IEDs', () => {

@@ -5,13 +5,13 @@ import {
   WizardInputElement,
   WizardActor,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
+import {
   ComplexAction,
   isCreate,
   isReplace,
   isDelete,
   isSimple,
- } from '@openscd/core/foundation/deprecated/editor.js';
+} from '@compas-oscd/core';
 import {
   createAction,
   updateAction,
@@ -33,9 +33,7 @@ describe('VoltageLevelEditor', () => {
       ['name', 'desc', 'nomFreq', 'numPhases', 'Voltage'].map(
         label =>
           <Promise<WizardInputElement>>(
-            fixture(
-              html`<wizard-textfield label=${label}></wizard-textfield>`
-            )
+            fixture(html`<wizard-textfield label=${label}></wizard-textfield>`)
           )
       )
     );
@@ -165,7 +163,6 @@ describe('VoltageLevelEditor', () => {
   });
 
   describe('with nulled properties', () => {
-
     describe('has an updateAction that', () => {
       describe('with present child element Voltage', () => {
         let element: Element;

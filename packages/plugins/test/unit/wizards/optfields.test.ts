@@ -6,7 +6,7 @@ import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { WizardSelect } from '@compas-oscd/open-scd/dist/wizard-select.js';
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';
-import { Replace, isReplace } from '@openscd/core/foundation/deprecated/editor.js';
+import { Replace, isReplace } from '@compas-oscd/core';
 import { editOptFieldsWizard } from '../../../src/wizards/optfields.js';
 
 describe('Wizards for SCL OptFields element', () => {

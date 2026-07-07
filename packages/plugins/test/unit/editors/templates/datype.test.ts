@@ -8,11 +8,7 @@ import {
   identity,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import {
-  ComplexAction,
-  Replace,
-  isSimple
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, Replace, isSimple } from '@compas-oscd/core';
 import { editDaTypeWizard } from '../../../../src/editors/templates/datype-wizards.js';
 
 describe('wizards for DAType element', () => {

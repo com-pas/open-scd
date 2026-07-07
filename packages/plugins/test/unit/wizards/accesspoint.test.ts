@@ -1,9 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-import {
-  ComplexAction,
-  isSimple,
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { ComplexAction, isSimple } from '@compas-oscd/core';
 import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 import { WizardInputElement } from '@compas-oscd/open-scd/dist/foundation.js';

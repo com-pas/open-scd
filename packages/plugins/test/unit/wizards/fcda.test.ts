@@ -5,7 +5,7 @@ import '@compas-oscd/open-scd/addons/Wizards.js';
 import { OscdWizards } from '@compas-oscd/open-scd/addons/Wizards.js';
 
 import { createFCDAsWizard } from '../../../src/wizards/fcda.js';
-import { isCreate } from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate } from '@compas-oscd/core';
 import { FinderList } from '@compas-oscd/open-scd/dist/finder-list.js';
 
 describe('create wizard for FCDA element', () => {

@@ -6,7 +6,6 @@ import '../../src/addons/Settings.js';
 import { OscdSettings, defaults } from '../../src/addons/Settings.js';
 
 import { Button } from '@material/mwc-button';
-import { LogEvent } from '@openscd/core/foundation/deprecated/history.js';
 
 describe('OSCD-Settings', () => {
   let element: OscdSettings;
@@ -81,7 +80,7 @@ describe('OSCD-Settings', () => {
     element.setSetting('IEC 61850-7-2', nsdocFile);
 
     await element.requestUpdate();
-    await element.updateComplete
+    await element.updateComplete;
 
     expect(localStorage.getItem('IEC 61850-7-2')).to.eql(nsdocFile);
     await expect(element).shadowDom.to.equalSnapshot();

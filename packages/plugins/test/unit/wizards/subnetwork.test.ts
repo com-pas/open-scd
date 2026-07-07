@@ -9,14 +9,14 @@ import {
   WizardInputElement,
   patterns,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
+import {
   isCreate,
   isDelete,
   isReplace,
-  Create, 
-  Delete, 
-  Replace
-} from '@openscd/core/foundation/deprecated/editor.js';
+  Create,
+  Delete,
+  Replace,
+} from '@compas-oscd/core';
 import {
   createSubNetworkWizard,
   editSubNetworkWizard,

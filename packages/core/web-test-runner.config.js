@@ -23,4 +23,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       files: 'test/**/*.test.ts',
     },
   ],
+
+  coverageConfig: {
+    include: ['src/**/*.ts'],
+    exclude: ['**/node_modules/**', '**/__wds-outside-root__/**'],
+  },
 });

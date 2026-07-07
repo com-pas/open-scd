@@ -3,9 +3,6 @@
   "version": "0.45.13",
   "description": "OpenSCD base distribution and plugins",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "clean": "lerna run clean",
     "build": "NODE_OPTIONS=--no-experimental-require-module npx nx run-many -t build --all",
@@ -20,12 +17,18 @@
     "url": "git+https://github.com/openscd/open-scd.git"
   },
   "license": "Apache-2.0",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=24"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "husky": "^9.1.7",
     "lerna": "^7.1.4",
-    "nx": "18.3.4"
+    "nx": "18.3.4",
+    "playwright": "^1.48.0",
+    "rimraf": "^5.0.0"
   },
   "optionalDependencies": {
     "@nx/nx-linux-x64-gnu": "18.3.4"

@@ -12,8 +12,8 @@ import {
   ComplexAction,
   Create,
   Delete,
-  Replace
-} from '@openscd/core/foundation/deprecated/editor.js';
+  Replace,
+} from '@compas-oscd/core';
 import { WizardTextField } from '@compas-oscd/open-scd/dist/wizard-textfield.js';
 import {
   createRedundancyGroupWizard,

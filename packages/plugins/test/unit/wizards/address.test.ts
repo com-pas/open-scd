@@ -10,12 +10,7 @@ import {
   Wizard,
   WizardInputElement,
 } from '@compas-oscd/open-scd/dist/foundation.js';
-import { 
-  isCreate,
-  isDelete,
-  Create, 
-  Delete 
-} from '@openscd/core/foundation/deprecated/editor.js';
+import { isCreate, isDelete, Create, Delete } from '@compas-oscd/core';
 import {
   contentGseOrSmvWizard,
   updateAddress,
