@@ -126,7 +126,7 @@ describe('voltage-level-editor wizarding integration', () => {
     });
     it('edits only for valid inputs', async () => {
       await fc.assert(
-        fc.asyncProperty(fc.integer(1, 255), async numPhases => {
+        fc.asyncProperty(fc.integer({ min: 1, max: 255 }), async numPhases => {
           parent.wizardUI.inputs[3].value = String(numPhases);
           await parent.updateComplete;
           expect(parent.wizardUI.inputs[3].checkValidity()).to.be.true;

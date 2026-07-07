@@ -16,3 +16,53 @@ updates:
     labels:
       - "dependencies"
       - "github-actions"
+    # Version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/core"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/distribution"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/forms"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/openscd"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/plugins"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/packages/xml"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5

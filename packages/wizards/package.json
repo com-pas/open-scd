@@ -46,7 +46,6 @@
     "@web/test-runner": "^0.13.22",
     "concurrently": "^6.2.1",
     "deepmerge": "^4.2.2",
-    "es-dev-server": "^2.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",

@@ -8,7 +8,9 @@ allowBuilds:
   bufferutil: true
   core-js-bundle: true
   core-js-pure: true
+  ejs: true
   esbuild: true
+  fsevents: true
   husky: true
   nx: true
   utf-8-validate: true
