@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/xml",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/com-pas/open-scd.git",
   "description": "The XML manipulation package for OpenSCD",
   "author": "Open-SCD",

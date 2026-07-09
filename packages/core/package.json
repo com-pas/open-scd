@@ -1,6 +1,6 @@
 {
   "name": "@compas-oscd/core",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": "https://github.com/com-pas/open-scd.git",
   "description": "The core editor component of open-scd, without any extensions pre-installed.",
   "author": "Open-SCD",

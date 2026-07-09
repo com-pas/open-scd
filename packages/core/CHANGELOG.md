@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/com-pas/open-scd/compare/core@v0.2.2...core@v0.2.3) (2026-07-09)
+
+
+### 📦 Miscellaneous Chores
+
+* update repository URLs to use com-pas organisation ([#145](https://github.com/com-pas/open-scd/issues/145)) ([d35b5ef](https://github.com/com-pas/open-scd/commit/d35b5eff1b31dd084b1156ab71f7fbae873102d1))
+
 ## [0.2.2](https://github.com/com-pas/open-scd/compare/core@v0.2.1...core@v0.2.2) (2026-07-09)
 
 
