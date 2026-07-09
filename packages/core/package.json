@@ -1,6 +1,7 @@
 {
   "name": "@compas-oscd/core",
   "version": "0.2.2",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "description": "The core editor component of open-scd, without any extensions pre-installed.",
   "author": "Open-SCD",
   "license": "Apache-2.0",
@@ -37,7 +38,6 @@
     "build": "tsc -b",
     "doc": "typedoc --out doc foundation.ts",
     "test": "web-test-runner --coverage",
-    "prepublish": "pnpm run lint && pnpm run build && pnpm run doc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore"
   },

@@ -1,6 +1,7 @@
 {
   "name": "@compas-oscd/xml",
   "version": "0.0.4",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "description": "The XML manipulation package for OpenSCD",
   "author": "Open-SCD",
   "license": "Apache-2.0",
@@ -19,7 +20,6 @@
     "clean": "rimraf .tsbuildinfo dist",
     "build": "tsc -b",
     "doc": "typedoc --out doc src/index.ts",
-    "prepublish": "pnpm run lint && pnpm run build && pnpm run doc",
     "lint": "eslint --ext .ts . --ignore-path .gitignore && prettier \"src/**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts . --fix --ignore-path .gitignore && prettier \"src/**/*.ts\" --write --ignore-path .gitignore",
     "test": "web-test-runner --coverage"

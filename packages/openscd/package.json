@@ -1,7 +1,7 @@
 {
   "name": "@compas-oscd/open-scd",
   "version": "0.35.0",
-  "repository": "https://github.com/openscd/open-scd.git",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/openscd",
   "description": "A bottom-up substation configuration designer for projects described using SCL `IEC 61850-6` Edition 2 or greater.",
   "keywords": [
@@ -217,6 +217,6 @@
         "hidden": true
       }
     ],
-    "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
+    "commitUrlFormat": "https://github.com/com-pas/open-scd/commits/{{hash}}"
   }
 }
