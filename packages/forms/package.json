@@ -1,6 +1,7 @@
 {
   "name": "@compas-oscd/forms",
   "version": "0.0.4",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "description": "The forms package OpenSCD",
   "author": "Open-SCD",
   "license": "Apache-2.0",

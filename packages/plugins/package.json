@@ -197,6 +197,6 @@
         "hidden": true
       }
     ],
-    "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
+    "commitUrlFormat": "https://github.com/com-pas/open-scd/commits/{{hash}}"
   }
 }
