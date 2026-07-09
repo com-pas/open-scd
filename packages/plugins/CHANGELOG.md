@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.0](https://github.com/com-pas/open-scd/compare/plugins@v0.0.13...plugins@v0.1.0) (2026-07-09)
+
+
+### ✨ Features
+
+* (plugins): validate duplicate IPs in ConnectedAP edit wizard ([24366f2](https://github.com/com-pas/open-scd/commit/24366f29084eddfcffd900eb1999b574f1564a42))
+* **communication:** validate duplicate IPs in ConnectedAP within the same SubNetwork ([568c944](https://github.com/com-pas/open-scd/commit/568c9442d9b4f6ab754805d6e770b67f5305c436))
+
+
+### 📦 Miscellaneous Chores
+
+* Fix plugins ([d249838](https://github.com/com-pas/open-scd/commit/d2498387ee01560667074424a86025cb1fd581c1))
+* migrate to pnpm ([#100](https://github.com/com-pas/open-scd/issues/100)) ([99da4ec](https://github.com/com-pas/open-scd/commit/99da4ec8128a745fd9821e3e6d87e64abdd70ef5))
+* pin dependencies + add npm dependabot config ([#102](https://github.com/com-pas/open-scd/issues/102)) ([b7ebf11](https://github.com/com-pas/open-scd/commit/b7ebf1138241c471005060319c3268b66ec9c488))
+
 ## [0.0.13](https://github.com/com-pas/open-scd/compare/plugins@v0.0.12...plugins@v0.0.13) (2026-05-28)
 
 

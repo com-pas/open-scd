@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.35.0](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.51...open-scd@v0.35.0) (2026-07-09)
+
+
+### ✨ Features
+
+* allow custom reserved value validation message in wizard textfield ([2b884b9](https://github.com/com-pas/open-scd/commit/2b884b9910e0dc8c189144072d046c837f28944a))
+* **communication:** validate duplicate IPs in ConnectedAP within the same SubNetwork ([568c944](https://github.com/com-pas/open-scd/commit/568c9442d9b4f6ab754805d6e770b67f5305c436))
+
+
+### 📦 Miscellaneous Chores
+
+* Adjust snapshots ([e2314dd](https://github.com/com-pas/open-scd/commit/e2314dd5fa996691715025521be6d4f5113535a4))
+* Fix plugins ([d249838](https://github.com/com-pas/open-scd/commit/d2498387ee01560667074424a86025cb1fd581c1))
+* migrate to pnpm ([#100](https://github.com/com-pas/open-scd/issues/100)) ([99da4ec](https://github.com/com-pas/open-scd/commit/99da4ec8128a745fd9821e3e6d87e64abdd70ef5))
+* pin dependencies + add npm dependabot config ([#102](https://github.com/com-pas/open-scd/issues/102)) ([b7ebf11](https://github.com/com-pas/open-scd/commit/b7ebf1138241c471005060319c3268b66ec9c488))
+
 ## [0.34.51](https://github.com/com-pas/open-scd/compare/open-scd@v0.34.50...open-scd@v0.34.51) (2026-05-26)
 
 

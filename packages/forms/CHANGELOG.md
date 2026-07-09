@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4](https://github.com/com-pas/open-scd/compare/forms@v0.0.3...forms@v0.0.4) (2026-07-09)
+
+
+### 📦 Miscellaneous Chores
+
+* migrate to pnpm ([#100](https://github.com/com-pas/open-scd/issues/100)) ([99da4ec](https://github.com/com-pas/open-scd/commit/99da4ec8128a745fd9821e3e6d87e64abdd70ef5))
+* pin dependencies + add npm dependabot config ([#102](https://github.com/com-pas/open-scd/issues/102)) ([b7ebf11](https://github.com/com-pas/open-scd/commit/b7ebf1138241c471005060319c3268b66ec9c488))
+
 ## [0.0.3](https://github.com/com-pas/open-scd/compare/forms@v0.0.2...forms@v0.0.3) (2026-05-26)
 
 
