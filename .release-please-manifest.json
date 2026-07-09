@@ -1,8 +1,8 @@
 {
-  "packages/openscd": "0.35.0",
-  "packages/core": "0.2.2",
-  "packages/forms": "0.0.4",
-  "packages/xml": "0.0.4",
-  "packages/plugins": "0.1.0",
+  "packages/openscd": "0.35.1",
+  "packages/core": "0.2.3",
+  "packages/forms": "0.0.5",
+  "packages/xml": "0.0.5",
+  "packages/plugins": "0.1.1",
   ".": "0.45.13"
 }
