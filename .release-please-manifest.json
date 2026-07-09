@@ -1,5 +1,5 @@
 {
-  "packages/openscd": "0.35.0",
+  "packages/openscd": "1.0.0",
   "packages/core": "0.2.2",
   "packages/forms": "0.0.4",
   "packages/xml": "0.0.4",
