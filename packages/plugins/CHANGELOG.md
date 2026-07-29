@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/com-pas/open-scd/compare/plugins@v0.1.1...plugins@v0.1.2) (2026-07-29)
+
+
+### 🐞 Bug Fixes
+
+* update public file urls ([#153](https://github.com/com-pas/open-scd/issues/153)) ([1523d83](https://github.com/com-pas/open-scd/commit/1523d83d547be7901d3ee316569d11c2c9b36736))
+
 ## [0.1.1](https://github.com/com-pas/open-scd/compare/plugins@v0.1.0...plugins@v0.1.1) (2026-07-09)
 
 
