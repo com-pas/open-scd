@@ -7,7 +7,10 @@ import '@material/mwc-list';
 import '@material/mwc-list/mwc-list-item';
 
 import '@compas-oscd/open-scd/dist/filtered-list.js';
-import { identity, newWizardEvent } from '@compas-oscd/open-scd/dist/foundation.js';
+import {
+  identity,
+  newWizardEvent,
+} from '@compas-oscd/open-scd/dist/foundation.js';
 
 import { createElement } from '@compas-oscd/xml';
 
@@ -35,15 +38,15 @@ import { List } from '@material/mwc-list';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
-const templates = fetch('public/xml/templates.scd')
+const templates = fetch('xml/templates.scd')
   .then(response => response.text())
   .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
-const nsd74 = fetch('public/xml/IEC_61850-7-4_2007B5.nsd')
+const nsd74 = fetch('xml/IEC_61850-7-4_2007B5.nsd')
   .then(response => response.text())
   .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
-const nsd7420 = fetch('public/xml/IEC_61850-7-420_2019A4.nsd')
+const nsd7420 = fetch('xml/IEC_61850-7-420_2019A4.nsd')
   .then(response => response.text())
   .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
