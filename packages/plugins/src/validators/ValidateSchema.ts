@@ -1,10 +1,7 @@
 import { LitElement, property } from 'lit-element';
 import { get } from 'lit-translate';
 
-import {
-  newIssueEvent,
-  newLogEvent,
-} from '@compas-oscd/core';
+import { newIssueEvent, newLogEvent } from '@compas-oscd/core';
 
 import {
   getSchema,
@@ -32,7 +29,7 @@ export default class ValidateSchema extends LitElement {
     if (!window.Worker) throw new Error(get('validator.schema.fatal'));
     if (validators[xsdName]) return validators[xsdName]!;
 
-    const worker: Worker = new Worker('public/js/worker.js');
+    const worker: Worker = new Worker('js/worker.js');
 
     async function validate(
       xml: string,
