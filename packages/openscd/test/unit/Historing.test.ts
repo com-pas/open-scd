@@ -223,5 +223,31 @@ describe('HistoringElement', () => {
       await element.updateComplete;
       expect(element.diagnoses.size).to.equal(0);
     });
+
+    it('clears only the targeted validator on empty-issues', async () => {
+      element.dispatchEvent(
+        newIssueEvent({
+          validatorId: '/src/validators/ValidateTemplates.js',
+          title: 'template issue',
+        })
+      );
+      await element.updateComplete;
+
+      mock.dispatchEvent(
+        new CustomEvent('empty-issues', {
+          bubbles: true,
+          composed: true,
+          detail: { pluginSrc: '/src/validators/ValidateSchema.js' },
+        })
+      );
+      await element.updateComplete;
+
+      expect(
+        element.diagnoses.get('/src/validators/ValidateSchema.js')!.length
+      ).to.equal(0);
+      expect(
+        element.diagnoses.get('/src/validators/ValidateTemplates.js')!.length
+      ).to.equal(1);
+    });
   });
 });
