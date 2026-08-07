@@ -338,6 +338,8 @@ export class OscdLayout extends LitElement {
               return;
             }
 
+            this.dispatchEvent(newEmptyIssuesEvent(src));
+
             return (menuContentElement as unknown as Validator).validate()
           })
       ).then();

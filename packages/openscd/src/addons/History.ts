@@ -145,6 +145,9 @@ export class OscdHistory extends LitElement {
   @state()
   history: HistoryItem[] = [];
 
+  @state()
+  validationTimes = new Map<string, Date>();
+
   get canRedo(): boolean {
     return this.editor.future.length >= 1;
   }
@@ -168,6 +171,8 @@ export class OscdHistory extends LitElement {
 
     if (!issues) this.diagnoses.set(de.detail.validatorId, [de.detail]);
     else issues?.push(de.detail);
+
+    this.validationTimes.set(de.detail.validatorId, new Date());
 
     this.latestIssue = de.detail;
     this.issueUI.close();
@@ -315,12 +320,12 @@ export class OscdHistory extends LitElement {
         graphic="icon"
         ?twoline=${!!entry.message}
       >
-        <span>
+        <span class="selectable-text">
           <!-- FIXME: replace tt with mwc-chip asap -->
           <tt>${entry.time?.toLocaleString()}</tt>
           ${entry.title}</span
         >
-        <span slot="secondary">${entry.message}</span>
+        <span class="selectable-text" slot="secondary">${entry.message}</span>
         <mwc-icon
           slot="graphic"
           style="--mdc-theme-text-icon-on-background:var(${iconColors[
@@ -356,6 +361,13 @@ export class OscdHistory extends LitElement {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
   }
 
+  private formatValidationTime(time: number): string {
+    const date = new Date(time);
+    const dateStr = date.toLocaleDateString();
+    const timeStr = date.toLocaleTimeString();
+    return `${dateStr} ${timeStr}`;
+  }
+
   private renderLog(): TemplateResult[] | TemplateResult {
     if (this.log.length > 0)
       return this.log.slice().reverse().map(this.renderLogEntry, this);
@@ -378,19 +390,30 @@ export class OscdHistory extends LitElement {
 
   protected renderIssueEntry(issue: IssueDetail): TemplateResult {
     return html` <abbr title="${issue.title + '\n' + issue.message}"
-      ><mwc-list-item ?twoline=${!!issue.message}>
-        <span> ${issue.title}</span>
-        <span slot="secondary">${issue.message}</span>
+      ><mwc-list-item noninteractive ?twoline=${!!issue.message}>
+        <span class="selectable-text"> ${issue.title}</span>
+        <span class="selectable-text" slot="secondary">${issue.message}</span>
       </mwc-list-item></abbr
     >`;
   }
 
   renderValidatorsIssues(issues: IssueDetail[]): TemplateResult[] {
     if (issues.length === 0) return [html``];
+
+    const lastValidated = this.validationTimes.get(issues[0].validatorId);
+
     return [
       html`
-        <mwc-list-item noninteractive>
-          ${getPluginName(issues[0].validatorId)}
+        <mwc-list-item noninteractive ?twoline=${!!lastValidated}>
+            <span>${getPluginName(issues[0].validatorId)}</span>
+            ${lastValidated
+              ? html`<span slot="secondary" class="validation-time"
+                  >${get('diag.lastValidated', {
+                    time: this.formatValidationTime(lastValidated.getTime()),
+                  })}</span
+                >`
+              : ''}
+          </span>
         </mwc-list-item>
       `,
       html`<li divider padded role="separator"></li>`,
@@ -460,6 +483,18 @@ export class OscdHistory extends LitElement {
   render(): TemplateResult {
     return html`<slot></slot>
       <style>
+        .selectable-text {
+          user-select: text;
+          -webkit-user-select: text;
+          cursor: text;
+        }
+  
+        .validation-time {
+          color: var(--base1);
+          font-size: 0.85em;
+          white-space: nowrap;
+        }
+        
         #log > mwc-icon-button-toggle {
           position: absolute;
           top: 8px;

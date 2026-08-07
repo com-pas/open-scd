@@ -158,6 +158,7 @@ export const en = {
     placeholder: 'Issues found during validation will show up here',
     missingnsd:
       'Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4',
+    lastValidated: 'Validated at {{ time }}',
   },
   plugins: {
     heading: 'Plug-ins',

@@ -14,8 +14,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with a valid DataTypeTemp
       aria-disabled="false"
       noninteractive=""
       tabindex="-1"
+      twoline=""
     >
-      Validate Templates
+      <span>
+        Validate Templates
+      </span>
+      <span
+        class="validation-time"
+        slot="secondary"
+      >
+        Validated at 8/7/2026 3:06:22 PM
+      </span>
     </mwc-list-item>
     <li
       divider=""
@@ -27,13 +36,16 @@ snapshots["ValidateTemplates OpenSCD integration test  with a valid DataTypeTemp
 undefined">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
       >
-        <span>
+        <span class="selectable-text">
           No errors found in the project
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
         </span>
       </mwc-list-item>
     </abbr>
@@ -61,8 +73,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
       aria-disabled="false"
       noninteractive=""
       tabindex="-1"
+      twoline=""
     >
-      Validate Templates
+      <span>
+        Validate Templates
+      </span>
+      <span
+        class="validation-time"
+        slot="secondary"
+      >
+        Validated at 8/7/2026 3:06:22 PM
+      </span>
     </mwc-list-item>
     <li
       divider=""
@@ -74,14 +95,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.CSWI > Pos">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           lnClass CSWI is missing mandatory child DO Pos
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.CSWI > Pos
         </span>
       </mwc-list-item>
@@ -90,14 +114,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.CILO > Beh">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           lnClass CILO is missing mandatory child DO Beh
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.CILO > Beh
         </span>
       </mwc-list-item>
@@ -106,14 +133,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.XSWI1 > SwTyp">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           lnClass XSWI is missing mandatory child DO SwTyp
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.XSWI1 > SwTyp
         </span>
       </mwc-list-item>
@@ -122,14 +152,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.invalidChild>NamPlt">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute type is required but missing in DO
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.invalidChild>NamPlt
         </span>
       </mwc-list-item>
@@ -138,14 +171,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.MissingLnClass">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute lnClass is required but missing in LNodeType
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.MissingLnClass
         </span>
       </mwc-list-item>
@@ -154,14 +190,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.LLN0.Mod>stVal">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:stVal has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.LLN0.Mod>stVal
         </span>
       </mwc-list-item>
@@ -170,14 +209,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.LLN0.Beh>stVal">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:stVal has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.LLN0.Beh>stVal
         </span>
       </mwc-list-item>
@@ -186,14 +228,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.LLN0.Health">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class ENS is missing mandatory child DA stVal
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.LLN0.Health
         </span>
       </mwc-list-item>
@@ -202,14 +247,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.SPC2">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class SPC is missing mandatory child DA SBO
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.SPC2
         </span>
       </mwc-list-item>
@@ -218,14 +266,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.SPC1">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class SPC is missing mandatory child DA SBOw
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.SPC1
         </span>
       </mwc-list-item>
@@ -234,14 +285,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.SPC8">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class SPC is missing mandatory child DA Cancel
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.SPC8
         </span>
       </mwc-list-item>
@@ -250,14 +304,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.SPC3">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class SPC is missing mandatory child DA Oper
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.SPC3
         </span>
       </mwc-list-item>
@@ -266,14 +323,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.XCBR1.Pos">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class DPC is missing mandatory child DA t
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.XCBR1.Pos
         </span>
       </mwc-list-item>
@@ -282,14 +342,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.CSWI.Pos1">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           Common Data Class DPC is missing mandatory child DA ctlModel
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.CSWI.Pos1
         </span>
       </mwc-list-item>
@@ -298,14 +361,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.XCBR1.badNamPlt">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute cdc is incorrect in the element DOType.
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.XCBR1.badNamPlt
         </span>
       </mwc-list-item>
@@ -314,14 +380,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.MissingCDC">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute cdc is required but missing in DOType
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.MissingCDC
         </span>
       </mwc-list-item>
@@ -330,14 +399,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.MissingType>SBOw">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute type is required but missing in DA
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.MissingType>SBOw
         </span>
       </mwc-list-item>
@@ -346,14 +418,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.MissingType>Oper">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute type is required but missing in DA
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.MissingType>Oper
         </span>
       </mwc-list-item>
@@ -362,14 +437,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.MissingType>Cancel">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute type is required but missing in DA
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.MissingType>Cancel
         </span>
       </mwc-list-item>
@@ -378,14 +456,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.badWYE>phsA">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute type is required but missing in SDO
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.badWYE>phsA
         </span>
       </mwc-list-item>
@@ -394,14 +475,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.LLN0.Mod.SBOw>ctlVal">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:ctlVal has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.LLN0.Mod.SBOw>ctlVal
         </span>
       </mwc-list-item>
@@ -410,14 +494,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.LLN0.Mod.Cancel>ctlVal">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:ctlVal has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.LLN0.Mod.Cancel>ctlVal
         </span>
       </mwc-list-item>
@@ -426,14 +513,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.Operfalse">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DAType Dummy.Operfalse is missing mandatory child BDA ctlNum
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.Operfalse
         </span>
       </mwc-list-item>
@@ -442,14 +532,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.SBOwfalse">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DAType Dummy.SBOwfalse is missing mandatory child BDA origin
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.SBOwfalse
         </span>
       </mwc-list-item>
@@ -458,14 +551,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.Cancelfalse">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DAType Dummy.Cancelfalse is missing mandatory child BDA ctlVal
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.Cancelfalse
         </span>
       </mwc-list-item>
@@ -474,14 +570,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.ScaledValueConfig">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DAType Dummy.ScaledValueConfig is missing mandatory child BDA scaleFactor
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.ScaledValueConfig
         </span>
       </mwc-list-item>
@@ -490,14 +589,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.unit>SIUnit">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:SIUnit has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.unit>SIUnit
         </span>
       </mwc-list-item>
@@ -506,14 +608,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with issues in the DataTy
 #Dummy.unit>multiplier">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           DO:multiplier has a invalid reference - type attribute cannot be connected to a template
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           #Dummy.unit>multiplier
         </span>
       </mwc-list-item>
@@ -542,8 +647,17 @@ snapshots["ValidateTemplates OpenSCD integration test  with schema version small
       aria-disabled="false"
       noninteractive=""
       tabindex="-1"
+      twoline=""
     >
-      Validate Templates
+      <span>
+        Validate Templates
+      </span>
+      <span
+        class="validation-time"
+        slot="secondary"
+      >
+        Validated at 8/7/2026 3:06:22 PM
+      </span>
     </mwc-list-item>
     <li
       divider=""
@@ -555,13 +669,16 @@ snapshots["ValidateTemplates OpenSCD integration test  with schema version small
 ">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
       >
-        <span>
+        <span class="selectable-text">
           Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
         </span>
       </mwc-list-item>
     </abbr>

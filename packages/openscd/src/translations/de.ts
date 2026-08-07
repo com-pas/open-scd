@@ -181,6 +181,7 @@ export const de: Translations = {
     placeholder: 'Hier werden Validierungsfehler angezeigt.',
     missingnsd:
       'DataTypeTemplates können nicht validiert werden. Das Projekt muss die Version 2007B4 oder höher haben.',
+    lastValidated: 'Validiert um {{ time }}',
   },
   plugins: {
     heading: 'Plug-ins',

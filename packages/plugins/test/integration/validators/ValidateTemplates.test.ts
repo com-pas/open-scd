@@ -1,4 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
+import { useFakeTimers } from 'sinon';
 
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
@@ -12,8 +13,17 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
 
   let parent: MockOpenSCD;
   let element: ValidateTemplates;
+  let clock: { restore: () => void };
 
   let doc: XMLDocument;
+
+  before(() => {
+    clock = useFakeTimers(new Date(2026, 7, 7, 15, 6, 22));
+  });
+
+  after(() => {
+    clock.restore();
+  });
 
   describe('with a valid DataTypeTemplates section', () => {
     beforeEach(async () => {
