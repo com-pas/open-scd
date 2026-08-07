@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.35.3](https://github.com/com-pas/open-scd/compare/open-scd@v0.35.2...open-scd@v0.35.3) (2026-08-07)
+
+
+### 🐞 Bug Fixes
+
+* reset previous validation errors when validating ([#158](https://github.com/com-pas/open-scd/issues/158)) ([c497f27](https://github.com/com-pas/open-scd/commit/c497f275b47943cea78b430aaeefdb12246c0636))
+
 ## [0.35.2](https://github.com/com-pas/open-scd/compare/open-scd@v0.35.1...open-scd@v0.35.2) (2026-07-29)
 
 

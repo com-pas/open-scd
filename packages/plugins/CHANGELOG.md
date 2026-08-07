@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/com-pas/open-scd/compare/plugins@v0.1.2...plugins@v0.1.3) (2026-08-07)
+
+
+### 🐞 Bug Fixes
+
+* reset previous validation errors when validating ([#158](https://github.com/com-pas/open-scd/issues/158)) ([c497f27](https://github.com/com-pas/open-scd/commit/c497f275b47943cea78b430aaeefdb12246c0636))
+
 ## [0.1.2](https://github.com/com-pas/open-scd/compare/plugins@v0.1.1...plugins@v0.1.2) (2026-07-29)
 
 
