@@ -64,7 +64,7 @@
     "./dist/test-helper": "./dist/test-helper/index.js"
   },
   "dependencies": {
-    "@compas-oscd/core": "0.1.23",
+    "@compas-oscd/core": "0.2.1",
     "@compas-oscd/xml": "0.0.1",
     "@material/mwc-dialog": "0.22.1",
     "@material/mwc-drawer": "0.22.1",
