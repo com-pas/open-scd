@@ -1,4 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
+import { useFakeTimers } from 'sinon';
 
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
@@ -13,9 +14,18 @@ describe('ValidateSchema plugin', () => {
 
   let parent: MockOpenSCD;
   let element: ValidateSchema;
+  let clock: { restore: () => void };
 
   let valid2007B4: XMLDocument;
   let invalid2007B: XMLDocument;
+
+  before(() => {
+    clock = useFakeTimers(new Date(2026, 7, 7, 15, 6, 22));
+  });
+
+  after(() => {
+    clock.restore();
+  });
 
   before(async () => {
     parent = await fixture(html`

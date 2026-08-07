@@ -14,8 +14,17 @@ snapshots["ValidateSchema plugin for valid SCL files zeroissues indication looks
       aria-disabled="false"
       noninteractive=""
       tabindex="-1"
+      twoline=""
     >
-      Validate Schema
+      <span>
+        Validate Schema
+      </span>
+      <span
+        class="validation-time"
+        slot="secondary"
+      >
+        Validated at 8/7/2026 3:06:22 PM
+      </span>
     </mwc-list-item>
     <li
       divider=""
@@ -27,13 +36,16 @@ snapshots["ValidateSchema plugin for valid SCL files zeroissues indication looks
 undefined">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
       >
-        <span>
+        <span class="selectable-text">
           valid2007B XML schema validation successful
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
         </span>
       </mwc-list-item>
     </abbr>
@@ -61,8 +73,17 @@ snapshots["ValidateSchema plugin for invalid SCL files pushes issues to the diag
       aria-disabled="false"
       noninteractive=""
       tabindex="-1"
+      twoline=""
     >
-      Validate Schema
+      <span>
+        Validate Schema
+      </span>
+      <span
+        class="validation-time"
+        slot="secondary"
+      >
+        Validated at 8/7/2026 3:06:22 PM
+      </span>
     </mwc-list-item>
     <li
       divider=""
@@ -74,25 +95,34 @@ snapshots["ValidateSchema plugin for invalid SCL files pushes issues to the diag
 invalid2007B:7 Substation name (Element '{http://www.iec.ch/61850/2003/SCL}Substation')">
       <mwc-list-item
         aria-disabled="false"
-        mwc-list-item=""
+        noninteractive=""
         tabindex="-1"
         twoline=""
       >
-        <span>
+        <span class="selectable-text">
           The attribute 'name' is required but missing.
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           invalid2007B:7 Substation name (Element '{http://www.iec.ch/61850/2003/SCL}Substation')
         </span>
       </mwc-list-item>
     </abbr>
     <abbr title="Not all fields of key identity-constraint '{http://www.iec.ch/61850/2003/SCL}SubstationKey' evaluate to a node.
 invalid2007B:7 Substation key identity-constraint '{http://www.iec.ch/61850/2003/SCL}SubstationKey' (Element '{http://www.iec.ch/61850/2003/SCL}Substation')">
-      <mwc-list-item twoline="">
-        <span>
+      <mwc-list-item
+        noninteractive=""
+        twoline=""
+      >
+        <span class="selectable-text">
           Not all fields of key identity-constraint '{http://www.iec.ch/61850/2003/SCL}SubstationKey' evaluate to a node.
         </span>
-        <span slot="secondary">
+        <span
+          class="selectable-text"
+          slot="secondary"
+        >
           invalid2007B:7 Substation key identity-constraint '{http://www.iec.ch/61850/2003/SCL}SubstationKey' (Element '{http://www.iec.ch/61850/2003/SCL}Substation')
         </span>
       </mwc-list-item>
