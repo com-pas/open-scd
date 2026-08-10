@@ -141,7 +141,6 @@ export class OpenSCD extends LitElement {
    * @deprecated Use `handleConfigurationPluginEvent` instead
    */
   public handleAddExternalPlugin(e: AddExternalPluginEvent){
-    this.addExternalPlugin(e.detail.plugin);
     const {name, kind} = e.detail.plugin
 
     const event = newConfigurePluginEvent(name,kind, e.detail.plugin)
@@ -396,16 +395,6 @@ export class OpenSCD extends LitElement {
     const mergedPlugins = [...mergedBuiltInPlugins, ...userInstalledPlugins]
 
     this.updateStoredPlugins(mergedPlugins)
-  }
-
-  private async addExternalPlugin(
-    plugin: Omit<Plugin, 'content'>
-  ): Promise<void> {
-    if (this.storedPlugins.some(p => p.src === plugin.src)) return;
-
-    const newPlugins: Omit<Plugin, 'content'>[] = this.storedPlugins;
-    newPlugins.push(plugin);
-    this.storePlugins(newPlugins);
   }
 
   protected getBuiltInPlugins(): CorePlugin[] {
