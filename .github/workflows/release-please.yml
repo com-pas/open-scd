@@ -27,7 +27,7 @@ jobs:
           echo "name=$(echo '${{ steps.release.outputs.prs }}' | jq -r '.[0].headBranchName')" >> $GITHUB_OUTPUT
 
       - name: Checkout PR branch
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 #v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
         with:
           ref: ${{ steps.pr-branch.outputs.name }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
 
       # The logic below handles the npm publication:
       - name: Checkout main branch incl submodules
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 #v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
         with:
           submodules: "true"
         if: ${{ steps.release.outputs.releases_created }}
