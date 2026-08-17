@@ -56,9 +56,15 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
         --oscd-primary: var(--oscd-theme-primary, var(--oscd-cyan));
         --oscd-secondary: var(--oscd-theme-secondary, var(--oscd-violet));
         --oscd-error: var(--oscd-theme-error, var(--oscd-red));
+        --oscd-warning: var(--oscd-theme-warning, var(--oscd-yellow));
+        --oscd-success: var(--oscd-theme-success, var(--oscd-green));
+        --oscd-black: var(--oscd-theme-black, light-dark(#000000, #ffffff));
+        --oscd-white: var(--oscd-theme-white, light-dark(#ffffff, #000000));
         --oscd-on-primary: var(--oscd-theme-on-primary, var(--oscd-base2));
         --oscd-on-secondary: var(--oscd-theme-on-secondary, var(--oscd-base2));
         --oscd-on-error: var(--oscd-theme-on-error, var(--oscd-base3));
+        --oscd-on-warning: var(--oscd-theme-on-warning, #073642);
+        --oscd-on-success: var(--oscd-theme-on-success, #073642);
         --oscd-nav-active: var(--oscd-theme-nav-active, var(--oscd-on-primary));
 
         --oscd-text-font: var(--oscd-theme-text-font, 'Roboto');
