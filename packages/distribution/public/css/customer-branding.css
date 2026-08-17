@@ -4,9 +4,29 @@
  * Set only --oscd-theme-* here. OpenSCD maps them to --oscd-*, --mdc-*, and --md-*.
  * Unset tokens keep the Solarized defaults from themes.ts.
  * Use light-dark(<light>, <dark>) so the app light/dark setting is respected.
+ * Omit light-dark() for a color that must stay the same in both modes.
  *
  * --oscd-theme-body-bg is independent of --oscd-theme-base2 (page background vs UI surfaces).
+ *
+ * Contrast pairs: primary/secondary/error do not invert by default.
+ * Set the matching --oscd-theme-on-* ink independently, e.g.:
+ *
+ *   --oscd-theme-primary: #004d40;
+ *   --oscd-theme-on-primary: #ffffff;
+ *   --oscd-theme-nav-active: #ffffff;
+ *
+ *   --oscd-theme-primary: light-dark(#00695c, #80cbc4);
+ *   --oscd-theme-on-primary: light-dark(#ffffff, #00332e);
+ *
+ * --oscd-theme-nav-active is the active editor-tab ink; it defaults to on-primary.
  */
 * {
-
+  /* --oscd-theme-body-bg: light-dark(#ffffff, #000000); */
+  /* --oscd-theme-primary: #2aa198; */
+  /* --oscd-theme-on-primary: light-dark(#eee8d5, #073642); */
+  /* --oscd-theme-nav-active: var(--oscd-theme-on-primary); */
+  /* --oscd-theme-secondary: #6c71c4; */
+  /* --oscd-theme-on-secondary: light-dark(#eee8d5, #073642); */
+  /* --oscd-theme-error: #dc322f; */
+  /* --oscd-theme-on-error: light-dark(#fdf6e3, #002b36); */
 }

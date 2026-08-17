@@ -671,13 +671,30 @@ export class OscdLayout extends LitElement {
       top: 0;
     }
 
+    /* mwc-drawer hardcodes title/subtitle to rgba(0,0,0,…). Color the slotted
+     * nodes here so they follow the Solarized scale in light and dark. */
+    mwc-drawer [slot='title'] {
+      color: var(--oscd-base02);
+    }
+
+    mwc-drawer [slot='subtitle'] {
+      color: var(--oscd-base01);
+    }
+
     mwc-top-app-bar-fixed {
-      --mdc-theme-text-disabled-on-light: rgba(255, 255, 255, 0.38);
-    } /* hack to fix disabled icon buttons rendering black */
+      /* MWC reads --mdc-theme-on-primary for icon ink. Rebind only here:
+       * the global --mdc-theme-on-primary is frozen to --oscd-base2 for plugins. */
+      --mdc-theme-on-primary: var(--oscd-on-primary);
+      --mdc-theme-text-disabled-on-light: color-mix(
+        in srgb,
+        var(--oscd-on-primary) 38%,
+        transparent
+      );
+    }
 
     mwc-tab {
-      background-color: var(--primary);
-      --mdc-theme-primary: var(--mdc-theme-on-primary);
+      background-color: var(--oscd-primary);
+      --mdc-theme-primary: var(--oscd-nav-active);
     }
 
     input[type='file'] {
@@ -738,8 +755,8 @@ export class OscdLayout extends LitElement {
       width: 160px;
       height: 140px;
       text-align: center;
-      color: var(--mdc-theme-on-secondary);
-      background: var(--secondary);
+      color: var(--oscd-on-secondary);
+      background: var(--oscd-secondary);
       --mdc-icon-button-size: 100px;
       --mdc-icon-size: 100px;
       --mdc-ripple-color: rgba(0, 0, 0, 0);

@@ -48,9 +48,13 @@ export class OscdMenuTabs extends LitElement {
   }
 
   static styles = css`
+    /* Bind MWC tab component tokens here. Do not use global --mdc-theme-*:
+     * plugins treat --mdc-theme-on-primary as --oscd-base2. */
     mwc-tab {
-      background-color: var(--primary);
-      --mdc-theme-primary: var(--mdc-theme-on-primary);
+      background-color: var(--oscd-primary);
+      --mdc-tab-text-label-color-default: var(--oscd-on-primary);
+      --mdc-tab-color-default: var(--oscd-on-primary);
+      --mdc-theme-primary: var(--oscd-nav-active);
     }
   `
 
