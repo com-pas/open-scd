@@ -1,61 +1,93 @@
 import { html, TemplateResult } from 'lit-element';
 import { Settings } from '@compas-oscd/core';
 
+/**
+ * Apply the current light/dark setting and return the theme stylesheet.
+ *
+ * Customize only via --oscd-theme-* in customer-branding.css. This function
+ * maps those overrides onto --oscd-* tokens used by OpenSCD and plugins.
+ *
+ * Keep this signature: other forks may override getTheme(theme).
+ */
 export function getTheme(theme: Settings['theme']): TemplateResult {
-  document.body.style.cssText = bodyStyles[theme];
+  // color-scheme on <html> drives every light-dark() value below.
+  document.documentElement.style.colorScheme = theme;
+
+  // <body> is outside the oscd-settings shadow tree, so it cannot use --oscd-*.
+  // Set --oscd-theme-body-bg to override independently of --oscd-theme-base2.
+  document.body.style.background =
+    'var(--oscd-theme-body-bg, var(--oscd-theme-base2, light-dark(#eee8d5, #073642)))';
+
   return html`
-    ${themes[theme]}
     <style>
+      /*
+       * Token layers:
+       *   --oscd-theme-*     customer overrides (customer-branding.css)
+       *   --oscd-*           resolved tokens for OpenSCD and plugins
+       *   --mdc-* / --md-*   Material mappings; do not set these
+       *   --primary, --base03, ...  deprecated aliases; do not use in new code
+       */
       * {
-        --primary: var(--cyan);
-        --secondary: var(--violet);
-        --mdc-theme-primary: var(--primary);
-        --mdc-theme-secondary: var(--secondary);
-        --mdc-theme-background: var(--base3);
-        --mdc-theme-surface: var(--base3);
-        --mdc-theme-on-primary: var(--base2);
-        --mdc-theme-on-secondary: var(--base2);
-        --mdc-theme-on-background: var(--base00);
-        --mdc-theme-on-surface: var(--base00);
-        --mdc-theme-text-primary-on-background: var(--base01);
-        --mdc-theme-text-secondary-on-background: var(--base00);
-        --mdc-theme-text-icon-on-background: var(--base00);
-        --mdc-theme-error: var(--red);
+        /* Solarized palette. Dark mode inverts the base scale.
+         * https://ethanschoonover.com/solarized/ */
+        --oscd-base03: var(--oscd-theme-base03, light-dark(#002b36, #fdf6e3));
+        --oscd-base02: var(--oscd-theme-base02, light-dark(#073642, #eee8d5));
+        --oscd-base01: var(--oscd-theme-base01, light-dark(#586e75, #93a1a1));
+        --oscd-base00: var(--oscd-theme-base00, light-dark(#657b83, #839496));
+        --oscd-base0: var(--oscd-theme-base0, light-dark(#839496, #657b83));
+        --oscd-base1: var(--oscd-theme-base1, light-dark(#93a1a1, #586e75));
+        --oscd-base2: var(--oscd-theme-base2, light-dark(#eee8d5, #073642));
+        --oscd-base3: var(--oscd-theme-base3, light-dark(#fdf6e3, #002b36));
+        --oscd-yellow: var(--oscd-theme-yellow, #b58900);
+        --oscd-orange: var(--oscd-theme-orange, #cb4b16);
+        --oscd-red: var(--oscd-theme-red, #dc322f);
+        --oscd-magenta: var(--oscd-theme-magenta, #d33682);
+        --oscd-violet: var(--oscd-theme-violet, #6c71c4);
+        --oscd-blue: var(--oscd-theme-blue, #268bd2);
+        --oscd-cyan: var(--oscd-theme-cyan, #2aa198);
+        --oscd-green: var(--oscd-theme-green, #859900);
 
-        --mdc-button-disabled-ink-color: var(--base1);
-
-        --mdc-drawer-heading-ink-color: var(--base00);
-
-        --mdc-text-field-fill-color: var(--base2);
-        --mdc-text-field-disabled-fill-color: var(--base3);
-        --mdc-text-field-ink-color: var(--base00);
-        --mdc-text-field-label-ink-color: var(--base00);
-
-        --mdc-select-fill-color: var(--base2);
-        --mdc-select-disabled-fill-color: var(--base3);
-        --mdc-select-ink-color: var(--base00);
-
-        --mdc-dialog-heading-ink-color: var(--base00);
-
-        --mdc-icon-font: 'Material Icons Outlined';
-
-        --oscd-primary: var(--oscd-theme-primary, var(--cyan));
-        --oscd-secondary: var(--oscd-theme-secondary, var(--violet));
-        --oscd-error: var(--oscd-theme-error, var(--red));
-
-        --oscd-base03: var(--oscd-theme-base03, var(--base03));
-        --oscd-base02: var(--oscd-theme-base02, var(--base02));
-        --oscd-base01: var(--oscd-theme-base01, var(--base01));
-        --oscd-base00: var(--oscd-theme-base00, var(--base00));
-        --oscd-base0: var(--oscd-theme-base0, var(--base0));
-        --oscd-base1: var(--oscd-theme-base1, var(--base1));
-        --oscd-base2: var(--oscd-theme-base2, var(--base2));
-        --oscd-base3: var(--oscd-theme-base3, var(--base3));
+        /* Semantic tokens */
+        --oscd-primary: var(--oscd-theme-primary, var(--oscd-cyan));
+        --oscd-secondary: var(--oscd-theme-secondary, var(--oscd-violet));
+        --oscd-error: var(--oscd-theme-error, var(--oscd-red));
 
         --oscd-text-font: var(--oscd-theme-text-font, 'Roboto');
         --oscd-icon-font: var(--oscd-theme-icon-font, 'Material Icons');
 
-        /* Fallbacks for Material Design variables */
+        /* Material Web / MWC mappings used by OpenSCD. Plugins should consume --oscd-*. */
+        --mdc-theme-primary: var(--oscd-primary);
+        --mdc-theme-secondary: var(--oscd-secondary);
+        --mdc-theme-background: var(--oscd-base3);
+        --mdc-theme-surface: var(--oscd-base3);
+        --mdc-theme-on-primary: var(--oscd-base2);
+        --mdc-theme-on-secondary: var(--oscd-base2);
+        --mdc-theme-on-background: var(--oscd-base00);
+        --mdc-theme-on-surface: var(--oscd-base00);
+        --mdc-theme-text-primary-on-background: var(--oscd-base01);
+        --mdc-theme-text-secondary-on-background: var(--oscd-base00);
+        --mdc-theme-text-icon-on-background: var(--oscd-base00);
+        --mdc-theme-error: var(--oscd-error);
+
+        --mdc-button-disabled-ink-color: var(--oscd-base1);
+
+        --mdc-drawer-heading-ink-color: var(--oscd-base00);
+
+        --mdc-text-field-fill-color: var(--oscd-base2);
+        --mdc-text-field-disabled-fill-color: var(--oscd-base3);
+        --mdc-text-field-ink-color: var(--oscd-base00);
+        --mdc-text-field-label-ink-color: var(--oscd-base00);
+
+        --mdc-select-fill-color: var(--oscd-base2);
+        --mdc-select-disabled-fill-color: var(--oscd-base3);
+        --mdc-select-ink-color: var(--oscd-base00);
+
+        --mdc-dialog-heading-ink-color: var(--oscd-base00);
+
+        /* Unset --oscd-theme-icon-font keeps the historical MWC outlined default. */
+        --mdc-icon-font: var(--oscd-theme-icon-font, 'Material Icons Outlined');
+
+        /* Material Design 3 token mappings */
         --md-sys-color-primary: var(--oscd-primary);
         --md-sys-color-on-primary: var(--oscd-base3);
         --md-sys-color-secondary: var(--oscd-secondary);
@@ -73,15 +105,35 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
         --md-sys-color-scrim: #000000;
         --md-sys-color-error: var(--oscd-error);
         --md-sys-color-on-error: var(--oscd-base3);
-        --md-icon-button-disabled-icon-color: var(--oscd-base3);
         /* --md-menu-item-selected-label-text-color: var(--oscd-base01); */
         --md-icon-button-disabled-icon-color: var(--oscd-base3);
 
-        /* textfield */ disabled-label-text-color
+        /* textfield */
         --md-filled-text-field-container-color: var(--oscd-base2);
         --md-filled-text-field-disabled-container-color: var(--oscd-base3);
         --md-filled-text-field-disabled-input-text-color: var(--oscd-base00);
         --md-filled-text-field-disabled-label-text-color: var(--oscd-base00);
+
+        /* Deprecated aliases. Do not use in new code; they will be removed in a future release. */
+        --primary: var(--oscd-primary);
+        --secondary: var(--oscd-secondary);
+
+        --base03: var(--oscd-base03);
+        --base02: var(--oscd-base02);
+        --base01: var(--oscd-base01);
+        --base00: var(--oscd-base00);
+        --base0: var(--oscd-base0);
+        --base1: var(--oscd-base1);
+        --base2: var(--oscd-base2);
+        --base3: var(--oscd-base3);
+        --yellow: var(--oscd-yellow);
+        --orange: var(--oscd-orange);
+        --red: var(--oscd-red);
+        --magenta: var(--oscd-magenta);
+        --violet: var(--oscd-violet);
+        --blue: var(--oscd-blue);
+        --cyan: var(--oscd-cyan);
+        --green: var(--oscd-green);
       }
 
       .mdc-drawer span.mdc-drawer__title {
@@ -99,55 +151,3 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
     </style>
   `;
 }
-
-const bodyStyles: Record<Settings['theme'], string> = {
-  dark: 'background: #073642',
-  light: 'background: #eee8d5',
-};
-
-const themes: Record<Settings['theme'], TemplateResult> = {
-  light: html`
-    <style>
-      * {
-        --base03: #002b36;
-        --base02: #073642;
-        --base01: #586e75;
-        --base00: #657b83;
-        --base0: #839496;
-        --base1: #93a1a1;
-        --base2: #eee8d5;
-        --base3: #fdf6e3;
-        --yellow: #b58900;
-        --orange: #cb4b16;
-        --red: #dc322f;
-        --magenta: #d33682;
-        --violet: #6c71c4;
-        --blue: #268bd2;
-        --cyan: #2aa198;
-        --green: #859900;
-      }
-    </style>
-  `,
-  dark: html`
-    <style>
-      * {
-        --base03: #fdf6e3;
-        --base02: #eee8d5;
-        --base01: #93a1a1;
-        --base00: #839496;
-        --base0: #657b83;
-        --base1: #586e75;
-        --base2: #073642;
-        --base3: #002b36;
-        --yellow: #b58900;
-        --orange: #cb4b16;
-        --red: #dc322f;
-        --magenta: #d33682;
-        --violet: #6c71c4;
-        --blue: #268bd2;
-        --cyan: #2aa198;
-        --green: #859900;
-      }
-    </style>
-  `,
-};

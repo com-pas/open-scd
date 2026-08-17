@@ -1,0 +1,12 @@
+/*
+ * Customer branding overrides.
+ *
+ * Set only --oscd-theme-* here. OpenSCD maps them to --oscd-*, --mdc-*, and --md-*.
+ * Unset tokens keep the Solarized defaults from themes.ts.
+ * Use light-dark(<light>, <dark>) so the app light/dark setting is respected.
+ *
+ * --oscd-theme-body-bg is independent of --oscd-theme-base2 (page background vs UI surfaces).
+ */
+* {
+
+}
