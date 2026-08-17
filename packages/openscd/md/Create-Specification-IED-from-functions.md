@@ -24,7 +24,7 @@ The basic idea behind this algorithm is that function type elements are used to 
 
 !!! The input for the automated IED creation is the function structure in the substation thus make sure the SCL file has:
 
-- [existing function(s) in the Substation section](https://github.com/openscd/open-scd/wiki/Function)
+- [existing function(s) in the Substation section](https://github.com/com-pas/compas-open-scd/wiki/Function)
 
 To use this automated specification IED creation
 

@@ -7,7 +7,7 @@ To create a new `Substation` element within the SCL root element
 - Navigate to the **Substation** editor
 - Click on the **Add mode** button on the upper right of the editor pane
 - Fill in all required value
-- Chose if the [substation structure shall be created automatically](https://github.com/openscd/open-scd/wiki/Guess-substation-structure)
+- Chose if the [substation structure shall be created automatically](https://github.com/com-pas/compas-open-scd/wiki/Guess-substation-structure)
 - Click on **Add**
 
 The create wizard allows to set

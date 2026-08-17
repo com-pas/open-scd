@@ -22,6 +22,6 @@ Reports need to be configured in three steps and depending on the strategy - dyn
 
 **Configuring Reports with OpenSCD**
 
-1. [Create Report Control Blocks and its DataSet](https://github.com/openscd/open-scd/wiki/Create-Report-Control-Blocks)
-2. [Edit Report Control Blocks and its DataSets](https://github.com/openscd/open-scd/wiki/Edit-Report-Control-Blocks)
-3. [Manage ClientLN configuration](https://github.com/openscd/open-scd/wiki/ClientLN)
+1. [Create Report Control Blocks and its DataSet](https://github.com/com-pas/compas-open-scd/wiki/Create-Report-Control-Blocks)
+2. [Edit Report Control Blocks and its DataSets](https://github.com/com-pas/compas-open-scd/wiki/Edit-Report-Control-Blocks)
+3. [Manage ClientLN configuration](https://github.com/com-pas/compas-open-scd/wiki/ClientLN)

@@ -1,7 +1,7 @@
 {
   "name": "@compas-oscd/addons",
   "version": "0.34.0",
-  "repository": "https://github.com/openscd/open-scd.git",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/addons",
   "description": "Official Addons for OpenSCD",
   "keywords": [
@@ -130,6 +130,6 @@
         "hidden": true
       }
     ],
-    "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
+    "commitUrlFormat": "https://github.com/com-pas/open-scd/commits/{{hash}}"
   }
 }

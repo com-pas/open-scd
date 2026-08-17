@@ -1,17 +1,21 @@
 # OpenSCD Core
 ## \<open-scd>
 
+This package is published to npm as `@compas-oscd/core` and is maintained in the `com-pas/open-scd` repository.
+
+It provides the OpenSCD core editor foundation used by the CoMPAS-specific application stack. `compas-open-scd` consumes these OpenSCD packages from npm rather than sharing a forked source tree.
+
 ## Installation
 
 ```sh
-npm i open-scd
+npm i @compas-oscd/core
 ```
 
 ## Usage
 
 ```html
 <script type="module">
-  import '@openscd/core';
+  import '@compas-oscd/core';
 </script>
 
 <open-scd></open-scd>

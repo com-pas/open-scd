@@ -13,18 +13,18 @@ This is why this process is so hard for beginners to wrap their mind around. To 
 
 The template database is nothing else than a pre-define data model. Here a lot and a growing number of logical node classes are defined with its proper references to `DOType`, `DAType` and `EnumType`.
 
-You can see, if OpenSCD does have a template for a logical node class you need in the **Add LNodeType** wizard (_Pre-defined lnClasses from templates_). For more detail please refer to [start from templates](https://github.com/openscd/open-scd/wiki/Start-from-template)
+You can see, if OpenSCD does have a template for a logical node class you need in the **Add LNodeType** wizard (_Pre-defined lnClasses from templates_). For more detail please refer to [start from templates](https://github.com/com-pas/compas-open-scd/wiki/Start-from-template)
 
-If this option is disabled you have to start the process [from scratch](https://github.com/openscd/open-scd/wiki/Start-from-scratch)
+If this option is disabled you have to start the process [from scratch](https://github.com/com-pas/compas-open-scd/wiki/Start-from-scratch)
 
 In addition to that you can read/manipulate any element and their attributes using the wizards for
 
-- [LNodeType](https://github.com/openscd/open-scd/wiki/Logical-node-type-LNodeType)
-- [DO](https://github.com/openscd/open-scd/wiki/Logical-node-type-child-DO)
-- [DOType](https://github.com/openscd/open-scd/wiki/Data-object-type-DOType)
-- [SDO](https://github.com/openscd/open-scd/wiki/Data-object-type-child-SDO)
-- [DA](https://github.com/openscd/open-scd/wiki/Data-object-type-child-DA)
-- [DAType](https://github.com/openscd/open-scd/wiki/Data-attribute-type-DAType)
-- [BDA](https://github.com/openscd/open-scd/wiki/Data-attribute-type-child-BDA)
-- [EnumType](https://github.com/openscd/open-scd/wiki/Enumeration-EnumType)
-- [EnumVal](https://github.com/openscd/open-scd/wiki/Enumeration-EnumVal)
+- [LNodeType](https://github.com/com-pas/compas-open-scd/wiki/Logical-node-type-LNodeType)
+- [DO](https://github.com/com-pas/compas-open-scd/wiki/Logical-node-type-child-DO)
+- [DOType](https://github.com/com-pas/compas-open-scd/wiki/Data-object-type-DOType)
+- [SDO](https://github.com/com-pas/compas-open-scd/wiki/Data-object-type-child-SDO)
+- [DA](https://github.com/com-pas/compas-open-scd/wiki/Data-object-type-child-DA)
+- [DAType](https://github.com/com-pas/compas-open-scd/wiki/Data-attribute-type-DAType)
+- [BDA](https://github.com/com-pas/compas-open-scd/wiki/Data-attribute-type-child-BDA)
+- [EnumType](https://github.com/com-pas/compas-open-scd/wiki/Enumeration-EnumType)
+- [EnumVal](https://github.com/com-pas/compas-open-scd/wiki/Enumeration-EnumVal)

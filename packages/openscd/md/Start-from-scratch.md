@@ -65,7 +65,7 @@ Still the validator will complain. The `cdc` attribute is empty but required wit
 2. Type in _ENS_ into the **cdc** field
 3. Click **Save**
 
-Nearly done. Now we need to define a `DOType` which must be a `DPC` common data class. To reduce complexity you can a [status-only DPC type](https://github.com/openscd/open-scd/wiki/Create-status-only-DPC). For the full experience create a [sbo-with-enhanced-security DPC](https://github.com/openscd/open-scd/wiki/Create-sbw-with-enchanced-security-DPC)
+Nearly done. Now we need to define a `DOType` which must be a `DPC` common data class. To reduce complexity you can a [status-only DPC type](https://github.com/com-pas/compas-open-scd/wiki/Create-status-only-DPC). For the full experience create a [sbo-with-enhanced-security DPC](https://github.com/com-pas/compas-open-scd/wiki/Create-sbw-with-enchanced-security-DPC)
 
 Finally we are in a stage to create the `LNodeType` with `lnClass` `CSWI`.
 

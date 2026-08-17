@@ -26,7 +26,7 @@ To configure an `ConnectedAP` element or to be more precise its `Address` child 
 2. Click in the **ConnectedAP** you want to edit
 3. Click on the **edit** action button
 
-> NOTE: For the various types of setting please refer to IEC 61850-6. The kind of types are summarized in [Communication basics](https://github.com/openscd/open-scd/wiki/Communication-Basics)
+> NOTE: For the various types of setting please refer to IEC 61850-6. The kind of types are summarized in [Communication basics](https://github.com/com-pas/compas-open-scd/wiki/Communication-Basics)
 
 &nbsp;
 

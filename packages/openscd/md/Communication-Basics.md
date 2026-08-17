@@ -78,5 +78,5 @@ A very typical `Communication` section might look like this:
 
 In OpenSCD you can configure the
 
-- [SubNetwork](https://github.com/openscd/open-scd/wiki/Subnetwork)
-- [ConnectedAP](https://github.com/openscd/open-scd/wiki/ConnectedAP)
+- [SubNetwork](https://github.com/com-pas/compas-open-scd/wiki/Subnetwork)
+- [ConnectedAP](https://github.com/com-pas/compas-open-scd/wiki/ConnectedAP)

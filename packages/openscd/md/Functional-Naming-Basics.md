@@ -63,4 +63,4 @@ Can you guess what it is? Would you be able to if these have been directly refer
 > NOTE: The element logical device `LDevice` in the IED has a similar purpose as the function structure in the substation section. It has been designed to structure logical nodes to groups. That is why the function structure can be transformed into logical devices! OpenSCD allows you to do so using [Create SPECIFICATION IED]()
 
 **Create function structure in OpenSCD**
-[Manipulate function type elements with OpenSCD](https://github.com/openscd/open-scd/wiki/Function)
+[Manipulate function type elements with OpenSCD](https://github.com/com-pas/compas-open-scd/wiki/Function)
