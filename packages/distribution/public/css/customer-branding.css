@@ -8,8 +8,14 @@
  *
  * --oscd-theme-body-bg is independent of --oscd-theme-base2 (page background vs UI surfaces).
  *
+ * --oscd-theme-paper / --oscd-theme-ink are the lightest ground and darkest mark.
+ * Their values swap in dark mode; they are not always #fff / #000.
+ *
+ * --oscd-theme-branding is an optional brand id for plugin @container style()
+ * quickfixes, e.g. --oscd-theme-branding: Bearingpoint;
+ *
  * Contrast pairs: primary/secondary/error do not invert by default.
- * Set the matching --oscd-theme-on-* ink independently, e.g.:
+ * Set the matching --oscd-theme-on-* independently, e.g.:
  *
  *   --oscd-theme-primary: #004d40;
  *   --oscd-theme-on-primary: #ffffff;
@@ -19,14 +25,23 @@
  *   --oscd-theme-on-primary: light-dark(#ffffff, #00332e);
  *
  * --oscd-theme-nav-active is the active editor-tab ink; it defaults to on-primary.
+ *
+ * See docs/how-to/customer-branding.md and docs/how-to/theme-tokens.md.
  */
 * {
+  /* --oscd-theme-branding: Bearingpoint; */
   /* --oscd-theme-body-bg: light-dark(#ffffff, #000000); */
   /* --oscd-theme-primary: #2aa198; */
   /* --oscd-theme-on-primary: light-dark(#eee8d5, #073642); */
   /* --oscd-theme-nav-active: var(--oscd-theme-on-primary); */
   /* --oscd-theme-secondary: #6c71c4; */
   /* --oscd-theme-on-secondary: light-dark(#eee8d5, #073642); */
-  /* --oscd-theme-error: #dc322f; */
-  /* --oscd-theme-on-error: light-dark(#fdf6e3, #002b36); */
+  /* --oscd-theme-error: #ff3d47; */
+  /* --oscd-theme-on-error: #073642; */
+  /* --oscd-theme-warning: #ffcc17; */
+  /* --oscd-theme-on-warning: #073642; */
+  /* --oscd-theme-success: #239c5b; */
+  /* --oscd-theme-on-success: #073642; */
+  /* --oscd-theme-paper: light-dark(#ffffff, #000000); */
+  /* --oscd-theme-ink: light-dark(#000000, #ffffff); */
 }
