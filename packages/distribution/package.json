@@ -42,7 +42,7 @@
     "preview": "pnpm run build && vite"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.1.0",
+    "@commitlint/cli": "21.2.0",
     "@commitlint/config-conventional": "21.1.0",
     "@open-wc/eslint-config": "7.0.0",
     "@open-wc/semantic-dom-diff": "0.19.9",
