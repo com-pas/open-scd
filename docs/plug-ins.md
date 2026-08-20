@@ -23,7 +23,7 @@ implemented in these plugins.
 
 ### IED
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/IED.js
@@ -31,7 +31,7 @@ implemented in these plugins.
 
 ### Substation
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/Substation.js
@@ -39,7 +39,7 @@ implemented in these plugins.
 
 ### Single Line Diagram
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/SingleLineDiagram.js
@@ -47,7 +47,7 @@ implemented in these plugins.
 
 ### Subscriber Message Binding (GOOSE)
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/GooseSubscriberMessageBinding.js
@@ -55,7 +55,7 @@ implemented in these plugins.
 
 ### Subscriber Data Binding (GOOSE)
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/GooseSubscriberDataBinding.js
@@ -63,7 +63,7 @@ implemented in these plugins.
 
 ### Subscriber Message Binding (SMV)
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/SMVSubscriberMessageBinding.js
@@ -71,7 +71,7 @@ implemented in these plugins.
 
 ### Subscriber Data Binding (SMV)
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/SMVSubscriberDataBinding.js
@@ -79,7 +79,7 @@ implemented in these plugins.
 
 ### Communication
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/Communication.js
@@ -87,7 +87,7 @@ implemented in these plugins.
 
 ### 104
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/Protocol104.js
@@ -95,7 +95,7 @@ implemented in these plugins.
 
 ### Templates
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/Templates.js
@@ -111,7 +111,7 @@ implemented in these plugins.
 
 ### Cleanup
 
-> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Editor</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/editors/Cleanup.js
@@ -119,7 +119,7 @@ implemented in these plugins.
 
 ### Open project
 
-> <kbd>✅ Official</kbd> | <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/OpenProject.js
@@ -127,7 +127,7 @@ implemented in these plugins.
 
 ### New project
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/NewProject.js
@@ -135,7 +135,7 @@ implemented in these plugins.
 
 ### Save project
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/SaveProject.js
@@ -143,7 +143,7 @@ implemented in these plugins.
 
 ### Validate Schema
 
-> <kbd>✅ Official</kbd> | <kbd>Validator</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Validator</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/validators/ValidateSchema.js
@@ -151,7 +151,7 @@ implemented in these plugins.
 
 ### Validate Templates
 
-> <kbd>✅ Official</kbd> | <kbd>Validator</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Validator</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/validators/ValidateTemplates.js
@@ -159,7 +159,7 @@ implemented in these plugins.
 
 ### Import IEDs
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/ImportIEDs.js
@@ -167,7 +167,7 @@ implemented in these plugins.
 
 ### Create Virtual IED
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/VirtualTemplateIED.js
@@ -175,7 +175,7 @@ implemented in these plugins.
 
 ### Subscriber Update
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/SubscriberInfo.js
@@ -183,7 +183,7 @@ implemented in these plugins.
 
 ### Merge Project
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/Merge.js
@@ -191,7 +191,7 @@ implemented in these plugins.
 
 ### Update Substation
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/UpdateSubstation.js
@@ -199,7 +199,7 @@ implemented in these plugins.
 
 ### Compare IED
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/CompareIED.js
@@ -207,7 +207,7 @@ implemented in these plugins.
 
 ### Export Communication Section
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/ExportCommunication.js
@@ -215,7 +215,7 @@ implemented in these plugins.
 
 ### Help
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/Help.js
@@ -223,7 +223,7 @@ implemented in these plugins.
 
 ### Show SCL History
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/SclHistory.js
@@ -268,7 +268,7 @@ logic or vendor specific private SCL extensions.
 
 ### Update desc (ABB)
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/UpdateDescriptionABB.js
@@ -276,7 +276,7 @@ logic or vendor specific private SCL extensions.
 
 ### Update desc (SEL)
 
-> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/compas-open-scd/)
+> <kbd>✅ Official</kbd> | <kbd>Menu</kbd> | by [OpenSCD](https://github.com/openscd) | [Repository](https://github.com/com-pas/open-scd/)
 > 
 > ```
 > https://openscd.github.io/plugins/src/menu/UpdateDescriptionSEL.js

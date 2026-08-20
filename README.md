@@ -27,7 +27,6 @@ This monorepo contains the OpenSCD packages that are published and consumed as p
 - [`packages/plugins`](packages/plugins) contains the official plug-ins distributed with OpenSCD. See [packages/plugins/README.md](packages/plugins/README.md).
 - [`packages/distribution`](packages/distribution) contains the local distribution app used to run the project locally and validate the built frontend. See [packages/distribution/README.md](packages/distribution/README.md).
 - [`packages/forms`](packages/forms) and [`packages/wizards`](packages/wizards) provide supporting form and wizard infrastructure used by the app and plugins.
-- [`packages/addons`](packages/addons) contains reusable OpenSCD addon functionality.
 
 ## Running locally
 
@@ -47,10 +46,6 @@ This starts the local development server for the OpenSCD distribution app. The p
 ## Installation
 
 In order to install OpenSCD on your local device (only for you), simply visit [↗ openscd.github.io](https://openscd.github.io), click the "Install OpenSCD" button in your address bar (Chrome or Edge on desktop) or click the "Add OpenSCD to home screen" notification in any mobile browser.
-
-In order to install your own instance of OpenSCD on your own webserver (e.g. on your company intranet), simply download [our latest release](https://github.com/com-pas/open-scd/releases/latest) (`open-scd.zip` or `open-scd.tar.gz`) and extract the archive contents into the "webroot" directory of your web server.
-
-If you don't have your own webserver but still want your own version of OpenSCD hosted locally (e.g. on a system without an internet connection), you can [use a browser plugin that acts as a local webserver](https://github.com/com-pas/compas-open-scd/wiki/Install-OpenSCD#offline) (only for you) instead.
 
 ## Relationship with CoMPAS OpenSCD
 
