@@ -36,7 +36,7 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
         --oscd-gray-20: var(--oscd-theme-gray-20, #eee8d5);
         --oscd-gray-30: var(--oscd-theme-gray-30, #93a1a1);
         --oscd-gray-40: var(--oscd-theme-gray-40, #839496);
-        --oscd-gray-50: var(--oscd-theme-gray-50, color-mix(in oklab, #839496 50%, #657b83));  /* #74888c */
+        --oscd-gray-50: var(--oscd-theme-gray-50, color-mix(in oklab, #839496 50%, #657b83));
         --oscd-gray-60: var(--oscd-theme-gray-60, #657b83);
         --oscd-gray-70: var(--oscd-theme-gray-70, #586e75);
         --oscd-gray-80: var(--oscd-theme-gray-80, #073642);

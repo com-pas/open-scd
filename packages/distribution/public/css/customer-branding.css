@@ -20,9 +20,8 @@
  * (i) --oscd-theme-nav-active is the active editor-tab ink; it defaults to on-primary.
  *
  * See:
- *   * docs/how-to/customer-branding.md and docs/how-to/customer-branding.md
- *   * docs/how-to/customer-branding.md and docs/how-to/plugin-theming.md
- *   * docs/how-to/customer-branding.md and docs/how-to/theme-tokens.md.
+ *   docs/how-to/customer-branding.md
+ *   docs/how-to/plugin-theming.md
  */
 :root {
 /*   SIMPLE EXAMPLE CONFIG: */
