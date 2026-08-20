@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/com-pas/open-scd/compare/plugins@v0.1.3...plugins@v0.1.4) (2026-08-20)
+
+
+### 📚 Documentation
+
+* update README files to clarify package relationships and npm usage ([#168](https://github.com/com-pas/open-scd/issues/168)) ([786ced0](https://github.com/com-pas/open-scd/commit/786ced0bb3864cb82025697a2f64446ec531f888))
+
 ## [0.1.3](https://github.com/com-pas/open-scd/compare/plugins@v0.1.2...plugins@v0.1.3) (2026-08-07)
 
 
