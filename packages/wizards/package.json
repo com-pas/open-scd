@@ -1,7 +1,7 @@
 {
   "name": "@compas-oscd/wizards",
   "version": "0.0.1",
-  "repository": "https://github.com/openscd/open-scd.git",
+  "repository": "https://github.com/com-pas/open-scd.git",
   "directory": "packages/wizards",
   "description": "Official Wizards for OpenSCD",
   "keywords": [
@@ -124,6 +124,6 @@
         "hidden": true
       }
     ],
-    "commitUrlFormat": "https://github.com/openscd/open-scd/commits/{{hash}}"
+    "commitUrlFormat": "https://github.com/com-pas/open-scd/commits/{{hash}}"
   }
 }

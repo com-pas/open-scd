@@ -9,18 +9,18 @@ If you say "hi" there we will be more than happy to help you find your way aroun
 
 You don't need to be a software developer to contribute to this effort!
 Apart from contributions in the form of code we are also very thankful for
-- [bug reports](https://github.com/openscd/open-scd/issues?q=is%3Aopen+type%3ABug)
+- [bug reports](https://github.com/com-pas/open-scd/issues?q=is%3Aopen+type%3ABug)
   alerting us of errors in the `open-scd` component or its `foundation` library
   functions,
-- [ideas for enhancements](https://github.com/openscd/open-scd/issues?q=is%3Aopen+type%3AFeature)
+- [ideas for enhancements](https://github.com/com-pas/open-scd/issues?q=is%3Aopen+type%3AFeature)
   to `open-scd` or its `foundation` library,
-- [improvements to our wiki](https://github.com/openscd/open-scd/wiki)
+- [improvements to our wiki](https://github.com/com-pas/compas-open-scd/wiki)
   which contains knowledge about how to use both OpenSCD and SCL in general.
 
 ## Code Contributions
 
 > [!NOTE]
-> The following is a set of guidelines for contributing to [OpenSCD](https://github.com/openscd/open-scd#readme), not a list of strict rules.
+> The following is a set of guidelines for contributing to [OpenSCD](https://github.com/com-pas/open-scd#readme), not a list of strict rules.
 > Use your best judgment and feel free to propose changes to this document in a pull request.
 
 ### Repo Setup

@@ -16,13 +16,13 @@ A configuration of the publisher has three basics steps:
 
 **Publishing: Configuring Sampled Values with OpenSCD**
 
-1. [Create Sampled Value Control Blocks and its DataSet](https://github.com/openscd/open-scd/wiki/Create-Sampled-Value-Control-Blocks)
-2. [Edit Sampled Value Control Blocks and its DataSets](https://github.com/openscd/open-scd/wiki/Edit-Sampled-Value-Control-Blocks)
+1. [Create Sampled Value Control Blocks and its DataSet](https://github.com/com-pas/compas-open-scd/wiki/Create-Sampled-Value-Control-Blocks)
+2. [Edit Sampled Value Control Blocks and its DataSets](https://github.com/com-pas/compas-open-scd/wiki/Edit-Sampled-Value-Control-Blocks)
 
 **Subscription: Basics**
 
-See [Subscription basics](https://github.com/openscd/open-scd/wiki/Subscriber-basics)
+See [Subscription basics](https://github.com/com-pas/compas-open-scd/wiki/Subscriber-basics)
 
 **Subscription with OpenSCD**
 
-See [Subscription complete Sampled Value Stream](https://github.com/openscd/open-scd/wiki/Subscribe-complete-SMV)
+See [Subscription complete Sampled Value Stream](https://github.com/com-pas/compas-open-scd/wiki/Subscribe-complete-SMV)

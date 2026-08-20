@@ -56,7 +56,7 @@ async function getLinkedPages(path: string[]): Promise<Directory> {
   const page = path[path.length - 1].replace(/ /g, '-');
   const res = await fetch(`md/${page}.md`);
   const md = await res.text();
-  const MD_LINK_REPLACEMENT = `<a style="cursor: help; color: var(--mdc-theme-primary)"  href="https://github.com/openscd/open-scd/wiki/$2" target="_blank" >$1</a>`;
+  const MD_LINK_REPLACEMENT = `<a style="cursor: help; color: var(--mdc-theme-primary)"  href="https://github.com/com-pas/compas-open-scd/wiki/$2" target="_blank" >$1</a>`;
   const unlinkedMd = md.replace(
     new RegExp(
       `\\[${MD_LINK_TITLE_PATTERN}\\]\\(${GITHUB_WIKI_LINK_PATTERN.source}\\)`,

@@ -23,7 +23,7 @@ OpenSCD will over three type of basic subscription plugins for `GOOSE` and three
 
 **Connecting the complete GOOSE/SMV**
 
-> NOTE: See [subscribe to GOOSE](https://github.com/openscd/open-scd/wiki/Subscribe-complete-GOOSE) or [subscribe to sampled value stream](https://github.com/openscd/open-scd/wiki/Subscribe-complete-SMV) to see how to do this with OpenSCD
+> NOTE: See [subscribe to GOOSE](https://github.com/com-pas/compas-open-scd/wiki/Subscribe-complete-GOOSE) or [subscribe to sampled value stream](https://github.com/com-pas/compas-open-scd/wiki/Subscribe-complete-SMV) to see how to do this with OpenSCD
 
 In this case OpenSCD writes for every data point the `GOOSE`/`SMV` is carrying one `ExtRef` in the receiving IED. It does this in the first logical device in the logical node `LN0`. Let's see an example for `GOOSE` further down. There are two `ExtRef` each for one of the `FCDA` element in the `DataSet` connected to the GOOSE control block or `GSEControl`. `FCDA` share the date that defines the reference to the data point in the data model: `ldInst`, `prefix`, `lnClass`, `lnInst`, `doName`, `daName`. In addition the sending IED name is written to `ExtRef`. The rest of the attributes are identifying the control block the `FCDA`s are connected with/are carried by.
 

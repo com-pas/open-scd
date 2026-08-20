@@ -1,6 +1,6 @@
 &nbsp;
 
-Logical node references are not visible so long the function structure is filtered. (see [Function](https://github.com/openscd/open-scd/wiki/Function) for more detail). When the function structure is visible logical node references are renders using the first letter of the logical node class e.g. **P** for protection or **C** for control. The element is an action icon. You can click on it and see what action can be performed (edit, duplicate, remove)
+Logical node references are not visible so long the function structure is filtered. (see [Function](https://github.com/com-pas/compas-open-scd/wiki/Function) for more detail). When the function structure is visible logical node references are renders using the first letter of the logical node class e.g. **P** for protection or **C** for control. The element is an action icon. You can click on it and see what action can be performed (edit, duplicate, remove)
 
 **Edit Logical Node reference**
 

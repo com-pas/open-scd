@@ -16,11 +16,11 @@ The configuration of GOOSE publishers is done in the SCL element `GSEControl` an
 
 **Publishing: Configuring GOOSEs with OpenSCD**
 
-1. [Create GOOSE Control Blocks and its DataSet](https://github.com/openscd/open-scd/wiki/Create-GOOSE-Control-Blocks)
-2. [Edit GOOSE Control Blocks and its DataSets](https://github.com/openscd/open-scd/wiki/Edit-GOOSE-Control-Blocks)
+1. [Create GOOSE Control Blocks and its DataSet](https://github.com/com-pas/compas-open-scd/wiki/Create-GOOSE-Control-Blocks)
+2. [Edit GOOSE Control Blocks and its DataSets](https://github.com/com-pas/compas-open-scd/wiki/Edit-GOOSE-Control-Blocks)
 
 **Subscription: Basics**
-See [Subscription basics](https://github.com/openscd/open-scd/wiki/Subscriber-basics)
+See [Subscription basics](https://github.com/com-pas/compas-open-scd/wiki/Subscriber-basics)
 
 **Subscription with OpenSCD**
-See [Subscription complete GOOSE](https://github.com/openscd/open-scd/wiki/Subscribe-complete-GOOSE)
+See [Subscription complete GOOSE](https://github.com/com-pas/compas-open-scd/wiki/Subscribe-complete-GOOSE)

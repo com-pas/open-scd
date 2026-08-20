@@ -1,6 +1,6 @@
 This editor plugin _Subscriber (GOOSE)_ allows to connect a complete GOOSE message to a subscriber IED. This means in detail that the plugin connects all the data within a GOOSE - the so-called `FCDA` - to a sink IED.
 
-> NOTE: For detail explanation what happens under the hood to the SCL file see [subscriber basics](https://github.com/openscd/open-scd/wiki/Subscriber-basics)
+> NOTE: For detail explanation what happens under the hood to the SCL file see [subscriber basics](https://github.com/com-pas/compas-open-scd/wiki/Subscriber-basics)
 
 There are two different views that allow you to work in your preferred way.
 
