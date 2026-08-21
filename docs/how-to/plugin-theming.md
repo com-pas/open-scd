@@ -7,11 +7,12 @@ Old-host workarounds and brand-id queries: [plugin-theming-advanced.md](./plugin
 
 ## Quick start
 
-Prefer the Solarized bases and the primary / secondary pairs. That is enough for surfaces, text, app-bar-like fills, and landing-style actions.
+**Prefer the [Solarized](https://ethanschoonover.com/solarized/) palette (`--oscd-base03` … `--oscd-base3`) together with `--oscd-primary` and `--oscd-secondary`.** That is the main set plugins should consume: surfaces and text from the [Solarized](https://ethanschoonover.com/solarized/) bases, brand fills from primary / secondary (and their `on-*` contrast tokens).
 
 | Use | Tokens | Description |
 |---|---|---|
-| Surfaces and body text | `--oscd-base03` … `--oscd-base3`, especially `--oscd-base00` | Solarized scale; inverts in dark mode. Main palette for plugins. |
+| Surfaces and body text | `--oscd-base03` … `--oscd-base3` | [Solarized](https://ethanschoonover.com/solarized/) scale; inverts in dark mode. Main palette for plugins. |
+| Accent colours | `--oscd-yellow`, `--oscd-orange`, `--oscd-red`, `--oscd-magenta`, `--oscd-violet`, `--oscd-blue`, `--oscd-cyan`, `--oscd-green` | [Solarized](https://ethanschoonover.com/solarized/) accents; stay the same in light and dark. |
 | Brand fill | `--oscd-primary`, `--oscd-secondary` | App-bar / accent fills. Default cyan / violet stay the same in light and dark. |
 | Text on that fill | `--oscd-on-primary`, `--oscd-on-secondary` | Contrast on primary / secondary. |
 | Brand on paper | `--oscd-primary-adaptive`, `--oscd-on-primary-adaptive` (same for secondary) | Use when a very dark or very light brand colour fails on black/white paper. Defaults equal the fixed primary pair. |
@@ -38,22 +39,22 @@ Do **not** use `--mdc-theme-*` or `--md-*` in new plugin code. `--mdc-theme-on-p
 | `--oscd-black` | mix of gray-90 and `#000` | Absolute black. | Fixed |
 | `--oscd-paper` | `light-dark(white, black)` | Lightest ground. | Light/Dark |
 | `--oscd-ink` | `light-dark(black, white)` | Darkest mark. | Light/Dark |
-| `--oscd-base03` | `light-dark(gray-90, gray-10)` | Solarized base03. | Light/Dark |
-| `--oscd-base02` | `light-dark(gray-80, gray-20)` | Solarized base02. | Light/Dark |
-| `--oscd-base01` | `light-dark(gray-70, gray-30)` | Solarized base01. | Light/Dark |
-| `--oscd-base00` | `light-dark(gray-60, gray-40)` | Solarized body text. | Light/Dark |
-| `--oscd-base0` | `light-dark(gray-40, gray-60)` | Solarized base0. | Light/Dark |
-| `--oscd-base1` | `light-dark(gray-30, gray-70)` | Solarized base1. | Light/Dark |
-| `--oscd-base2` | `light-dark(gray-20, gray-80)` | Solarized UI surface. | Light/Dark |
-| `--oscd-base3` | `light-dark(gray-10, gray-90)` | Solarized lightest/darkest surface. | Light/Dark |
-| `--oscd-yellow` | `#b58900` | Solarized yellow. | Fixed |
-| `--oscd-orange` | `#cb4b16` | Solarized orange. | Fixed |
-| `--oscd-red` | `#dc322f` | Solarized red. | Fixed |
-| `--oscd-magenta` | `#d33682` | Solarized magenta. | Fixed |
-| `--oscd-violet` | `#6c71c4` | Solarized violet. | Fixed |
-| `--oscd-blue` | `#268bd2` | Solarized blue. | Fixed |
-| `--oscd-cyan` | `#2aa198` | Solarized cyan. | Fixed |
-| `--oscd-green` | `#859900` | Solarized green. | Fixed |
+| `--oscd-base03` | `light-dark(gray-90, gray-10)` | [Solarized](https://ethanschoonover.com/solarized/) base03. | Light/Dark |
+| `--oscd-base02` | `light-dark(gray-80, gray-20)` | [Solarized](https://ethanschoonover.com/solarized/) base02. | Light/Dark |
+| `--oscd-base01` | `light-dark(gray-70, gray-30)` | [Solarized](https://ethanschoonover.com/solarized/) base01. | Light/Dark |
+| `--oscd-base00` | `light-dark(gray-60, gray-40)` | [Solarized](https://ethanschoonover.com/solarized/) body text. | Light/Dark |
+| `--oscd-base0` | `light-dark(gray-40, gray-60)` | [Solarized](https://ethanschoonover.com/solarized/) base0. | Light/Dark |
+| `--oscd-base1` | `light-dark(gray-30, gray-70)` | [Solarized](https://ethanschoonover.com/solarized/) base1. | Light/Dark |
+| `--oscd-base2` | `light-dark(gray-20, gray-80)` | [Solarized](https://ethanschoonover.com/solarized/) UI surface. | Light/Dark |
+| `--oscd-base3` | `light-dark(gray-10, gray-90)` | [Solarized](https://ethanschoonover.com/solarized/) lightest/darkest surface. | Light/Dark |
+| `--oscd-yellow` | `#b58900` | [Solarized](https://ethanschoonover.com/solarized/) yellow. | Fixed |
+| `--oscd-orange` | `#cb4b16` | [Solarized](https://ethanschoonover.com/solarized/) orange. | Fixed |
+| `--oscd-red` | `#dc322f` | [Solarized](https://ethanschoonover.com/solarized/) red. | Fixed |
+| `--oscd-magenta` | `#d33682` | [Solarized](https://ethanschoonover.com/solarized/) magenta. | Fixed |
+| `--oscd-violet` | `#6c71c4` | [Solarized](https://ethanschoonover.com/solarized/) violet. | Fixed |
+| `--oscd-blue` | `#268bd2` | [Solarized](https://ethanschoonover.com/solarized/) blue. | Fixed |
+| `--oscd-cyan` | `#2aa198` | [Solarized](https://ethanschoonover.com/solarized/) cyan. | Fixed |
+| `--oscd-green` | `#859900` | [Solarized](https://ethanschoonover.com/solarized/) green. | Fixed |
 | `--oscd-primary` | `--oscd-cyan` | Brand fill. | Either |
 | `--oscd-on-primary` | `--oscd-gray-20` | Text on primary. | Either |
 | `--oscd-primary-adaptive` | `--oscd-primary` | Primary on paper; host may vary light/dark. | Either |
@@ -82,7 +83,7 @@ The host sets `color-scheme` on `<html>`. Use CSS `light-dark(light, dark)` when
 background: light-dark(var(--oscd-base3), var(--oscd-base03));
 ```
 
-Prefer the Solarized `--oscd-base*` tokens: they already invert.
+Prefer the [Solarized](https://ethanschoonover.com/solarized/) `--oscd-base*` tokens: they already invert.
 
 ## `color-mix`
 
@@ -94,7 +95,50 @@ color-mix(in oklab, var(--oscd-gray-90) 50%, #000)
 
 ## Contrast
 
-Always pair a fill with its contrast token: `--oscd-primary` with `--oscd-on-primary`, `--oscd-error` with `--oscd-on-error`, `--oscd-base3` with `--oscd-base00`. For a button, use the fill as background, the `on-*` token as text, and the **same text colour** as the border. That stays visible in both modes and with unknown host branding.
+Always pair a **fill** with its **contrast** token. Do not invent a third colour for text on a branded fill.
+
+| Fill (background) | Contrast (text / icon) | Description |
+|---|---|---|
+| `--oscd-primary` | `--oscd-on-primary` | Fixed (same in light and dark by default) |
+| `--oscd-primary-adaptive` | `--oscd-on-primary-adaptive` | Either: defaults to the primary pair; host may use `light-dark()` |
+| `--oscd-secondary` | `--oscd-on-secondary` | Fixed (same in light and dark by default) |
+| `--oscd-secondary-adaptive` | `--oscd-on-secondary-adaptive` | Either: defaults to the secondary pair; host may use `light-dark()` |
+| `--oscd-error` | `--oscd-on-error` | Fixed |
+| `--oscd-warning` | `--oscd-on-warning` | Fixed |
+| `--oscd-success` | `--oscd-on-success` | Fixed |
+| `--oscd-paper` | `--oscd-ink` | Light/Dark (roles swap) |
+| `--oscd-base3` | `--oscd-base00` | Light/Dark. Example of the 4-step minimum on the [Solarized](https://ethanschoonover.com/solarized/) ramp |
+| `--oscd-base1` | `--oscd-base02` | Light/Dark. Example of the 4-step minimum on the [Solarized](https://ethanschoonover.com/solarized/) ramp |
+| `--oscd-gray-20` | `--oscd-gray-60` | Fixed. Example of the 4-step (40) minimum on the gray ramp |
+| `--oscd-white` | `--oscd-black` | Fixed (absolute poles; do not swap) |
+
+`--oscd-nav-active` is ink **on** `--oscd-primary` (same role as `--oscd-on-primary` by default), not a fill of its own.
+
+For a button: fill as `background`, contrast token as `color`, and the **same contrast token** as `border-color`. That stays visible in both modes and with unknown host branding.
+
+### Gray scale vs [Solarized](https://ethanschoonover.com/solarized/) bases
+
+`--oscd-gray-10` … `--oscd-gray-90` is a **fixed** ramp (10 = lightest, 90 = darkest). It does not invert.
+
+`--oscd-base03` … `--oscd-base3` is the same ramp **folded through** `light-dark()`, so plugins can keep using `base3` as “surface” and `base00` as “body text” in both modes.
+
+| Step | `--oscd-gray-*` (fixed) | `--oscd-base*` in light | `--oscd-base*` in dark |
+|---|---|---|---|
+| 10 lightest | `--oscd-gray-10` | `--oscd-base3` | `--oscd-base03` |
+| 20 | `--oscd-gray-20` | `--oscd-base2` | `--oscd-base02` |
+| 30 | `--oscd-gray-30` | `--oscd-base1` | `--oscd-base01` |
+| 40 | `--oscd-gray-40` | `--oscd-base0` | `--oscd-base00` |
+| 50 | `--oscd-gray-50` | — | — |
+| 60 | `--oscd-gray-60` | `--oscd-base00` | `--oscd-base0` |
+| 70 | `--oscd-gray-70` | `--oscd-base01` | `--oscd-base1` |
+| 80 | `--oscd-gray-80` | `--oscd-base02` | `--oscd-base2` |
+| 90 darkest | `--oscd-gray-90` | `--oscd-base03` | `--oscd-base3` |
+
+**Minimum gap: 4 steps (40 on the 10–90 scale).** Adjacent steps (for example `--oscd-gray-20` with `--oscd-gray-30`) are not enough for text.
+
+Example: background `--oscd-gray-20`, text `--oscd-gray-60` (gap 40). That is the same pairing as `--oscd-base2` / `--oscd-base00` in light mode. `--oscd-gray-20` with `--oscd-gray-40` (gap 20) is too close.
+
+Prefer `--oscd-base*` over raw `--oscd-gray-*` so the pair still works after dark mode inverts the scale.
 
 ## What not to do
 
