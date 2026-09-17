@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.36.0](https://github.com/com-pas/open-scd/compare/open-scd@v0.35.3...open-scd@v0.36.0) (2026-09-17)
+
+
+### ✨ Features
+
+* **openscd:** update themes.ts for Customer Branding and better Plugin support - Sync with OSCD-Shell ([#170](https://github.com/com-pas/open-scd/issues/170)) ([38b5550](https://github.com/com-pas/open-scd/commit/38b5550707c77732083c0fe2e7282da86150d865))
+
+
+### 🐞 Bug Fixes
+
+* 157 - Open-SCD - Adding a custom plugin with an existing name and kind creates duplicate entries ([#160](https://github.com/com-pas/open-scd/issues/160)) ([1f23c68](https://github.com/com-pas/open-scd/commit/1f23c6898b4fc827db0a00aa449ad311d48a7816))
+
+
+### 📚 Documentation
+
+* update README files to clarify package relationships and npm usage ([#168](https://github.com/com-pas/open-scd/issues/168)) ([786ced0](https://github.com/com-pas/open-scd/commit/786ced0bb3864cb82025697a2f64446ec531f888))
+
 ## [0.35.3](https://github.com/com-pas/open-scd/compare/open-scd@v0.35.2...open-scd@v0.35.3) (2026-08-07)
 
 
