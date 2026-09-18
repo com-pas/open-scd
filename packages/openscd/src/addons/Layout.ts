@@ -485,6 +485,19 @@ export class OscdLayout extends LitElement {
    * settings, help, scl history and plug-ins management
    */
   protected renderAside(): TemplateResult {
+    const makeListAction = (menuItems : (MenuItem|'divider')[]) => {
+      return (ae: CustomEvent<ActionDetail>) => {
+        //FIXME: dirty hack to be fixed in open-scd-core
+        //       if clause not necessary when oscd... components in open-scd not list
+        if (!(ae.target instanceof List)) return;
+        this.menuUI.open = false;
+        (<MenuItem>(
+          menuItems.filter(
+            item => item !== 'divider' && !item.actionItem
+          )[ae.detail.index]
+        ))?.action?.(ae);
+      }
+    }
 
     return html`
       <mwc-drawer class="mdc-theme--surface" hasheader type="modal" id="menu">
@@ -503,19 +516,6 @@ export class OscdLayout extends LitElement {
       if(!docName) return html``;
 
       return html`<span slot="subtitle">${docName}</span>`;
-    }
-
-    function makeListAction(menuItems : (MenuItem|'divider')[]){
-      return function listAction(ae: CustomEvent<ActionDetail>){
-        //FIXME: dirty hack to be fixed in open-scd-core
-        //       if clause not necessary when oscd... components in open-scd not list
-        if (ae.target instanceof List)
-          (<MenuItem>(
-            menuItems.filter(
-              item => item !== 'divider' && !item.actionItem
-            )[ae.detail.index]
-          ))?.action?.(ae);
-      }
     }
 
 
