@@ -666,6 +666,21 @@ export class OscdLayout extends LitElement {
 
 
   static styles = css`
+
+    :host > div {
+      height: calc(-4px + 100vh);   /* 4px is the bottom progressbar from the oscd-waiter wrapper */
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+  
+    .plugin.editor {
+      min-height: 0;
+      flex: 1;
+      height: 100%;
+      overflow: auto;
+    }
+
     mwc-drawer {
       position: absolute;
       top: 0;
