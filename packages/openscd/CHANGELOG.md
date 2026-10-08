@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.36.1](https://github.com/com-pas/open-scd/compare/open-scd@v0.36.0...open-scd@v0.36.1) (2026-10-08)
+
+
+### 🐞 Bug Fixes
+
+* **openscd:** close menu drawer before Settings/Plugins dialogs ([aa48454](https://github.com/com-pas/open-scd/commit/aa484549e6e1636e3316e2a799c69669676d1974))
+* **openscd:** close the modal menu before opening another modal ([90665ff](https://github.com/com-pas/open-scd/commit/90665ffff5ae54bceba2efa18227232b31f646cb))
+* **openscd:** give editor plugins a bounded remaining viewport height ([7131302](https://github.com/com-pas/open-scd/commit/713130285163fc04d7d1cf029f742cb9a4d4e5d9))
+* **openscd:** give editor plugins a bounded remaining viewport height ([9a308af](https://github.com/com-pas/open-scd/commit/9a308af6efe5c75c0af348ba9b09df986cf1377b)), closes [#173](https://github.com/com-pas/open-scd/issues/173)
+
 ## [0.36.0](https://github.com/com-pas/open-scd/compare/open-scd@v0.35.3...open-scd@v0.36.0) (2026-09-17)
 
 
