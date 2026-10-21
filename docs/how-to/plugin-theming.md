@@ -127,13 +127,13 @@ The table names the **theme roles**. After the mapping, paint with `--my-interna
 | Fonts | `--oscd-theme-text-font`, `--oscd-theme-text-font-mono`, `--oscd-theme-icon-font` | Text, monospace, and icon fonts. |
 | Shape | `--oscd-theme-shape` | Corner radius (Material **small**). |
 
-Do **not** set `--oscd-theme-*`. Do **not** read `--oscd-internal-*` or `--oscd-theme-nav-*`. App-bar colors are host-only.
+Do **not** set `--oscd-theme-*`. Do **not** read `--oscd-internal-*`, `--oscd-compas-theme-nav-*`, or `--oscd-compas-theme-body-bg`. App bar, tabs, and the page background are host-only.
 
 ## `--oscd-theme-*` tokens
 
 These are the portable tokens a distro may set. The distro is not required to set them, so always consume them with a fallback (as in the quick start).
 
-`--oscd-theme-nav-*` and `--oscd-theme-body-bg` are host-only ([customer-branding.md](./customer-branding.md)). `--oscd-theme-branding` is an optional brand id ([plugin-theming-advanced.md](./plugin-theming-advanced.md)).
+`--oscd-compas-theme-nav-*` and `--oscd-compas-theme-body-bg` are host-only ([customer-branding.md](./customer-branding.md)). `--oscd-theme-branding` is an optional brand id ([plugin-theming-advanced.md](./plugin-theming-advanced.md)).
 
 | Key | Default | Description | Theme |
 |---|---|---|---|
@@ -200,7 +200,7 @@ For a button: fill as `background`, contrast token as `color`, and the **same co
 
 - Do not set `--oscd-theme-*` inside the plugin.
 - Do not rely on the host having published `--oscd-*`. Initialize them (or your own library prefix) from `--oscd-theme-*` with a fallback.
-- Do not use `--oscd-internal-*` or `--oscd-theme-nav-*`. Nav / app-bar colors are host chrome.
+- Do not use `--oscd-internal-*`, `--oscd-compas-theme-nav-*`, or `--oscd-compas-theme-body-bg`. Nav, app bar, and page background are host chrome.
 - Unprefixed tokens (`--primary`, `--base03`, `--cyan`, …) exist only for compatibility and will be removed.
 - `--md-sys-*` / `--mwc-*` are for the Material library after you map them. They are not the portable OpenSCD contract.
 

@@ -1,6 +1,6 @@
 # ADR-0005 annex — CoMPAS host (`com-pas/open-scd`)
 
-Date: 2026-08-21 (updated 2026-09-06)
+Date: 2026-08-21 (updated 2026-10-19)
 
 This annex is the CoMPAS-specific work behind [ADR-0005](0005-customer-branding-and-dark-mode.md). Ecosystem terminology and the `--oscd-theme-*` fork live there. This file is the `themes.ts` / Settings / nav-token plan for https://github.com/com-pas/open-scd (and distros such as https://github.com/com-pas/compas-open-scd).
 
@@ -54,22 +54,22 @@ Keep this short. Token names and defaults are in the tables below.
 - **Theme select:** System default / Light / Dark. Default is **system**, so a CoMPAS distro can follow the OS with `prefers-color-scheme` if it wants.
 - **`themes.ts` follows oscd-shell** for compatibility: [`oscd-shell-design-tokens.ts`](https://github.com/OMICRONEnergyOSS/oscd-shell/blob/main/src/oscd-shell-design-tokens.ts). Small adds: icon font `'Material Symbols Outlined'`, `--oscd-theme-shape`, `--oscd-theme-warning`.
 - **Old names stay for compatibility.** `--oscd-*` and unprefixed Solarized tokens (`--primary`, `--base03`, `--cyan`, …) are still set. Distros and new plugins brand with **`--oscd-theme-*`**. Do not treat `--oscd-*` as the branding API.
-- **Split plugin-facing vs host-distribution branding.** Plugins read `--oscd-theme-primary`, bases, fonts, shape, and so on. App bar, tabs, and page background are host-distribution only (`--oscd-theme-nav-*`, `--oscd-theme-body-bg`).
+- **Split plugin-facing vs host-distribution branding.** Plugins read `--oscd-theme-primary`, bases, fonts, shape, and so on. App bar, tabs, and page background are host-distribution only (`--oscd-compas-theme-nav-*`, `--oscd-compas-theme-body-bg`).
 - **How-tos** for customer branding and plugin development: [`docs/how-to/`](../how-to/customer-branding.md).
 
-Hosts that set no `--oscd-theme-*` keep the current look. Status colors beyond error / warning: [ADR-0006](0006-customer-branding-add-status-color-tokens.md).
+Hosts that set neither `--oscd-theme-*` nor `--oscd-compas-theme-*` keep the current look. Status colors beyond error / warning: [ADR-0006](0006-customer-branding-add-status-color-tokens.md).
 
-## New host-distribution branding tokens (`--oscd-theme-*`)
+## New host-distribution branding tokens (`--oscd-compas-theme-*`)
 
-These are the tokens a distro sets in `customer-branding.css`. Plugins must **not** read the nav / body-bg ones. Distros may leave them unset.
+These are the tokens a distro sets in `customer-branding.css` for host chrome. Plugins must **not** read them. Distros may leave them unset. The `compas` segment keeps them out of the portable `--oscd-theme-*` plugin contract (renamed from `--oscd-theme-nav-*` and `--oscd-theme-body-bg`).
 
 | Branding token | Default (if unset) | Description | Theme |
 |---|---|---|---|
-| `--oscd-theme-nav-primary` | Solarized cyan | App-bar / tab fill. Host-distribution only. | Either |
-| `--oscd-theme-nav-primary-active` | Solarized cyan | Active editor-tab fill. Host-distribution only. | Either |
-| `--oscd-theme-nav-primary-text` | Solarized base2 | App-bar / tab ink. Host-distribution only. | Either |
-| `--oscd-theme-nav-primary-text-active` | Solarized base2 | Active editor-tab indicator. Host-distribution only. | Either |
-| `--oscd-theme-body-bg` | Solarized base2 | Page background; independent of plugin surfaces. Host-distribution only. | Light/Dark |
+| `--oscd-compas-theme-nav-primary` | Solarized cyan | App-bar / tab fill. Host-distribution only. | Either |
+| `--oscd-compas-theme-nav-primary-active` | Solarized cyan | Active editor-tab fill. Host-distribution only. | Either |
+| `--oscd-compas-theme-nav-primary-text` | Solarized base2 | App-bar / tab ink. Host-distribution only. | Either |
+| `--oscd-compas-theme-nav-primary-text-active` | Solarized base2 | Active editor-tab indicator. Host-distribution only. | Either |
+| `--oscd-compas-theme-body-bg` | Solarized base2 | Page background; independent of plugin surfaces. Host-distribution only. | Light/Dark |
 
 The host maps nav tokens to `--oscd-internal-nav-*` for `Layout.ts` / `menu-tabs.ts`. That prefix is host-distribution internals, not a plugin API.
 
@@ -77,13 +77,13 @@ The host maps nav tokens to `--oscd-internal-nav-*` for `Layout.ts` / `menu-tabs
 
 ## Changed variables (vs former com-pas/open-scd `main`)
 
-**Brand with `--oscd-theme-*`.** `--oscd-*` and unprefixed Solarized names are filled from those tokens so old plugins keep working.
+**Brand plugins with `--oscd-theme-*` and host chrome with `--oscd-compas-theme-*`.** `--oscd-*` and unprefixed Solarized names are filled from the plugin tokens so old plugins keep working.
 
 | Branding token | Former `main` | This branch | Compatibility alias (not the branding API) |
 |---|---|---|---|
 | `--oscd-theme-yellow` … `--oscd-theme-green` | unprefixed `--yellow` only | overridable `--oscd-theme-*` | `--oscd-yellow` … `--oscd-green`, `--yellow` … |
 | `--oscd-theme-primary` / `--oscd-theme-secondary` | `--primary` stayed `--cyan` | distro sets `--oscd-theme-*` | `--oscd-primary` / `--oscd-secondary`, `--primary` / `--secondary` |
-| `--oscd-theme-body-bg` | JS `bodyStyles` (`#eee8d5` / `#073642`) | CSS branding token | (none — host-distribution only) |
+| `--oscd-compas-theme-body-bg` | JS `bodyStyles` (`#eee8d5` / `#073642`) | CSS branding token | (none — host-distribution only) |
 | Settings `theme` | `'light'` \| `'dark'` (default light) | `'system'` \| `'light'` \| `'dark'` (default system) | `color-scheme` on `<html>` |
 | `--oscd-theme-shape` | unset | `8px` | `--oscd-shape`. Plugins map `--md-sys-shape-corner-*` (see Demo Theme). |
 | `--oscd-theme-icon-font` | `'Material Icons'` | `'Material Symbols Outlined'` | `--oscd-icon-font`, `--mdc-icon-font` |
@@ -91,7 +91,7 @@ The host maps nav tokens to `--oscd-internal-nav-*` for `Layout.ts` / `menu-tabs
 
 ## Theming default changes for distros
 
-When a distro such as [CoMPAS](https://github.com/com-pas/compas-open-scd) bumps `@compas-oscd/open-scd`, look and behavior change even if the distro sets no `--oscd-theme-*` tokens.
+When a distro such as [CoMPAS](https://github.com/com-pas/compas-open-scd) bumps `@compas-oscd/open-scd`, look and behavior change even if the distro sets no `--oscd-theme-*` or `--oscd-compas-theme-*` tokens.
 
 `customer-branding.css` is **not** inside the published `@compas-oscd/open-scd` package. Unbranded distros keep the Solarized defaults from `themes.ts`. To brand, add your own CSS file and a `<link>` in **your** `index.html` — see [customer-branding.md](../../docs/how-to/customer-branding.md).
 
@@ -101,15 +101,15 @@ When a distro such as [CoMPAS](https://github.com/com-pas/compas-open-scd) bumps
 |---|---|---|---|---|
 | Settings default | `'light'` | `'system'` (OS `prefers-color-scheme`) | Users with no `localStorage.theme` (and after Reset) follow the OS. Stored `'light'` / `'dark'` stay. | User can set the theme in Settings. |
 | Icon font | `--mdc-icon-font: 'Material Icons Outlined'` | `'Material Symbols Outlined'` | All MWC icons. The distro must keep shipping that font (CoMPAS already loads it). | Overwrite with `--oscd-theme-icon-font: 'Material Icons Outlined'` |
-| App bar / tabs | `--primary` / `--oscd-theme-primary` | `--oscd-theme-nav-*` → `--oscd-internal-nav-*` | Setting `--oscd-theme-primary` no longer paints chrome. Unset nav tokens stay Solarized cyan. | Overwrite with `--oscd-theme-nav-*` |
-| Body background | JS `bodyStyles` hex | `color-scheme` + `light-dark()` | Page background follows the app theme / OS. | Overwrite with `--oscd-theme-body-bg` |
+| App bar / tabs | `--primary` / `--oscd-theme-primary` | `--oscd-compas-theme-nav-*` → `--oscd-internal-nav-*` | Setting `--oscd-theme-primary` no longer paints chrome. Unset nav tokens stay Solarized cyan. | Overwrite with `--oscd-compas-theme-nav-*` |
+| Body background | JS `bodyStyles` hex | `color-scheme` + `light-dark()` | Page background follows the app theme / OS. | Overwrite with `--oscd-compas-theme-body-bg` |
 
 Why these defaults changed:
 
 - **Settings default.** If the operating system is set to dark mode, the first launch should show dark mode as well.
 - **Icon font.** `'Material Symbols Outlined'` is Google’s current Material icon font. `'Material Icons Outlined'` should no longer be used. oscd-shell already defaults to `'Material Symbols Outlined'`, so hosts stay aligned. Glyphs can look slightly different.
 - **App bar / tabs.** Chrome is no longer tied to `--oscd-theme-primary`, so the distro can brand the bar without changing plugin fills.
-- **Body background.** Previously a hardcoded hex in JS. It can now be overridden with `--oscd-theme-body-bg`.
+- **Body background.** Previously a hardcoded hex in JS. It can now be overridden with `--oscd-compas-theme-body-bg`.
 
 ### CSS features and browser years
 

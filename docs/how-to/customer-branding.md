@@ -1,7 +1,7 @@
 # Customer branding
 
 Brand an OpenSCD or CoMPAS host without changing `themes.ts`.
-Set only `--oscd-theme-*` in CSS. That is the portable contract for both the host chrome and plugins ([plugin-theming.md](./plugin-theming.md)). This host also publishes resolved `--oscd-*` so older plugins keep working; new plugins must not depend on that.
+Set `--oscd-theme-*` in CSS for plugins, and `--oscd-compas-theme-*` for host chrome (app bar, tabs, page background). `--oscd-theme-*` is the portable plugin contract ([plugin-theming.md](./plugin-theming.md)). This host also publishes resolved `--oscd-*` so older plugins keep working; new plugins must not depend on that.
 
 Plugin authors: [plugin-theming.md](./plugin-theming.md).  
 Toolbar, plugin-catalog, git modules: [customer-branding-advanced.md](./customer-branding-advanced.md).  
@@ -23,19 +23,19 @@ Unset tokens keep the defaults from `themes.ts`.
   --oscd-theme-secondary: #6c71c4;
 
   /* App bar and editor tabs (host only; plugins must not use these). */
-  --oscd-theme-nav-primary: #004d40;
-  --oscd-theme-nav-primary-active: #005d50;
-  --oscd-theme-nav-primary-text: #eee8d5;
-  --oscd-theme-nav-primary-text-active: yellow;
+  --oscd-compas-theme-nav-primary: #004d40;
+  --oscd-compas-theme-nav-primary-active: #005d50;
+  --oscd-compas-theme-nav-primary-text: #eee8d5;
+  --oscd-compas-theme-nav-primary-text-active: yellow;
 
   /* Page background behind the shell (host only). */
-  --oscd-theme-body-bg: light-dark(#dff, #001b16);
+  --oscd-compas-theme-body-bg: light-dark(#dff, #001b16);
 }
 ```
 
-Use `light-dark(light, dark)` when a value should follow the app theme setting. Omit it for a color that stays the same in both modes (typical for `--oscd-theme-nav-primary`).
+Use `light-dark(light, dark)` when a value should follow the app theme setting. Omit it for a color that stays the same in both modes (typical for `--oscd-compas-theme-nav-primary`).
 
-`--oscd-theme-primary` does **not** paint the app bar. That is `--oscd-theme-nav-*`. Unset nav tokens keep OpenSCD cyan. A customer distro may omit these `--oscd-theme-nav-*` tokens or hard-code them.
+`--oscd-theme-primary` does **not** paint the app bar. That is `--oscd-compas-theme-nav-*`. Unset nav tokens keep OpenSCD cyan. A customer distro may omit these `--oscd-compas-theme-nav-*` tokens or hard-code them.
 
 ## Layers
 
@@ -45,7 +45,7 @@ Custom branding fans out to the host and to each plugin. The plugin then maps in
 
 | Layer | Tokens | Who |
 |---|---|---|
-| Custom branding / distro | `--oscd-theme-*` | Distro CSS. Portable contract. |
+| Custom branding / distro | `--oscd-theme-*`, `--oscd-compas-theme-*` | Distro CSS. `--oscd-theme-*` is the portable plugin contract. `--oscd-compas-theme-*` is host chrome only. |
 | Host | `--oscd-*`, `--oscd-internal-*` | Host chrome. Plugins must not depend on these. |
 | Plugin | maps `--oscd-theme-*` → library prefixes | Plugin root. |
 | oscd-ui | `--oscd-*` (planned rename `--oscd-ui-*`) | Shared OpenSCD UI, including Ace. |
@@ -71,11 +71,6 @@ You can test your customer-Branding with the Bearingpoint Demo Theme Plugin: htt
 | `--oscd-theme-green` | `#859900` | Solarized green. | Fixed |
 | `--oscd-theme-primary` | `--oscd-theme-cyan` | Plugin brand fill. Contrast with `--oscd-theme-base2` / `--oscd-theme-base3`. | Either |
 | `--oscd-theme-secondary` | `--oscd-theme-violet` | Second plugin brand fill (landing tiles). Same contrast rule. | Either |
-| `--oscd-theme-nav-primary` | `--oscd-theme-cyan` | App-bar / tab fill. Host only. | Either |
-| `--oscd-theme-nav-primary-active` | `--oscd-theme-cyan` | Active editor-tab fill. Host only. | Either |
-| `--oscd-theme-nav-primary-text` | `--oscd-theme-base2` | App-bar / tab ink. Host only. | Either |
-| `--oscd-theme-nav-primary-text-active` | `--oscd-theme-base2` | Active editor-tab indicator. Host only. | Either |
-| `--oscd-theme-body-bg` | Solarized base2 | Page background behind the app. Independent of `--oscd-theme-base2`. Host only. | Light/Dark |
 | `--oscd-theme-error` | `--oscd-theme-red` | Error fill. | Fixed |
 | `--oscd-theme-warning` | `--oscd-theme-yellow` | Warning fill. | Fixed |
 | `--oscd-theme-text-font` | `'Roboto'` | UI text font. | Fixed |
@@ -88,7 +83,17 @@ You can test your customer-Branding with the Bearingpoint Demo Theme Plugin: htt
 
 Contrast on primary/secondary is `--oscd-theme-base2` or `--oscd-theme-base3`. Keep that in mind when defining primary/secondary for light/dark — see [plugin-theming.md § Contrast](./plugin-theming.md#contrast).
 
-`--oscd-theme-nav-*`, `--oscd-theme-body-bg`, and the resolved `--oscd-internal-nav-*` are **host-only**. Plugins must not read them:
+## Host chrome (`--oscd-compas-theme-*`)
+
+These tokens brand the app bar, editor tabs, and the page background. The `compas` segment marks them as host-distribution only, so they are not part of the portable `--oscd-theme-*` plugin contract. Plugins must not read them. The host maps the nav tokens to `--oscd-internal-nav-*`.
+
+| Key | Default | Description | Theme |
+|---|---|---|---|
+| `--oscd-compas-theme-nav-primary` | `--oscd-theme-cyan` | App-bar / tab fill. | Either |
+| `--oscd-compas-theme-nav-primary-active` | `--oscd-theme-cyan` | Active editor-tab fill. | Either |
+| `--oscd-compas-theme-nav-primary-text` | `--oscd-theme-base2` | App-bar / tab ink. | Either |
+| `--oscd-compas-theme-nav-primary-text-active` | `--oscd-theme-base2` | Active editor-tab indicator. | Either |
+| `--oscd-compas-theme-body-bg` | Solarized base2 | Page background behind the app. Independent of `--oscd-theme-base2`. | Light/Dark |
 
 ![Main Navigation Tokens](./assets/customer-branding_main-navigation.png)
 
@@ -119,7 +124,7 @@ Leave it unset on stock OpenSCD.
 Settings is a select: **System default** (OpenSCD default), **Light**, **Dark**. `themes.ts` sets `color-scheme` on `<html>` (`light`, `dark`, or `light dark` for system). CSS `light-dark(light, dark)` then follows that:
 
 ```css
---oscd-theme-body-bg: light-dark(#ffffff, #000000);
+--oscd-compas-theme-body-bg: light-dark(#ffffff, #000000);
 ```
 
 Omit `light-dark()` for a value that must stay the same in both modes.
@@ -138,6 +143,6 @@ color-mix(in oklab, var(--oscd-theme-base03) 50%, #000)
 
 Do **not** set component-library variables (`--mdc-*`, `--md-sys-*`, `--md-*`). Each plugin may use a different library or version. Those mappings in `themes.ts` exist only for compatibility and may go away. Plugins must configure their own component library.
 
-Do **not** set `--oscd-*` or `--oscd-internal-*` here. The host maps `--oscd-theme-*` → `--oscd-*` for its own chrome (and for older plugins). New plugins map `--oscd-theme-*` themselves. `--oscd-internal-*` is host chrome.
+Do **not** set `--oscd-*` or `--oscd-internal-*` here. The host maps `--oscd-theme-*` → `--oscd-*` for its surfaces and for older plugins. App bar and tabs read `--oscd-compas-theme-nav-*` into `--oscd-internal-nav-*`. New plugins map `--oscd-theme-*` themselves. `--oscd-internal-*` and `--oscd-compas-theme-*` are host chrome.
 
 More (plugin catalog, git modules, toolbar/logo): [customer-branding-advanced.md](./customer-branding-advanced.md).

@@ -14,8 +14,9 @@ export function resolvedColorScheme(
 /**
  * Apply the current theme setting and return the theme stylesheet.
  *
- * Customize only via --oscd-theme-* in customer-branding.css. This function
- * maps those overrides onto --oscd-* tokens used by OpenSCD and plugins.
+ * Customize only via --oscd-theme-* (plugins) and --oscd-compas-theme-*
+ * (host chrome) in customer-branding.css. This function maps those overrides
+ * onto --oscd-* and --oscd-internal-* tokens.
  *
  * Keep this signature: other forks may override getTheme(theme).
  */
@@ -26,15 +27,16 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
     theme === 'dark' ? 'dark' : theme === 'light' ? 'light' : 'light dark';
 
   // <body> is outside the oscd-settings shadow tree, so it cannot use --oscd-*.
-  // Set --oscd-theme-body-bg to override independently of --oscd-theme-base2.
+  // Set --oscd-compas-theme-body-bg to override independently of --oscd-theme-base2.
   document.body.style.background =
-    'var(--oscd-theme-body-bg, var(--oscd-theme-base2, light-dark(#eee8d5, #073642)))';
+    'var(--oscd-compas-theme-body-bg, var(--oscd-theme-base2, light-dark(#eee8d5, #073642)))';
 
   return html`
     <style>
       /*
        * Token layers:
-       *   --oscd-theme-*         customer overrides (customer-branding.css)
+       *   --oscd-theme-*         customer overrides for plugins (customer-branding.css)
+       *   --oscd-compas-theme-*  host chrome overrides (app bar, tabs, page background); not for plugins
        *   --oscd-theme-branding  optional brand id for plugin style queries
        *   --oscd-*               resolved tokens for OpenSCD and plugins
        *   --oscd-internal-*      host chrome only (app bar / tabs); do not use in plugins
@@ -68,11 +70,11 @@ export function getTheme(theme: Settings['theme']): TemplateResult {
         --oscd-primary: var(--oscd-theme-primary, var(--oscd-cyan));
         --oscd-secondary: var(--oscd-theme-secondary, var(--oscd-violet));
 
-        /* Host chrome only. Plugins must not use --oscd-internal-* or --oscd-theme-nav-*. */
-        --oscd-internal-nav-primary: var(--oscd-theme-nav-primary, var(--oscd-cyan));
-        --oscd-internal-nav-primary-active: var(--oscd-theme-nav-primary-active, var(--oscd-cyan));
-        --oscd-internal-nav-primary-text: var(--oscd-theme-nav-primary-text, var(--oscd-base2));
-        --oscd-internal-nav-primary-text-active: var(--oscd-theme-nav-primary-text-active, var(--oscd-base2));
+        /* Host chrome only. Plugins must not use --oscd-internal-* or --oscd-compas-theme-nav-*. */
+        --oscd-internal-nav-primary: var(--oscd-compas-theme-nav-primary, var(--oscd-cyan));
+        --oscd-internal-nav-primary-active: var(--oscd-compas-theme-nav-primary-active, var(--oscd-cyan));
+        --oscd-internal-nav-primary-text: var(--oscd-compas-theme-nav-primary-text, var(--oscd-base2));
+        --oscd-internal-nav-primary-text-active: var(--oscd-compas-theme-nav-primary-text-active, var(--oscd-base2));
 
         --oscd-error: var(--oscd-theme-error, var(--oscd-red));
         --oscd-warning: var(--oscd-theme-warning, var(--oscd-yellow));
