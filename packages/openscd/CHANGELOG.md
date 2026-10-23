@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.36.2](https://github.com/com-pas/open-scd/compare/open-scd@v0.36.1...open-scd@v0.36.2) (2026-10-23)
+
+
+### 🐞 Bug Fixes
+
+* **openscd:** contain editor plugin overflow in the host scrollport ([ce7c7bd](https://github.com/com-pas/open-scd/commit/ce7c7bdf04c9e03ee7d5c4fc71eb83866eb9a20b))
+* **openscd:** contain editor plugin overflow in the host scrollport ([df48ebe](https://github.com/com-pas/open-scd/commit/df48ebe4c2c376f3c64c75eaa05861c96d59fb35)), closes [#180](https://github.com/com-pas/open-scd/issues/180)
+
 ## [0.36.1](https://github.com/com-pas/open-scd/compare/open-scd@v0.36.0...open-scd@v0.36.1) (2026-10-21)
 
 
