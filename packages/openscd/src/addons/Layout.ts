@@ -679,6 +679,8 @@ export class OscdLayout extends LitElement {
       flex: 1;
       height: 100%;
       overflow: auto;
+      /* Containing block. A static host lets a tall shadow tree (e.g. communication-plugin) grow the document scroll height. */
+      position: relative;
     }
 
     mwc-drawer {
