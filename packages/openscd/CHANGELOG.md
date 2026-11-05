@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.37.0](https://github.com/com-pas/open-scd/compare/open-scd@v0.36.2...open-scd@v0.37.0) (2026-11-05)
+
+
+### ✨ Features
+
+* **plugins:** provide docVersion to plugins ([#184](https://github.com/com-pas/open-scd/issues/184)) ([a84b1ff](https://github.com/com-pas/open-scd/commit/a84b1ffd1eb7ee436c3039d5e54d099a75b51ebb))
+
 ## [0.36.2](https://github.com/com-pas/open-scd/compare/open-scd@v0.36.1...open-scd@v0.36.2) (2026-10-23)
 
 
