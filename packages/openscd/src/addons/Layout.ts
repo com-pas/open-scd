@@ -645,6 +645,7 @@ export class OscdLayout extends LitElement {
           .doc=${this.doc}
           .docName=${this.docName}
           .editCount=${this.editCount}
+          .docVersion=${this.editCount}
           .plugins=${this.host.storedPlugins}
           .docId=${this.host.docId}
           .pluginId=${plugin.src}
