@@ -4,6 +4,7 @@ import { useFakeTimers } from 'sinon';
 import '@compas-oscd/open-scd/dist/test-helper';
 import { MockOpenSCD } from '@compas-oscd/open-scd/dist/test-helper';
 import type { Plugin } from '@compas-oscd/open-scd/dist/plugin.js';
+import { LogEntry } from '@compas-oscd/core';
 
 import ValidateTemplates from '../../../src/validators/ValidateTemplates.js';
 
@@ -98,12 +99,19 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
       await element.validate();
       await parent.updateComplete;
     });
-    it('shows only one message in the diagnostics pane', async () => {
+    it('shows no message in the diagnostics pane', async () => {
       const issues = parent.historyAddon.diagnoses.get(
         'http://localhost:8000/plugins/src/validators/ValidateTemplates.js'
       );
-      expect(issues?.length).to.equal(1);
+      expect(issues).to.be.undefined;
     }).timeout(1000);
+    it('logs a warning that DataTypeTemplates validation was skipped', async () => {
+      const lastEntry = <LogEntry>parent.historyAddon.log.pop();
+      expect(lastEntry.kind).to.equal('warning');
+      expect(lastEntry.title).to.contain(
+        'DataTypeTemplates validation skipped: requires SCL edition 2007B4 or higher'
+      );
+    });
     it('looks like the latest snapshot', async () => {
       await parent.requestUpdate();
       await expect(parent.historyAddon.diagnosticUI).to.equalSnapshot();

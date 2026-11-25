@@ -127,22 +127,24 @@ describe('ValidateTemplates', () => {
       );
     });
 
-    it('pushes only diag.missingnsd issue to diagnostics pane for SCL version < 2007B4', async () => {
+    it('logs only diag.missingnsd for SCL version < 2007B4', async () => {
       element.doc.querySelector('SCL')?.setAttribute('version', '2003');
       await element.validate();
-      expect(issueEvent).to.have.been.calledOnce;
-      expect(issueEvent.args[0][0].detail.title).to.contain(
-        'Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4'
+      expect(issueEvent).to.not.have.been.called;
+      expect(logEvent).to.have.been.calledOnce;
+      expect(logEvent.args[0][0].detail.title).to.contain(
+        'DataTypeTemplates validation skipped: requires SCL edition 2007B4 or higher'
       );
     });
 
-    it('pushes only diag.missingnsd issue to diagnostics pane for SCL not having version information', async () => {
+    it('logs only diag.missingnsd for SCL not having version information', async () => {
       element.doc.querySelector('SCL')?.removeAttribute('version');
       element.doc.querySelector('SCL')?.removeAttribute('revision');
       await element.validate();
-      expect(issueEvent).to.have.been.calledOnce;
-      expect(issueEvent.args[0][0].detail.title).to.contain(
-        'Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4'
+      expect(issueEvent).to.not.have.been.called;
+      expect(logEvent).to.have.been.calledOnce;
+      expect(logEvent.args[0][0].detail.title).to.contain(
+        'DataTypeTemplates validation skipped: requires SCL edition 2007B4 or higher'
       );
     });
 

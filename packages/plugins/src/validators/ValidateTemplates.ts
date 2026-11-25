@@ -43,13 +43,7 @@ export default class ValidateTemplates extends LitElement {
     ];
 
     if (!(version === '2007' && revision === 'B' && Number(release) > 3)) {
-      this.dispatchEvent(
-        newIssueEvent({
-          validatorId: this.pluginId,
-          title: get('diag.missingnsd'),
-          message: '',
-        })
-      );
+      this.dispatch({ kind: 'warning', title: get('diag.missingnsd') });
       return;
     }
 
