@@ -185,7 +185,7 @@ export const de: Translations = {
     zeroissues: 'Es konnten keine Fehler in dem Projekt gefunden werden.',
     placeholder: 'Hier werden Validierungsfehler angezeigt.',
     missingnsd:
-      'DataTypeTemplates können nicht validiert werden. Das Projekt muss die Version 2007B4 oder höher haben.',
+      'Validierung der DataTypeTemplates übersprungen: erfordert SCL-Edition 2007B4 oder höher.',
     lastValidated: 'Validiert um {{ time }}',
   },
   plugins: {

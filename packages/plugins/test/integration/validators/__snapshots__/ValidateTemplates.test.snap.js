@@ -644,44 +644,19 @@ snapshots["ValidateTemplates OpenSCD integration test  with schema version small
     wrapfocus=""
   >
     <mwc-list-item
-      aria-disabled="false"
-      noninteractive=""
-      tabindex="-1"
-      twoline=""
+      aria-disabled="true"
+      disabled=""
+      graphic="icon"
+      mwc-list-item=""
+      tabindex="0"
     >
       <span>
-        Validate Templates
+        Issues found during validation will show up here
       </span>
-      <span
-        class="validation-time"
-        slot="secondary"
-      >
-        Validated at 8/7/2026 3:06:22 PM
-      </span>
+      <mwc-icon slot="graphic">
+        info
+      </mwc-icon>
     </mwc-list-item>
-    <li
-      divider=""
-      padded=""
-      role="separator"
-    >
-    </li>
-    <abbr title="Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4
-">
-      <mwc-list-item
-        aria-disabled="false"
-        noninteractive=""
-        tabindex="-1"
-      >
-        <span class="selectable-text">
-          Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4
-        </span>
-        <span
-          class="selectable-text"
-          slot="secondary"
-        >
-        </span>
-      </mwc-list-item>
-    </abbr>
   </filtered-list>
   <mwc-button
     dialogaction="close"

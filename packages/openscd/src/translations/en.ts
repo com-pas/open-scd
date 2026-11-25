@@ -162,7 +162,7 @@ export const en = {
     zeroissues: 'No errors found in the project',
     placeholder: 'Issues found during validation will show up here',
     missingnsd:
-      'Cannot validate DataTypeTemplates. The version of the project must be higher than or equal to 2007B4',
+      'DataTypeTemplates validation skipped: requires SCL edition 2007B4 or higher',
     lastValidated: 'Validated at {{ time }}',
   },
   plugins: {
